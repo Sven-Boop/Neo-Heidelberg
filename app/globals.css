@@ -2241,7 +2241,7 @@
 
   /* ==================== HOCHZEIT HERO ==================== */
   .hochzeit-hero .hero-bg {
-    background-image: url('https://www.neo-heidelberg.de/wp-content/uploads/L1170568.jpg');
+    background-image: url('/gallery/neo-interior.jpg');
     background-position: center 30%;
     filter: brightness(0.85) saturate(1.02) contrast(1.1);
   }
