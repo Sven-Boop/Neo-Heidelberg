@@ -16,7 +16,7 @@
     --accent-hi: #d5e6f0;
     --accent-soft: #6d8a9a;
     --accent-dim: rgba(170,200,218,0.08);
-    --sans: 'Lato', system-ui, sans-serif;
+    --sans: var(--font-lato), 'Lato', system-ui, sans-serif;
     --pad-x: clamp(24px, 4vw, 72px);
   
     --bar-img: url('/bg/bar.webp');}

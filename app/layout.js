@@ -1,6 +1,15 @@
 import './globals.css';
 import Script from 'next/script';
+import { Lato } from 'next/font/google';
 import { structuredData } from './structuredData';
+
+const lato = Lato({
+  weight: ['300', '400', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lato',
+});
 
 export const metadata = {
   metadataBase: new URL('https://www.neo-heidelberg.de'),
@@ -40,7 +49,10 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="de">
+    <html lang="de" className={lato.variable}>
+      <head>
+        <link rel="preload" as="image" href="/bg/hero.webp" fetchPriority="high" />
+      </head>
       <body>
         {structuredData.map((json, i) => (
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
