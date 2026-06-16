@@ -9,7 +9,7 @@ export default function NotFound() {
         justifyContent: 'center',
         textAlign: 'center',
         padding: '24px',
-        background: '#080a0c',
+        background: '#161b22',
         color: '#fff',
       }}
     >
