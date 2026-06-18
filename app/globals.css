@@ -19,7 +19,7 @@
     --sans: var(--font-lato), 'Lato', system-ui, sans-serif;
     --pad-x: clamp(24px, 4vw, 72px);
   
-    --bar-img: url('/bg/bar.webp');}
+    --bar-img: url('/menu/p03907.jpg');}
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   h1, h2, h3, h4 { padding-bottom: 0.12em; overflow: visible; }
