@@ -30,13 +30,13 @@ export const metadata = {
     url: 'https://www.neo-heidelberg.de/',
     title: 'NEO \u2014 Bar & Restaurant Heidelberg',
     description: 'Seit 2016 in der Bahnstadt. Dry-Aged, Californisches Sushi, eigene Bar. Feed your soul.',
-    images: [{ url: 'https://www.neo-heidelberg.de/wp-content/uploads/L1170568.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.neo-heidelberg.de/img/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'NEO \u2014 Bar & Restaurant Heidelberg',
     description: 'Dry-Aged \u00b7 Sushi \u00b7 Bar \u00b7 Feed your soul.',
-    images: ['https://www.neo-heidelberg.de/wp-content/uploads/L1170568.jpg'],
+    images: ['https://www.neo-heidelberg.de/img/og-image.jpg'],
   },
 };
 
