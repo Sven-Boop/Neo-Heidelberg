@@ -4053,3 +4053,28 @@ img, video { max-width: 100%; height: auto; }
   .zehn-col { grid-template-columns: 1fr 1fr; }
   .zehn-photo { min-height: 150px; }
 }
+
+/* ==================== ENGLISH MENU PAGE ==================== */
+.menu-en { padding-top: 0; }
+.menu-en-hero {
+  padding: 170px var(--pad-x) 30px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.menu-en-hero .eyebrow { margin-bottom: 22px; }
+.menu-en-hero h1 {
+  font-size: clamp(48px, 7vw, 110px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  margin-bottom: 24px;
+}
+.menu-en-hero h1 em { font-style: italic; color: var(--accent); }
+.menu-en-hero p {
+  color: var(--fg-soft);
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 640px;
+}
+.menu-en-hero .legal-back { margin-bottom: 40px; display: inline-block; }
