@@ -68,7 +68,7 @@ export const sections = [
         items: [
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00565.jpg', name: 'Sashimi Selection', price: '65.00 €', sub: '', desc: 'Salmon trout from Forellenhof Lenz · bluefin tuna · scallop · hamachi from Völklingen · beetroot-cured salmon · chili cucumber salad · wakame · lobster salad.' },
           { img: '/menu/p04925.jpg', name: 'Ceviche Raw Hamachi Völklingen', price: '32.00 €', sub: '', desc: 'Yuzu leche · kumquat · jalapeño · brown butter · pickled red onion · chives.' },
-          { img: null, name: 'Tuna Tataki', price: '29.00 €', sub: '', desc: 'Seared bluefin tuna · black truffle soy reduction · raw marinated mushrooms · freshly shaved black truffle · chives · Granny Smith · togarashi.' },
+          { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00822.jpg', name: 'Tuna Tataki', price: '29.00 €', sub: '', desc: 'Seared bluefin tuna · black truffle soy reduction · raw marinated mushrooms · freshly shaved black truffle · chives · Granny Smith · togarashi.' },
           { img: '/menu/p03421.jpg', name: 'Katsu Sando – Duroc', price: '22.00 €', sub: '', desc: 'Crispy panko Duroc loin · shokupan toasted in brown butter · tonkatsu sauce · mustard miso cream · pickled red onion · pointed cabbage · chives · chili cucumber salad.' },
           { img: '/menu/p03491.jpg', name: 'Edamame', price: '10.50 € / 12.50 € / 14.50 €', sub: 'Plain · Black Aioli · Truffle', desc: 'Japanese soybeans · brown butter · sea salt · harissa mayo / black aioli · sesame · togarashi · soy reduction / truffle · truffle cream.' },
         ],
@@ -86,10 +86,10 @@ export const sections = [
         items: [
           { img: '/menu/p03549.jpg', name: 'Mrs. Green (vegetarian)', price: '22.00 €', sub: '', desc: 'Green asparagus · cucumber · edamame cream cheese · yuzu mayo · black sesame · avocado.' },
           { img: '/menu/p03638.jpg', name: 'T N T', price: '30.00 €', sub: '', desc: 'Bluefin tuna (tartare & sashimi) · avocado · harissa mayo · jalapeño · sesame · coriander.' },
-          { img: null, name: 'Völklingen Hamachi Smoke Roll', price: '29.00 €', sub: '', desc: 'Hamachi sashimi · green asparagus · grilled mayo · daikon · spring onion · black sesame · soy mirin glaze.' },
+          { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00652.jpg', name: 'Völklingen Hamachi Smoke Roll', price: '29.00 €', sub: '', desc: 'Hamachi sashimi · green asparagus · grilled mayo · daikon · spring onion · black sesame · soy mirin glaze.' },
           { img: '/menu/p03632.jpg', name: 'Salmon²', price: '27.00 €', sub: '', desc: 'Salmon trout from Forellenhof Lenz · aji verde · cucumber · Granny Smith chutney · edamame cream cheese · salmon roe · chives.' },
-          { img: null, name: 'Lobster Roll', price: '35.00 €', sub: '', desc: 'Lobster salad · yuzu mayo · crispy asparagus · avocado · lobster bisque glaze · black tobiko · chives.' },
-          { img: null, name: 'Surf’n Turf NEO Signature', price: '29.00 €', sub: '', desc: 'Beef fillet · crispy wild-caught prawn · avocado · truffle cream · black truffle · Parmesan · chives.' },
+          { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00600.jpg', name: 'Lobster Roll', price: '35.00 €', sub: '', desc: 'Lobster salad · yuzu mayo · crispy asparagus · avocado · lobster bisque glaze · black tobiko · chives.' },
+          { img: '/menu/sig-surfturf.jpg', name: 'Surf’n Turf NEO Signature', price: '29.00 €', sub: '', desc: 'Beef fillet · crispy wild-caught prawn · avocado · truffle cream · black truffle · Parmesan · chives.' },
         ],
       },
       {
@@ -104,34 +104,13 @@ export const sections = [
       {
         subcat: 'Limited Signature',
         items: [
-          { img: null, name: 'Wagyu Japan A4 Roll', price: '48.00 €', sub: '', desc: 'Japanese Wagyu A4 Akune Gold · daikon · black sesame · black truffle sauce · cucumber · chives · fleur de sel · lightly torched.' },
+          { img: '/menu/sharing.jpg', name: 'Wagyu Japan A4 Roll', price: '48.00 €', sub: '', desc: 'Japanese Wagyu A4 Akune Gold · daikon · black sesame · black truffle sauce · cucumber · chives · fleur de sel · lightly torched.' },
         ],
       },
     ],
   },
   {
     eyebrow: 'Chapter IV',
-    h2: ['Hand ', 'Rolls.'],
-    intro:
-      'Rolled one by one, eaten right away — from crispy shrimp to beef fire to Japanese Wagyu A4. Crispy outside, warm inside.',
-    groups: [
-      {
-        subcat: 'Handrolls',
-        items: [
-          { img: null, name: 'Crispy Shrimp Heat', price: '12.00 €', sub: '', desc: 'Sushi rice · wasabi guacamole · avocado · crispy prawn · harissa mayo · black tobiko.' },
-          { img: null, name: 'Hamachi Flame', price: '12.00 €', sub: '', desc: 'Sushi rice · torched hamachi · yuzu mayo · daikon · kizami wasabi · pickled red onions.' },
-          { img: null, name: 'Bluefin Tuna', price: '12.00 €', sub: '', desc: 'Sushi rice · bluefin tuna · avocado · black sauce · sesame · jalapeño.' },
-          { img: null, name: 'Lobster Yuzu', price: '14.00 €', sub: '', desc: 'Sushi rice · lobster salad · yuzu mayo · black tobiko · chives · panko.' },
-          { img: null, name: 'Beef Fire', price: '12.00 €', sub: '', desc: 'Sushi rice · torched beef fillet · daikon · tamago · truffle cream · fleur de sel.' },
-          { img: null, name: 'Japan Wagyu Roast Beef A4', price: '18.00 €', sub: '', desc: 'Sushi rice · Japanese Wagyu A4 · black truffle sauce · kizami wasabi · daikon · fleur de sel · yuzu mayo.' },
-          { img: null, name: 'Eel & Foie Gras', price: '16.00 €', sub: '', desc: 'Sushi rice · grilled eel · foie gras tare · Granny Smith chutney · kizami wasabi · chives.' },
-          { img: null, name: 'Scallop Apple Fire', price: '12.00 €', sub: '', desc: 'Sushi rice · torched scallop · Granny Smith chutney · yuzu mayo · kizami wasabi · black tobiko · chives.' },
-        ],
-      },
-    ],
-  },
-  {
-    eyebrow: 'Chapter V',
     h2: ['Maki & ', 'More.'],
     intro: 'Classic and pared back — freshly rolled, six pieces. The easiest way to taste your way through the sea.',
     groups: [
@@ -150,7 +129,7 @@ export const sections = [
     ],
   },
   {
-    eyebrow: 'Chapter VI',
+    eyebrow: 'Chapter V',
     h2: ['Bowls', '.'],
     intro: 'Sushi rice as the base, the best of sea and kitchen on top. The fastest way to eat your way through half of NEO.',
     groups: [
@@ -163,7 +142,7 @@ export const sections = [
     ],
   },
   {
-    eyebrow: 'Chapter VII',
+    eyebrow: 'Chapter VI',
     h2: ['Main ', 'Course.'],
     intro:
       'Fish from the fjords, lobster from Brittany, Galician chestnut-fed pork — and a vegetarian answer to everything.',
@@ -193,7 +172,7 @@ export const sections = [
     ],
   },
   {
-    eyebrow: 'Chapter VIII',
+    eyebrow: 'Chapter VII',
     h2: ['Beef & ', 'Filet.'],
     intro:
       'Four breeds, three sizes. From Pomeranian Simmental to Tuscan Chianina to Japanese Wagyu — dry-aged for 3–4 weeks on the bone.',
@@ -230,7 +209,7 @@ export const sections = [
     ],
   },
   {
-    eyebrow: 'Chapter IX',
+    eyebrow: 'Chapter VIII',
     h2: ['Sides & ', 'Sauces.'],
     intro: 'Truffle fries, Hasselback potato, grilled vegetables — and sauces that make the difference.',
     groups: [
@@ -250,7 +229,7 @@ export const sections = [
       {
         subcat: 'Greens',
         items: [
-          { img: null, name: 'Grilled Lettuce Heart', price: '8.00 €', sub: '', desc: 'Crispy bacon · panko crunch · yuzu mayo · tomato chutney · Parmesan · pickled red onions.' },
+          { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00633.jpg', name: 'Grilled Lettuce Heart', price: '8.00 €', sub: '', desc: 'Crispy bacon · panko crunch · yuzu mayo · tomato chutney · Parmesan · pickled red onions.' },
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00357.jpg', name: 'Sesame Spinach', price: '8.00 €', sub: '', desc: '' },
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00946.jpg', name: 'Grilled Vegetables', price: '8.00 €', sub: '', desc: 'Pointed peppers · green asparagus · aubergine · courgette · vine tomatoes · pine nuts · black aioli cream.' },
           { img: null, name: 'Crispy Miso Aubergine', price: '8.00 €', sub: '', desc: '' },
@@ -267,14 +246,14 @@ export const sections = [
     ],
   },
   {
-    eyebrow: 'Chapter X',
+    eyebrow: 'Chapter IX',
     h2: ['Sweets & ', 'Desserts.'],
     intro: 'The final course. Crème brûlée, The Lime, a molten caramel core — the sweet finale.',
     groups: [
       {
         subcat: 'Sweets & Desserts',
         items: [
-          { img: '/menu/p03928.jpg', name: 'Lemongrass Crème Brûlée', price: '16.00 €', sub: '', desc: 'Lemongrass · mango · kaffir lime · caramelised almonds · coconut sorbet.' },
+          { img: null, name: 'Lemongrass Crème Brûlée', price: '16.00 €', sub: '', desc: 'Lemongrass · mango · kaffir lime · caramelised almonds · coconut sorbet.' },
           { img: null, name: 'The Lime', price: '27.00 €', sub: '', desc: 'Vanilla white chocolate cream · lime financier · lime mint core · marinated strawberries · champagne sorbet.' },
           { img: '/menu/p04654.jpg', name: 'Chocolate Cake', price: '18.00 €', sub: '15–20 min preparation time', desc: 'Molten caramel core · dark chocolate · grilled pineapple · Tasmanian pepper.' },
         ],
