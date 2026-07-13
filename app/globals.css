@@ -3803,15 +3803,18 @@ img, video { max-width: 100%; height: auto; }
 }
 .nga-head-text h3 em { font-style: italic; color: var(--accent); }
 .nga-head-text p { max-width: 560px; color: var(--fg-soft); font-size: 16px; }
-.nga-grid { columns: 3; column-gap: 14px; }
-@media (max-width: 1024px) { .nga-grid { columns: 2; } }
-@media (max-width: 560px)  { .nga-grid { columns: 1; } }
+.nga-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1024px) { .nga-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .nga-grid { grid-template-columns: 1fr; } }
 .nga-item {
   position: relative;
   display: block;
   width: 100%;
-  margin-bottom: 14px;
-  break-inside: avoid;
+  aspect-ratio: 4 / 3;
   border: none;
   padding: 0;
   background: var(--bg-card);
@@ -3821,6 +3824,8 @@ img, video { max-width: 100%; height: auto; }
 }
 .nga-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transform: scale(1.001);
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
@@ -3962,65 +3967,89 @@ img, video { max-width: 100%; height: auto; }
 
 /* ==================== 10 JAHRE NEO ==================== */
 .zehn-jahre {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(40px, 6vw, 100px);
-  align-items: center;
   padding: clamp(90px, 12vw, 160px) var(--pad-x);
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
 }
-@media (max-width: 900px) { .zehn-jahre { grid-template-columns: 1fr; } }
-.zehn-text .eyebrow { margin-bottom: 22px; }
-.zehn-text h3 {
+.zehn-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.zehn-head-text .eyebrow { margin-bottom: 22px; }
+.zehn-head-text h3 {
   font-size: clamp(38px, 5.4vw, 84px);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
-.zehn-text h3 em { font-style: italic; color: var(--accent); }
-.zehn-text p {
+.zehn-head-text h3 em { font-style: italic; color: var(--accent); }
+.zehn-head-text p {
   color: var(--fg-soft);
   font-size: 16px;
   line-height: 1.75;
-  max-width: 560px;
-  margin-bottom: 30px;
+  max-width: 640px;
 }
-.zehn-video-wrap {
+.zehn-media {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 420px) 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+.zehn-col {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  min-height: 0;
+}
+.zehn-photo {
   position: relative;
-  max-width: 380px;
-  margin: 0 auto;
-  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 220px;
 }
+.zehn-video-wrap { position: relative; }
 .zehn-video {
   width: 100%;
+  height: 100%;
   display: block;
   aspect-ratio: 9 / 16;
   object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid var(--line-bright, rgba(255,255,255,0.14));
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
   background: #000;
 }
-.zehn-sound {
+.zehn-tag {
   position: absolute;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: inherit;
-  font-size: 11px;
+  left: 14px;
+  bottom: 12px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #fff;
-  background: rgba(8, 10, 12, 0.6);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background 0.2s;
+  background: rgba(8, 10, 12, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 7px 12px;
+  border-radius: 3px;
+  pointer-events: none;
 }
-.zehn-sound:hover { background: rgba(8, 10, 12, 0.85); }
+.zehn-tag-video { bottom: auto; top: 12px; }
+@media (max-width: 1024px) {
+  .zehn-media { grid-template-columns: 1fr 1fr; }
+  .zehn-video-wrap { grid-column: 1 / -1; grid-row: 1; max-width: 420px; margin: 0 auto; width: 100%; }
+  .zehn-col { grid-template-rows: none; grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .zehn-media { grid-template-columns: 1fr; }
+  .zehn-col { grid-template-columns: 1fr 1fr; }
+  .zehn-photo { min-height: 150px; }
+}
