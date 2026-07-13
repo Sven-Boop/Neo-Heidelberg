@@ -19,7 +19,7 @@
     --sans: var(--font-lato), 'Lato', system-ui, sans-serif;
     --pad-x: clamp(24px, 4vw, 72px);
   
-    --bar-img: url('/menu/p03907.jpg');}
+    --bar-img: url('/bg/bar.webp');}
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   h1, h2, h3, h4 { padding-bottom: 0.12em; overflow: visible; }
@@ -3791,9 +3791,9 @@ img, video { max-width: 100%; height: auto; }
   max-width: 1600px;
   margin: 0 auto;
 }
-.gal-head { margin-bottom: 54px; }
-.gal-head-text .eyebrow { margin-bottom: 22px; }
-.gal-head-text h3 {
+.nga-head { margin-bottom: 54px; }
+.nga-head-text .eyebrow { margin-bottom: 22px; }
+.nga-head-text h3 {
   font-size: clamp(38px, 5.4vw, 84px);
   font-weight: 900;
   line-height: 0.95;
@@ -3801,12 +3801,12 @@ img, video { max-width: 100%; height: auto; }
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-.gal-head-text h3 em { font-style: italic; color: var(--accent); }
-.gal-head-text p { max-width: 560px; color: var(--fg-soft); font-size: 16px; }
-.gal-grid { columns: 3; column-gap: 14px; }
-@media (max-width: 1024px) { .gal-grid { columns: 2; } }
-@media (max-width: 560px)  { .gal-grid { columns: 1; } }
-.gal-item {
+.nga-head-text h3 em { font-style: italic; color: var(--accent); }
+.nga-head-text p { max-width: 560px; color: var(--fg-soft); font-size: 16px; }
+.nga-grid { columns: 3; column-gap: 14px; }
+@media (max-width: 1024px) { .nga-grid { columns: 2; } }
+@media (max-width: 560px)  { .nga-grid { columns: 1; } }
+.nga-item {
   position: relative;
   display: block;
   width: 100%;
@@ -3819,15 +3819,15 @@ img, video { max-width: 100%; height: auto; }
   overflow: hidden;
   border-radius: 4px;
 }
-.gal-item img {
+.nga-item img {
   width: 100%;
   display: block;
   transform: scale(1.001);
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
   filter: saturate(0.96);
 }
-.gal-item:hover img { transform: scale(1.05); filter: saturate(1.05); }
-.gal-cat {
+.nga-item:hover img { transform: scale(1.05); filter: saturate(1.05); }
+.nga-cat {
   position: absolute;
   left: 14px;
   bottom: 12px;
@@ -3845,9 +3845,9 @@ img, video { max-width: 100%; height: auto; }
   transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: none;
 }
-.gal-item:hover .gal-cat { opacity: 1; transform: translateY(0); }
-@media (hover: none) { .gal-cat { opacity: 1; transform: none; } }
-.gal-lightbox {
+.nga-item:hover .nga-cat { opacity: 1; transform: translateY(0); }
+@media (hover: none) { .nga-cat { opacity: 1; transform: none; } }
+.nga-lightbox {
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -3858,16 +3858,16 @@ img, video { max-width: 100%; height: auto; }
   justify-content: center;
   animation: galFade 0.25s ease;
 }
-.gal-lightbox[hidden] { display: none; }
+.nga-lightbox[hidden] { display: none; }
 @keyframes galFade { from { opacity: 0; } to { opacity: 1; } }
-.gal-lightbox > img {
+.nga-lightbox > img {
   max-width: min(92vw, 1400px);
   max-height: 86vh;
   object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
-.gal-lb-close {
+.nga-lb-close {
   position: absolute;
   top: 22px;
   right: 28px;
@@ -3881,8 +3881,8 @@ img, video { max-width: 100%; height: auto; }
   transition: opacity 0.2s;
   z-index: 2;
 }
-.gal-lb-close:hover { opacity: 1; }
-.gal-lb-nav {
+.nga-lb-close:hover { opacity: 1; }
+.nga-lb-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -3897,10 +3897,10 @@ img, video { max-width: 100%; height: auto; }
   transition: background 0.2s;
   z-index: 2;
 }
-.gal-lb-nav:hover { background: rgba(255, 255, 255, 0.2); }
-.gal-lb-prev { left: 24px; }
-.gal-lb-next { right: 24px; }
-.gal-lb-caption {
+.nga-lb-nav:hover { background: rgba(255, 255, 255, 0.2); }
+.nga-lb-prev { left: 24px; }
+.nga-lb-next { right: 24px; }
+.nga-lb-caption {
   position: absolute;
   bottom: 26px;
   left: 50%;
@@ -3911,9 +3911,9 @@ img, video { max-width: 100%; height: auto; }
   color: var(--fg-soft);
 }
 @media (max-width: 640px) {
-  .gal-lb-nav { width: 44px; height: 44px; }
-  .gal-lb-prev { left: 10px; }
-  .gal-lb-next { right: 10px; }
+  .nga-lb-nav { width: 44px; height: 44px; }
+  .nga-lb-prev { left: 10px; }
+  .nga-lb-next { right: 10px; }
 }
 
 /* ==================== LEGAL PAGES ==================== */
@@ -3959,3 +3959,68 @@ img, video { max-width: 100%; height: auto; }
   border-radius: 3px;
 }
 .legal-back:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ==================== 10 JAHRE NEO ==================== */
+.zehn-jahre {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+  padding: clamp(90px, 12vw, 160px) var(--pad-x);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) { .zehn-jahre { grid-template-columns: 1fr; } }
+.zehn-text .eyebrow { margin-bottom: 22px; }
+.zehn-text h3 {
+  font-size: clamp(38px, 5.4vw, 84px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.zehn-text h3 em { font-style: italic; color: var(--accent); }
+.zehn-text p {
+  color: var(--fg-soft);
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+.zehn-video-wrap {
+  position: relative;
+  max-width: 380px;
+  margin: 0 auto;
+  width: 100%;
+}
+.zehn-video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line-bright, rgba(255,255,255,0.14));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  background: #000;
+}
+.zehn-sound {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(8, 10, 12, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.zehn-sound:hover { background: rgba(8, 10, 12, 0.85); }
