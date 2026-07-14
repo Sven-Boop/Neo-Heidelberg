@@ -1,5 +1,7 @@
 import './globals.css';
 import { Lato } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { structuredData } from './structuredData';
 
 const lato = Lato({
@@ -57,6 +59,8 @@ export default function RootLayout({ children }) {
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
         ))}
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
