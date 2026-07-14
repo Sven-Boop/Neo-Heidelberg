@@ -3,7 +3,7 @@ import { sections, sharing } from './menuData';
 export const metadata = {
   title: 'Menu (English) — NEO Bar & Restaurant Heidelberg',
   description:
-    'The NEO menu in English. Dry-aged steaks, Californian sushi, hand rolls, bowls and desserts — Zollhofgarten 2, Heidelberg.',
+    'The NEO menu in English. Dry-aged steaks, Californian sushi, signature rolls, bowls and desserts — Zollhofgarten 2, Heidelberg.',
 };
 
 function Item({ item }) {
@@ -35,7 +35,7 @@ export default function MenuEnglishPage() {
           Feed your <em>soul.</em>
         </h1>
         <p>
-          Dry-aged steaks from our humidor, Californian sushi, hand rolls and signature
+          Dry-aged steaks from our humidor, Californian sushi, signature rolls and
           desserts. Kitchen open from 5:30 pm, Sundays from 4 pm. Please let us know about
           any allergies or intolerances — our team is happy to help.
         </p>

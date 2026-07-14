@@ -60,7 +60,7 @@ export const sections = [
       {
         subcat: 'Signature',
         items: [
-          { img: '/menu/p04848.jpg', name: 'The NEO Tower', price: '59.00 € p.p.', sub: 'price per person', desc: 'Sashimi variation · nigiri · inside-out roll · crispy futomaki · panko prawn · crispy spicy tuna mochi · daikon · wakame · chili cucumber salad · ponzu.' },
+          { img: '/img/gallery/sushi-terrasse.jpg', name: 'The NEO Tower', price: '59.00 € p.p.', sub: 'price per person', desc: 'Sashimi variation · nigiri · inside-out roll · crispy futomaki · panko prawn · crispy spicy tuna mochi · daikon · wakame · chili cucumber salad · ponzu.' },
         ],
       },
       {
