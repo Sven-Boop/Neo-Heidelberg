@@ -2358,7 +2358,8 @@
     line-height: 1.7;
   }
   .saison-tag {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 0.24em;

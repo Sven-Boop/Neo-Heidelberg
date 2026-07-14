@@ -178,6 +178,15 @@ export const sections = [
       'Four breeds, three sizes. From Pomeranian Simmental to Tuscan Chianina to Japanese Wagyu — dry-aged for 3–4 weeks on the bone.',
     groups: [
       {
+        subcat: 'Filet · by breed (180g / 250g / 500g)',
+        items: [
+          { img: null, name: 'Black Angus', price: '45.00 / 57.00 / 110.00 €', sub: 'Galicia – Spain · Meermeat · Nosa Terra · 28 days', desc: '' },
+          { img: null, name: 'Chianina IGP', price: '52.00 / 65.00 / 120.00 €', sub: 'Green Feed · Tuscany', desc: '' },
+          { img: null, name: 'Pomeranian Simmental', price: '65.00 / 78.00 / 140.00 €', sub: 'NEO selection Yumshaki', desc: '' },
+          { img: null, name: 'Wagyu', price: '80.00 / 100.00 / 185.00 €', sub: 'Galicia – Spain', desc: '' },
+        ],
+      },
+      {
         subcat: 'Taste Your Filet',
         items: [
           { img: '/menu/p03689.jpg', name: 'Taste Your Filet', price: '79.00 €', sub: '3 × 100g', desc: 'Black Angus Galicia · Chianina IGP Tuscany · Pomeranian Simmental.' },
