@@ -1,5 +1,4 @@
 import './globals.css';
-import Script from 'next/script';
 import { Lato } from 'next/font/google';
 import { structuredData } from './structuredData';
 
@@ -58,7 +57,6 @@ export default function RootLayout({ children }) {
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
         ))}
         {children}
-        <Script defer data-domain="neo-heidelberg.de" src="https://plausible.io/js/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );
