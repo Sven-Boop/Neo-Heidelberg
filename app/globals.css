@@ -4079,3 +4079,158 @@ img, video { max-width: 100%; height: auto; }
   max-width: 640px;
 }
 .menu-en-hero .legal-back { margin-bottom: 40px; display: inline-block; }
+
+/* ==================== TEAM / MENSCHEN ==================== */
+.team {
+  padding: clamp(100px, 13vw, 170px) var(--pad-x);
+  border-top: 1px solid var(--line);
+}
+.team-head {
+  max-width: 1560px;
+  margin: 0 auto clamp(50px, 6vw, 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.team-head-text { max-width: 44ch; }
+.team-head-text .eyebrow { margin-bottom: 20px; }
+.team-head h3 {
+  font-weight: 900;
+  font-size: clamp(40px, 5.4vw, 84px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.team-head h3 em { font-style: italic; color: var(--accent); }
+.team-head p {
+  max-width: 40ch;
+  font-size: 15px;
+  color: var(--fg-soft);
+  line-height: 1.7;
+}
+.team-grid {
+  max-width: 1560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 980px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .team-grid { grid-template-columns: 1fr; } }
+.member {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  border-radius: 3px;
+  background: var(--bg-card);
+}
+.member-img {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center top;
+  transition: transform 1.4s cubic-bezier(.2,.8,.2,1);
+}
+.member:hover .member-img { transform: scale(1.06); }
+.member::after {
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(8,10,12,0.95) 0%, rgba(8,10,12,0.3) 55%, transparent 90%);
+}
+.member-content {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: clamp(22px, 3vw, 30px);
+  z-index: 2;
+  color: #fff;
+}
+.member-role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.member-name {
+  font-weight: 900;
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.member-name em { font-style: italic; color: var(--accent); }
+.member-quote {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.88);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .7s ease;
+}
+.member:hover .member-quote,
+.member:focus-within .member-quote,
+.member:focus .member-quote { max-height: 200px; }
+.member-quote::before { content:"„"; color: var(--accent); margin-right: 2px; }
+@media (max-width: 980px) { .member-quote { max-height: 200px; } }
+
+/* ==================== BEWERTUNGEN ==================== */
+.reviews {
+  padding: clamp(90px, 12vw, 150px) var(--pad-x);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.reviews-head { max-width: 640px; margin: 0 auto clamp(44px, 5vw, 64px); }
+.reviews-head .eyebrow { justify-content: center; margin-bottom: 20px; }
+.reviews-head .eyebrow::after {
+  content: ""; width: 34px; height: 1px; background: var(--accent);
+}
+.reviews-head h3 {
+  font-size: clamp(38px, 5.4vw, 82px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.reviews-head h3 em { font-style: italic; color: var(--accent); }
+.reviews-head p { color: var(--fg-soft); font-size: 16px; line-height: 1.7; }
+.reviews-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 760px) { .reviews-grid { grid-template-columns: 1fr; max-width: 420px; } }
+.review-card {
+  display: block;
+  padding: clamp(30px, 4vw, 44px) 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.review-card:hover { border-color: var(--accent-soft); transform: translateY(-3px); }
+.review-platform {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+  margin-bottom: 18px;
+}
+.review-score {
+  font-size: clamp(46px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--fg);
+}
+.review-score small { font-size: 0.4em; font-weight: 400; color: var(--muted); }
+.review-stars { color: var(--accent); font-size: 18px; letter-spacing: 3px; margin: 12px 0 10px; }
+.review-meta { font-size: 13px; color: var(--fg-soft); letter-spacing: 0.02em; }
+.review-rank { display: block; margin-top: 4px; color: var(--accent-soft); font-size: 12px; }
+.reviews-note { margin-top: 30px; font-size: 13px; color: var(--muted); }
+.reviews-note a { color: var(--accent); }
