@@ -180,7 +180,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/video/neo-hero-poster.jpg');
+    background-image: url('/video/neo-hero-poster.webp');
     background-size: cover;
     background-position: center;
     filter: brightness(0.85) saturate(1.02) contrast(1.08);
@@ -608,7 +608,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.5), rgba(20,25,32,0.78)),
-      url('/menu/sharing.jpg');
+      url('/menu/sharing.webp');
     background-size: cover;
     background-position: center;
   }
@@ -763,7 +763,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.78), rgba(20,25,32,0.92)),
-      url('/img/Neo_Gerichte_by_SelinaGargiullo-00482.jpg');
+      url('/img/Neo_Gerichte_by_SelinaGargiullo-00482.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1383,7 +1383,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.93), rgba(20,25,32,0.95)),
-      url('/img/L1170568.jpg');
+      url('/img/L1170568.webp');
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
@@ -2054,7 +2054,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.5), rgba(20,25,32,0.78)),
-      url('/menu/sharing.jpg');
+      url('/menu/sharing.webp');
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid var(--line);
@@ -2248,7 +2248,7 @@
 
   /* ==================== HOCHZEIT HERO ==================== */
   .hochzeit-hero .hero-bg {
-    background-image: url('/gallery/neo-interior.jpg');
+    background-image: url('/gallery/neo-interior.webp');
     background-position: center 30%;
     filter: brightness(0.85) saturate(1.02) contrast(1.1);
   }
@@ -2811,7 +2811,7 @@
     aspect-ratio: 4/5;
     background:
       linear-gradient(180deg, rgba(20,25,32,0.25) 0%, rgba(20,25,32,0.65) 100%),
-      url('/menu/p03734.jpg');
+      url('/menu/p03734.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3192,7 +3192,7 @@
   text-align: center;
   background:
     linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
-    url('/img/L1170568.jpg');
+    url('/img/L1170568.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -3333,7 +3333,7 @@
   aspect-ratio: 4/5;
   background-size: cover;
   background-position: center;
-  background-image: url('/img/Neo_Gerichte_by_SelinaGargiullo-00686.jpg');
+  background-image: url('/img/Neo_Gerichte_by_SelinaGargiullo-00686.webp');
   filter: brightness(1.1) saturate(1.04) contrast(1.05);
 }
 .brunch-text .eyebrow {
