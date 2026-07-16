@@ -166,6 +166,23 @@
   }
   @media (max-width: 640px) { .nav-cta { display: none; } }
 
+  /* Sprachumschalter DE/EN */
+  .nav-lang {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    padding: 6px 12px;
+    transition: color .3s, border-color .3s;
+  }
+  .nav-lang:hover { color: var(--fg); border-color: var(--fg); }
+  .nav-lang-m {
+    color: var(--accent) !important;
+    font-style: italic;
+  }
+
   /* ——— HERO ——— */
   .hero {
     position: relative;
