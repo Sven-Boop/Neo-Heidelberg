@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="de" className={lato.variable}>
       <head>
-        <link rel="preload" as="image" href="/bg/hero.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/video/neo-hero-poster.webp" fetchPriority="high" />
       </head>
       <body>
         {structuredData.map((json, i) => (
