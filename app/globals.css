@@ -4252,3 +4252,10 @@ img, video { max-width: 100%; height: auto; }
   letter-spacing: 0.02em;
 }
 .menu-legend .veg-badge { font-size: 1em; top: 0; margin: 0 4px 0 0; }
+
+/* Hero above-the-fold: sofort sichtbar, nur Transform-Slide (kein JS-Observer-Gate)
+   -> LCP-Element (H1) paintet sofort, statt unter Drosselung ~20s zu warten. */
+.hero-content .reveal { opacity: 1; transform: none; animation: heroSlideUp 1s cubic-bezier(.2,.7,.2,1) both; }
+.hero-content .reveal-delay-1 { animation-delay: .08s; }
+.hero-content .reveal-delay-2 { animation-delay: .16s; }
+@keyframes heroSlideUp { from { transform: translateY(26px); } to { transform: none; } }
