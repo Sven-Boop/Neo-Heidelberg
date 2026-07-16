@@ -4234,3 +4234,21 @@ img, video { max-width: 100%; height: auto; }
 .review-rank { display: block; margin-top: 4px; color: var(--accent-soft); font-size: 12px; }
 .reviews-note { margin-top: 30px; font-size: 13px; color: var(--muted); }
 .reviews-note a { color: var(--accent); }
+
+/* ==================== VEGETARISCH-BADGE ==================== */
+.veg-badge {
+  font-size: 0.62em;
+  vertical-align: middle;
+  margin-left: 3px;
+  position: relative;
+  top: -1px;
+}
+.menu-legend {
+  max-width: 1600px;
+  margin: 0 auto clamp(20px, 3vw, 34px);
+  padding: 14px var(--pad-x) 0;
+  font-size: 13px;
+  color: var(--fg-soft);
+  letter-spacing: 0.02em;
+}
+.menu-legend .veg-badge { font-size: 1em; top: 0; margin: 0 4px 0 0; }
