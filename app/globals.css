@@ -939,7 +939,7 @@
   .breed h4 em { font-style: italic; color: var(--accent); }
   .breed-sub {
     font-size: 12px;
-    color: var(--muted);
+    color: #9aa5b1; /* etwas heller als --muted -> WCAG-AA-Kontrast auf --bg-elev */
     margin-bottom: 12px;
     letter-spacing: 0.04em;
   }
