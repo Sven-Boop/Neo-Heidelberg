@@ -1916,7 +1916,20 @@
     line-height: 1.7;
     font-weight: 300;
   }
-  
+
+  /* Speisekarte auf Mobil: Items einspaltig statt 2 Spalten (sonst quetscht
+     der Text auf 1 Wort pro Zeile und die Bilder überlappen). */
+  @media (max-width: 760px) {
+    .items { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 460px) {
+    .item { grid-template-columns: 92px 1fr; gap: 16px; }
+    .featured { grid-template-columns: 1fr; }
+    /* Name behält Mindestbreite -> lange Doppelpreise brechen auf eigene Zeile
+       um, statt den Namen zu zerquetschen (z.B. Beef Tatar, Caesar Salad). */
+    .item-name { min-width: 55%; }
+  }
+
 
   /* FEATURED ITEM */
   .featured {
