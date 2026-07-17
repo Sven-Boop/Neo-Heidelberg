@@ -1,6 +1,7 @@
 import { bodyHtml } from './bodyHtmlEn';
 import SiteScripts from '../SiteScripts';
 import SetLang from '../SetLang';
+import { structuredDataEn } from '../structuredData';
 
 export const metadata = {
   title: 'NEO — Bar & Restaurant Heidelberg | Dry-Aged · Sushi · Bar',
@@ -28,6 +29,9 @@ export default function HomeEN() {
   return (
     <>
       <SetLang lang="en" />
+      {structuredDataEn.map((json, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
+      ))}
       <div id="app-root" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       <SiteScripts />
     </>

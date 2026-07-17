@@ -2,7 +2,6 @@ import './globals.css';
 import { Lato } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { structuredData } from './structuredData';
 
 const lato = Lato({
   weight: ['300', '400', '700', '900'],
@@ -55,9 +54,6 @@ export default function RootLayout({ children }) {
         <link rel="preload" as="image" href="/video/neo-hero-poster.webp" fetchPriority="high" />
       </head>
       <body>
-        {structuredData.map((json, i) => (
-          <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
-        ))}
         {children}
         <Analytics />
         <SpeedInsights />

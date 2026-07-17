@@ -1,5 +1,6 @@
 import { bodyHtml } from './bodyHtml';
 import SiteScripts from './SiteScripts';
+import { structuredData } from './structuredData';
 
 export const metadata = {
   alternates: {
@@ -14,6 +15,9 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      {structuredData.map((json, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
+      ))}
       <div id="app-root" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       <SiteScripts />
     </>
