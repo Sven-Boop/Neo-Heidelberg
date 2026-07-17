@@ -1917,9 +1917,10 @@
     font-weight: 300;
   }
 
-  /* Speisekarte auf Mobil: Items einspaltig statt 2 Spalten (sonst quetscht
-     der Text auf 1 Wort pro Zeile und die Bilder überlappen). */
-  @media (max-width: 760px) {
+  /* Speisekarte einspaltig bis 900px: bei 2 Spalten quetscht auf schmalen
+     Screens der Text (1 Wort/Zeile) und auf Tablets (768-900px) werden die
+     Spalten zu eng -> lange Doppelpreise (Beef Tatar, Caesar) laufen über. */
+  @media (max-width: 900px) {
     .items { grid-template-columns: 1fr; gap: 28px; }
   }
   @media (max-width: 460px) {
@@ -1928,6 +1929,18 @@
     /* Name behält Mindestbreite -> lange Doppelpreise brechen auf eigene Zeile
        um, statt den Namen zu zerquetschen (z.B. Beef Tatar, Caesar Salad). */
     .item-name { min-width: 55%; }
+  }
+
+  /* Sehr schmale Screens (<=400px, z.B. iPhone SE): Manifesto-Spalten dürfen
+     unter ihre Mindest-Inhaltsbreite schrumpfen (sonst 360px-Track -> rechts
+     abgeschnitten), Button-Zeile bricht um, lange Doppelpreise brechen statt
+     abgeschnitten zu werden. */
+  @media (max-width: 400px) {
+    .manifesto-text, .manifesto-info { min-width: 0; }
+    .btn-row { flex-wrap: wrap; }
+    .info-grid { grid-template-columns: 1fr; gap: 24px; }
+    .item-price { white-space: normal; }
+    .item-head { column-gap: 10px; }
   }
 
 
