@@ -1,4 +1,26 @@
+'use client';
+import { usePathname } from 'next/navigation';
+
 export default function NotFound() {
+  const pathname = usePathname() || '';
+  const en = pathname.startsWith('/en');
+
+  const t = en
+    ? {
+        h1a: 'Page not ',
+        h1b: 'found.',
+        p: "This page doesn't exist — but a table with us does. Zollhofgarten 2, Heidelberg.",
+        cta: 'To homepage',
+        home: '/en',
+      }
+    : {
+        h1a: 'Seite nicht ',
+        h1b: 'gefunden.',
+        p: 'Diese Seite gibt es nicht — aber einen Tisch bei uns schon. Zollhofgarten 2, Heidelberg.',
+        cta: 'Zur Startseite',
+        home: '/',
+      };
+
   return (
     <div
       style={{
@@ -26,13 +48,14 @@ export default function NotFound() {
         NEO — Bar &amp; Restaurant
       </div>
       <h1 style={{ fontSize: 'clamp(40px, 8vw, 80px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 18, textTransform: 'uppercase' }}>
-        Seite nicht <em style={{ fontStyle: 'italic', color: '#aac8da' }}>gefunden.</em>
+        {t.h1a}
+        <em style={{ fontStyle: 'italic', color: '#aac8da' }}>{t.h1b}</em>
       </h1>
       <p style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '46ch', lineHeight: 1.7, marginBottom: 36 }}>
-        Diese Seite gibt es nicht — aber einen Tisch bei uns schon. Zollhofgarten 2, Heidelberg.
+        {t.p}
       </p>
       <a
-        href="/"
+        href={t.home}
         style={{
           padding: '16px 32px',
           background: '#aac8da',
@@ -44,7 +67,7 @@ export default function NotFound() {
           textDecoration: 'none',
         }}
       >
-        Zur Startseite
+        {t.cta}
       </a>
     </div>
   );
