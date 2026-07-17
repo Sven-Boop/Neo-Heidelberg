@@ -2921,35 +2921,6 @@
 
 /* ─── Festive Hochzeit upgrades ─── */
 
-/* Hero submarquee under the wedding hero */
-.hochzeit-submarquee {
-  background: var(--accent);
-  color: var(--bg);
-  padding: 14px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-bottom: 0;
-  position: relative;
-}
-.hochzeit-submarquee-track {
-  display: inline-block;
-  animation: hzMarquee 32s linear infinite;
-  font-weight: 900;
-  font-size: 13px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.hochzeit-submarquee-track span { padding: 0 28px; }
-.hochzeit-submarquee-track em {
-  font-style: italic;
-  font-weight: 400;
-  opacity: 0.65;
-}
-@keyframes hzMarquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 /* Service-Highlights horizontal ribbon */
 .service-ribbon {
   padding: 70px 0 40px;
@@ -3552,7 +3523,6 @@ img, video { max-width: 100%; height: auto; }
 
   /* HOCHZEIT — hero, stats, sections */
   .hochzeit-hero h1 { font-size: clamp(42px, 11vw, 78px); }
-  .hochzeit-submarquee-track { font-size: 12px; }
   .stats-grid { gap: 1px; }
   .stat { padding: 22px 14px; }
   .stat-num { font-size: 32px; }
