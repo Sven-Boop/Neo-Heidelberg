@@ -2003,7 +2003,12 @@
     border: 1px solid var(--line-bright);
     margin-top: 10px;
   }
-  
+  /* Responsiv: diese Regeln MÜSSEN nach der Basisregel oben stehen, sonst
+     überschreibt die Basis (gleiche Spezifität, spätere Quelle) die Umbrüche
+     -> sonst 4 winzige Spalten auf Mobil. */
+  @media (max-width: 1100px) { .drya-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .drya-grid { grid-template-columns: 1fr; } }
+
 
   /* FILET TABLE */
   .filet-grid {
@@ -2049,7 +2054,18 @@
   .filet-price { font-size: 14px; font-weight: 700; color: var(--fg-soft); }
   
   .filet-price strong { color: var(--accent); font-weight: 900; }
-  
+
+  /* Filet-Preistabelle auf Mobil: kleineres Padding/Schrift, damit alle vier
+     Spalten (Rasse + 180/250/500g) passen und die 500g-Spalte nicht abgeschnitten
+     wird. */
+  @media (max-width: 560px) {
+    .filet-cell { padding: 14px 8px; }
+    .filet-head .filet-cell { font-size: 9px; letter-spacing: 0.08em; }
+    .filet-name { font-size: 12.5px; }
+    .filet-name small { font-size: 9px; }
+    .filet-price { font-size: 12px; }
+  }
+
 
   /* NOTE */
   .note {
