@@ -651,7 +651,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.5), rgba(20,25,32,0.78)),
-      url('/img/Neo_Gerichte_by_SelinaGargiullo-00600.webp');
+      url('/menu/p04061.webp');
     background-size: cover;
     background-position: center;
   }
@@ -2139,7 +2139,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.5), rgba(20,25,32,0.78)),
-      url('/img/Neo_Gerichte_by_SelinaGargiullo-00600.webp');
+      url('/menu/p04061.webp');
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid var(--line);
