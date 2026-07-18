@@ -246,20 +246,24 @@
     width: 100%;
   }
   .hero-eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 38px;
   }
-  /* Anklickbarer „Ein Haus der Bliss Group"-Hinweis oben im Hero (wie Palais) */
+  /* Anklickbarer „Ein Haus der Bliss Group"-Hinweis rechts unten im Hero.
+     Absolut positioniert; Text-Shadow für Lesbarkeit über dem Video. */
   .hero-bliss {
+    position: absolute;
+    bottom: 30px;
+    right: var(--pad-x);
+    z-index: 3;
     display: flex;
-    width: fit-content;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 38px;
+    color: var(--fg-soft);
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
     transition: color .3s;
   }
   .hero-bliss::after {
@@ -268,7 +272,7 @@
     font-size: 1.05em;
     transition: transform .3s;
   }
-  .hero-bliss:hover { color: var(--fg); }
+  .hero-bliss:hover { color: #fff; }
   .hero-bliss:hover::after { transform: translate(2px, -2px); }
   .hero h1 {
     font-size: clamp(58px, 10vw, 192px);
@@ -3522,8 +3526,8 @@ img, video { max-width: 100%; height: auto; }
   .hero h1 { font-size: clamp(42px, 11vw, 72px); line-height: 1.2; max-width: 100%; }
   .hero-meta { gap: 18px; padding-top: 24px; }
   .hero-meta-item { font-size: 12px; }
-  .hero-eyebrow { font-size: 10px; margin-bottom: 10px; }
-  .hero-bliss { font-size: 10px; margin-bottom: 26px; }
+  .hero-eyebrow { font-size: 10px; margin-bottom: 24px; }
+  .hero-bliss { font-size: 9px; letter-spacing: 0.12em; bottom: 18px; right: 20px; }
 
   /* Marquee — smaller, still readable */
   .marquee-item { font-size: clamp(32px, 8vw, 56px); }

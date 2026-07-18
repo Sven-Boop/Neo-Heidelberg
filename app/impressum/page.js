@@ -29,7 +29,7 @@ export default function ImpressumPage() {
 
         <h2>Kontakt</h2>
         <p>
-          Telefon: <a href="tel:+4962214050660">06221 4050660</a><br />
+          Telefon: <a href="tel:+4962217239099">06221 7239099</a><br />
           E-Mail: <a href="mailto:info@neo-heidelberg.de">info@neo-heidelberg.de</a>
         </p>
 

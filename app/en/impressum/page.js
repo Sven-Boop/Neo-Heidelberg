@@ -38,7 +38,7 @@ export default function ImpressumEN() {
 
         <h2>Contact</h2>
         <p>
-          Phone: <a href="tel:+4962214050660">06221 4050660</a><br />
+          Phone: <a href="tel:+4962217239099">06221 7239099</a><br />
           Email: <a href="mailto:info@neo-heidelberg.de">info@neo-heidelberg.de</a>
         </p>
 

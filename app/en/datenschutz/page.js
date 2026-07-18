@@ -27,7 +27,7 @@ export default function DatenschutzEN() {
           NEO – Gastronomie GmbH<br />
           Zollhofgarten 2 · 69115 Heidelberg<br />
           Email: <a href="mailto:info@neo-heidelberg.de">info@neo-heidelberg.de</a> ·
-          Phone: 06221 4050660
+          Phone: 06221 7239099
         </p>
 
         <h2>2. General information on data processing</h2>
