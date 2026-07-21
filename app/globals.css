@@ -1779,6 +1779,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     padding: 0 var(--pad-x);
+    padding-left: 288px; /* Platz fuer den fixierten Zurueck-Button, damit Kapitel nicht ueberdeckt werden */
     max-width: 1600px;
     margin: 0 auto;
   }
@@ -2329,6 +2330,7 @@
   }
   @media (max-width: 640px) {
     .back-link { top: 86px; padding: 9px 14px; font-size: 9px; }
+    .cats-scroll { padding-left: 210px; }
   }
 
   /* ==================== HOCHZEIT HERO ==================== */
