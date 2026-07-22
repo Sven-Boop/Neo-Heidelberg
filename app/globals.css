@@ -250,6 +250,26 @@
   }
   /* Anklickbarer „Ein Haus der Bliss Group"-Hinweis rechts unten im Hero.
      Absolut positioniert; Text-Shadow für Lesbarkeit über dem Video. */
+  .hero-sound {
+    position: absolute;
+    bottom: 30px;
+    left: var(--pad-x);
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(20,25,32,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color .3s, background .3s;
+  }
+  .hero-sound:hover { border-color: var(--accent); background: rgba(20,25,32,0.8); }
+
   .hero-bliss {
     position: absolute;
     bottom: 30px;
