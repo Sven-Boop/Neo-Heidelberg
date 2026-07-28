@@ -39,6 +39,9 @@ export default function MenuEnglishPage() {
           desserts. Kitchen open from 5:30 pm, Sundays from 4 pm. Please let us know about
           any allergies or intolerances — our team is happy to help.
         </p>
+        <a href="/pdf/menu-english.pdf" target="_blank" rel="noopener" className="btn-outline menu-pdf-btn no-print">
+          Download menu as PDF
+        </a>
       </header>
 
       <section className="sharing" id="sharing">

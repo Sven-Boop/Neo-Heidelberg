@@ -4356,3 +4356,7 @@ img, video { max-width: 100%; height: auto; }
 .hero-content .reveal-delay-1 { animation-delay: .08s; }
 .hero-content .reveal-delay-2 { animation-delay: .16s; }
 @keyframes heroSlideUp { from { transform: translateY(26px); } to { transform: none; } }
+
+/* English-Menu: PDF-Button + Druck */
+.menu-pdf-btn { display: inline-block; margin-top: 18px; }
+@media print { .no-print { display: none !important; } }
