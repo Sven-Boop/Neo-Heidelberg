@@ -670,8 +670,8 @@
     overflow: hidden;
     background-color: var(--bg);
     background-image:
-      linear-gradient(rgba(20,25,32,0.5), rgba(20,25,32,0.78)),
-      url('/menu/p04061.webp');
+      linear-gradient(rgba(20,25,32,0.30), rgba(20,25,32,0.58)),
+      url('/menu/p03753.webp');
     background-size: cover;
     background-position: center;
   }
@@ -2169,8 +2169,8 @@
     overflow: hidden;
     background-color: var(--bg);
     background-image:
-      linear-gradient(rgba(20,25,32,0.5), rgba(20,25,32,0.78)),
-      url('/menu/p04061.webp');
+      linear-gradient(rgba(20,25,32,0.30), rgba(20,25,32,0.58)),
+      url('/menu/p03753.webp');
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid var(--line);
