@@ -1055,19 +1055,6 @@
     min-height: 400px;
     overflow: hidden;
   }
-  .bar-visual::after {
-    content: "EST. BAR";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: clamp(60px, 10vw, 160px);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    color: rgba(170,200,218,0.08);
-    white-space: nowrap;
-    pointer-events: none;
-  }
   .bar-content {
     padding: clamp(70px, 9vw, 130px) clamp(40px, 5vw, 90px);
     display: flex;
