@@ -933,6 +933,40 @@
     line-height: 1.75;
   }
 
+  /* Humidor-Showcase: Dry-Ager-Schrank groß, daneben zwei Detailaufnahmen */
+  .drya-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 1600px;
+    margin: 0 auto 2px;
+    background: var(--line-bright);
+    border: 1px solid var(--line-bright);
+  }
+  .drya-showcase-main {
+    aspect-ratio: 3/4;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg-card);
+  }
+  .drya-showcase-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+  }
+  .drya-showcase-img {
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg-card);
+    min-height: 0;
+  }
+  /* Responsiv NACH der Basisregel (siehe Hinweis bei .drya-grid weiter unten) */
+  @media (max-width: 640px) {
+    .drya-showcase { grid-template-columns: 1fr; }
+    .drya-showcase-side { grid-template-rows: none; grid-template-columns: 1fr; }
+    .drya-showcase-img { aspect-ratio: 4/3; }
+  }
+
   .drya-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -956,7 +990,7 @@
   .breed:hover { background: var(--bg-card); }
   .breed-img {
     width: 100%;
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/5;
     background-size: cover;
     background-position: center;
     background-color: var(--bg-card);
