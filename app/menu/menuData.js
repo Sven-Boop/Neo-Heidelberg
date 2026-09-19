@@ -200,8 +200,8 @@ export const sections = [
         items: [
           { img: '/menu/p03759.webp', name: 'Japan A4', price: '100g · 65,00 €', sub: 'Akune Gold · Kagoshima · roast beef', desc: '' },
           { img: '/menu/p03694.webp', name: 'Rump Steak', price: '350g · 55,00 €', sub: 'Pomeranian Simmental · NEO selection Yumshaki', desc: 'Finest marbling.' },
-          { img: '/menu/p03700.webp', name: 'Entrecôte', price: '350g · 69,00 €', sub: 'Pomeranian Simmental · NEO selection Yumshaki', desc: 'Finest marbling.' },
-          { img: '/menu/p03782.webp', name: 'Dry Aged Rump Steak', price: '350g · 55,00 €', sub: 'Galicia · Black Angus · Nosa Terra · dry-aged 3–4 weeks', desc: '' },
+          { img: '/menu/p03700.webp', name: 'Entrecôte', price: '350g · 55,00 €', sub: 'Pomeranian Simmental · NEO selection Yumshaki', desc: 'Finest marbling.' },
+          { img: '/menu/p03782.webp', name: 'Dry Aged Rump Steak', price: '350g · 69,00 €', sub: 'Galicia · Black Angus · Nosa Terra · dry-aged 3–4 weeks', desc: '' },
           { img: '/menu/p03692.webp', name: 'Dry Aged Entrecôte', price: '350g · 69,00 €', sub: 'Galicia · Black Angus · Nosa Terra · dry-aged 3–4 weeks', desc: '' },
           { img: null, name: 'Served with all steaks', price: '', sub: '', desc: 'Yuzu miso butter · grilled lettuce heart · crispy bacon · panko crunch · yuzu mayo · tomato chutney · Parmesan · pickled red onions.' },
         ],
