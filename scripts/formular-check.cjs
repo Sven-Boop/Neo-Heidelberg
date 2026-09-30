@@ -54,31 +54,35 @@ async function trifft(page, selector) {
   page.on('pageerror', (e) => jsFehler.push(e.message));
 
   // 1) Startseite: erreichbar, Formular da, klickbar, Tippen kommt an
-  const r = await page.goto(BASIS + '/', { waitUntil: 'networkidle', timeout: 60000 });
+  // 'load' statt 'networkidle': das Hero-Video streamt nach dem Laden weiter, „Netz ruhig“ käme evtl. nie
+  const r = await page.goto(BASIS + '/', { waitUntil: 'load', timeout: 60000 });
   pruefe(r && r.ok(), `Startseite lädt (HTTP ${r && r.status()})`);
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(2500);
   const F = '#anfrage-form';
-  pruefe((await page.locator(F).count()) === 1, 'Anfrageformular auf der Startseite vorhanden');
-  pruefe(await trifft(page, `${F} [name=name]`), 'Klick trifft das Namensfeld im Formular');
-  await page.click(`${F} [name=name]`);
-  await page.keyboard.type('abc');
-  pruefe((await page.inputValue(`${F} [name=name]`)) === 'abc', 'Tippen im Formularfeld kommt an');
+  const formDa = (await page.locator(F).count()) === 1;
+  pruefe(formDa, 'Anfrageformular auf der Startseite vorhanden');
+  if (formDa) {
+    pruefe(await trifft(page, `${F} [name=name]`), 'Klick trifft das Namensfeld im Formular');
+    await page.click(`${F} [name=name]`);
+    await page.keyboard.type('abc');
+    pruefe((await page.inputValue(`${F} [name=name]`)) === 'abc', 'Tippen im Formularfeld kommt an');
 
-  // 2) Kontroll-Anfrage wirklich absenden (geht NUR an sven@bliss-group.de)
-  await page.evaluate((sel) => { const f = document.querySelector(sel); const i = document.createElement('input'); i.type = 'hidden'; i.name = '_kontrolle'; i.value = '1'; f.appendChild(i); }, F);
-  await page.fill(`${F} [name=name]`, 'Formular-Check Startseite');
-  await page.fill(`${F} [name=mail]`, 'sven@bliss-group.de');
-  await page.fill(`${F} [name=nachricht]`, `Automatischer Kontroll-Lauf ${HEUTE}. Kommt diese Mail täglich an, funktioniert das Formular. Kann gelöscht werden.`);
-  const [antwort] = await Promise.all([
-    page.waitForResponse((x) => x.url().includes('/api/anfrage') && x.request().method() === 'POST', { timeout: 20000 }).catch(() => null),
-    page.click(`${F} .af-submit`),
-  ]);
-  const body = antwort ? await antwort.text().catch(() => '') : '';
-  log('Antwort /api/anfrage:', antwort ? antwort.status() : 'keine', body.slice(0, 200));
-  pruefe(!!antwort && antwort.status() === 200 && /"ok":true/.test(body), 'Formular: Versand über /api/anfrage (Resend) angenommen');
-  await page.waitForTimeout(1200);
-  const danke = await page.evaluate((sel) => { const s = document.querySelector(sel + ' .af-status'); return s && s.classList.contains('ok') && /Danke|Thank/.test(s.textContent) ? s.textContent : ''; }, F);
-  pruefe(!!danke, `Formular: Danke-Meldung angezeigt${danke ? ` („${danke.slice(0, 40)}…“)` : ''}`);
+    // 2) Kontroll-Anfrage wirklich absenden (geht NUR an sven@bliss-group.de)
+    await page.evaluate((sel) => { const f = document.querySelector(sel); const i = document.createElement('input'); i.type = 'hidden'; i.name = '_kontrolle'; i.value = '1'; f.appendChild(i); }, F);
+    await page.fill(`${F} [name=name]`, 'Formular-Check Startseite');
+    await page.fill(`${F} [name=mail]`, 'sven@bliss-group.de');
+    await page.fill(`${F} [name=nachricht]`, `Automatischer Kontroll-Lauf ${HEUTE}. Kommt diese Mail täglich an, funktioniert das Formular. Kann gelöscht werden.`);
+    const [antwort] = await Promise.all([
+      page.waitForResponse((x) => x.url().includes('/api/anfrage') && x.request().method() === 'POST', { timeout: 20000 }).catch(() => null),
+      page.click(`${F} .af-submit`),
+    ]);
+    const body = antwort ? await antwort.text().catch(() => '') : '';
+    log('Antwort /api/anfrage:', antwort ? antwort.status() : 'keine', body.slice(0, 200));
+    pruefe(!!antwort && antwort.status() === 200 && /"ok":true/.test(body), 'Formular: Versand über /api/anfrage (Resend) angenommen');
+    await page.waitForTimeout(1200);
+    const danke = await page.evaluate((sel) => { const s = document.querySelector(sel + ' .af-status'); return s && s.classList.contains('ok') && /Danke|Thank/.test(s.textContent) ? s.textContent : ''; }, F);
+    pruefe(!!danke, `Formular: Danke-Meldung angezeigt${danke ? ` („${danke.slice(0, 40)}…“)` : ''}`);
+  }
 
   // 3) Hochzeits-Unterseite: Formular vorhanden und klickbar
   await page.evaluate(() => { location.hash = 'hochzeit-anfrage'; });
@@ -86,8 +90,9 @@ async function trifft(page, selector) {
   pruefe(await trifft(page, '#anfrage-form-hochzeit [name=name]'), 'Hochzeit: Formularfeld klickbar');
 
   // 4) Englische Seite: lädt, Formular vorhanden und klickbar
-  const en = await page.goto(BASIS + '/en', { waitUntil: 'networkidle', timeout: 60000 }).catch(() => null);
+  const en = await page.goto(BASIS + '/en', { waitUntil: 'load', timeout: 60000 }).catch(() => null);
   pruefe(en && en.ok(), `/en lädt (HTTP ${en && en.status()})`);
+  await page.waitForTimeout(2500);
   if (en && en.ok()) pruefe(await trifft(page, '#anfrage-form [name=name]'), '/en: Formularfeld klickbar');
   pruefe(jsFehler.length === 0, `Keine JS-Fehler (${jsFehler.length}${jsFehler.length ? ': ' + jsFehler.slice(0, 3).join(' | ') : ''})`);
 
