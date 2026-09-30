@@ -64,14 +64,28 @@ export default function DatenschutzEN() {
 
         <h2>5. Contact and event enquiries</h2>
         <p>
-          If you write to us by email (e.g. for reservations, wedding or event enquiries), we
-          process the data you provide (name, email address, and where applicable occasion,
-          preferred date, number of guests and your message) exclusively to handle and respond
+          If you write to us by email or use our enquiry form (e.g. for reservations, wedding,
+          corporate, event or group enquiries), we process the data you provide (name, email
+          address, and where applicable phone number, occasion, preferred date, number of guests
+          and your message) exclusively to handle and respond
           to your enquiry. The legal basis is Art. 6(1)(b) GDPR (performance of pre-contractual
           measures) or Art. 6(1)(f) GDPR. Your data is deleted as soon as it is no longer
           required for processing and no statutory retention obligations conflict with this. We
           handle table reservations via our service provider Gastronaut; their privacy notice
           applies additionally.
+        </p>
+        <p>
+          <strong>Enquiry form:</strong> the details from the form are passed via our server to the
+          email delivery service Resend (Resend, Inc., USA) and delivered to us by email to
+          info@neo-heidelberg.de and to the events team of the BLISS Group (sales@bliss-group.de),
+          of which NEO is a part. The sole purpose is to handle and respond to your enquiry; the
+          legal basis is Art. 6(1)(b) GDPR or Art. 6(1)(f) GDPR. Resend processes the data solely for
+          delivery on our behalf under a data processing agreement; transfers to the USA are based
+          on the EU Standard Contractual Clauses. The form data is not stored on the website itself.
+          We delete enquiry emails once the enquiry has been fully handled and no statutory
+          retention obligations apply; if a contract is concluded, the commercial and tax retention
+          periods apply (up to six or ten years). A hidden extra field only serves to block
+          automated spam submissions and contains no personal data.
         </p>
 
         <h2>6. Newsletter</h2>
@@ -105,7 +119,7 @@ export default function DatenschutzEN() {
 
         <h2>9. Currency of this policy</h2>
         <p>
-          As of July 2026. We will adjust this privacy policy as soon as the data processing on
+          As of September 2026. We will adjust this privacy policy as soon as the data processing on
           this website changes.
         </p>
       </div>

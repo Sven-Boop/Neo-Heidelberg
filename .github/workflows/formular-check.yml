@@ -1,0 +1,53 @@
+name: Formular-Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: "Basis-URL (leer = https://neo-heidelberg.de)"
+        required: false
+        default: ""
+  push:
+    branches: [main]
+    paths:
+      - "scripts/formular-check.cjs"
+      - ".github/workflows/formular-check.yml"
+  schedule:
+    # UTC! Täglich 05:20 UTC = 07:20 deutscher Sommerzeit (06:20 Winterzeit). Schlägt der Lauf fehl,
+    # schickt GitHub „All jobs have failed" an Sven und /api/kontrolle mailt den Bericht an
+    # sven@bliss-group.de; klappt er, liegt die Kontroll-Anfrage „✓ Formular-Check …" bei sven@.
+    - cron: "20 5 * * *"
+
+concurrency:
+  group: formular-check
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write # OIDC-Token als Ausweis gegenüber /api/kontrolle (Alarm-Mail), kein Secret nötig
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SITE_URL: ${{ inputs.site_url || 'https://neo-heidelberg.de' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-save playwright
+      - name: Playwright-Version merken (Cache-Schlüssel)
+        id: pwver
+        run: echo "v=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+      - name: Playwright-Chromium (gecacht je Version)
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-chromium-${{ runner.os }}-${{ steps.pwver.outputs.v }}
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - name: Live-Seite und Formular prüfen
+        run: node scripts/formular-check.cjs

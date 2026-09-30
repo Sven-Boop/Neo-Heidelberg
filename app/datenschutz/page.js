@@ -56,15 +56,31 @@ export default function DatenschutzPage() {
 
         <h2>5. Kontakt- und Eventanfragen</h2>
         <p>
-          Wenn Sie uns per E-Mail schreiben (z.&nbsp;B. für Reservierungen, Hochzeits- oder
-          Eventanfragen), verarbeiten wir die von Ihnen mitgeteilten Daten (Name, E-Mail-Adresse,
-          ggf. Anlass, Wunschdatum, Gästezahl sowie Ihre Nachricht) ausschließlich zur
+          Wenn Sie uns per E-Mail schreiben oder unser Anfrageformular nutzen (z.&nbsp;B. für
+          Reservierungen, Hochzeits-, Firmen-, Event- oder Gruppenanfragen), verarbeiten wir die von
+          Ihnen mitgeteilten Daten (Name, E-Mail-Adresse, ggf. Telefonnummer, Anlass, Wunschdatum,
+          Gästezahl sowie Ihre Nachricht) ausschließlich zur
           Bearbeitung und Beantwortung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
           DSGVO (Durchführung vorvertraglicher Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO. Ihre
           Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und
           keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Tischreservierungen wickeln
           wir über unseren Dienstleister Gastronaut ab; dabei gelten ergänzend dessen
           Datenschutzhinweise.
+        </p>
+        <p>
+          <strong>Anfrageformular:</strong> Die Angaben aus dem Formular werden über unseren Server an
+          den E-Mail-Versanddienst Resend (Resend, Inc., USA) übergeben und uns als E-Mail an
+          info@neo-heidelberg.de sowie an das Veranstaltungsteam der BLISS Group
+          (sales@bliss-group.de), zu der das NEO gehört, zugestellt. Zweck ist allein die
+          Bearbeitung und Beantwortung Ihrer Anfrage; Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
+          bzw. Art. 6 Abs. 1 lit. f DSGVO. Resend verarbeitet die Daten ausschließlich für den Versand
+          in unserem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrags; die Übermittlung in
+          die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln. Auf der Website selbst werden
+          die Formulardaten nicht gespeichert. Die Anfrage-E-Mails löschen wir, sobald die Anfrage
+          abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen;
+          kommt ein Vertrag zustande, gelten die handels- und steuerrechtlichen Aufbewahrungsfristen
+          (bis zu sechs bzw. zehn Jahre). Ein verstecktes Zusatzfeld dient nur der Abwehr
+          automatisierter Spam-Einsendungen und enthält keine personenbezogenen Daten.
         </p>
 
         <h2>6. Newsletter</h2>
@@ -100,7 +116,7 @@ export default function DatenschutzPage() {
 
         <h2>9. Aktualität dieser Erklärung</h2>
         <p>
-          Stand: Juli 2026. Wir passen diese Datenschutzerklärung an, sobald sich die
+          Stand: September 2026. Wir passen diese Datenschutzerklärung an, sobald sich die
           Datenverarbeitung auf dieser Website ändert.
         </p>
       </div>

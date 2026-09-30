@@ -164,7 +164,7 @@
     .nav-center, .status-dot { display: none; }
     .burger { display: block; }
   }
-  @media (max-width: 640px) { .nav-cta { display: none; } }
+  /* Mobil bleibt der Reservieren-Knopf sichtbar — Größe/Abstände im Block „Mobil: Reservieren-Knopf“ am Dateiende */
 
   /* Sprachumschalter DE/EN */
   .nav-lang {
@@ -294,7 +294,7 @@
   }
   .hero-bliss:hover { color: #fff; }
   .hero-bliss:hover::after { transform: translate(2px, -2px); }
-  .hero h1 {
+  .hero h1, .hero .hero-h1 {
     font-size: clamp(58px, 10vw, 192px);
     font-weight: 900;
     line-height: 1.2;
@@ -303,7 +303,7 @@
     max-width: 14ch;
     margin-bottom: 44px;
   }
-  .hero h1 em {
+  .hero h1 em, .hero .hero-h1 em {
     font-style: italic;
     font-weight: 900;
     color: var(--accent);
@@ -3056,11 +3056,11 @@
     0%, 100% { opacity: 0.5; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.1); }
   }
-  .hochzeit-hero h1 em {
+  .hochzeit-hero h1 em, .hochzeit-hero .hero-h1 em {
     position: relative;
     display: inline-block;
   }
-  .hochzeit-hero h1 em::after {
+  .hochzeit-hero h1 em::after, .hochzeit-hero .hero-h1 em::after {
     content: '✦';
     position: absolute;
     top: -8px;
@@ -3608,7 +3608,7 @@ img, video { max-width: 100%; height: auto; }
 
   /* HERO — reasonable heights, text fits */
   .hero { padding: 130px 20px 70px; min-height: 90vh; }
-  .hero h1 { font-size: clamp(42px, 11vw, 72px); line-height: 1.2; max-width: 100%; }
+  .hero h1, .hero .hero-h1 { font-size: clamp(42px, 11vw, 72px); line-height: 1.2; max-width: 100%; }
   .hero-meta { gap: 18px; padding-top: 24px; }
   .hero-meta-item { font-size: 12px; }
   .hero-eyebrow { font-size: 10px; margin-bottom: 24px; }
@@ -3676,7 +3676,7 @@ img, video { max-width: 100%; height: auto; }
   .sk-section-head h2 { font-size: clamp(32px, 8vw, 54px); }
 
   /* HOCHZEIT — hero, stats, sections */
-  .hochzeit-hero h1 { font-size: clamp(42px, 11vw, 78px); }
+  .hochzeit-hero h1, .hochzeit-hero .hero-h1 { font-size: clamp(42px, 11vw, 78px); }
   .stats-grid { gap: 1px; }
   .stat { padding: 22px 14px; }
   .stat-num { font-size: 32px; }
@@ -3751,7 +3751,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Very small phones (max 380px) */
 @media (max-width: 380px) {
-  .hero h1 { font-size: 38px; }
+  .hero h1, .hero .hero-h1 { font-size: 38px; }
   .card-title { font-size: 32px; }
   .cats-scroll a { padding: 8px 12px; }
   .sk-item img, .sk-item .no-img { width: 80px; height: 80px; min-width: 80px; }
@@ -4413,3 +4413,146 @@ img, video { max-width: 100%; height: auto; }
 /* English-Menu: PDF-Button + Druck */
 .menu-pdf-btn { display: inline-block; margin-top: 18px; }
 @media print { .no-print { display: none !important; } }
+
+/* ==================== LAZY-HINTERGRUNDBILDER ====================
+   Elemente mit data-lazy laden ihr Hintergrundbild erst, wenn sie in die Nähe des Viewports
+   kommen (Skript im <head> von app/layout.js setzt .lz-in). Ohne JS fehlt .js → Bilder laden normal. */
+.js [data-lazy]:not(.lz-in) { background-image: none !important; }
+
+/* ==================== MOBIL: RESERVIEREN-KNOPF IN DER KOPFZEILE ====================
+   Logo · EN · Reservieren · Burger. Alle Klick-Elemente 44 px hoch (wie die übrigen Knöpfe mobil);
+   die Nav ist fixed → der Knopf bleibt auch beim Scrollen sichtbar. */
+@media (max-width: 640px) {
+  .nav-right { gap: 12px; }
+  .nav-right .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .nav-right .nav-lang {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 14px;
+  }
+  .nav-right .burger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 44px;
+    padding: 0;
+  }
+}
+@media (max-width: 374px) {
+  .nav-right { gap: 8px; }
+  .nav-right .nav-cta { padding: 0 11px; letter-spacing: 0.1em; }
+  .nav-right .nav-lang { padding: 0 11px; }
+}
+
+/* ==================== ANFRAGEFORMULAR (Events · Firmen · Gruppen · Hochzeit) ==================== */
+.anfrage-form-section {
+  padding: clamp(80px, 10vw, 130px) var(--pad-x);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+@media (max-width: 980px) { .anfrage-form-section { grid-template-columns: 1fr; } }
+.af-intro .eyebrow { margin-bottom: 26px; }
+.af-intro h2 {
+  font-size: clamp(38px, 4.6vw, 70px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+.af-intro h2 em { font-style: italic; color: var(--accent); }
+.af-intro p { color: var(--fg-soft); margin-top: 20px; max-width: 44ch; font-size: 15px; line-height: 1.75; font-weight: 300; }
+.af-intro .af-alt { font-size: 13px; color: var(--muted); margin-top: 26px; }
+.af-alt a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+.af-form { position: relative; color-scheme: dark; }
+.af-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px 26px; }
+.af-field { grid-column: span 6; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.af-half { grid-column: span 3; }
+.af-third { grid-column: span 2; }
+.af-field > span {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.af-field input,
+.af-field select,
+.af-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--fg-soft);
+  border-radius: 0;
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 0;
+  outline: none;
+  transition: border-color .3s;
+}
+/* einheitliche Feldhöhe (Datumsfeld wäre sonst 2 px höher) */
+.af-field input,
+.af-field select { height: 44px; }
+.af-field input:focus,
+.af-field select:focus,
+.af-field textarea:focus { border-color: var(--accent); }
+.af-field input::placeholder,
+.af-field textarea::placeholder { color: var(--muted); }
+.af-field textarea { resize: vertical; min-height: 112px; line-height: 1.6; }
+.af-field select {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding-right: 28px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position: calc(100% - 12px) 55%, calc(100% - 6px) 55%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+.af-field select option { background: var(--bg-elev); color: var(--fg); }
+/* Honeypot: für Menschen unsichtbar, Bots füllen es aus */
+.af-honey { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.af-foot { display: flex; align-items: center; gap: 20px 28px; flex-wrap: wrap; margin-top: 36px; }
+.af-submit[disabled] { opacity: .6; cursor: wait; }
+.af-form .af-note { flex: 1 1 240px; max-width: 46ch; margin: 0; font-size: 11.5px; line-height: 1.55; color: var(--muted); font-weight: 300; text-align: left; }
+.af-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.af-status { min-height: 20px; margin-top: 18px; font-size: 13px; line-height: 1.6; letter-spacing: 0.02em; }
+.af-status.ok { color: var(--accent); }
+.af-status.err { color: #e08a8a; }
+.af-status a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+/* In der Hochzeits-Anfrage-Karte (zentriert) steht das Formular linksbündig */
+.anfrage-card .af-form { text-align: left; max-width: 780px; margin: 8px auto 0; }
+.anfrage-card .af-alt-label {
+  margin: 48px auto 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .af-half, .af-third { grid-column: span 6; }
+  .af-grid { gap: 20px; }
+  .af-foot { margin-top: 30px; }
+}

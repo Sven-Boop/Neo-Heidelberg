@@ -47,11 +47,24 @@ export const viewport = {
   themeColor: '#161b22',
 };
 
+// Lazy-Hintergrundbilder (läuft im <head>, noch vor React und unabhängig vom JS-Bundle):
+// setzt .js am <html> — die CSS-Regel in globals.css hält data-lazy-Hintergründe dann zurück —
+// und gibt jedes Bild (bzw. data-poster beim 10-Jahre-Video) erst frei, wenn die Stelle bis auf
+// ~900 px an den Viewport herankommt. So lädt beim Start fast nur das Hero-Standbild.
+const lazyBilder = `(function(){var d=document.documentElement;d.classList.add('js');
+function an(el){el.classList.add('lz-in');var p=el.getAttribute('data-poster');if(p){el.setAttribute('poster',p);el.removeAttribute('data-poster');}}
+function los(){var els=document.querySelectorAll('[data-lazy],[data-poster]');var i;
+if(!('IntersectionObserver' in window)){for(i=0;i<els.length;i++)an(els[i]);return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){an(e.target);io.unobserve(e.target);}});},{rootMargin:'900px 0px'});
+for(i=0;i<els.length;i++)io.observe(els[i]);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',los);else los();})();`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="de" className={lato.variable}>
+    <html lang="de" className={lato.variable} suppressHydrationWarning>
       <head>
         <link rel="preload" as="image" href="/video/neo-hero-poster.webp" fetchPriority="high" />
+        <script dangerouslySetInnerHTML={{ __html: lazyBilder }} />
       </head>
       <body>
         {children}
