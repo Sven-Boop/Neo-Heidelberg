@@ -49,5 +49,8 @@ jobs:
           key: pw-chromium-${{ runner.os }}-${{ steps.pwver.outputs.v }}
       - if: steps.cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
+      - name: Bei push auf main erst das Vercel-Production-Deployment abwarten
+        if: github.event_name == 'push'
+        run: sleep 180
       - name: Live-Seite und Formular prüfen
         run: node scripts/formular-check.cjs
