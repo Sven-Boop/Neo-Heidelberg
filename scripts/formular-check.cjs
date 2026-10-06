@@ -1,6 +1,6 @@
 // Täglicher Kontroll-Lauf für neo-heidelberg.de (GitHub Actions, Playwright).
 // Prüft: Startseite lädt, Anfrageformular ist klickbar und sendet wirklich (Kontroll-Anfrage mit
-// _kontrolle=1 → /api/anfrage → Resend → NUR an sven@bliss-group.de), Hochzeits- und EN-Formular
+// _kontrolle=1 → /api/anfrage → Resend → Resend-Testadresse statt Postfach), Hochzeits- und EN-Formular
 // sind da, der Reservieren-Knopf ist mobil sichtbar, die API-Route antwortet.
 // Schlägt etwas fehl → Exit 1 → GitHub schickt „All jobs have failed" an Sven.
 // Zusätzlich: Bericht per Mail an sven@bliss-group.de über /api/kontrolle (Ausweis = GitHub-OIDC-Token).
@@ -67,7 +67,7 @@ async function trifft(page, selector) {
     await page.keyboard.type('abc');
     pruefe((await page.inputValue(`${F} [name=name]`)) === 'abc', 'Tippen im Formularfeld kommt an');
 
-    // 2) Kontroll-Anfrage wirklich absenden (geht NUR an sven@bliss-group.de)
+    // 2) Kontroll-Anfrage wirklich absenden (geht an die Resend-Testadresse)
     await page.evaluate((sel) => { const f = document.querySelector(sel); const i = document.createElement('input'); i.type = 'hidden'; i.name = '_kontrolle'; i.value = '1'; f.appendChild(i); }, F);
     await page.fill(`${F} [name=name]`, 'Formular-Check Startseite');
     await page.fill(`${F} [name=mail]`, 'sven@bliss-group.de');

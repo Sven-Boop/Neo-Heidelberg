@@ -7,11 +7,13 @@ export const runtime = "nodejs";
  * Ohne RESEND_API_KEY -> 503; der Client bietet dann den mailto-Weg an.
  *
  * Kontroll-Lauf (GitHub Actions, scripts/formular-check.cjs) schickt zusätzlich _kontrolle=1:
- * derselbe Weg, die Mail geht dann NUR an sven@bliss-group.de mit eindeutigem Betreff.
+ * derselbe Weg, die Mail geht dann an die Resend-Testadresse statt in ein Postfach.
+ * Sven bekommt nur noch Mails, wenn etwas nicht klappt (Sven, 06.10.2026) — den Alarm
+ * schickt /api/kontrolle.
  */
 const ABSENDER = "NEO Heidelberg <neo@bliss-group.de>";
 const ZIELE = ["info@neo-heidelberg.de", "sales@bliss-group.de"];
-const KONTROLLE_ZIEL = "sven@bliss-group.de";
+const KONTROLLE_ZIEL = "delivered@resend.dev";
 
 function datumDE(iso) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
@@ -59,7 +61,7 @@ export async function POST(req) {
     : `Anfrage NEO — ${anlass || "Anfrage"} · ${name}${datum ? " · " + datum : ""}`;
   const text = [
     kontrolle
-      ? "Automatischer Kontroll-Lauf: Das Anfrageformular auf neo-heidelberg.de funktioniert. Diese Mail kommt einmal täglich; bleibt sie aus, stimmt etwas nicht.\n"
+      ? "Automatischer Kontroll-Lauf: Das Anfrageformular auf neo-heidelberg.de funktioniert.\n"
       : "Neue Anfrage über neo-heidelberg.de\n",
     `Anlass: ${anlass || "—"}`,
     `Name: ${name}`,
