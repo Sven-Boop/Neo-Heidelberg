@@ -91,11 +91,18 @@ export default function DatenschutzPage() {
           <a href="mailto:info@neo-heidelberg.de">info@neo-heidelberg.de</a>. Nach dem Widerruf
           wird Ihre E-Mail-Adresse aus dem Verteiler gelöscht.
         </p>
+        <p>
+          Die Anmeldung läuft im Double-Opt-in-Verfahren: Erst nach Klick auf den Link in der
+          Bestätigungs-E-Mail wird Ihre Adresse in den Verteiler aufgenommen. Versand und
+          Verwaltung der Anmeldungen übernimmt der E-Mail-Dienst Resend (Resend, Inc., USA) in
+          unserem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrags; die Übermittlung in
+          die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln.
+        </p>
 
         <h2>7. Externe Links und Dienste</h2>
         <p>
           Unsere Website verlinkt auf externe Angebote (z.&nbsp;B. das Reservierungssystem
-          Gastronaut, unseren Sushi-2-Go-Lieferdienst, Instagram, Facebook und Tripadvisor). Beim
+          Gastronaut, unsere Sushi-2-Go-Bestellseite zum Abholen, Instagram, Facebook und Tripadvisor). Beim
           Anklicken dieser Links verlassen Sie unsere Website; es gelten die
           Datenschutzbestimmungen des jeweiligen Anbieters. Inhalte dieser Anbieter werden auf
           unserer Website nicht eingebettet.
@@ -116,7 +123,7 @@ export default function DatenschutzPage() {
 
         <h2>9. Aktualität dieser Erklärung</h2>
         <p>
-          Stand: September 2026. Wir passen diese Datenschutzerklärung an, sobald sich die
+          Stand: Oktober 2026. Wir passen diese Datenschutzerklärung an, sobald sich die
           Datenverarbeitung auf dieser Website ändert.
         </p>
       </div>

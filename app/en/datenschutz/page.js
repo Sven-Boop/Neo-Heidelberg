@@ -96,11 +96,17 @@ export default function DatenschutzEN() {
           <a href="mailto:info@neo-heidelberg.de">info@neo-heidelberg.de</a>. After withdrawal,
           your email address is removed from the distribution list.
         </p>
+        <p>
+          Sign-up uses a double opt-in: your address is only added to the list after you click the
+          link in the confirmation email. Sending and managing sign-ups is handled on our behalf by
+          the email service Resend (Resend, Inc., USA) under a data processing agreement; transfers
+          to the USA are based on the EU Standard Contractual Clauses.
+        </p>
 
         <h2>7. External links and services</h2>
         <p>
           Our website links to external offerings (e.g. the Gastronaut reservation system, our
-          Sushi 2 Go delivery service, Instagram, Facebook and Tripadvisor). When you click
+          Sushi 2 Go pick-up ordering page, Instagram, Facebook and Tripadvisor). When you click
           these links, you leave our website; the privacy policy of the respective provider
           then applies. Content from these providers is not embedded on our website.
         </p>
@@ -119,7 +125,7 @@ export default function DatenschutzEN() {
 
         <h2>9. Currency of this policy</h2>
         <p>
-          As of September 2026. We will adjust this privacy policy as soon as the data processing on
+          As of October 2026. We will adjust this privacy policy as soon as the data processing on
           this website changes.
         </p>
       </div>
