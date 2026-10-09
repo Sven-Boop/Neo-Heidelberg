@@ -4604,3 +4604,125 @@ img, video { max-width: 100%; height: auto; }
   .manifesto h2 { font-size: min(38px, 8.6vw); }
   .manifesto h2 .nk { white-space: nowrap; }
 }
+
+/* ===== Durchsicht 09.10.2026 · Paket 3 (Vorschau): ruhiger und kürzer ===== */
+
+/* Ein Überschriften-Stil: .section-head hatte bisher gar keine Gestaltung */
+.section-head { max-width: 1600px; margin: 0 auto clamp(36px, 4vw, 54px); }
+.section-head .eyebrow { margin-bottom: 22px; }
+.section-head h2 {
+  font-size: clamp(38px, 5.4vw, 84px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+.section-head h2 em { font-style: italic; color: var(--accent); }
+.section-head p { max-width: 62ch; color: var(--fg-soft); font-size: 16px; line-height: 1.7; margin: 0; }
+#page-speisekarte .section-head h2, .menu-en .section-head h2 { font-size: clamp(32px, 4vw, 56px); line-height: 1.02; }
+
+/* Fotowand: 12 Fotos, die übrigen über „Alle 45 Fotos ansehen“ in der Bildergalerie */
+#impressionen .nga-grid .nga-item:nth-child(n+13) { display: none; }
+.nga-mehr { margin-top: 28px; }
+
+/* Bewertungen: ruhige Zeile statt drei Kästen, Sterne passend zur Note */
+.reviews-grid { gap: 0; }
+.review-card { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none; }
+.review-card:hover { transform: none; border-color: var(--accent-soft); }
+.review-stars {
+  background: linear-gradient(90deg, var(--accent) calc(var(--r, 5) / 5 * 100%), rgba(255,255,255,0.18) 0);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Slider: Schrift auf dunklem Grund, auch bei Bildern ohne Beschnitt */
+.ss-slide--full .ss-overlay {
+  background: linear-gradient(to top, rgba(20,25,32,0.96) 0%, rgba(20,25,32,0.82) 30%, rgba(20,25,32,0.25) 58%, transparent 75%);
+}
+.ss-eyebrow, .ss-title, .ss-text { text-shadow: 0 1px 14px rgba(10,12,16,0.55); }
+
+/* Speisekarte: Kapitel-Leiste passt am Desktop ganz in die Breite */
+@media (min-width: 1101px) {
+  .cats-scroll a { padding: 11px 15px; letter-spacing: 0.16em; }
+}
+
+/* Hochzeit: Zahlen als ruhige Zeile */
+.stats-grid { background: none; border: 0; gap: 0; }
+.stat { background: none; padding: 30px 18px; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: 0; }
+.stat:hover { background: none; }
+@media (max-width: 900px) { .stat:nth-child(3) { border-left: 0; } }
+
+/* Hochzeit: Leistungen als Liste statt Emoji-Kacheln */
+.service-icon { display: none; }
+.service-grid { background: none; border: 0; gap: 0 48px; grid-template-columns: repeat(3, 1fr); padding: 0 var(--pad-x); }
+.service-cell { background: none; border-top: 1px solid var(--line); padding: 22px 0 26px; text-align: left; align-items: flex-start; }
+@media (max-width: 900px) { .service-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
+
+/* Hochzeit: Drink-Punkte als Zeile */
+.signature-spec { background: none; border: 0; gap: 0; }
+.signature-spec-cell { background: none; border-left: 1px solid rgba(170,200,218,0.25); padding: 6px 18px; }
+.signature-spec-cell:first-child { border-left: 0; }
+
+/* Hochzeit: Tombola als ruhige Liste in drei Spalten, ohne Schilder und Ziffern */
+.tombola-grid { grid-template-columns: repeat(3, 1fr); gap: 0 48px; }
+.prize-card { background: none; border: 0; border-top: 1px solid var(--line); padding: 26px 0 30px; }
+.prize-card:hover { transform: none; border-color: var(--accent-soft); }
+.prize-num { display: none; }
+.prize-tag { background: none; border: 0; padding: 0; margin-bottom: 12px; }
+@media (max-width: 900px) { .tombola-grid { grid-template-columns: 1fr; } }
+
+/* Hochzeit: Snacks als Liste */
+.lnb-grid { background: none; border: 0; gap: 0 40px; }
+.lnb-item { background: none; border-top: 1px solid var(--line); text-align: left; padding: 24px 0 28px; }
+
+/* Hochzeit: Einleitung nicht über die volle Breite */
+.hochzeit-hero .hero-lead { max-width: 62ch; }
+
+/* QR-Seite /menu: Logo oben, Zurück-Knopf eigene Zeile, Pfeil mit Abstand */
+.menu-en-hero { padding-top: 56px; }
+.menu-en-logo { display: block; width: 76px; margin-bottom: 44px; }
+.menu-en-logo img { display: block; width: 76px; height: 76px; }
+.menu-en-hero .legal-back { margin-bottom: 30px; }
+.menu-en-hero .eyebrow { display: flex; }
+.btn-outline::after { margin-left: 10px; }
+
+/* Leerräume: doppelte Abstände zwischen den Startseiten-Abschnitten verkleinern (Desktop) */
+@media (min-width: 901px) {
+  #page-home > .sharing, #page-home > .galerie, #page-home > .zehn-jahre, #page-home > .signatures,
+  #page-home > .news, #page-home > .reviews, #page-home > .anfrage-form-section, #page-home > #impressionen,
+  #page-home > .team, #page-home > .bliss-section, #page-home > .newsletter {
+    padding-top: clamp(80px, 8vw, 116px);
+    padding-bottom: clamp(80px, 8vw, 116px);
+  }
+}
+
+/* Paket 3, Nachschliff nach Sichtprüfung */
+/* Knopf „Alle 45 Fotos ansehen“: Browser-Grundaussehen von <button> aufheben */
+.nga-mehr .btn { background: transparent; font-family: inherit; cursor: pointer; }
+.nga-mehr .btn:hover { background: var(--fg); color: var(--bg); }
+/* Hochzeit: restliche Überschriften im selben Stil (Versalien) */
+.service-ribbon-head h2, .signature-cocktail h2, .tombola-head h2, .lnb-head h2 {
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+/* Tombola: Kicker ohne Schild */
+.tombola-section .tombola-head .eyebrow { background: none; border: 0; padding: 0; color: var(--accent); }
+/* Drink-Punkte: etwas breiter, damit „Bar-Chef“ nicht trennt */
+.signature-spec { max-width: 760px; }
+/* Speisekarte: Kapitel als schlichte Textlinks statt unterschiedlich breiter Kästchen */
+.cats-scroll a { border: 0; background: none; padding: 12px 14px; }
+.cats-scroll a.active { background: none; color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+.cats-scroll a:hover { color: var(--accent); }
+/* Drink-Abschnitt: kein englisches Schmuckband im Hintergrund */
+.signature-cocktail::before { content: none; display: none; }
+/* Handy-Regeln, die von den Paket-3-Regeln oben überschrieben wurden, wiederherstellen */
+@media (max-width: 640px) {
+  .stat { padding: 22px 14px; }
+  .signature-spec { gap: 16px 0; }
+  .signature-spec-cell:nth-child(odd) { border-left: 0; }
+}

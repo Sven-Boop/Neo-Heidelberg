@@ -20,6 +20,18 @@ export default function sitemap() {
       alternates: { languages: langs },
     },
     {
+      url: 'https://www.neo-heidelberg.de/speisekarte',
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.neo-heidelberg.de/hochzeit',
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.neo-heidelberg.de/menu',
       lastModified: now,
       changeFrequency: 'monthly',

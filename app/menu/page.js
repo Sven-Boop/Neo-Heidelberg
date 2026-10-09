@@ -1,9 +1,14 @@
 import { sections, sharing } from './menuData';
+import SetLang from '../SetLang';
 
 export const metadata = {
   title: 'Menu (English) — NEO Bar & Restaurant Heidelberg',
   description:
     'The NEO menu in English. Dry-aged steaks, Californian sushi, signature rolls, bowls and desserts — Zollhofgarten 2, Heidelberg.',
+  alternates: {
+    canonical: 'https://www.neo-heidelberg.de/menu',
+    languages: { 'de-DE': 'https://www.neo-heidelberg.de/speisekarte', en: 'https://www.neo-heidelberg.de/menu' },
+  },
 };
 
 function Item({ item }) {
@@ -28,7 +33,12 @@ function Item({ item }) {
 export default function MenuEnglishPage() {
   return (
     <main className="menu-en">
+      <SetLang lang="en" />
       <header className="menu-en-hero">
+        <a href="/" className="menu-en-logo" aria-label="NEO Bar & Restaurant Heidelberg">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/img/neo-logo-weiss.png" alt="NEO" width="76" height="76" />
+        </a>
         <a href="/" className="legal-back">← Back to neo-heidelberg.de</a>
         <div className="eyebrow">Menu · English</div>
         <h1>
