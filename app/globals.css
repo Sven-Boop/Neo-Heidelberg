@@ -4726,3 +4726,9 @@ img, video { max-width: 100%; height: auto; }
   .signature-spec { gap: 16px 0; }
   .signature-spec-cell:nth-child(odd) { border-left: 0; }
 }
+
+/* ===== 12.10.2026: kleine graue Schrift lesbarer (Kontrast mind. 4,5 : 1 auf dem dunklen Grund) ===== */
+:root { --muted-lesbar: #a3aeba; }
+.course-desc, .nl-check span, .reviews-note, .af-form .af-note, .foot-brand .addr, .af-field > span { color: var(--muted-lesbar); }
+.course-desc { font-size: 12px; }
+.foot-bottom, .foot-bottom a { color: var(--muted-lesbar); }

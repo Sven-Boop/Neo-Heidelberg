@@ -21,7 +21,7 @@ export const metadata = {
     url: 'https://www.neo-heidelberg.de/en',
     title: 'NEO — Bar & Restaurant Heidelberg',
     description: 'In the Bahnstadt since 2016. Dry-aged, Californian sushi, our own bar. Feed your soul.',
-    images: [{ url: 'https://www.neo-heidelberg.de/img/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.neo-heidelberg.de/img/og-neo.jpg', width: 1200, height: 630 }],
   },
 };
 

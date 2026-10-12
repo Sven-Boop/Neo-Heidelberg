@@ -13,8 +13,8 @@ export const metadata = {
     canonical: URL,
     languages: { 'de-DE': URL, en: 'https://www.neo-heidelberg.de/menu' },
   },
-  twitter: { card: 'summary_large_image', title: TITEL, description: TEXT, images: ['https://www.neo-heidelberg.de/img/og-image.jpg'] },
-  openGraph: { type: 'website', locale: 'de_DE', siteName: 'NEO Bar & Restaurant', url: URL, title: TITEL, description: TEXT, images: [{ url: 'https://www.neo-heidelberg.de/img/og-image.jpg', width: 1200, height: 630 }] },
+  twitter: { card: 'summary_large_image', title: TITEL, description: TEXT, images: ['https://www.neo-heidelberg.de/img/og-neo.jpg'] },
+  openGraph: { type: 'website', locale: 'de_DE', siteName: 'NEO Bar & Restaurant', url: URL, title: TITEL, description: TEXT, images: [{ url: 'https://www.neo-heidelberg.de/img/og-neo.jpg', width: 1200, height: 630 }] },
 };
 
 const html = subpageHtml('speisekarte');
