@@ -84,9 +84,10 @@ async function trifft(page, selector) {
     pruefe(!!danke, `Formular: Danke-Meldung angezeigt${danke ? ` („${danke.slice(0, 40)}…“)` : ''}`);
   }
 
-  // 3) Hochzeits-Unterseite: Formular vorhanden und klickbar
-  await page.evaluate(() => { location.hash = 'hochzeit-anfrage'; });
-  await page.waitForTimeout(1200);
+  // 3) Hochzeits-Unterseite: Formular vorhanden und klickbar (seit 12.10.2026 eigene Adresse /hochzeit)
+  const hz = await page.goto(BASIS + '/hochzeit#hochzeit-anfrage', { waitUntil: 'load', timeout: 60000 }).catch(() => null);
+  pruefe(hz && hz.ok(), `/hochzeit lädt (HTTP ${hz && hz.status()})`);
+  await page.waitForTimeout(2500);
   pruefe(await trifft(page, '#anfrage-form-hochzeit [name=name]'), 'Hochzeit: Formularfeld klickbar');
 
   // 4) Englische Seite: lädt, Formular vorhanden und klickbar
