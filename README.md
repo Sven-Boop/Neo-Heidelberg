@@ -51,3 +51,17 @@ app/
 - **Styling:** `app/globals.css`
 - **Slider-Folien:** im `SPECIALS`-Array in `app/siteScripts.js`
 - **SEO/Meta:** `app/layout.js`
+
+## Menüvorschläge auf den Anlass-Seiten (seit 17.10.2026)
+
+/weihnachtsfeier und /firmenfeier zeigen den Abschnitt „Menüvorschläge“ (/eventlocation-heidelberg eine Kurzfassung, Sprungmarke `#menuevorschlaege`). Die Daten stehen in `app/menuvorschlaege.json`, einem Abzug aus dem Werkzeug „NEO Wintermenüs“ (Supabase kv `nwm:stand`, aufbereitet mit dessen `migrieren()`). Nur NEO-Menüs, ohne LAB-Vorschläge (`lab-…`), ohne Silvester, ohne gestrichene Menüs und Gerichte, ohne interne Felder. Die JSON-Datei nie von Hand ändern.
+
+Nach Menüänderungen im Werkzeug den Abzug erneuern:
+
+```bash
+node scripts/menues-holen.mjs   # liest nwm:stand (nur lesend), schreibt app/menuvorschlaege.json
+npx next build                  # bauen und prüfen
+git add app/menuvorschlaege.json && git commit -m "Menüvorschläge: neuer Abzug aus nwm:stand" && git push   # Push = Deploy über Vercel
+```
+
+Das Skript braucht `../neo-wintermenues-online/index.html` und die Supabase-Werte aus `../neo-wintermenues-online/.env.local` (oder `SUPABASE_URL`/`SUPABASE_SERVICE_ROLE_KEY` in der Umgebung, anderer Pfad über `NWM_ENV`). Schlüssel nie ausgeben oder committen, kein `vercel env pull`. Auf der Seite gibt es keinen Link auf das Bearbeitungswerkzeug.

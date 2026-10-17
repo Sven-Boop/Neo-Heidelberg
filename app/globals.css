@@ -4838,3 +4838,66 @@ h1.eyebrow { font-size: 11px; font-weight: 700; line-height: inherit; letter-spa
 @media (max-width: 640px) { .ev-bildpaar { grid-template-columns: 1fr; } }
 
 .ev-weiter { padding-top: clamp(60px, 7vw, 100px); padding-bottom: clamp(60px, 7vw, 100px); }
+
+/* ===== 17.10.2026 · Menüvorschläge auf den Anlass-Seiten (Abzug aus nwm:stand) — Entwurf ===== */
+.ev-link { display: flex; flex-wrap: wrap; gap: 14px 32px; }
+.ev-menues-links { position: sticky; top: 120px; }
+@media (max-width: 980px) { .ev-menues-links { position: static; } }
+.ev-menue-gruppe + .ev-menue-gruppe { margin-top: clamp(44px, 5vw, 64px); }
+.ev-menue-gruppe-name { color: var(--accent); font-size: 15px; font-style: italic; font-weight: 400; letter-spacing: 0.01em; margin-bottom: 14px; }
+
+/* ein Menü: Kopfzeile mit Preis rechts, darunter die Gänge (Plus/Kreuz wie im FAQ) */
+.ev-menue-gruppe-name { padding-bottom: 14px; margin-bottom: 0; border-bottom: 1px solid var(--line); }
+.ev-menue, .ev-menue:first-child { padding: 0; border-bottom: 1px solid var(--line); }
+.ev-menue summary { text-transform: none; font-size: inherit; font-weight: inherit; letter-spacing: normal; display: grid; grid-template-columns: 1fr auto 26px; gap: 6px 24px; align-items: baseline; padding: 22px 0; }
+.ev-menue summary::after { align-self: center; justify-self: end; line-height: 1; }
+.ev-menue summary:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+.ev-menue-kopf { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.ev-menue-name { font-size: clamp(19px, 1.6vw, 24px); font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.2; transition: color .3s; color: var(--fg); }
+.ev-menue summary:hover .ev-menue-name { color: var(--accent); }
+.ev-menue-zeilen { color: var(--fg-soft); font-size: 15px; line-height: 1.55; font-weight: 300; }
+.ev-menue-preis { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 4px; }
+.ev-menue-betrag { font-size: clamp(19px, 1.6vw, 24px); font-weight: 900; color: var(--fg); white-space: nowrap; }
+.ev-menue-zusatz { color: var(--muted-lesbar); font-size: 13px; line-height: 1.4; max-width: 12rem; }
+.ev-menue-inhalt { padding: 0 0 30px; }
+
+.ev-gaenge { list-style: none; border-left: 1px solid var(--line); padding-left: clamp(16px, 2vw, 26px); }
+.ev-gang { display: grid; grid-template-columns: 3.6rem 1fr auto; gap: 4px 18px; align-items: baseline; padding: 10px 0; }
+.ev-gang-nr { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+.ev-gang-oder { padding-top: 0; }
+.ev-gang-oder .ev-gang-nr { font-weight: 400; font-style: italic; letter-spacing: 0; color: var(--muted-lesbar); }
+.ev-gang-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ev-gang-name { color: var(--fg); font-size: 16px; font-weight: 700; line-height: 1.45; }
+.ev-gang-sub { color: var(--fg-soft); font-size: 14.5px; line-height: 1.6; font-weight: 300; }
+.ev-gang-preis { color: var(--fg-soft); font-size: 14px; white-space: nowrap; text-align: right; }
+.ev-gang-rubrik { color: var(--accent); font-size: 14px; font-style: italic; padding: 16px 0 2px; }
+.ev-gang-rubrik:first-child { padding-top: 4px; }
+/* Menüs zum Teilen (mit Rubriken): ohne Nummern-Spalte */
+.ev-gang-rubrik ~ .ev-gang { grid-template-columns: 1fr auto; }
+.ev-gang-rubrik ~ .ev-gang .ev-gang-nr { display: none; }
+.ev-gang-notiz { color: var(--muted-lesbar); font-size: 14px; line-height: 1.65; padding-top: 14px; max-width: 62ch; }
+.ev-menue .ev-menue-option { color: var(--fg-soft); font-size: 14px; line-height: 1.65; margin-top: 14px; padding-top: 0; max-width: 62ch; }
+.ev-menue-anfrage { display: inline-block; margin-top: 22px; color: var(--accent); font-size: 12px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 0; border-bottom: 1px solid var(--accent-soft); }
+.ev-menue-anfrage::after { content: " →"; }
+.ev-menue-anfrage:hover { color: var(--accent-hi); border-bottom-color: var(--accent); }
+
+/* Kurzfassung (Eventlocation): eine Zeile je Menü, Preis rechts */
+.ev-menue-liste { list-style: none; }
+.ev-menue-liste li { border-bottom: 1px solid var(--line); }
+.ev-menue-zeile { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: baseline; padding: 18px 0; }
+.ev-menue-zeile .ev-menue-name { font-size: 17px; }
+.ev-menue-zeile .ev-menue-betrag { font-size: 17px; }
+.ev-menue-zeile:hover .ev-menue-name { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .ev-menue summary { grid-template-columns: 1fr auto 20px; gap: 6px 14px; }
+  .ev-menue summary::after { font-size: 26px; }
+  .ev-menue-zusatz { max-width: 8.5rem; }
+  .ev-gang { grid-template-columns: 2.6rem 1fr; }
+  .ev-gang-preis { grid-column: 2; text-align: left; }
+  .ev-gang-rubrik ~ .ev-gang { grid-template-columns: 1fr; }
+  .ev-gang-rubrik ~ .ev-gang .ev-gang-preis { grid-column: 1; }
+  .ev-gaenge { padding-left: 14px; }
+}
+/* Brotkrumen im Startbild sind ein <nav>: die globale nav-Regel (fixed, Verlauf, Unschärfe) hier aufheben */
+.ev-hero nav.ev-pfad { position: static; z-index: auto; padding: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; justify-content: flex-start; align-items: baseline; border: 0; transition: none; }

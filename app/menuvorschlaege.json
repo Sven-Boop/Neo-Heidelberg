@@ -1,0 +1,786 @@
+{
+ "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
+ "stand": 41,
+ "kvRev": 3,
+ "kvGeaendert": "2026-10-16T11:40:24.639Z",
+ "vorlageStand": 41,
+ "menues": [
+  {
+   "id": "chalet",
+   "titel": "Chalet Menü",
+   "haus": "Chalet",
+   "ort": "NEO Chalet · Heidelberg",
+   "zeilen": [
+    "Drei Gänge"
+   ],
+   "preis": "69 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "gang",
+     "nr": "Vorweg",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "gang",
+     "nr": "I",
+     "name": "Kürbissuppe",
+     "beschreibung": "Hokkaido · gelber Curry · Kokosmilch · Tempura-Garnele · Kürbis-Mayo · karamellisierte Kürbiskerne · steirisches Kürbiskernöl"
+    },
+    {
+     "art": "gang",
+     "oder": true,
+     "name": "Handschuhsheimer Feldsalat",
+     "beschreibung": "Ruby-Cube-Vinaigrette · Speckwürfel · Croutons · süß-saure Radieschen"
+    },
+    {
+     "art": "gang",
+     "nr": "II",
+     "name": "½ Silver Hill Ente, knusprig",
+     "beschreibung": "Jus · Feigenrotkohl · Walnuss · Kartoffelnocken"
+    },
+    {
+     "art": "gang",
+     "oder": true,
+     "name": "Rehrücken",
+     "beschreibung": "Trüffeljus · Sauce Béarnaise · Sellerie · Lauch · Walnuss",
+     "preis": "14 € Aufpreis"
+    },
+    {
+     "art": "gang",
+     "nr": "III",
+     "name": "Birne Helene",
+     "beschreibung": "weiße Schokoladen-Crème · Birnen-Thymian-Ragout · Glühwein-Sabayon · Schokoladen-Rum-Sauce · Crème-Brûlée-Eis"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Kürbissuppe ohne Garnele oder Feldsalat ohne Speck · Trüffelravioli mit Salbeibutter und Wintertrüffel statt Ente"
+    }
+   ]
+  },
+  {
+   "id": "fondue",
+   "titel": "Say Cheese, Say Yes",
+   "haus": "Chalet",
+   "ort": "NEO Chalet · Heidelberg",
+   "zeilen": [
+    "Käsefondue im Chalet",
+    "Drei Gänge · ab zwei Personen"
+   ],
+   "preis": "65 €",
+   "preisZusatz": "pro Person",
+   "option": "Aufpreis pro Person · Trüffel 15 € · Fetzen vom Rinderfilet 15 €",
+   "bloecke": [
+    {
+     "art": "gang",
+     "nr": "Vorweg",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "gang",
+     "nr": "I",
+     "name": "Handschuhsheimer Feldsalat",
+     "beschreibung": "Ruby-Cube-Vinaigrette · Speckwürfel · Croutons · süß-saure Radieschen"
+    },
+    {
+     "art": "gang",
+     "nr": "II",
+     "name": "Traditionelles Schweizer Käsefondue",
+     "beschreibung": "Mixed Pickles · knuspriges Brot · kleine Kartoffeln"
+    },
+    {
+     "art": "gang",
+     "nr": "III",
+     "name": "Schokoladenkuchen",
+     "beschreibung": "mit flüssigem Kern · Zartbitter · Zwetschgen-Ragout · Champagner-Sorbet"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Feldsalat ohne Speck"
+    }
+   ]
+  },
+  {
+   "id": "ente",
+   "titel": "Die Ente",
+   "haus": "Chalet",
+   "ort": "NEO Chalet · Heidelberg",
+   "zeilen": [
+    "Vier Gänge rund um die Ente",
+    "Silver Hill · knusprig gebraten"
+   ],
+   "preis": "105 €",
+   "preisZusatz": "pro Person",
+   "option": "Ab zwei Personen wird die Ente im Ganzen am Tisch tranchiert · ohne Aufpreis",
+   "bloecke": [
+    {
+     "art": "gang",
+     "nr": "Vorweg",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "gang",
+     "nr": "I",
+     "name": "Entenleber-Terrine",
+     "beschreibung": "Feigen-Chutney · Wildpreiselbeeren · Brioche · gepickelte Zwiebel · Feldsalat"
+    },
+    {
+     "art": "gang",
+     "nr": "II",
+     "name": "Klare Entenbrühe auf Dashi-Art",
+     "beschreibung": "Enten-Gyoza · Shiitake · Pak Choi · Frühlingslauch"
+    },
+    {
+     "art": "gang",
+     "nr": "III",
+     "name": "½ Silver Hill Ente, knusprig",
+     "beschreibung": "Jus · Feigenrotkohl · Walnuss · Kartoffelnocken"
+    },
+    {
+     "art": "gang",
+     "nr": "IV",
+     "name": "Schokoladenkuchen",
+     "beschreibung": "mit flüssigem Kern · Zartbitter · Zwetschgen-Ragout · Champagner-Sorbet"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Gebackene Büffel-Burrata statt Terrine · Miso-Ramen statt Entenbrühe · Trüffelravioli statt Ente"
+    }
+   ]
+  },
+  {
+   "id": "gans",
+   "titel": "Die Gans",
+   "haus": "Chalet",
+   "ort": "NEO Chalet · Heidelberg",
+   "zeilen": [
+    "Martins- und Weihnachtsgans · eine Woche vorher bestellen",
+    "11. November bis 27. Dezember 2026"
+   ],
+   "preis": "99 €",
+   "preisZusatz": "pro Person · ab vier Personen",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "gang",
+     "nr": "Vorweg",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "gang",
+     "nr": "I",
+     "name": "Kürbissuppe",
+     "beschreibung": "Hokkaido · gelber Curry · Kokosmilch · karamellisierte Kürbiskerne · steirisches Kürbiskernöl"
+    },
+    {
+     "art": "gang",
+     "nr": "II",
+     "name": "Ganze Gans, am Tisch tranchiert",
+     "beschreibung": "Gänsejus · Feigenrotkohl · Maronen · Kartoffelnocken"
+    },
+    {
+     "art": "gang",
+     "nr": "III",
+     "name": "Birne Helene",
+     "beschreibung": "weiße Schokoladen-Crème · Birnen-Thymian-Ragout · Glühwein-Sabayon · Schokoladen-Rum-Sauce · Crème-Brûlée-Eis"
+    }
+   ]
+  },
+  {
+   "id": "sharing",
+   "titel": "Wintertafel",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
+   "zeilen": [
+    "Für Feiern ab acht Personen",
+    "Drei Gänge zum Teilen"
+   ],
+   "preis": "89 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "rubrik",
+     "titel": "Vorweg"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Zum Start"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Ceviche vom weißen Heilbutt",
+     "beschreibung": "Zitrusfrüchte · Granny Smith · Staudensellerie · Granatapfel · rote Zwiebeln · Haselnuss-Crunch · Jalapeño"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Tatar vom Schwarzwälder Rind",
+     "beschreibung": "Kartoffel-Crunch · Portwein-Zwiebel-Marmelade · Pommery Senf"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Handschuhsheimer Feldsalat",
+     "beschreibung": "Ruby-Cube-Vinaigrette · Speckwürfel · Croutons · süß-saure Radieschen"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gebackene Büffel-Burrata",
+     "beschreibung": "Rote-Bete-Carpaccio · Portwein-Zwiebel-Marmelade · Walnüsse · Pommery Senf · Feldsalat · geeiste Birne"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Hauptgang"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Rosa gebratenes Kalbskotelett",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Lachsforellenfilet vom Forellenhof Lenz",
+     "beschreibung": ""
+    },
+    {
+     "art": "rubrik",
+     "titel": "Saucen & Beilagen"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Jus",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Sauce Béarnaise",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gebratener Rosenkohl",
+     "beschreibung": "Soja-Karamell · Sesam · Frühlingslauch · geschmorte Zwiebel · Rote Bete"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Sellerie",
+     "beschreibung": "Lauch · Walnuss · Trüffel"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Semmelknödel",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Cremiges Kartoffelgratin",
+     "beschreibung": ""
+    },
+    {
+     "art": "rubrik",
+     "titel": "Dessert"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Tiramisu 2.0",
+     "beschreibung": "Kaffee-Mascarpone-Crème · getränkter Biskuitkern · Sauce von schwarzem Kakao · Schokoladen-Crumble · Zwetschgen-Ragout"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Chocolate Bar",
+     "beschreibung": "Schokolade · gesalzene Erdnüsse · Karamell-Crème · Schokoladen-Sponge · Schokoladen-Crème · Kakao-Crumble"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Feldsalat ohne Speck · Trüffelravioli statt Kalbskotelett und Lachsforelle · Menüwahl bis fünf Tage vorher"
+    }
+   ]
+  },
+  {
+   "id": "special",
+   "titel": "Winter-Special",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
+   "zeilen": [
+    "Für Feiern ab acht Personen",
+    "Drei Gänge zum Teilen"
+   ],
+   "preis": "95 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "rubrik",
+     "titel": "Vorweg"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Zum Start"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Thunfisch Tataki",
+     "beschreibung": "Ponzu-Schalotten-Vinaigrette · Shiitake · Wintertrüffel"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Crispy Green",
+     "beschreibung": "Crispy Futomaki, vegetarisch · Teriyaki-Tofu · Avocado · gerösteter Kürbis · Edamame-Crème · Wasabi-Mayo · Sesam"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gebackene Büffel-Burrata",
+     "beschreibung": "Rote-Bete-Carpaccio · Portwein-Zwiebel-Marmelade · Walnüsse · Pommery Senf · Feldsalat · geeiste Birne"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Rote-Bete-gebeizte Lachsforelle",
+     "beschreibung": "Forellenhof Lenz · Yuzu-Nussbutter · Kumquat · Shiso"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Hauptgang · an der Tafel aufgeschnitten"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Filet vom Black Angus Galicien",
+     "beschreibung": "im Ganzen rosa gebraten"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Saucen & Beilagen"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Trüffeljus",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Sauce Béarnaise",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gegrillter Spitzkohl",
+     "beschreibung": "Miso-Caesar-Dressing · Nori-Crunch · Parmesan · Schnittlauch"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Sellerie",
+     "beschreibung": "Lauch · Walnuss · Trüffel"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "French Fries",
+     "beschreibung": "Parmesan · Trüffel · Trüffel-Mayo"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Cremiges Kartoffelgratin",
+     "beschreibung": ""
+    },
+    {
+     "art": "rubrik",
+     "titel": "Dessert"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Snowball",
+     "beschreibung": "Tonkabohnen-Crème · Zwetschgenkern · Zwetschgenröster · Vanillesauce · Kakao-Crumble"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Trüffelravioli statt Filet · Menüwahl bis fünf Tage vorher"
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "titel": "Winter Family Style",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
+   "zeilen": [
+    "Für Feiern ab acht Personen",
+    "Drei Gänge zum Teilen"
+   ],
+   "preis": "78 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "rubrik",
+     "titel": "Vorweg"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Zum Start"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gebackene Büffel-Burrata",
+     "beschreibung": "Rote-Bete-Carpaccio · Portwein-Zwiebel-Marmelade · Walnüsse · Pommery Senf · Feldsalat · geeiste Birne"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Carpaccio vom Rinderfilet",
+     "beschreibung": "Entenleber-Crème · Sellerie · Haselnuss-Crunch · Feldsalat"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Mrs. Green",
+     "beschreibung": "Inside Out Roll, vegetarisch · gepickelter Spitzkohl · Gurke · Edamame-Frischkäse-Crème · Wasabi-Mayo · Sesam · Avocado"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Edamame Trüffel",
+     "beschreibung": "Trüffel · Nussbutter · Meersalz · Trüffel-Crème"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Hauptgang"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Lachsforellenfilet vom Forellenhof Lenz",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Französische Maispoularde",
+     "beschreibung": "im Ganzen knusprig gebraten"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Saucen & Beilagen"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Jus",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Sauce Béarnaise",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gegrillter Spitzkohl",
+     "beschreibung": "Miso-Caesar-Dressing · Nori-Crunch · Parmesan · Schnittlauch"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gebratener Rosenkohl",
+     "beschreibung": "Soja-Karamell · Sesam · Frühlingslauch · geschmorte Zwiebel · Rote Bete"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Rosmarin-Kartoffeln",
+     "beschreibung": ""
+    },
+    {
+     "art": "rubrik",
+     "titel": "Dessert"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Schokoladenkuchen",
+     "beschreibung": "mit flüssigem Kern · Zartbitter · Zwetschgen-Ragout · Champagner-Sorbet"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Trüffelravioli statt Lachsforelle und Maispoularde · Menüwahl bis fünf Tage vorher"
+    }
+   ]
+  },
+  {
+   "id": "roastbeef",
+   "titel": "Sushi & Roastbeef",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
+   "zeilen": [
+    "Drei Gänge"
+   ],
+   "preis": "92 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "gang",
+     "nr": "Vorweg",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "gang",
+     "nr": "I",
+     "name": "Lachs Hoch²",
+     "beschreibung": "Inside Out Roll · Lachsforelle vom Forellenhof Lenz · Kürbiskern-Mayo · gepickelter Rettich · Granny-Smith-Chutney · Edamame-Frischkäse-Crème · Lachsrogen · Schnittlauch"
+    },
+    {
+     "art": "gang",
+     "nr": "II",
+     "name": "Roastbeef vom Pommerschen Simmentaler",
+     "beschreibung": "250 g · im Ganzen rosa gebraten · Trüffeljus · Sauce Béarnaise · gegrillter Spitzkohl · Rosmarin-Kartoffeln"
+    },
+    {
+     "art": "gang",
+     "nr": "III",
+     "name": "Tiramisu 2.0",
+     "beschreibung": "Kaffee-Mascarpone-Crème · getränkter Biskuitkern · Sauce von schwarzem Kakao · Schokoladen-Crumble · Zwetschgen-Ragout"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Mrs. Green statt Lachs Hoch² · Trüffelravioli statt Roastbeef"
+    }
+   ]
+  },
+  {
+   "id": "sushi",
+   "titel": "Winter Sushi",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
+   "zeilen": [
+    "Für Feiern ab acht Personen",
+    "Drei Gänge zum Teilen"
+   ],
+   "preis": "74 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "rubrik",
+     "titel": "Vorweg"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Zum Start"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Edamame Trüffel",
+     "beschreibung": "Trüffel · Nussbutter · Meersalz · Trüffel-Crème"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Ceviche vom weißen Heilbutt",
+     "beschreibung": "Zitrusfrüchte · Granny Smith · Staudensellerie · Granatapfel · rote Zwiebeln · Haselnuss-Crunch · Jalapeño"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Toro Tataki",
+     "beschreibung": "O Toro · scharf angeflämmt · schwarzer Trüffel · Trüffel-Soja-Reduktion · Shiitake · Granny Smith · Togarashi"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Katsu Sando vom Duroc Schwein",
+     "beschreibung": "Duroc-Rücken knusprig in Panko ausgebacken · Shokupan in Nussbutter geröstet · Tonkatsu-Sauce · Senf-Miso-Crème · gepickelte rote Zwiebel · Spitzkohl · Schnittlauch"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Sushi zum Teilen"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Lachs Hoch²",
+     "beschreibung": "Inside Out Roll · Lachsforelle vom Forellenhof Lenz · Kürbiskern-Mayo · gepickelter Rettich · Granny-Smith-Chutney · Edamame-Frischkäse-Crème · Lachsrogen · Schnittlauch"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Hummer Roll",
+     "beschreibung": "Inside Out Roll · Hummersalat · Yuzu-Mayo · Crunchy Kürbiskerne · Avocado · Hummer-Bisque-Glace · schwarzer Tobiko · Schnittlauch"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Crispy Gochujang Garnele",
+     "beschreibung": "Crispy Futomaki · Tempura-Garnele · Gochujang-Mayo · Avocado · Rote Bete · Sesam · Frühlingslauch"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Crispy Green",
+     "beschreibung": "Crispy Futomaki, vegetarisch · Teriyaki-Tofu · Avocado · gerösteter Kürbis · Edamame-Crème · Wasabi-Mayo · Sesam"
+    },
+    {
+     "art": "rubrik",
+     "titel": "Dessert"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Chocolate Bar",
+     "beschreibung": "Schokolade · gesalzene Erdnüsse · Karamell-Crème · Schokoladen-Sponge · Schokoladen-Crème · Kakao-Crumble"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Mrs. Green statt der Gerichte mit Fisch und Fleisch · Menüwahl bis fünf Tage vorher"
+    }
+   ]
+  },
+  {
+   "id": "weihnachten",
+   "titel": "Wintermenü",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
+   "zeilen": [
+    "Vier Gänge",
+    "Fisch und Meeresfrüchte"
+   ],
+   "preis": "99 €",
+   "preisZusatz": "pro Person",
+   "option": "",
+   "bloecke": [
+    {
+     "art": "gang",
+     "nr": "Vorweg",
+     "name": "Gaues Brotvariation",
+     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
+    },
+    {
+     "art": "gang",
+     "nr": "I",
+     "name": "Rote-Bete-gebeizte Lachsforelle",
+     "beschreibung": "Forellenhof Lenz · Yuzu-Nussbutter · Kumquat · Shiso · Buchweizen-Crunch"
+    },
+    {
+     "art": "gang",
+     "nr": "II",
+     "name": "Hummerbisque-Dashi",
+     "beschreibung": "Hummer · Shiitake · Frühlingslauch · Koriander · Chili-Crunch"
+    },
+    {
+     "art": "gang",
+     "nr": "III",
+     "name": "Weißer Heilbutt & Wildfanggarnele",
+     "beschreibung": "Rote-Curry-Krustentiersauce · Sesam-Miso-Pak-Choi · Crispy Rice"
+    },
+    {
+     "art": "gang",
+     "nr": "IV",
+     "name": "Snowball",
+     "beschreibung": "Tonkabohnen-Crème · Zwetschgenkern · Zwetschgenröster · Vanillesauce · Kakao-Crumble"
+    },
+    {
+     "art": "notiz",
+     "text": "Vegetarisch: Gebackene Büffel-Burrata statt Lachsforelle · Miso-Dashi mit Kürbis, Shiitake und Tofu statt Hummer · Trüffelravioli statt Heilbutt"
+    }
+   ]
+  }
+ ],
+ "weggelassen": [
+  {
+   "id": "silvester",
+   "titel": "Paris meets Havana",
+   "grund": "Silvester: eigenes Event, noch nicht freigegeben"
+  },
+  {
+   "id": "silvester-veg",
+   "titel": "Paris meets Havana · vegetarisch",
+   "grund": "Silvester: eigenes Event, noch nicht freigegeben"
+  },
+  {
+   "id": "lab-winter",
+   "titel": "Wintermenü",
+   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  },
+  {
+   "id": "lab-ente",
+   "titel": "Die Ente",
+   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  },
+  {
+   "id": "lab-tafel",
+   "titel": "Lange Tafel",
+   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  },
+  {
+   "id": "lab-feuer",
+   "titel": "Feuer & Rauch",
+   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  },
+  {
+   "id": "lab-sushi",
+   "titel": "Sushi & Grill",
+   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  },
+  {
+   "id": "lab-festlich",
+   "titel": "Festliches Menü",
+   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  }
+ ]
+}

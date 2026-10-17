@@ -4,8 +4,12 @@
 // eine H1, FAQPage-, EventVenue- und BreadcrumbList-JSON-LD und das bestehende Anfrageformular
 // (window.neoAnfrage → /api/anfrage) mit vorausgewähltem Anlass.
 // Inhalte nur aus belegten Fakten (Website, Fakten-Mappe 17.10.2026). Nicht nennen: Winterkarte,
-// Chalet, Wintermenüs, Silvester, weitere Preise.
+// Silvester, weitere Preise.
+// Seit 17.10.2026 (Sven: „die neuen menü vorschläge können auch auf die seite neo“): Abschnitt
+// „Menüvorschläge“ aus app/menuvorschlaege.json. Die Datei ist ein Abzug aus dem Werkzeug NEO Wintermenüs
+// (kv nwm:stand) und wird nur mit `node scripts/menues-holen.mjs` erneuert, nie von Hand.
 import { seitenHtml } from './seitenTeile';
+import MENUES from './menuvorschlaege.json';
 
 const BASIS = 'https://www.neo-heidelberg.de';
 const TEL = '+49 (0) 6221 7239099';
@@ -77,7 +81,7 @@ const F = {
   },
   essen: {
     q: 'Was gibt es zu essen?',
-    a: 'Was zu eurem Anlass passt, aus der eigenen Küche: Dry-Aged-Steaks aus dem Humidor, handgerolltes Sushi und mehr. Wir stellen euch das Angebot zusammen.',
+    a: 'Was zu eurem Anlass passt, aus der eigenen Küche: Dry-Aged-Steaks aus dem Humidor, handgerolltes Sushi und mehr. Für den Winter gibt es feste <a href="#menuevorschlaege">Menüvorschläge</a>, sonst stellen wir euch das Angebot zusammen.',
   },
   veggie: {
     q: 'Gibt es vegetarische und vegane Gerichte?',
@@ -121,6 +125,7 @@ export const ANLASS_SEITEN = {
     raeume: ['restaurant', 'bar', 'garten'],
     raeumeH2: 'Drei Bereiche, <em>ein Haus.</em>',
     anlaesse: true,
+    menues: 'kurz',
     faq: [F.gaeste, F.lage, F.bar, F.essen, F.musik, F.ansehen, F.anfrage],
     form: {
       anlass: 'Firmenfeier / Firmen-Event',
@@ -155,6 +160,7 @@ export const ANLASS_SEITEN = {
     },
     raeume: ['restaurant', 'bar'],
     raeumeH2: 'Restaurant <em>und Bar.</em>',
+    menues: 'voll',
     faq: [
       {
         q: 'Wie viele Personen passen zur Weihnachtsfeier ins NEO?',
@@ -206,6 +212,7 @@ export const ANLASS_SEITEN = {
     },
     raeume: ['restaurant', 'bar', 'garten'],
     raeumeH2: 'Drei Bereiche, <em>ein Haus.</em>',
+    menues: 'voll',
     faq: [
       F.gaeste,
       F.bar,
@@ -315,6 +322,75 @@ function raeumeHtml(s) {
 </section>`;
 }
 
+// ===== Menüvorschläge (Abzug aus dem Werkzeug NEO Wintermenüs, app/menuvorschlaege.json) =====
+const esc = (x) => String(x ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// Gruppen nach Haus wie im Werkzeug (NEO = Restaurant, Chalet = Chalet), Reihenfolge wie im Werkzeug
+const MENUE_GRUPPEN = [
+  { name: 'Im Restaurant', menues: MENUES.menues.filter((m) => m.haus !== 'Chalet') },
+  { name: 'Im Chalet', menues: MENUES.menues.filter((m) => m.haus === 'Chalet') },
+].filter((g) => g.menues.length);
+const menueWert = (m) => `${m.titel} (${[m.preis, m.preisZusatz].filter(Boolean).join(' ')})`;
+
+function menueAnfrageLink(m, text = 'Dieses Menü anfragen') {
+  return `<a href="#anfrage" class="ev-menue-anfrage" data-menue="${esc(menueWert(m))}" aria-label="${esc(text)}: ${esc(m.titel)}">${esc(text)}</a>`;
+}
+
+function preisHtml(m) {
+  return `<span class="ev-menue-preis"><span class="ev-menue-betrag">${esc(m.preis)}</span>${m.preisZusatz ? `<span class="ev-menue-zusatz">${esc(m.preisZusatz)}</span>` : ''}</span>`;
+}
+
+function gaengeHtml(m) {
+  return m.bloecke
+    .map((b) => {
+      if (b.art === 'rubrik') return `<li class="ev-gang-rubrik">${esc(b.titel)}</li>`;
+      if (b.art === 'notiz') return `<li class="ev-gang-notiz">${esc(b.text)}</li>`;
+      return `<li class="ev-gang${b.oder ? ' ev-gang-oder' : ''}"><span class="ev-gang-nr">${b.oder ? 'oder' : esc(b.nr)}</span><span class="ev-gang-text"><span class="ev-gang-name">${esc(b.name)}</span>${b.beschreibung ? `<span class="ev-gang-sub">${esc(b.beschreibung)}</span>` : ''}</span>${b.preis ? `<span class="ev-gang-preis">${esc(b.preis)}</span>` : ''}</li>`;
+    })
+    .join('');
+}
+
+function menueVollHtml(m, offen) {
+  return `<details class="ev-menue" id="menue-${esc(m.id)}"${offen ? ' open' : ''}>
+        <summary><span class="ev-menue-kopf"><h3 class="ev-menue-name">${esc(m.titel)}</h3>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map(esc).join(' · ')}</span>` : ''}</span>${preisHtml(m)}</summary>
+        <div class="ev-menue-inhalt">
+          <ol class="ev-gaenge">${gaengeHtml(m)}</ol>
+          ${m.option ? `<p class="ev-menue-option">${esc(m.option)}</p>` : ''}
+          ${menueAnfrageLink(m)}
+        </div>
+      </details>`;
+}
+
+function menueKurzHtml(m) {
+  return `<li><a class="ev-menue-zeile" href="#anfrage" data-menue="${esc(menueWert(m))}" aria-label="Menü anfragen: ${esc(m.titel)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map(esc).join(' · ')}</span>` : ''}</span>${preisHtml(m)}</a></li>`;
+}
+
+function menuesHtml(s) {
+  if (!s.menues || !MENUE_GRUPPEN.length) return '';
+  const voll = s.menues === 'voll';
+  const gruppen = MENUE_GRUPPEN.map(
+    (g, gi) => `<div class="ev-menue-gruppe">
+      <p class="ev-menue-gruppe-name">${g.name}</p>
+      ${voll ? g.menues.map((m, i) => menueVollHtml(m, gi === 0 && i === 0)).join('\n      ') : `<ul class="ev-menue-liste">${g.menues.map(menueKurzHtml).join('')}</ul>`}
+    </div>`
+  ).join('\n    ');
+  return `
+<section class="ev-abschnitt ev-menues" id="menuevorschlaege">
+  <div class="ev-innen ev-zwei">
+    <div class="ev-menues-links">
+      <div class="eyebrow">Menüvorschläge · Winter 2026/27</div>
+      <h2 class="ev-h2">Menüs für <em>eure Runde.</em></h2>
+      <div class="ev-text">
+        <p>${voll ? 'Fest zusammengestellt, Preise pro Person. Passt ein Menü, übernehmt es mit einem Klick in eure Anfrage.' : 'Für die Wintersaison gibt es feste Menüs, Preise pro Person. Antippen übernimmt das Menü in eure Anfrage.'}</p>
+        ${voll ? '' : '<p class="ev-link"><a href="/weihnachtsfeier#menuevorschlaege">Alle Gänge ansehen</a></p>'}
+      </div>
+    </div>
+    <div class="ev-menues-rechts">
+    ${gruppen}
+    </div>
+  </div>
+</section>`;
+}
+
 function inhaltHtml(s) {
   const fakten = [
     ['Gäste', 'bis 199, innen und außen'],
@@ -386,13 +462,14 @@ ${
     </div>
     <div class="ev-text">
       ${KUECHE.text.map((t) => `<p>${t}</p>`).join('\n      ')}
-      <p class="ev-link"><a href="/speisekarte">Zur Speisekarte</a></p>
+      <p class="ev-link"><a href="/speisekarte">Zur Speisekarte</a>${s.menues ? '<a href="#menuevorschlaege">Zu den Menüvorschlägen</a>' : ''}</p>
     </div>
   </div>
   <div class="ev-bildpaar ev-innen">
     ${KUECHE.bilder.map((b) => `<figure><img src="${b.src}" alt="${b.alt}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async"></figure>`).join('\n    ')}
   </div>
 </section>
+${menuesHtml(s)}
 
 <section class="faq ev-faq">
   <div class="faq-head">
