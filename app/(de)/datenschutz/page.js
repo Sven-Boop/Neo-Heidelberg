@@ -24,9 +24,10 @@ export default function DatenschutzPage() {
         <p>
           Wir verarbeiten personenbezogene Daten unserer Besucherinnen und Besucher
           grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website
-          sowie zur Bearbeitung von Anfragen erforderlich ist. Diese Website verwendet{' '}
-          <strong>keine Cookies</strong> zu Marketing- oder Trackingzwecken und bindet keine
-          Werbedienste ein. Die Übertragung erfolgt durchgehend TLS-verschlüsselt (https).
+          sowie zur Bearbeitung von Anfragen erforderlich ist. Ohne Ihre Einwilligung verwendet
+          diese Website <strong>keine Cookies</strong> zu Marketing- oder Trackingzwecken und lädt
+          keine Werbedienste; das Google-Werbe-Tag kommt nur mit Einwilligung zum Einsatz (siehe
+          Ziffer 8). Die Übertragung erfolgt durchgehend TLS-verschlüsselt (https).
         </p>
 
         <h2>3. Hosting (Vercel)</h2>
@@ -108,20 +109,52 @@ export default function DatenschutzPage() {
           unserer Website nicht eingebettet.
         </p>
 
-        <h2>8. Ihre Rechte</h2>
+        <h2>8. Google-Werbe-Tag (nur mit Einwilligung)</h2>
+        <p>
+          Nur nach einem Klick auf „Akzeptieren“ im Hinweis-Banner laden wir das Google-Werbe-Tag
+          (Google Ads, Konto AW-11550875624) der Google Ireland Limited, Gordon House, Barrow
+          Street, Dublin 4, Irland. Damit messen wir, ob unsere Anzeigen zu Reservierungen,
+          Anfragen, Anrufen oder E-Mails führen (Conversion-Messung): Gezählt wird, dass ein
+          Anfrageformular abgeschickt, der Link zur Tischreservierung oder eine Telefonnummer bzw.
+          E-Mail-Adresse angeklickt wurde, nicht deren Inhalt. Personalisierte Werbung und
+          Remarketing sind ausgeschaltet. Das Werbekonto gehört der BLISS Group. Die Cookies
+          (_gcl_au und verwandte) werden bis zu 90 Tage gespeichert. Bei einem Besuch über eine
+          Anzeige kann Google zusätzlich Cookies auf eigenen Domains setzen (etwa google.com oder
+          doubleclick.net); diese lassen sich nicht von unserer Seite aus, sondern nur in den
+          Browser-Einstellungen löschen.
+        </p>
+        <p>
+          Dabei werden Nutzungsdaten wie IP-Adresse, Geräteinformationen und Klicks an Google
+          übermittelt, auch in die USA. Google ist unter dem EU-US Data Privacy Framework
+          zertifiziert. Wir nutzen den Einwilligungsmodus von Google (Consent Mode) so, dass das
+          Tag vor der Einwilligung gar nicht geladen wird. Rechtsgrundlage ist die Einwilligung
+          (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Ohne Einwilligung wird nichts von Google
+          geladen, die Seite funktioniert trotzdem vollständig.
+        </p>
+        <p>
+          Die Entscheidung speichern wir für zwölf Monate im lokalen Speicher des Browsers, damit
+          der Hinweis nicht bei jedem Besuch erscheint; das ist technisch notwendig (§ 25 Abs. 2
+          TDDDG). Widerrufen oder ändern lässt sie sich jederzeit mit Wirkung für die Zukunft über
+          „Cookie-Einstellungen“ im Fuß jeder Seite oder hier:{' '}
+          <button type="button" className="legal-consent" data-cookie-einstellungen>
+            Cookie-Einstellungen
+          </button>
+        </p>
+
+        <h2>9. Ihre Rechte</h2>
         <p>
           Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden
           personenbezogenen Daten: Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16
           DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO),
           Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen Verarbeitungen auf
           Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO). Eine erteilte Einwilligung
-          können Sie jederzeit widerrufen. Zudem haben Sie das Recht, sich bei einer
+          können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Zudem haben Sie das Recht, sich bei einer
           Datenschutz-Aufsichtsbehörde zu beschweren; zuständig ist der Landesbeauftragte für den
           Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20,
           70173 Stuttgart.
         </p>
 
-        <h2>9. Aktualität dieser Erklärung</h2>
+        <h2>10. Aktualität dieser Erklärung</h2>
         <p>
           Stand: Oktober 2026. Wir passen diese Datenschutzerklärung an, sobald sich die
           Datenverarbeitung auf dieser Website ändert.

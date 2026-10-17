@@ -33,9 +33,10 @@ export default function DatenschutzEN() {
         <h2>2. General information on data processing</h2>
         <p>
           As a rule, we only process personal data of our visitors insofar as this is
-          necessary to provide a functional website and to handle enquiries. This website uses{' '}
-          <strong>no cookies</strong> for marketing or tracking purposes and does not integrate
-          any advertising services. Transmission is always TLS-encrypted (https).
+          necessary to provide a functional website and to handle enquiries. Without your consent,
+          this website uses <strong>no cookies</strong> for marketing or tracking purposes and
+          loads no advertising services; the Google advertising tag is only used with your consent
+          (see section 8). Transmission is always TLS-encrypted (https).
         </p>
 
         <h2>3. Hosting (Vercel)</h2>
@@ -111,7 +112,36 @@ export default function DatenschutzEN() {
           then applies. Content from these providers is not embedded on our website.
         </p>
 
-        <h2>8. Your rights</h2>
+        <h2>8. Google advertising tag (only with consent)</h2>
+        <p>
+          Only after you click “Accept” in the cookie notice do we load the Google advertising tag
+          (Google Ads, account AW-11550875624) of Google Ireland Limited, Gordon House, Barrow
+          Street, Dublin 4, Ireland. It lets us measure whether our ads lead to reservations,
+          enquiries, calls or emails (conversion tracking): we count that an enquiry form was sent
+          or that the reservation link, a phone number or an email address was clicked, not their
+          content. Personalised advertising and remarketing are switched off. The ad account
+          belongs to the BLISS Group. The cookies (_gcl_au and related) are stored for up to 90
+          days. If you arrive via an ad, Google may also set cookies on its own domains (such as
+          google.com or doubleclick.net); these can only be deleted in your browser settings.
+        </p>
+        <p>
+          Usage data such as IP address, device information and clicks are transmitted to Google,
+          including to the USA. Google is certified under the EU-US Data Privacy Framework. We use
+          Google’s consent mode so that the tag is not loaded at all before you consent. The legal
+          basis is your consent (Art. 6(1)(a) GDPR, Section 25(1) TDDDG). Without consent nothing is
+          loaded from Google and the website still works in full.
+        </p>
+        <p>
+          We store your choice for twelve months in your browser’s local storage so the notice does
+          not appear on every visit; this is technically necessary (Section 25(2) TDDDG). You can
+          withdraw or change it at any time with effect for the future via “Cookie settings” in the
+          footer of every page or here:{' '}
+          <button type="button" className="legal-consent" data-cookie-einstellungen>
+            Cookie settings
+          </button>
+        </p>
+
+        <h2>9. Your rights</h2>
         <p>
           You have the following rights with regard to the personal data concerning you: the
           right to information (Art. 15 GDPR), rectification (Art. 16 GDPR), erasure (Art. 17
@@ -123,7 +153,7 @@ export default function DatenschutzEN() {
           Lautenschlagerstraße 20, 70173 Stuttgart.
         </p>
 
-        <h2>9. Currency of this policy</h2>
+        <h2>10. Currency of this policy</h2>
         <p>
           As of October 2026. We will adjust this privacy policy as soon as the data processing on
           this website changes.

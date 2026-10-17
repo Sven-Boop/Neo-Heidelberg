@@ -6,6 +6,7 @@ import './globals.css';
 import { Lato } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Einwilligung } from './Einwilligung';
 
 const lato = Lato({
   weight: ['300', '400', '700', '900'],
@@ -45,6 +46,7 @@ export function Grundgeruest({ lang, children }) {
         {children}
         <Analytics />
         <SpeedInsights />
+        <Einwilligung />
       </body>
     </html>
   );

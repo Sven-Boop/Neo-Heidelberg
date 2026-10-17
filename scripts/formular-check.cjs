@@ -58,6 +58,9 @@ async function trifft(page, selector) {
   const r = await page.goto(BASIS + '/', { waitUntil: 'load', timeout: 60000 });
   pruefe(r && r.ok(), `Startseite lädt (HTTP ${r && r.status()})`);
   await page.waitForTimeout(2500);
+  // Cookie-Hinweis (seit 17.10.2026): ablehnen, falls er unten steht (die Wahl gilt danach für den ganzen Lauf)
+  const nein = page.locator('.einw .einw-knopf', { hasText: 'Ablehnen' });
+  if ((await nein.count()) && (await nein.first().isVisible())) { await nein.first().click(); await page.waitForTimeout(400); log('Cookie-Hinweis abgelehnt'); }
   const F = '#anfrage-form';
   const formDa = (await page.locator(F).count()) === 1;
   pruefe(formDa, 'Anfrageformular auf der Startseite vorhanden');
