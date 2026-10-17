@@ -1,4 +1,4 @@
-import SetLang from '../../SetLang';
+import SetLang from '../../../SetLang';
 
 export const metadata = {
   title: 'Legal Notice — NEO Bar & Restaurant Heidelberg',

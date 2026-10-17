@@ -1,5 +1,5 @@
-import { subpageHtml } from '../subpageHtml';
-import SiteScripts from '../SiteScripts';
+import { subpageHtml } from '../../subpageHtml';
+import SiteScripts from '../../SiteScripts';
 
 const URL = 'https://www.neo-heidelberg.de/hochzeit';
 const TITEL = 'Hochzeit im NEO Heidelberg — Hochzeitslocation in der Bahnstadt';

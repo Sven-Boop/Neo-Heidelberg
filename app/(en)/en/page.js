@@ -1,17 +1,18 @@
 import { bodyHtml } from './bodyHtmlEn';
-import SiteScripts from '../SiteScripts';
-import SetLang from '../SetLang';
-import { structuredDataEn } from '../structuredData';
+import SiteScripts from '../../SiteScripts';
+import SetLang from '../../SetLang';
+import { structuredDataEn } from '../../structuredData';
 
 export const metadata = {
-  title: 'NEO — Bar & Restaurant Heidelberg | Dry-Aged · Sushi · Bar',
+  title: 'NEO Heidelberg · Dry-Aged Steaks, Sushi & Bar at Main Station',
   description:
-    'In the Bahnstadt since 2016: dry-aged from the humidor, Californian sushi, our own bar. NEO Heidelberg — Feed your soul.',
+    "Bar & restaurant in Heidelberg's Bahnstadt by the main station: dry-aged steaks from our humidor, hand-rolled sushi, bar and garden. Parties up to 199 guests.",
   alternates: {
     canonical: 'https://www.neo-heidelberg.de/en',
     languages: {
       'de-DE': 'https://www.neo-heidelberg.de/',
       'en': 'https://www.neo-heidelberg.de/en',
+      'x-default': 'https://www.neo-heidelberg.de/',
     },
   },
   openGraph: {
@@ -19,8 +20,8 @@ export const metadata = {
     locale: 'en_GB',
     siteName: 'NEO Bar & Restaurant',
     url: 'https://www.neo-heidelberg.de/en',
-    title: 'NEO — Bar & Restaurant Heidelberg',
-    description: 'In the Bahnstadt since 2016. Dry-aged, Californian sushi, our own bar. Feed your soul.',
+    title: 'NEO Heidelberg · Dry-Aged Steaks, Sushi & Bar at Main Station',
+    description: "Bar & restaurant in Heidelberg's Bahnstadt by the main station: dry-aged steaks from our humidor, hand-rolled sushi, bar and garden. Parties up to 199 guests.",
     images: [{ url: 'https://www.neo-heidelberg.de/img/og-neo.jpg', width: 1200, height: 630 }],
   },
 };

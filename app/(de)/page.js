@@ -1,6 +1,6 @@
-import { bodyHtml } from './bodyHtml';
-import SiteScripts from './SiteScripts';
-import { structuredData } from './structuredData';
+import { bodyHtml } from '../bodyHtml';
+import SiteScripts from '../SiteScripts';
+import { structuredData } from '../structuredData';
 
 export const metadata = {
   alternates: {
@@ -8,6 +8,7 @@ export const metadata = {
     languages: {
       'de-DE': 'https://www.neo-heidelberg.de/',
       'en': 'https://www.neo-heidelberg.de/en',
+      'x-default': 'https://www.neo-heidelberg.de/',
     },
   },
 };

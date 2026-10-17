@@ -1,5 +1,5 @@
 import { sections, sharing } from './menuData';
-import SetLang from '../SetLang';
+import SetLang from '../../SetLang';
 
 export const metadata = {
   title: 'Menu (English) — NEO Bar & Restaurant Heidelberg',

@@ -1,5 +1,5 @@
-import { subpageHtml } from '../subpageHtml';
-import SiteScripts from '../SiteScripts';
+import { subpageHtml } from '../../subpageHtml';
+import SiteScripts from '../../SiteScripts';
 
 const URL = 'https://www.neo-heidelberg.de/speisekarte';
 const TITEL = 'Speisekarte — NEO Bar & Restaurant Heidelberg';
