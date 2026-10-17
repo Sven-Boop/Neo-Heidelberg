@@ -1,4 +1,4 @@
-import { bodyHtml } from '../bodyHtml';
+import { startseiteHtml } from '../seitenTeile';
 import SiteScripts from '../SiteScripts';
 import { structuredData } from '../structuredData';
 
@@ -19,7 +19,7 @@ export default function Home() {
       {structuredData.map((json, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
       ))}
-      <div id="app-root" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <div id="app-root" dangerouslySetInnerHTML={{ __html: startseiteHtml }} />
       <SiteScripts />
     </>
   );

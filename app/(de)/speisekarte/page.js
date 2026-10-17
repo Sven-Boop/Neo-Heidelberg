@@ -1,4 +1,5 @@
-import { subpageHtml } from '../../subpageHtml';
+import { speisekarteHtml } from '../../seitenTeile';
+import { brotkrumenLd } from '../../anlassSeiten';
 import SiteScripts from '../../SiteScripts';
 
 const URL = 'https://www.neo-heidelberg.de/speisekarte';
@@ -17,12 +18,31 @@ export const metadata = {
   openGraph: { type: 'website', locale: 'de_DE', siteName: 'NEO Bar & Restaurant', url: URL, title: TITEL, description: TEXT, images: [{ url: 'https://www.neo-heidelberg.de/img/og-neo.jpg', width: 1200, height: 630 }] },
 };
 
-const html = subpageHtml('speisekarte');
+// Eigenes JSON-LD der Speisekarte: die Karte mit ihren Kapiteln (wie die Überschriften der Seite), Brotkrumen
+const KAPITEL = [
+  'Sharing Menu', 'Starter & Appetizer', 'Sushi & More', 'Sushi Rolls', 'Maki & Mehr', 'Bowls',
+  'Main Course', 'Beef & Filet', 'Sides & Saucen', 'Sweets & Desserts',
+];
+const ld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Menu',
+    '@id': `${URL}#karte`,
+    name: 'Speisekarte NEO Bar & Restaurant Heidelberg',
+    url: URL,
+    inLanguage: 'de',
+    hasMenuSection: KAPITEL.map((name) => ({ '@type': 'MenuSection', name })),
+  },
+  brotkrumenLd('Speisekarte', '/speisekarte'),
+].map((o) => JSON.stringify(o));
 
 export default function Speisekarte() {
   return (
     <>
-      <div id="app-root" dangerouslySetInnerHTML={{ __html: html }} />
+      {ld.map((json, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
+      ))}
+      <div id="app-root" dangerouslySetInnerHTML={{ __html: speisekarteHtml }} />
       <SiteScripts />
     </>
   );

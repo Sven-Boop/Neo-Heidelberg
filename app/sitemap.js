@@ -34,6 +34,13 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    // Anlass-Seiten für die Heidelberger Event-Suchen (seit 17.10.2026)
+    ...['/eventlocation-heidelberg', '/firmenfeier', '/weihnachtsfeier'].map((pfad) => ({
+      url: 'https://www.neo-heidelberg.de' + pfad,
+      lastModified: stand,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    })),
     {
       url: 'https://www.neo-heidelberg.de/menu',
       lastModified: stand,
