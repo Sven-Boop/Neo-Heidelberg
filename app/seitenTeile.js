@@ -1,4 +1,5 @@
 import { bodyHtml } from './bodyHtml';
+import { mitHaeuserLeiste } from './haeuser';
 
 // Seit 17.10.2026 liefert jede deutsche Adresse nur ihren eigenen Inhalt aus (vorher bekamen
 // /speisekarte und /hochzeit die komplette Startseite und schalteten nur per CSS-Klasse um).
@@ -15,7 +16,8 @@ const KOPF = schneide('<!-- NAV -->', '<!-- HERO -->');
 const START = schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">');
 const KARTE = schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE');
 const HOCHZEIT = schneide('<div class="subpage" id="page-hochzeit">', '<!-- FOOTER -->');
-const FUSS = schneide('<!-- FOOTER -->');
+// Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js)
+const FUSS = mitHaeuserLeiste(schneide('<!-- FOOTER -->'), 'de');
 
 const ids = (html) => new Set([...html.matchAll(/\sid="([\w-]+)"/g)].map((m) => m[1]));
 const BEREICHE = [

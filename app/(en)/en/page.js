@@ -2,6 +2,10 @@ import { bodyHtml } from './bodyHtmlEn';
 import SiteScripts from '../../SiteScripts';
 import SetLang from '../../SetLang';
 import { structuredDataEn } from '../../structuredData';
+import { mitHaeuserLeiste } from '../../haeuser';
+
+// Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js)
+const html = mitHaeuserLeiste(bodyHtml, 'en');
 
 export const metadata = {
   title: 'NEO Heidelberg · Dry-Aged Steaks, Sushi & Bar at Main Station',
@@ -33,7 +37,7 @@ export default function HomeEN() {
       {structuredDataEn.map((json, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
       ))}
-      <div id="app-root" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <div id="app-root" dangerouslySetInnerHTML={{ __html: html }} />
       <SiteScripts />
     </>
   );
