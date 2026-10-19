@@ -4944,3 +4944,22 @@ html.einw-offen { scroll-padding-bottom: calc(var(--einw-h, 110px) + 12px); }
   .haeuser-leiste li { height: 38px; }
   .haeuser-leiste img { height: calc(var(--lh) * 0.8); }
 }
+
+/* ===== 19.10.2026 · Startseite „Feiern im NEO“: Events, Anlässe und Wintermenüs (Entwurf) ===== */
+.feiern-oben { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(36px, 6vw, 96px); align-items: center; }
+@media (max-width: 980px) { .feiern-oben { grid-template-columns: 1fr; } }
+.feiern-h2 { font-size: clamp(42px, 6vw, 96px); }
+.feiern-text .ev-text { margin-top: 28px; }
+.feiern-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.feiern-bild { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-elev); }
+.feiern-bild img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.feiern-bild:hover img { transform: scale(1.03); }
+.feiern-unten { margin-top: clamp(64px, 7vw, 110px); grid-template-columns: 1fr 1fr; }
+@media (max-width: 980px) { .feiern-unten { grid-template-columns: 1fr; } }
+.feiern-zwischen { color: var(--accent); font-size: 12px; font-weight: 900; letter-spacing: 0.24em; text-transform: uppercase; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.feiern .ev-liste { border-top: none; }
+.feiern .ev-zeile { grid-template-columns: minmax(9rem, 13rem) 1fr auto; }
+.feiern-menues .ev-menue-zusatz { white-space: nowrap; }
+@media (max-width: 640px) { .feiern .ev-zeile { grid-template-columns: 1fr auto; } }
+/* Sprung auf ein Menü: nicht unter der festen Navigation verschwinden */
+.ev-menue { scroll-margin-top: 110px; }

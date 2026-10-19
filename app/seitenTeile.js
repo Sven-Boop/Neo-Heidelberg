@@ -1,5 +1,6 @@
 import { bodyHtml } from './bodyHtml';
 import { mitHaeuserLeiste } from './haeuser';
+import { mitFeiernMenues } from './feiernMenues';
 
 // Seit 17.10.2026 liefert jede deutsche Adresse nur ihren eigenen Inhalt aus (vorher bekamen
 // /speisekarte und /hochzeit die komplette Startseite und schalteten nur per CSS-Klasse um).
@@ -13,7 +14,8 @@ function schneide(von, bis) {
 }
 
 const KOPF = schneide('<!-- NAV -->', '<!-- HERO -->');
-const START = schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">');
+// Startseite mit Wintermenüs im Abschnitt „Feiern im NEO“ (app/feiernMenues.js)
+const START = mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">'));
 const KARTE = schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE');
 const HOCHZEIT = schneide('<div class="subpage" id="page-hochzeit">', '<!-- FOOTER -->');
 // Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js)

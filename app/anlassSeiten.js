@@ -412,6 +412,7 @@ function inhaltHtml(s) {
     <p class="ev-lead">${s.lead}</p>
     <div class="hero-ctas">
       <a href="#anfrage" class="btn primary">Anfrage stellen</a>
+      ${s.menues && MENUE_GRUPPEN.length ? '<a href="#menuevorschlaege" class="btn">Menüvorschläge</a>' : ''}
       <a href="${TEL_LINK}" class="btn">06221 7239099</a>
     </div>
   </div>
