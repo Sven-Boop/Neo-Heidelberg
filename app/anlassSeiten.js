@@ -324,11 +324,9 @@ function raeumeHtml(s) {
 
 // ===== Menüvorschläge (Abzug aus dem Werkzeug NEO Wintermenüs, app/menuvorschlaege.json) =====
 const esc = (x) => String(x ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// Gruppen nach Haus wie im Werkzeug (NEO = Restaurant, Chalet = Chalet), Reihenfolge wie im Werkzeug
-const MENUE_GRUPPEN = [
-  { name: 'Im Restaurant', menues: MENUES.menues.filter((m) => m.haus !== 'Chalet') },
-  { name: 'Im Chalet', menues: MENUES.menues.filter((m) => m.haus === 'Chalet') },
-].filter((g) => g.menues.length);
+// Alle Menüs in einer Gruppe, Reihenfolge wie im Werkzeug. Sven 19.10.2026: „die Menüs gibt es in jedem Raum,
+// egal ob Chalet oder NEO“ – keine Trennung mehr nach Restaurant und Chalet.
+const MENUE_GRUPPEN = [{ name: 'Im Restaurant und im Chalet', menues: MENUES.menues }].filter((g) => g.menues.length);
 const menueWert = (m) => `${m.titel} (${[m.preis, m.preisZusatz].filter(Boolean).join(' ')})`;
 
 function menueAnfrageLink(m, text = 'Dieses Menü anfragen') {

@@ -5,8 +5,8 @@ import MENUES from './menuvorschlaege.json';
 
 const esc = (x) => String(x ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const betrag = (p) => parseFloat(String(p).replace(/[^0-9,]/g, '').replace(',', '.')) || 0;
-// Nur die Restaurant-Menüs, günstigstes zuerst; die Chalet-Menüs stehen auf /firmenfeier
-const RESTAURANT = (MENUES.menues || []).filter((m) => m.haus !== 'Chalet').sort((a, b) => betrag(a.preis) - betrag(b.preis));
+// Alle Menüs, günstigstes zuerst (Sven 19.10.2026: die Menüs gibt es in jedem Raum, egal ob Chalet oder NEO)
+const RESTAURANT = (MENUES.menues || []).slice().sort((a, b) => betrag(a.preis) - betrag(b.preis));
 
 function zeile(m) {
   return `<li><a class="ev-menue-zeile" href="/firmenfeier#menue-${esc(m.id)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen && m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map(esc).join(' · ')}</span>` : ''}</span><span class="ev-menue-preis"><span class="ev-menue-betrag">${esc(m.preis)}</span>${m.preisZusatz ? `<span class="ev-menue-zusatz">${esc(m.preisZusatz)}</span>` : ''}</span></a></li>`;

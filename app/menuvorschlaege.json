@@ -1,15 +1,15 @@
 {
  "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
- "stand": 44,
- "kvRev": 124,
- "kvGeaendert": "2026-10-19T13:43:58.077Z",
- "vorlageStand": 44,
+ "stand": 45,
+ "kvRev": 125,
+ "kvGeaendert": "2026-10-19T13:49:51.224Z",
+ "vorlageStand": 45,
  "menues": [
   {
    "id": "chalet",
    "titel": "Chalet Menü",
-   "haus": "Chalet",
-   "ort": "NEO Chalet · Heidelberg",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
    "zeilen": [
     "Drei Gänge"
    ],
@@ -63,10 +63,10 @@
   {
    "id": "fondue",
    "titel": "Say Cheese, Say Yes",
-   "haus": "Chalet",
-   "ort": "NEO Chalet · Heidelberg",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
    "zeilen": [
-    "Käsefondue im Chalet",
+    "Käsefondue",
     "Drei Gänge · ab zwei Personen"
    ],
    "preis": "65 €",
@@ -106,8 +106,8 @@
   {
    "id": "ente",
    "titel": "Die Ente",
-   "haus": "Chalet",
-   "ort": "NEO Chalet · Heidelberg",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
    "zeilen": [
     "Vier Gänge rund um die Ente",
     "Silver Hill · knusprig gebraten"
@@ -155,8 +155,8 @@
   {
    "id": "gans",
    "titel": "Die Gans",
-   "haus": "Chalet",
-   "ort": "NEO Chalet · Heidelberg",
+   "haus": "NEO",
+   "ort": "NEO Heidelberg · Zollhofgarten 2",
    "zeilen": [
     "Martins- und Weihnachtsgans · eine Woche vorher bestellen",
     "11. November bis 27. Dezember 2026"
