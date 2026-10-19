@@ -1,9 +1,9 @@
 {
  "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
- "stand": 41,
- "kvRev": 3,
- "kvGeaendert": "2026-10-16T11:40:24.639Z",
- "vorlageStand": 41,
+ "stand": 44,
+ "kvRev": 124,
+ "kvGeaendert": "2026-10-19T13:43:58.077Z",
+ "vorlageStand": 44,
  "menues": [
   {
    "id": "chalet",
@@ -112,7 +112,7 @@
     "Vier Gänge rund um die Ente",
     "Silver Hill · knusprig gebraten"
    ],
-   "preis": "105 €",
+   "preis": "99 €",
    "preisZusatz": "pro Person",
    "option": "Ab zwei Personen wird die Ente im Ganzen am Tisch tranchiert · ohne Aufpreis",
    "bloecke": [
@@ -781,6 +781,46 @@
    "id": "lab-festlich",
    "titel": "Festliches Menü",
    "grund": "LAB-Vorschlag (Palatin), nicht NEO"
+  },
+  {
+   "id": "hz-menue-1",
+   "titel": "Klassisch & Leicht",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-menue-2",
+   "titel": "Kräftig & Winterlich",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-menue-3",
+   "titel": "Festlich & Gourmet",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-vorspeisen",
+   "titel": "Vorspeisen",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-zwischengang",
+   "titel": "Zwischengang",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-hauptgaenge",
+   "titel": "Hauptgänge",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-desserts",
+   "titel": "Desserts",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
+  },
+  {
+   "id": "hz-fingerfood",
+   "titel": "Fingerfood",
+   "grund": "Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO"
   }
  ]
 }

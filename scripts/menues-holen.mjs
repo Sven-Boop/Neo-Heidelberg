@@ -5,7 +5,7 @@
 // ../neo-wintermenues-online/index.html läuft über den gespeicherten Stand (Übernahme-Stufen, und solange
 // niemand online etwas geändert hat, gilt START aus der Datei). So steht hier dasselbe wie online im Werkzeug.
 //
-// Übernommen: nur NEO-Menüs. Weggelassen: LAB-Vorschläge (lab-…), Silvester (eigenes Event, noch nicht
+// Übernommen: nur NEO-Menüs. Weggelassen: LAB-Vorschläge (lab-…), Winter-Hochzeitskarten (hz-…, seit 17.10.), Silvester (eigenes Event, noch nicht
 // freigegeben), gestrichene Menüs und gestrichene Gerichte. Interne Felder (eigen, zukauf, intern, beleg,
 // vorjahr, vergleich) und Einkaufspreise kommen nicht in die Datei.
 //
@@ -111,6 +111,7 @@ const weggelassen = [];
 for (const k of stand.karten) {
   const titel = titelText(k) + (/-veg$/.test(k.id || '') ? ' · vegetarisch' : '');
   if (/^lab-/.test(k.id || '')) weggelassen.push({ id: k.id, titel, grund: 'LAB-Vorschlag (Palatin), nicht NEO' });
+  else if (/^hz-/.test(k.id || '')) weggelassen.push({ id: k.id, titel, grund: 'Winter-Hochzeitskarte (BLISS-Baukasten), nicht NEO' });
   else if (/^silvester/.test(k.id || '')) weggelassen.push({ id: k.id, titel, grund: 'Silvester: eigenes Event, noch nicht freigegeben' });
   else if (k.weg) weggelassen.push({ id: k.id, titel, grund: 'im Werkzeug gestrichen' });
   else menues.push(menue(k));
