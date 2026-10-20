@@ -1,9 +1,9 @@
 {
  "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
- "stand": 45,
- "kvRev": 125,
- "kvGeaendert": "2026-10-19T13:49:51.224Z",
- "vorlageStand": 45,
+ "stand": 46,
+ "kvRev": 126,
+ "kvGeaendert": "2026-10-20T07:53:22.693Z",
+ "vorlageStand": 46,
  "menues": [
   {
    "id": "chalet",
@@ -56,7 +56,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Kürbissuppe ohne Garnele oder Feldsalat ohne Speck · Trüffelravioli mit Salbeibutter und Wintertrüffel statt Ente"
+     "text": "Vegetarisch: Kürbissuppe ohne Garnele oder Feldsalat ohne Speck · Trüffelravioli mit Salbeibutter und Wintertrüffel"
     }
    ]
   },
@@ -148,7 +148,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Gebackene Büffel-Burrata statt Terrine · Miso-Ramen statt Entenbrühe · Trüffelravioli statt Ente"
+     "text": "Vegetarisch: Gebackene Büffel-Burrata · Miso-Ramen · Trüffelravioli"
     }
    ]
   },
@@ -316,7 +316,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Feldsalat ohne Speck · Trüffelravioli statt Kalbskotelett und Lachsforelle · Menüwahl bis fünf Tage vorher"
+     "text": "Vegetarisch: Feldsalat ohne Speck · Trüffelravioli · Menüwahl bis fünf Tage vorher"
     }
    ]
   },
@@ -433,7 +433,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Trüffelravioli statt Filet · Menüwahl bis fünf Tage vorher"
+     "text": "Vegetarisch: Trüffelravioli · Menüwahl bis fünf Tage vorher"
     }
    ]
   },
@@ -550,7 +550,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Trüffelravioli statt Lachsforelle und Maispoularde · Menüwahl bis fünf Tage vorher"
+     "text": "Vegetarisch: Trüffelravioli · Menüwahl bis fünf Tage vorher"
     }
    ]
   },
@@ -592,7 +592,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Mrs. Green statt Lachs Hoch² · Trüffelravioli statt Roastbeef"
+     "text": "Vegetarisch: Mrs. Green · Trüffelravioli"
     }
    ]
   },
@@ -687,7 +687,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Mrs. Green statt der Gerichte mit Fisch und Fleisch · Menüwahl bis fünf Tage vorher"
+     "text": "Vegetarisch: Mrs. Green · Menüwahl bis fünf Tage vorher"
     }
    ]
   },
@@ -736,7 +736,7 @@
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Gebackene Büffel-Burrata statt Lachsforelle · Miso-Dashi mit Kürbis, Shiitake und Tofu statt Hummer · Trüffelravioli statt Heilbutt"
+     "text": "Vegetarisch: Gebackene Büffel-Burrata · Miso-Dashi mit Kürbis, Shiitake und Tofu · Trüffelravioli"
     }
    ]
   }
