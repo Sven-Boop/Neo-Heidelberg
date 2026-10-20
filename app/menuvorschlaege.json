@@ -1,9 +1,9 @@
 {
  "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
- "stand": 46,
- "kvRev": 126,
- "kvGeaendert": "2026-10-20T07:53:22.693Z",
- "vorlageStand": 46,
+ "stand": 51,
+ "kvRev": 178,
+ "kvGeaendert": "2026-10-20T15:56:04.101Z",
+ "vorlageStand": 51,
  "menues": [
   {
    "id": "chalet",
@@ -249,14 +249,14 @@
     {
      "art": "gang",
      "nr": "",
-     "name": "Rosa gebratenes Kalbskotelett",
-     "beschreibung": ""
+     "name": "Maispoulardenbrust",
+     "beschreibung": "rosa gebraten"
     },
     {
      "art": "gang",
      "nr": "",
-     "name": "Lachsforellenfilet vom Forellenhof Lenz",
-     "beschreibung": ""
+     "name": "Weißer Heilbutt",
+     "beschreibung": "gebraten"
     },
     {
      "art": "rubrik",
@@ -523,12 +523,6 @@
     {
      "art": "gang",
      "nr": "",
-     "name": "Gegrillter Spitzkohl",
-     "beschreibung": "Miso-Caesar-Dressing · Nori-Crunch · Parmesan · Schnittlauch"
-    },
-    {
-     "art": "gang",
-     "nr": "",
      "name": "Gebratener Rosenkohl",
      "beschreibung": "Soja-Karamell · Sesam · Frühlingslauch · geschmorte Zwiebel · Rote Bete"
     },
@@ -562,7 +556,7 @@
    "zeilen": [
     "Drei Gänge"
    ],
-   "preis": "92 €",
+   "preis": "89 €",
    "preisZusatz": "pro Person",
    "option": "",
    "bloecke": [
@@ -632,20 +626,8 @@
     {
      "art": "gang",
      "nr": "",
-     "name": "Ceviche vom weißen Heilbutt",
-     "beschreibung": "Zitrusfrüchte · Granny Smith · Staudensellerie · Granatapfel · rote Zwiebeln · Haselnuss-Crunch · Jalapeño"
-    },
-    {
-     "art": "gang",
-     "nr": "",
      "name": "Toro Tataki",
      "beschreibung": "O Toro · scharf angeflämmt · schwarzer Trüffel · Trüffel-Soja-Reduktion · Shiitake · Granny Smith · Togarashi"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Katsu Sando vom Duroc Schwein",
-     "beschreibung": "Duroc-Rücken knusprig in Panko ausgebacken · Shokupan in Nussbutter geröstet · Tonkatsu-Sauce · Senf-Miso-Crème · gepickelte rote Zwiebel · Spitzkohl · Schnittlauch"
     },
     {
      "art": "rubrik",
@@ -677,23 +659,33 @@
     },
     {
      "art": "rubrik",
+     "titel": "Hauptgang"
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Thunfischsteak",
+     "beschreibung": "gebraten"
+    },
+    {
+     "art": "rubrik",
      "titel": "Dessert"
     },
     {
      "art": "gang",
      "nr": "",
-     "name": "Chocolate Bar",
-     "beschreibung": "Schokolade · gesalzene Erdnüsse · Karamell-Crème · Schokoladen-Sponge · Schokoladen-Crème · Kakao-Crumble"
+     "name": "Crème Brûlée",
+     "beschreibung": "Zitronengras · Mango · Kaffir-Limette · Pekannuss · Kokosnuss-Sorbet"
     },
     {
      "art": "notiz",
-     "text": "Vegetarisch: Mrs. Green · Menüwahl bis fünf Tage vorher"
+     "text": "Vegetarisch: Mrs. Green · Trüffelravioli · Menüwahl bis fünf Tage vorher"
     }
    ]
   },
   {
    "id": "weihnachten",
-   "titel": "Wintermenü",
+   "titel": "Seafood Menü",
    "haus": "NEO",
    "ort": "NEO Heidelberg · Zollhofgarten 2",
    "zeilen": [
