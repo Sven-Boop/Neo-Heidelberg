@@ -4963,3 +4963,6 @@ html.einw-offen { scroll-padding-bottom: calc(var(--einw-h, 110px) + 12px); }
 @media (max-width: 640px) { .feiern .ev-zeile { grid-template-columns: 1fr auto; } }
 /* Sprung auf ein Menü: nicht unter der festen Navigation verschwinden */
 .ev-menue { scroll-margin-top: 110px; }
+
+/* Knopf zum Menü-Baukasten unter den Menüvorschlägen (20.10.2026) */
+.ev-baukasten { margin-top: 28px; }

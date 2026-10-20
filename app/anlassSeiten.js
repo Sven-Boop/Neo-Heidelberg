@@ -381,6 +381,7 @@ function menuesHtml(s) {
         <p>${voll ? 'Fest zusammengestellt, Preise pro Person. Passt ein Menü, übernehmt es mit einem Klick in eure Anfrage.' : 'Für die Wintersaison gibt es feste Menüs, Preise pro Person. Antippen übernimmt das Menü in eure Anfrage.'}</p>
         ${voll ? '' : '<p class="ev-link"><a href="/weihnachtsfeier#menuevorschlaege">Alle Gänge ansehen</a></p>'}
       </div>
+      <p class="ev-baukasten"><a href="/menue-baukasten" class="btn">Menü selbst zusammenstellen</a></p>
     </div>
     <div class="ev-menues-rechts">
     ${gruppen}
