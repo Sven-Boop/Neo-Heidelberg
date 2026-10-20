@@ -1,9 +1,9 @@
 {
  "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
- "stand": 52,
- "kvRev": 180,
- "kvGeaendert": "2026-10-20T15:57:13.537Z",
- "vorlageStand": 52,
+ "stand": 59,
+ "kvRev": 229,
+ "kvGeaendert": "2026-10-20T16:54:12.256Z",
+ "vorlageStand": 59,
  "menues": [
   {
    "id": "chalet",
@@ -221,8 +221,8 @@
     {
      "art": "gang",
      "nr": "",
-     "name": "Ceviche vom weißen Heilbutt",
-     "beschreibung": "Zitrusfrüchte · Granny Smith · Staudensellerie · Granatapfel · rote Zwiebeln · Haselnuss-Crunch · Jalapeño"
+     "name": "Lachsforelle Matjes Art",
+     "beschreibung": "Forellenhof Lenz · Apfel-Senf-Miso · Granny Smith · rote Zwiebeln · Kartoffelschaum · Gewürzgurke · Dill"
     },
     {
      "art": "gang",
@@ -249,7 +249,7 @@
     {
      "art": "gang",
      "nr": "",
-     "name": "Maispoulardenbrust",
+     "name": "Kalbskotelett",
      "beschreibung": "rosa gebraten"
     },
     {
@@ -373,7 +373,7 @@
     },
     {
      "art": "rubrik",
-     "titel": "Hauptgang · an der Tafel aufgeschnitten"
+     "titel": "Hauptgang"
     },
     {
      "art": "gang",
@@ -523,6 +523,12 @@
     {
      "art": "gang",
      "nr": "",
+     "name": "Gegrillter Spitzkohl",
+     "beschreibung": "Miso-Caesar-Dressing · Nori-Crunch · Parmesan · Schnittlauch"
+    },
+    {
+     "art": "gang",
+     "nr": "",
      "name": "Gebratener Rosenkohl",
      "beschreibung": "Soja-Karamell · Sesam · Frühlingslauch · geschmorte Zwiebel · Rote Bete"
     },
@@ -530,6 +536,12 @@
      "art": "gang",
      "nr": "",
      "name": "Rosmarin-Kartoffeln",
+     "beschreibung": ""
+    },
+    {
+     "art": "gang",
+     "nr": "",
+     "name": "Cremiges Kartoffelgratin",
      "beschreibung": ""
     },
     {
@@ -556,7 +568,7 @@
    "zeilen": [
     "Drei Gänge"
    ],
-   "preis": "89 €",
+   "preis": "85 €",
    "preisZusatz": "pro Person",
    "option": "",
    "bloecke": [
@@ -587,95 +599,6 @@
     {
      "art": "notiz",
      "text": "Vegetarisch: Mrs. Green · Trüffelravioli"
-    }
-   ]
-  },
-  {
-   "id": "sushi",
-   "titel": "Winter Sushi",
-   "haus": "NEO",
-   "ort": "NEO Heidelberg · Zollhofgarten 2",
-   "zeilen": [
-    "Für Feiern ab acht Personen",
-    "Drei Gänge zum Teilen"
-   ],
-   "preis": "74 €",
-   "preisZusatz": "pro Person",
-   "option": "",
-   "bloecke": [
-    {
-     "art": "rubrik",
-     "titel": "Vorweg"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Gaues Brotvariation",
-     "beschreibung": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Koji-Butter"
-    },
-    {
-     "art": "rubrik",
-     "titel": "Zum Start"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Edamame Trüffel",
-     "beschreibung": "Trüffel · Nussbutter · Meersalz · Trüffel-Crème"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Toro Tataki",
-     "beschreibung": "O Toro · scharf angeflämmt · schwarzer Trüffel · Trüffel-Soja-Reduktion · Shiitake · Granny Smith · Togarashi"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Lachs Hoch²",
-     "beschreibung": "Inside Out Roll · Lachsforelle vom Forellenhof Lenz · Kürbiskern-Mayo · gepickelter Rettich · Granny-Smith-Chutney · Edamame-Frischkäse-Crème · Lachsrogen · Schnittlauch"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Hummer Roll",
-     "beschreibung": "Inside Out Roll · Hummersalat · Yuzu-Mayo · Crunchy Kürbiskerne · Avocado · Hummer-Bisque-Glace · schwarzer Tobiko · Schnittlauch"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Crispy Gochujang Garnele",
-     "beschreibung": "Crispy Futomaki · Tempura-Garnele · Gochujang-Mayo · Avocado · Rote Bete · Sesam · Frühlingslauch"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Crispy Green",
-     "beschreibung": "Crispy Futomaki, vegetarisch · Teriyaki-Tofu · Avocado · gerösteter Kürbis · Edamame-Crème · Wasabi-Mayo · Sesam"
-    },
-    {
-     "art": "rubrik",
-     "titel": "Hauptgang"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Thunfischsteak",
-     "beschreibung": "gebraten"
-    },
-    {
-     "art": "rubrik",
-     "titel": "Dessert"
-    },
-    {
-     "art": "gang",
-     "nr": "",
-     "name": "Crème Brûlée",
-     "beschreibung": "Zitronengras · Mango · Kaffir-Limette · Pekannuss · Kokosnuss-Sorbet"
-    },
-    {
-     "art": "notiz",
-     "text": "Vegetarisch: Mrs. Green · Trüffelravioli · Menüwahl bis fünf Tage vorher"
     }
    ]
   },
@@ -753,11 +676,6 @@
   {
    "id": "lab-tafel",
    "titel": "Lange Tafel",
-   "grund": "LAB-Vorschlag (Palatin), nicht NEO"
-  },
-  {
-   "id": "lab-feuer",
-   "titel": "Feuer & Rauch",
    "grund": "LAB-Vorschlag (Palatin), nicht NEO"
   },
   {
