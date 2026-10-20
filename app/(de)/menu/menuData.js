@@ -263,7 +263,7 @@ export const sections = [
         subcat: 'Sweets & Desserts',
         items: [
           { img: null, name: 'Lemongrass Crème Brûlée', price: '16,00 €', sub: '', desc: 'Lemongrass · mango · kaffir lime · caramelised almonds · coconut sorbet.' },
-          { img: null, name: 'The Lime', price: '27,00 €', sub: '', desc: 'Vanilla white chocolate cream · lime financier · lime mint core · marinated strawberries · champagne sorbet.' },
+          { img: null, name: 'The Lime', price: '20,00 €', sub: '', desc: 'Vanilla white chocolate cream · lime financier · lime mint core · marinated strawberries · champagne sorbet.' },
           { img: '/menu/p04654.webp', name: 'Chocolate Cake', price: '18,00 €', sub: '15–20 min preparation time', desc: 'Molten caramel core · dark chocolate · grilled pineapple · Tasmanian pepper.' },
         ],
       },
