@@ -1,9 +1,9 @@
 {
  "hinweis": "Automatisch erzeugt von scripts/menues-holen.mjs aus nwm:stand – nicht von Hand ändern.",
- "stand": 51,
- "kvRev": 178,
- "kvGeaendert": "2026-10-20T15:56:04.101Z",
- "vorlageStand": 51,
+ "stand": 52,
+ "kvRev": 180,
+ "kvGeaendert": "2026-10-20T15:57:13.537Z",
+ "vorlageStand": 52,
  "menues": [
   {
    "id": "chalet",
@@ -628,10 +628,6 @@
      "nr": "",
      "name": "Toro Tataki",
      "beschreibung": "O Toro · scharf angeflämmt · schwarzer Trüffel · Trüffel-Soja-Reduktion · Shiitake · Granny Smith · Togarashi"
-    },
-    {
-     "art": "rubrik",
-     "titel": "Sushi zum Teilen"
     },
     {
      "art": "gang",
