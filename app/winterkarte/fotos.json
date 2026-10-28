@@ -94,11 +94,17 @@
   },
   "w-crispy-futomaki-rolls-crispy-chicken": {
    "nr": 171,
-   "gericht": "Crispy Chicken"
+   "gericht": "Crispy Chicken",
+   "weitere": []
   },
   "w-crispy-tuna": {
    "nr": 71,
    "gericht": "Crispy Tuna"
+  },
+  "w-crispy-gochujang-garnele": {
+   "nr": 90,
+   "gericht": "Crispy Gochujang Garnele",
+   "weitere": []
   },
   "w-weisser-heilbutt-wildfanggarnele": {
    "nr": 32,
@@ -128,9 +134,23 @@
    "nr": 134,
    "gericht": "Trüffelravioli"
   },
+  "w-wagyu-galicien": {
+   "nr": 247,
+   "gericht": "Wagyu Galicien"
+  },
   "w-taste-your-filet": {
    "nr": 193,
    "gericht": "Taste Your Filet"
+  },
+  "w-rumpsteak-pommersches-simmentaler": {
+   "nr": 149,
+   "gericht": "Rumpsteak Pommersches Simmentaler",
+   "weitere": []
+  },
+  "w-entrecote-pommersches-simmentaler": {
+   "nr": 126,
+   "gericht": "Entrecôte Pommersches Simmentaler",
+   "weitere": []
   },
   "w-taste-your-filet-deluxe": {
    "nr": 209,
@@ -139,6 +159,10 @@
   "w-taste-your-filet-deluxe-hoch2": {
    "nr": 214,
    "gericht": "Taste Your Filet Deluxe Hoch²"
+  },
+  "w-gegrillter-spitzkohl": {
+   "nr": 9,
+   "gericht": "Gegrillter Spitzkohl"
   },
   "w-french-fries": {
    "alt": "/menu/p04345.webp",
