@@ -36,6 +36,14 @@ pruefe(/^\d{2}\.\d{2}\.\d{4}$/.test(al.stand), `Stand als TT.MM.JJJJ (${al.stand
 // Fritteuse: French Fries mit Parmesan geht durch die Fritteuse → Gluten/Krebstiere unter „kann“
 pruefe(kann('w-parmesan', 'A') && kann('w-parmesan', 'B'), 'Fritteuse ergänzt Gluten und Krebstiere unter „Kann enthalten“');
 
+console.log('Ohne Saucen und Beilage (nur Filet, Steak, Dry Aged, Taste Your Filet)');
+const ohne = (k) => g(k)?.ohne || [];
+pruefe(['C', 'H'].every((a) => ohne('w-black-angus-galicien').includes(a)) && hat('w-black-angus-galicien', 'C'), 'Black Angus Galicien: Ei und Nüsse stehen unter „Enthält“ UND in der Ohne-Zeile');
+pruefe(!ohne('w-black-angus-galicien').includes('G'), 'Black Angus Galicien: Milch (Garmethode) nicht in der Ohne-Zeile');
+pruefe(ohne('w-rumpsteak-pommersches-simmentaler').length > 0 && ohne('w-black-angus-kotelett').length > 0 && ohne('gang:taste-your-filet-deluxe').length > 0, 'Steak, Dry Aged und Sharing-Gang Taste Your Filet haben eine Ohne-Zeile');
+pruefe(['w-caesar-salad', 'w-hummer-roll', 'w-crispy-tuna', 'w-weisser-heilbutt-wildfanggarnele', 'gang:hummer-roll'].every((k) => !ohne(k).length), 'keine Ohne-Zeile bei Salat, Sushi, Fisch');
+pruefe(alle.every(([, v]) => (v.ohne || []).every((a) => v.enthaelt.includes(a))), 'Ohne-Zeile nennt nur, was unter „Enthält“ steht');
+
 console.log('Abdeckung: jedes sichtbare Gericht hat Daten oder „bitte frag unser Team“');
 const OHNE_KNOPF = new Set(['badge']); // „Specials“: Hinweis, kein Gericht
 let mitDaten = 0;
@@ -73,6 +81,8 @@ if (basis) {
     pruefe(stand, `${pfad}: Hinweis mit Stand`);
     pruefe(details > 80, `${pfad}: ${details} Aufklapper (${items} Gerichte-Kästen, ${filets} Filets, ${gaenge} Gänge, davon ${fragenHtml}× „frag unser Team“)`);
     pruefe(!/allergens\? Just ask us|Allergene\? Fragt uns gerne/.test(html), `${pfad}: alte Legende ersetzt`);
+    const ohneZeilen = (html.match(/<p class="allergene-ohne">/g) || []).length;
+    pruefe(ohneZeilen >= 15, `${pfad}: ${ohneZeilen} Ohne-Saucen-Zeilen`);
   }
 }
 

@@ -2,13 +2,15 @@
 // app/winterkarte/allergene.json. Quelle:
 //   ~/Desktop/Development/neo-dienstplan/lib/daten/karte.js  (KARTE, GERICHTE, KOMPONENTEN —
 //                                                            erzeugt aus der Küchen-App neo-kueche)
-//   ~/Desktop/Development/neo-dienstplan/lib/karte.js        (gerichtBild: Teller + alle Komponenten)
+//   ~/Desktop/Development/neo-dienstplan/lib/karte.js        (gerichtBild + allergenDetail — die einzige Rechnung)
 // Aufruf: node scripts/allergene-holen.mjs [ordner-bliss-service]
 //
-// Je Gericht der Website:
+// Je Gericht der Website (allergenDetail(…).kuerzel aus BLISS Service):
 //   enthaelt = allergeneAlle (Teller ∪ alle Komponenten rekursiv), Kürzel A–R in Reihenfolge der Liste
 //   kann     = Verdacht aus Zutatenwörtern (evtl) + bei gemeinsamer Fritteuse Gluten und Krebstiere,
 //              jeweils ohne das, was schon unter „enthaelt“ steht
+//   ohne     = nur Filet/Steak/Dry Aged/Taste Your Filet: fällt weg, wenn Saucen und Beilage
+//              abbestellt werden (Sven 28.10.2026); fehlt das Feld, gibt es keine Zeile
 // Fehlt die Zuordnung oder ist enthaelt leer, zeigt die Website „bitte frag unser Team“.
 //
 // Zuordnung: Die Kennungen der Website (kennung(name), scripts/winterkarte-holen.mjs) weichen bei
@@ -26,7 +28,7 @@ const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const FENSTER = 6;
 
 const { KARTE, GERICHTE, KOMPONENTEN, KARTE_STAND } = await import(pathToFileURL(path.join(ordner, 'lib/daten/karte.js')).href);
-const { gerichtBild, ALLERGEN_KURZ } = await import(pathToFileURL(path.join(ordner, 'lib/karte.js')).href);
+const { gerichtBild, allergenDetail } = await import(pathToFileURL(path.join(ordner, 'lib/karte.js')).href);
 const karte = JSON.parse(fs.readFileSync(path.join(repo, 'app/winterkarte/karte.json'), 'utf8'));
 
 const normal = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/[^a-z0-9²]+/g, ' ').trim();
@@ -55,15 +57,8 @@ for (const s of karte.seiten) for (const r of s.rubriken) {
 function bild(id) {
   const g = GERICHTE[id];
   if (!g) return null;
-  const b = gerichtBild(g, KOMPONENTEN);
-  const enthaelt = b.allergeneAlle;
-  const kann = new Set(b.evtl.map((e) => e.kurz));
-  if (b.fritteuse) { kann.add('A'); kann.add('B'); }
-  for (const a of enthaelt) kann.delete(a);
-  return {
-    enthaelt,
-    kann: [...kann].sort((x, y) => ALLERGEN_KURZ.indexOf(x) - ALLERGEN_KURZ.indexOf(y)),
-  };
+  const k = allergenDetail(gerichtBild(g, KOMPONENTEN)).kuerzel;
+  return { enthaelt: k.enthaelt, kann: k.kann, ...(k.ohneBeilage.length ? { ohne: k.ohneBeilage } : {}) };
 }
 
 const gerichte = {};

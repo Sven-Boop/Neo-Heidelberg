@@ -48,6 +48,7 @@ const T = {
     enthaelt: 'Enthält',
     kann: 'Kann enthalten',
     fragen: 'Allergene: bitte frag unser Team',
+    ohne: 'Ohne Saucen und Beilage möglich – dann ohne',
     rasse: 'Rasse',
     dryAgedSub: 'Ab 600 g · Preis je 100 g',
     sharingH2: 'Vier Gänge. <em>Ein Abend.</em>',
@@ -76,6 +77,7 @@ const T = {
     enthaelt: 'Contains',
     kann: 'May contain',
     fragen: 'Allergens: please ask our team',
+    ohne: 'Available without sauces and side – then without',
     rasse: 'Breed',
     dryAgedSub: 'From 600 g · price per 100 g',
     sharingH2: 'Four courses. <em>One evening.</em>',
@@ -228,8 +230,11 @@ export function allergenAngaben(schluessel) {
   if (!liste.length || liste.some((g) => !g || !g.enthaelt.length)) return null;
   const enthaelt = new Set(liste.flatMap((g) => g.enthaelt));
   const kann = new Set(liste.flatMap((g) => g.kann).filter((a) => !enthaelt.has(a)));
+  // ohne Saucen/Beilage: nur, was in JEDEM Teil, das es enthält, abbestellbar ist
+  const ohne = new Set(liste.flatMap((g) => g.ohne || []));
+  for (const g of liste) for (const a of g.enthaelt) if (!(g.ohne || []).includes(a)) ohne.delete(a);
   const sortiert = (m) => ALLERGEN_KURZ.filter((a) => m.has(a));
-  return { enthaelt: sortiert(enthaelt), kann: sortiert(kann) };
+  return { enthaelt: sortiert(enthaelt), kann: sortiert(kann), ohne: sortiert(ohne) };
 }
 
 export const allergenText = (kuerzel, lang) => kuerzel.map((a) => ALLERGEN_NAMEN[a][lang === 'en' ? 1 : 0]).join(', ');
@@ -241,7 +246,7 @@ export function allergenHtml(schluessel, lang, einzug = '        ') {
   const inhalt = a
     ? `<p><span class="allergene-art">${t.enthaelt}:</span> ${esc(allergenText(a.enthaelt, lang))}</p>${
         a.kann.length ? `<p><span class="allergene-art">${t.kann}:</span> ${esc(allergenText(a.kann, lang))}</p>` : ''
-      }`
+      }${a.ohne.length ? `<p class="allergene-ohne">${t.ohne} ${esc(allergenText(a.ohne, lang))}</p>` : ''}`
     : `<p>${t.fragen}</p>`;
   return `${einzug}<details class="allergene"><summary>${t.allergene}</summary><div class="allergene-text">${inhalt}</div></details>\n`;
 }

@@ -1,7 +1,7 @@
 {
- "_quelle": "BLISS Service lib/daten/karte.js (Küche ea929e7, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
+ "_quelle": "BLISS Service lib/daten/karte.js (Küche 7b68580, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
  "stand": "28.10.2026",
- "kueche": "ea929e7",
+ "kueche": "7b68580",
  "gerichte": {
   "gang:katsu-sando-vom-wagyu-roastbeef-a4": {
    "service": "w-katsu-sando-vom-wagyu-roastbeef-a4",
@@ -48,6 +48,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "gang:birne-helene": {
@@ -731,6 +739,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-chianina-igp-toscana": {
@@ -746,6 +762,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-pommersches-simmentaler": {
@@ -761,6 +785,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-wagyu-galicien": {
@@ -776,6 +808,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-taste-your-filet": {
@@ -791,6 +831,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-rumpsteak-pommersches-simmentaler": {
@@ -805,6 +853,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-entrecote-pommersches-simmentaler": {
@@ -819,6 +874,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-dry-aged-rumpsteak-simmentaler": {
@@ -833,6 +895,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-dry-aged-entrecote-simmentaler": {
@@ -847,6 +916,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-japan-wagyu-a4": {
@@ -861,6 +937,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-taste-your-filet-deluxe": {
@@ -876,6 +960,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-taste-your-filet-deluxe-hoch2": {
@@ -891,6 +983,14 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "C",
+    "F",
+    "H",
+    "L",
+    "O"
    ]
   },
   "w-black-angus-kotelett": {
@@ -905,6 +1005,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-black-angus-t-bone": {
@@ -919,6 +1026,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-black-angus-porterhouse": {
@@ -933,6 +1047,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-wagyu-kotelett": {
@@ -947,6 +1068,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-wagyu-t-bone": {
@@ -961,6 +1089,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-wagyu-porterhouse": {
@@ -975,6 +1110,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-rubia-gallega-kotelett": {
@@ -989,6 +1131,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-rubia-gallega-t-bone": {
@@ -1003,6 +1152,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-rubia-gallega-porterhouse": {
@@ -1017,6 +1173,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-chianina-rind-kotelett": {
@@ -1031,6 +1194,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-chianina-rind-t-bone": {
@@ -1045,6 +1215,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-chianina-rind-porterhouse": {
@@ -1059,6 +1236,13 @@
    ],
    "kann": [
     "D"
+   ],
+   "ohne": [
+    "A",
+    "F",
+    "L",
+    "N",
+    "O"
    ]
   },
   "w-portwein-jus": {
