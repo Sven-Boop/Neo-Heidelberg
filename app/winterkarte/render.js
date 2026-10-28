@@ -9,25 +9,12 @@ import fotos from './fotos.json';
 
 const RESERVIEREN = 'https://reservation.gastronaut.ai/neo-heidelberg';
 
-// Vegetarisch (🌱): Kennzeichnung der Website, nicht Teil der Gästekarte.
-// Miso-Caesar-Dressing ohne Sardelle (Sven 09.10.2026), Miso-Ramen mit vegetarischem Dashi
-// (Küchen-App), Trüffelravioli vegetarisch (Sven 17.10.2026).
-const VEG = new Set([
-  'w-gebackene-bueffel-burrata', 'w-caesar-salad', 'w-spitzkohl-dunkel-geroestet',
-  'w-edamame-klassisch', 'w-edamame-asian-style', 'w-edamame-trueffel',
-  'w-mrs-green', 'w-crispy-green', 'w-avocado', 'w-gurke', 'w-gurke-frischkaese', 'w-tamago',
-  'w-miso-ramen', 'w-trueffelravioli', 'w-gegrillter-spitzkohl', 'w-sellerie',
-  'w-french-fries', 'w-parmesan', 'w-trueffel-trueffel-mayo', 'w-parmesan-trueffel-trueffel-mayo',
-  'w-suesskartoffel-fries', 'w-cremiges-kartoffelgratin',
-  'w-creme-brulee', 'w-birne-helene', 'w-schokoladenkuchen',
-]);
 
 const T = {
   de: {
     lang: 'de',
     kapitel: 'Kapitel',
-    veg: 'vegetarisch',
-    legende: 'vegetarisch · Vegane Varianten und Allergene? Fragt uns gerne — unser Team hilft weiter.',
+    legende: 'Vegetarische und vegane Varianten, Allergene? Fragt uns gerne — unser Team hilft weiter.',
     rasse: 'Rasse',
     dryAgedSub: 'Ab 600 g · Preis je 100 g',
     sharingH2: 'Vier Gänge. <em>Ein Abend.</em>',
@@ -49,8 +36,7 @@ const T = {
   en: {
     lang: 'en',
     kapitel: 'Chapter',
-    veg: 'vegetarian',
-    legende: 'vegetarian · Vegan options and allergens? Just ask us — our team is happy to help.',
+    legende: 'Vegetarian and vegan options, allergens? Just ask us — our team is happy to help.',
     rasse: 'Breed',
     dryAgedSub: 'From 600 g · price per 100 g',
     sharingH2: 'Four courses. <em>One evening.</em>',
@@ -196,12 +182,11 @@ function item(it, lang, x = {}) {
   const t = T[lang];
   const name = feld(it, 'name', lang);
   const bild = x.ohneBild ? null : fotoFuer(it.id);
-  const veg = VEG.has(it.id) ? ` <span class="veg-badge" title="${t.veg}">🌱</span>` : '';
   const sub = x.sub ?? feld(it, 'notiz', lang);
   const desc = x.desc ?? feld(it, 'beschr', lang);
   return `    <div class="item${bild ? '' : ' no-image'}">
 ${bild ? `      <img decoding="async" class="item-img" src="${bild}" alt="${esc(name)}" loading="lazy">\n` : ''}      <div class="item-text">
-        <div class="item-head"><div class="item-name">${esc(x.name ?? name)}${veg}</div><div class="item-price">${esc(x.preis ?? preis(feld(it, 'preis', lang)))}</div></div>
+        <div class="item-head"><div class="item-name">${esc(x.name ?? name)}</div><div class="item-price">${esc(x.preis ?? preis(feld(it, 'preis', lang)))}</div></div>
 ${sub ? `        <div class="item-sub">${esc(sub)}</div>\n` : ''}${desc ? `        <div class="item-desc">${esc(desc)}</div>\n` : ''}      </div>
     </div>`;
 }
@@ -363,7 +348,7 @@ ${t.chips.map((c, i) => `    <a href="${ANKER[i]}">${c}</a>`).join('\n')}
   }
   teile.push('\n<!-- SHARING -->\n');
   teile.push(sharingHtml(lang, { id: 'sharing', eyebrow: sharingEyebrow, eyebrowTag: sharingEyebrowTag, knopf }));
-  teile.push(`\n<div class="menu-legend"><span class="veg-badge">🌱</span> ${t.legende}</div>\n`);
+  teile.push(`\n<div class="menu-legend">${t.legende}</div>\n`);
   for (const kap of KAPITEL) teile.push(kapitelHtml(kap, lang) + '\n');
   if (download) {
     const d = t.download;

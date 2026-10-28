@@ -2,8 +2,7 @@
  "_hinweis": [
   "EINZIGE Zuordnung Foto → Gericht für die Website (Speisekarte DE /speisekarte, EN /en und /menu).",
   "Stand 28.10.2026: Serien „sicher“ und „wahrscheinlich“ aus der Durchsicht aller 431 Fotos (scratchpad/benennen/claude-zuordnung.json), je Gericht ein Einzelbild ohne Hände/Personen.",
-  "gerichte: Kennung aus app/winterkarte/karte.json → nr = Bildnummer #1–#431 im Shooting „NEO - WINTERKARTE 26’“ (Selina Gargiullo, Ablage ~/Pictures/Galerie Selina Gargiullo/NEO - WINTERKARTE 26/NNN_<id>.jpg).",
-  "alt = Foto aus dem Sommer-Shooting, nur für Gerichte, die im Winter gleich geblieben sind; ein Winterfoto (nr) ersetzt es.",
+  "alt = Foto aus dem Sommer-Shooting, nur wenn es eindeutig dasselbe Gericht in derselben Anrichtung zeigt (Konserven, Brot, Fries); ein Winterfoto (nr) ersetzt es.",
   "Gerichte ohne Eintrag zeigen kein Foto.",
   "Svens Namen einspielen: python3 scripts/winterfotos.py --namen <datei.json>; danach immer: python3 scripts/winterfotos.py (erzeugt die WebP-Bilder).",
   "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp."
@@ -57,10 +56,6 @@
    "nr": 1,
    "gericht": "Spitzkohl, dunkel geröstet"
   },
-  "w-the-neo-tower": {
-   "alt": "/img/gallery/sushi-terrasse.webp",
-   "gericht": "The NEO Tower"
-  },
   "w-ceviche-vom-weissen-heilbutt": {
    "nr": 280,
    "gericht": "Ceviche vom weißen Heilbutt"
@@ -104,14 +99,6 @@
   "w-crispy-tuna": {
    "nr": 71,
    "gericht": "Crispy Tuna"
-  },
-  "w-limited-signature-wagyu-japan-a4-roll": {
-   "alt": "/menu/p04087.webp",
-   "gericht": "Limited Signature Wagyu Japan A4 Roll"
-  },
-  "w-lachs": {
-   "alt": "/img/E60A8677-Bearbeitet-scaled-e1719227896937.webp",
-   "gericht": "Lachs"
   },
   "w-weisser-heilbutt-wildfanggarnele": {
    "nr": 32,
@@ -245,9 +232,11 @@
    "de": "Das Restaurant am Abend",
    "en": "The restaurant in the evening"
   },
-  "chalet-raum": {
-   "nr": 412,
-   "was": "Eventseiten, Raum „Das Chalet“"
+  "tische": {
+   "nr": 405,
+   "was": "Lightbox (GAL_IMGS 39, ersetzt Thunfisch-Foto mit falscher Beschriftung)",
+   "de": "Gedeckte Tische im Restaurant",
+   "en": "Tables set in the restaurant"
   }
  }
 }
