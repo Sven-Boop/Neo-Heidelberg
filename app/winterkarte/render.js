@@ -2,19 +2,52 @@
 // Unterseite #speisekarte) und /menu (englisch, Ziel des QR-Codes der gedruckten Winterkarte).
 //   Inhalte:  app/winterkarte/karte.json  (aus der Gästekarte, node scripts/winterkarte-holen.mjs)
 //   Fotos:    app/winterkarte/fotos.json  (Gericht → Bildnummer, python3 scripts/winterfotos.py)
+//   Allergene: app/winterkarte/allergene.json (aus BLISS Service, node scripts/allergene-holen.mjs)
 // Die Texte der Gerichte kommen unverändert aus der Gästekarte; nur das Preisformat folgt der
 // Website (13,00 €). Kapitelköpfe und Einleitungen sind Website-Texte (stehen hier unten).
 import karte from './karte.json';
 import fotos from './fotos.json';
+import allergene from './allergene.json';
 
 const RESERVIEREN = 'https://reservation.gastronaut.ai/neo-heidelberg';
 
+
+// Die 14 Allergene (LMIV Anhang II), Kürzel und Reihenfolge wie in BLISS Service / Küchen-App
+const ALLERGEN_NAMEN = {
+  A: ['Gluten', 'gluten'],
+  B: ['Krebstiere', 'crustaceans'],
+  C: ['Ei', 'egg'],
+  D: ['Fisch', 'fish'],
+  E: ['Erdnuss', 'peanuts'],
+  F: ['Soja', 'soy'],
+  G: ['Milch', 'milk'],
+  H: ['Nüsse', 'nuts'],
+  L: ['Sellerie', 'celery'],
+  M: ['Senf', 'mustard'],
+  N: ['Sesam', 'sesame'],
+  O: ['Sulfite', 'sulphites'],
+  P: ['Lupine', 'lupin'],
+  R: ['Weichtiere', 'molluscs'],
+};
+const ALLERGEN_KURZ = Object.keys(ALLERGEN_NAMEN);
+const MONATE_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+// „28.10.2026“ → „28 October 2026“
+function standEn(stand) {
+  const [t, m, j] = String(stand).split('.');
+  return MONATE_EN[+m - 1] ? `${+t} ${MONATE_EN[+m - 1]} ${j}` : stand;
+}
 
 const T = {
   de: {
     lang: 'de',
     kapitel: 'Kapitel',
-    legende: 'Vegetarische und vegane Varianten, Allergene? Fragt uns gerne — unser Team hilft weiter.',
+    legende: (stand) =>
+      `Angaben nach unseren Rezepturen, Stand ${stand}. Spuren weiterer Allergene können wir in unserer Küche nicht ausschließen. Bei Allergien sprich bitte vor der Bestellung unser Service-Team an. Vegetarische und vegane Varianten? Frag uns gerne.`,
+    allergene: 'Allergene',
+    alleAllergene: 'Allergene anzeigen',
+    enthaelt: 'Enthält',
+    kann: 'Kann enthalten',
+    fragen: 'Allergene: bitte frag unser Team',
     rasse: 'Rasse',
     dryAgedSub: 'Ab 600 g · Preis je 100 g',
     sharingH2: 'Vier Gänge. <em>Ein Abend.</em>',
@@ -36,7 +69,13 @@ const T = {
   en: {
     lang: 'en',
     kapitel: 'Chapter',
-    legende: 'Vegetarian and vegan options, allergens? Just ask us — our team is happy to help.',
+    legende: (stand) =>
+      `Based on our recipes, as of ${standEn(stand)}. We cannot rule out traces of other allergens in our kitchen. If you have an allergy, please speak to our service team before ordering. Vegetarian or vegan options? Just ask us.`,
+    allergene: 'Allergens',
+    alleAllergene: 'Show allergens',
+    enthaelt: 'Contains',
+    kann: 'May contain',
+    fragen: 'Allergens: please ask our team',
     rasse: 'Breed',
     dryAgedSub: 'From 600 g · price per 100 g',
     sharingH2: 'Four courses. <em>One evening.</em>',
@@ -178,16 +217,47 @@ function seite(titel) {
   return s;
 }
 
+// Schlüssel der Gänge des Sharing Menus (wie scripts/allergene-holen.mjs gangSchluessel)
+const gangSchluessel = (name) =>
+  'gang:' + String(name).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss').replace(/[^a-z0-9²]+/g, ' ').trim().replace(/ /g, '-');
+
+// Was der Gast zu einem Gericht liest. Mehrere Schlüssel (Dry Aged: Kotelett, T-Bone, Porterhouse
+// einer Rasse in einer Zeile) werden vereinigt; fehlt einer, heißt es „bitte frag unser Team“.
+export function allergenAngaben(schluessel) {
+  const liste = [].concat(schluessel).map((k) => allergene.gerichte[k]);
+  if (!liste.length || liste.some((g) => !g || !g.enthaelt.length)) return null;
+  const enthaelt = new Set(liste.flatMap((g) => g.enthaelt));
+  const kann = new Set(liste.flatMap((g) => g.kann).filter((a) => !enthaelt.has(a)));
+  const sortiert = (m) => ALLERGEN_KURZ.filter((a) => m.has(a));
+  return { enthaelt: sortiert(enthaelt), kann: sortiert(kann) };
+}
+
+export const allergenText = (kuerzel, lang) => kuerzel.map((a) => ALLERGEN_NAMEN[a][lang === 'en' ? 1 : 0]).join(', ');
+
+// <details> je Gericht: geht ohne JavaScript, klappt nur dieses Gericht auf
+export function allergenHtml(schluessel, lang, einzug = '        ') {
+  const t = T[lang];
+  const a = allergenAngaben(schluessel);
+  const inhalt = a
+    ? `<p><span class="allergene-art">${t.enthaelt}:</span> ${esc(allergenText(a.enthaelt, lang))}</p>${
+        a.kann.length ? `<p><span class="allergene-art">${t.kann}:</span> ${esc(allergenText(a.kann, lang))}</p>` : ''
+      }`
+    : `<p>${t.fragen}</p>`;
+  return `${einzug}<details class="allergene"><summary>${t.allergene}</summary><div class="allergene-text">${inhalt}</div></details>\n`;
+}
+
 function item(it, lang, x = {}) {
   const t = T[lang];
   const name = feld(it, 'name', lang);
+  // x.allergene: Schlüssel (oder Liste), false = Zeile ohne eigenes Gericht; Standard die id
+  const allergenSchluessel = x.allergene === undefined ? it.id : x.allergene;
   const bild = x.ohneBild ? null : fotoFuer(it.id);
   const sub = x.sub ?? feld(it, 'notiz', lang);
   const desc = x.desc ?? feld(it, 'beschr', lang);
   return `    <div class="item${bild ? '' : ' no-image'}">
 ${bild ? `      <img decoding="async" class="item-img" src="${bild}" alt="${esc(name)}" loading="lazy">\n` : ''}      <div class="item-text">
         <div class="item-head"><div class="item-name">${esc(x.name ?? name)}</div><div class="item-price">${esc(x.preis ?? preis(feld(it, 'preis', lang)))}</div></div>
-${sub ? `        <div class="item-sub">${esc(sub)}</div>\n` : ''}${desc ? `        <div class="item-desc">${esc(desc)}</div>\n` : ''}      </div>
+${sub ? `        <div class="item-sub">${esc(sub)}</div>\n` : ''}${desc ? `        <div class="item-desc">${esc(desc)}</div>\n` : ''}${allergenSchluessel ? allergenHtml(allergenSchluessel, lang) : ''}      </div>
     </div>`;
 }
 
@@ -203,7 +273,8 @@ function filetTabelle(r, lang) {
       const preise = i.preis.split(/\s{3,}/).map((p) => preis(p.split(' · ')[1]));
       const b = feld(i, 'beschr', lang);
       return `    <div class="filet-row">
-      <div class="filet-cell"><div class="filet-name">${esc(feld(i, 'name', lang))}${b ? `<small>${esc(b)}</small>` : ''}</div></div>
+      <div class="filet-cell"><div class="filet-name">${esc(feld(i, 'name', lang))}${b ? `<small>${esc(b)}</small>` : ''}</div>
+${allergenHtml(i.id, lang)}      </div>
 ${preise.map((p) => `      <div class="filet-cell"><div class="filet-price"><strong>${p}</strong></div></div>`).join('\n')}
     </div>`;
     })
@@ -224,6 +295,7 @@ function dryAgedRasse(r, lang) {
   const preisZeile =
     teile.map((i) => `${feld(i, 'name', lang)} ${(i.preis.match(/(\d+)\.(\d{2})$/) || []).slice(1).join(',')}`).join(' · ') + ' €';
   return item({ id: null, name: r.titel, name_en: r.titel_en }, lang, {
+    allergene: teile.map((i) => i.id),
     preis: preisZeile,
     sub: feld(teile[0], 'beschr', lang),
     desc: feld(r, 'intro', lang),
@@ -273,7 +345,7 @@ function rubrikenHtml(kap, lang) {
     }
     if (r.stil === 'badge') {
       const it = sichtbar(r)[0];
-      (gruppe ||= []).push(item(it, lang, { preis: '' }));
+      (gruppe ||= []).push(item(it, lang, { preis: '', allergene: false }));
       continue;
     }
     // Rubrik ohne Titel (z. B. Deluxe Hoch² unter Signature) hängt an der vorigen Gruppe
@@ -304,7 +376,7 @@ ${rubrikenHtml(kap, lang)}</section>
 }
 
 // Sharing-Abschnitt (Speisekarte und Startseiten-Teaser)
-export function sharingHtml(lang, { id = '', eyebrow, eyebrowTag = 'div', knopf }) {
+export function sharingHtml(lang, { id = '', eyebrow, eyebrowTag = 'div', knopf, mitAllergenen = false }) {
   const t = T[lang];
   const s = seite('Sharing Menu');
   const gaenge = s.rubriken.find((r) => r.stil === 'gaenge').items;
@@ -317,7 +389,7 @@ export function sharingHtml(lang, { id = '', eyebrow, eyebrowTag = 'div', knopf 
     <h2>${t.sharingH2}</h2>
     <p class="lead">${t.sharingLead}</p>
     <div class="courses">
-${gaenge.map((g) => `      <div class="course"><div class="course-num">${g.nr}</div><div class="course-name">${esc(feld(g, 'name', lang))}</div><div class="course-desc">${esc(feld(g, 'beschr', lang))}</div></div>`).join('\n')}
+${gaenge.map((g) => `      <div class="course"><div class="course-num">${g.nr}</div><div class="course-name">${esc(feld(g, 'name', lang))}</div><div class="course-desc">${esc(feld(g, 'beschr', lang))}</div>${mitAllergenen ? allergenHtml(gangSchluessel(g.name), lang, '').trimEnd() : ''}</div>`).join('\n')}
     </div>
     <div class="sharing-price">
       <span class="label">${t.sharingLabel}</span>
@@ -347,8 +419,9 @@ ${t.chips.map((c, i) => `    <a href="${ANKER[i]}">${c}</a>`).join('\n')}
 `);
   }
   teile.push('\n<!-- SHARING -->\n');
-  teile.push(sharingHtml(lang, { id: 'sharing', eyebrow: sharingEyebrow, eyebrowTag: sharingEyebrowTag, knopf }));
-  teile.push(`\n<div class="menu-legend">${t.legende}</div>\n`);
+  teile.push(sharingHtml(lang, { id: 'sharing', eyebrow: sharingEyebrow, eyebrowTag: sharingEyebrowTag, knopf, mitAllergenen: true }));
+  // Hinweis + EIN Schalter für alle Allergene (Klick-Logik: app/Grundgeruest.js, ohne JS ausgeblendet)
+  teile.push(`\n<div class="menu-legend"><p>${t.legende(allergene.stand)}</p><button type="button" class="allergene-schalter" aria-pressed="false" data-allergene-schalter>${t.alleAllergene}</button></div>\n`);
   for (const kap of KAPITEL) teile.push(kapitelHtml(kap, lang) + '\n');
   if (download) {
     const d = t.download;

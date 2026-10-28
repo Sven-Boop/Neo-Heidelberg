@@ -35,12 +35,20 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 for(i=0;i<els.length;i++)io.observe(els[i]);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',los);else los();})();`;
 
+// Schalter „Allergene anzeigen“ der Speisekarte (app/winterkarte/render.js): klappt alle
+// <details class="allergene"> auf bzw. zu. Per Ereignis-Delegation am Dokument, damit er auf
+// /speisekarte, /en und /menu gleich arbeitet, ohne dass React oder die Seiten-Skripte geladen sein müssen.
+const allergenSchalter = `document.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-allergene-schalter]');if(!b)return;
+var an=b.getAttribute('aria-pressed')!=='true';var bs=document.querySelectorAll('[data-allergene-schalter]'),ds=document.querySelectorAll('details.allergene'),i;
+for(i=0;i<bs.length;i++)bs[i].setAttribute('aria-pressed',an?'true':'false');for(i=0;i<ds.length;i++)ds[i].open=an;});`;
+
 export function Grundgeruest({ lang, children }) {
   return (
     <html lang={lang} className={lato.variable} suppressHydrationWarning>
       <head>
         <link rel="preload" as="image" href="/video/neo-hero-poster.webp" fetchPriority="high" />
         <script dangerouslySetInnerHTML={{ __html: lazyBilder }} />
+        <script dangerouslySetInnerHTML={{ __html: allergenSchalter }} />
       </head>
       <body>
         {children}

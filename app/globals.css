@@ -4980,3 +4980,94 @@ html.einw-offen { scroll-padding-bottom: calc(var(--einw-h, 110px) + 12px); }
 }
 /* Abstand zwischen Filet-Tabelle und den Gerichten darunter (Taste Your Filet) */
 .filet-grid + .items { margin-top: 28px; }
+
+/* ============ Allergene auf der Online-Karte (28.10.2026, Entwurf) ============ */
+/* Je Gericht ein <details> „Allergene“ (geht ohne JS), oben EIN Schalter für alle.
+   Zu: nur die kleine Zeile — aufgeklappt schiebt sich der Text darunter, nichts überlagert. */
+.allergene {
+  /* globale FAQ-Regeln für details/summary/p (oben) hier zurücknehmen */
+  border: 0;
+  padding: 0;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--fg-soft);
+}
+.allergene > summary {
+  display: inline-flex;
+  justify-content: flex-start;
+  transition: color .2s;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px 0 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.allergene > summary::-webkit-details-marker { display: none; }
+.allergene > summary::after {
+  content: '';
+  flex-shrink: 0;
+  font-size: 0;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .2s;
+}
+.allergene[open] > summary::after { transform: translateY(1px) rotate(-135deg); }
+.allergene > summary:hover { color: var(--accent-hi); }
+.allergene > summary:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.allergene-text { padding: 0 0 4px; }
+.allergene .allergene-text p { padding: 0; font-size: inherit; line-height: inherit; color: inherit; max-width: none; }
+.allergene-text p + p { margin-top: 2px; }
+.allergene-art { font-weight: 700; color: var(--fg); }
+/* Filet-Tabelle: Name groß, Allergene klein darunter in derselben Zelle */
+.filet-cell .allergene { margin-top: 4px; }
+@media (max-width: 560px) {
+  .filet-cell .allergene { font-size: 11px; }
+  .filet-cell .allergene > summary { letter-spacing: 0.1em; padding-right: 0; }
+}
+/* Sharing Menu: Gänge sind mittig gesetzt */
+.course .allergene { margin-top: 10px; text-align: center; }
+.course .allergene > summary { padding: 0 0 0 14px; }
+
+/* Hinweis + Schalter über der Karte */
+.menu-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 28px;
+  flex-wrap: wrap;
+}
+.menu-legend p { flex: 1 1 32rem; max-width: 62rem; }
+.allergene-schalter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid var(--accent-soft);
+  background: transparent;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.allergene-schalter:hover { border-color: var(--accent); }
+.allergene-schalter[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.allergene-schalter:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+html:not(.js) .allergene-schalter { display: none; }
+@media print { .allergene-schalter, .allergene > summary::after { display: none; } }

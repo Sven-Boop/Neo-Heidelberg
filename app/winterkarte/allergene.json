@@ -1,0 +1,1287 @@
+{
+ "_quelle": "BLISS Service lib/daten/karte.js (Küche ea929e7, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
+ "stand": "28.10.2026",
+ "kueche": "ea929e7",
+ "gerichte": {
+  "gang:katsu-sando-vom-wagyu-roastbeef-a4": {
+   "service": "w-katsu-sando-vom-wagyu-roastbeef-a4",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "gang:hummer-roll": {
+   "service": "w-hummer-roll",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "L",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "gang:taste-your-filet-deluxe": {
+   "service": "w-taste-your-filet-deluxe",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "gang:birne-helene": {
+   "service": "w-birne-helene",
+   "enthaelt": [
+    "C",
+    "G",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-sharing-dinner-fuer-2-personen": {
+   "service": "w-sharing-menu-winter",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "H",
+    "L",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-kleine-sardinen-in-olivenoel": {
+   "service": "w-kleine-sardinen-in-olivenoel",
+   "enthaelt": [
+    "A",
+    "D",
+    "G"
+   ],
+   "kann": []
+  },
+  "w-marinierte-miesmuscheln": {
+   "service": "w-marinierte-miesmuscheln",
+   "enthaelt": [
+    "A",
+    "G",
+    "R"
+   ],
+   "kann": []
+  },
+  "w-kleine-kammmuscheln-galicien-style": {
+   "service": "w-kleine-kammmuscheln-galicien-style",
+   "enthaelt": [
+    "A",
+    "G",
+    "R"
+   ],
+   "kann": []
+  },
+  "w-die-weltbesten-codesa-anchovis-aus-kantabrien": {
+   "service": "w-codesa-anchovis-limitada-black-edition",
+   "enthaelt": [
+    "A",
+    "D",
+    "G"
+   ],
+   "kann": []
+  },
+  "w-gaues-brotvariation": {
+   "service": "w-gaues-brotvariation",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-tatar-vom-schwarzwaelder-rind": {
+   "service": "w-tatar-vom-schwarzwaelder-rind",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-lachsforelle-matjes-art": {
+   "service": "w-lachsforelle-matjes-art",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "G",
+    "M",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-carpaccio-vom-rinderfilet": {
+   "service": "w-carpaccio-vom-rinderfilet",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-rote-bete-gebeizte-lachsforelle": {
+   "service": "w-rote-bete-gebeizte-lachsforelle",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "G"
+   ],
+   "kann": [
+    "B",
+    "O"
+   ]
+  },
+  "w-gebackene-bueffel-burrata": {
+   "service": "w-gebackene-bueffel-burrata",
+   "enthaelt": [
+    "A",
+    "G",
+    "H",
+    "M",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-caesar-salad": {
+   "service": "w-caesar-salad",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-spitzkohl-dunkel-geroestet": {
+   "service": "w-spitzkohl-dunkel-geroestet",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-gegrillte-wildfanggarnele": {
+   "service": "w-gegrillte-wildfang-garnele",
+   "enthaelt": [
+    "B"
+   ],
+   "kann": []
+  },
+  "w-tempura-garnele": {
+   "service": "w-tempura-garnele",
+   "enthaelt": [
+    "A",
+    "B",
+    "C"
+   ],
+   "kann": []
+  },
+  "w-fetzen-vom-rinderfilet": {
+   "service": "w-fetzen-vom-rinderfilet",
+   "enthaelt": [],
+   "kann": []
+  },
+  "w-crispy-chicken": {
+   "service": "w-crispy-chicken",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "N"
+   ],
+   "kann": [
+    "B",
+    "O"
+   ]
+  },
+  "w-the-neo-tower": {
+   "service": "w-the-neo-tower",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O",
+    "R"
+   ],
+   "kann": []
+  },
+  "w-sashimi-selection": {
+   "service": "w-sashimi-selection",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N",
+    "R"
+   ],
+   "kann": [
+    "O"
+   ]
+  },
+  "w-sashimi-selection-thunfisch-blue-fin": {
+   "service": "w-sashimi-selection-thunfisch-blue-fin",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "N"
+   ],
+   "kann": [
+    "O"
+   ]
+  },
+  "w-toro-tataki": {
+   "service": "w-toro-tataki",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "N"
+   ],
+   "kann": [
+    "O"
+   ]
+  },
+  "w-ceviche-vom-weissen-heilbutt": {
+   "service": "w-ceviche-vom-weissen-heilbutt",
+   "enthaelt": [
+    "D",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-katsu-sando-vom-duroc-schwein": {
+   "service": "w-katsu-sando-vom-duroc-schwein",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-crispy-rice-spicy-tuna": {
+   "service": "w-crispy-rice-spicy-tuna",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-edamame-klassisch": {
+   "service": "w-edamame-klassisch",
+   "enthaelt": [
+    "C",
+    "F",
+    "G",
+    "M"
+   ],
+   "kann": []
+  },
+  "w-edamame-asian-style": {
+   "service": "w-edamame-asian-style",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "M",
+    "N"
+   ],
+   "kann": [
+    "O"
+   ]
+  },
+  "w-edamame-trueffel": {
+   "service": "w-edamame-trueffel",
+   "enthaelt": [
+    "F",
+    "G",
+    "M"
+   ],
+   "kann": []
+  },
+  "w-mrs-green": {
+   "service": "w-mrs-green",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-t-n-t": {
+   "service": "w-t-n-t",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-lachs-hoch2": {
+   "service": "w-lachs-hoch2",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-hummer-roll": {
+   "service": "w-hummer-roll",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "L",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-surf-n-turf": {
+   "service": "w-surf-n-turf",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-crispy-green": {
+   "service": "w-crispy-green",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-crispy-hummer": {
+   "service": "w-crispy-hummer",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "L",
+    "M",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-crispy-futomaki-rolls-crispy-chicken": {
+   "service": "w-crispy-chicken-crispy-futomaki",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-crispy-tuna": {
+   "service": "w-crispy-tuna",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-crispy-gochujang-garnele": {
+   "service": "w-crispy-gochujang-garnele",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "F",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-limited-signature-wagyu-japan-a4-roll": {
+   "service": "w-limited-signature-wagyu-japan-a4-roll",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-happy-bowl": {
+   "service": "w-bowl",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-lachs": {
+   "service": "w-maki-lachs",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-lachs-avocado": {
+   "service": "w-maki-lachs-avocado",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-tuna": {
+   "service": "w-maki-tuna",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-avocado": {
+   "service": "w-maki-avocado",
+   "enthaelt": [
+    "A",
+    "F",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-gurke": {
+   "service": "w-maki-gurke",
+   "enthaelt": [
+    "A",
+    "F",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-gurke-frischkaese": {
+   "service": "w-maki-gurke-frischkaese",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-tamago": {
+   "service": "w-maki-tamago",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-weisser-heilbutt-wildfanggarnele": {
+   "service": "w-weisser-heilbutt-wildfanggarnele",
+   "enthaelt": [
+    "A",
+    "B",
+    "D",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-lachsforellenfilet-vom-forellenhof-lenz": {
+   "service": "w-lachsforellenfilet-vom-forellenhof-lenz",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-hummer-ramen": {
+   "service": "w-hummer-ramen",
+   "enthaelt": [
+    "A",
+    "B",
+    "C",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-paniertes-kotelett-vom-duroc-schwein": {
+   "service": "w-paniertes-kotelett-vom-duroc-schwein",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "M",
+    "O"
+   ],
+   "kann": [
+    "B",
+    "D"
+   ]
+  },
+  "w-spare-ribs-vom-galicischen-kastanienschwein": {
+   "service": "w-spare-ribs-vom-galicischen-kastanienschwein",
+   "enthaelt": [
+    "A",
+    "F",
+    "L",
+    "M",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-miso-ramen": {
+   "service": "w-miso-ramen",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-trueffelravioli": {
+   "service": "w-trueffelravioli",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G"
+   ],
+   "kann": []
+  },
+  "w-black-angus-galicien": {
+   "service": "w-black-angus-galicien",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-chianina-igp-toscana": {
+   "service": "w-chianina-igp-toscana",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-pommersches-simmentaler": {
+   "service": "w-pommersches-simmentaler",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-wagyu-galicien": {
+   "service": "w-wagyu-galicien",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-taste-your-filet": {
+   "service": "w-taste-your-filet",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-rumpsteak-pommersches-simmentaler": {
+   "service": "w-rumpsteak-pommersches-simmentaler",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-entrecote-pommersches-simmentaler": {
+   "service": "w-entrecote-pommersches-simmentaler",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-dry-aged-rumpsteak-simmentaler": {
+   "service": "w-dry-aged-rumpsteak-rubia-gallega",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-dry-aged-entrecote-simmentaler": {
+   "service": "w-dry-aged-entrecote-rubia-gallega",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-japan-wagyu-a4": {
+   "service": "w-japan-wagyu-a4-am-heissen-stein",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-taste-your-filet-deluxe": {
+   "service": "w-taste-your-filet-deluxe",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-taste-your-filet-deluxe-hoch2": {
+   "service": "w-taste-your-filet-deluxe-hoch2",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-black-angus-kotelett": {
+   "service": "w-black-angus-kotelett",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-black-angus-t-bone": {
+   "service": "w-black-angus-t-bone",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-black-angus-porterhouse": {
+   "service": "w-black-angus-porterhouse",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-wagyu-kotelett": {
+   "service": "w-wagyu-kotelett",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-wagyu-t-bone": {
+   "service": "w-wagyu-t-bone",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-wagyu-porterhouse": {
+   "service": "w-wagyu-porterhouse",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-rubia-gallega-kotelett": {
+   "service": "w-rubia-gallega-kotelett",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-rubia-gallega-t-bone": {
+   "service": "w-rubia-gallega-t-bone",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-rubia-gallega-porterhouse": {
+   "service": "w-rubia-gallega-porterhouse",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-chianina-rind-kotelett": {
+   "service": "w-chianina-kotelett",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-chianina-rind-t-bone": {
+   "service": "w-chianina-t-bone",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-chianina-rind-porterhouse": {
+   "service": "w-chianina-porterhouse",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-portwein-jus": {
+   "service": "w-portwein-jus",
+   "enthaelt": [
+    "G",
+    "L",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-trueffeljus": {
+   "service": "w-trueffeljus",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-sauce-bearnaise": {
+   "service": "w-sauce-bearnaise",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-koji-butter": {
+   "service": "w-koji-butter",
+   "enthaelt": [
+    "A",
+    "F",
+    "G"
+   ],
+   "kann": [
+    "O"
+   ]
+  },
+  "w-apfel-senf-miso": {
+   "service": "w-apfel-senf-miso",
+   "enthaelt": [
+    "A",
+    "F",
+    "M",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-trueffel-mayo": {
+   "service": "w-trueffel-mayo",
+   "enthaelt": [
+    "C",
+    "G",
+    "M"
+   ],
+   "kann": []
+  },
+  "w-gochujang-mayo": {
+   "service": "w-gochujang-mayo",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "M",
+    "N"
+   ],
+   "kann": []
+  },
+  "w-gebratener-rosenkohl": {
+   "service": "w-gebratener-rosenkohl",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "L",
+    "N",
+    "O"
+   ],
+   "kann": [
+    "D"
+   ]
+  },
+  "w-gegrillter-spitzkohl": {
+   "service": "w-gegrillter-spitzkohl",
+   "enthaelt": [
+    "A",
+    "C",
+    "D",
+    "F",
+    "G",
+    "M",
+    "N"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-sellerie": {
+   "service": "w-selleriepueree",
+   "enthaelt": [
+    "A",
+    "F",
+    "G",
+    "H",
+    "L",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-french-fries": {
+   "service": "w-french-fries",
+   "enthaelt": [],
+   "kann": [
+    "A",
+    "B"
+   ]
+  },
+  "w-parmesan": {
+   "service": "w-french-fries-parmesan",
+   "enthaelt": [
+    "G"
+   ],
+   "kann": [
+    "A",
+    "B"
+   ]
+  },
+  "w-trueffel-trueffel-mayo": {
+   "service": "w-french-fries-trueffel-trueffel-mayo",
+   "enthaelt": [
+    "C",
+    "G",
+    "M"
+   ],
+   "kann": [
+    "A",
+    "B"
+   ]
+  },
+  "w-parmesan-trueffel-trueffel-mayo": {
+   "service": "w-french-fries-parmesan-trueffel-trueffel-mayo",
+   "enthaelt": [
+    "C",
+    "G",
+    "M"
+   ],
+   "kann": [
+    "A",
+    "B"
+   ]
+  },
+  "w-suesskartoffel-fries": {
+   "service": "w-suesskartoffel-fries",
+   "enthaelt": [
+    "A",
+    "D",
+    "F",
+    "N"
+   ],
+   "kann": [
+    "B"
+   ]
+  },
+  "w-loaded-fries": {
+   "service": "w-loaded-fries",
+   "enthaelt": [
+    "A",
+    "C",
+    "F",
+    "G",
+    "L",
+    "O"
+   ],
+   "kann": [
+    "B",
+    "D"
+   ]
+  },
+  "w-cremiges-kartoffelgratin": {
+   "service": "w-cremiges-kartoffelgratin",
+   "enthaelt": [
+    "G"
+   ],
+   "kann": []
+  },
+  "w-creme-brulee": {
+   "service": "w-creme-brulee",
+   "enthaelt": [
+    "C",
+    "G",
+    "H"
+   ],
+   "kann": []
+  },
+  "w-birne-helene": {
+   "service": "w-birne-helene",
+   "enthaelt": [
+    "C",
+    "G",
+    "O"
+   ],
+   "kann": []
+  },
+  "w-schokoladenkuchen": {
+   "service": "w-schokoladenkuchen",
+   "enthaelt": [
+    "A",
+    "C",
+    "G",
+    "O"
+   ],
+   "kann": []
+  }
+ },
+ "ohneZuordnung": [
+  "Side Dishes · – · Specials"
+ ]
+}
