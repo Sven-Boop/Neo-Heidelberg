@@ -3,9 +3,10 @@ import SiteScripts from '../../SiteScripts';
 import SetLang from '../../SetLang';
 import { structuredDataEn } from '../../structuredData';
 import { mitHaeuserLeiste } from '../../haeuser';
+import { mitKarte, mitSharingTeaser } from '../../winterkarte/render';
 
-// Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js)
-const html = mitHaeuserLeiste(bodyHtml, 'en');
+// Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js), Winterkarte aus app/winterkarte
+const html = mitKarte(mitSharingTeaser(mitHaeuserLeiste(bodyHtml, 'en'), 'en'), 'en');
 
 export const metadata = {
   title: 'NEO Heidelberg · Dry-Aged Steaks, Sushi & Bar at Main Station',

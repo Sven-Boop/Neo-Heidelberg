@@ -19,7 +19,7 @@
     --sans: var(--font-lato), 'Lato', system-ui, sans-serif;
     --pad-x: clamp(24px, 4vw, 72px);
   
-    --bar-img: url('/bg/bar.webp');}
+    --bar-img: url('/img/w26/bar.webp');}
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   h1, h2, h3, h4 { padding-bottom: 0.12em; overflow: visible; }
@@ -671,7 +671,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.30), rgba(20,25,32,0.58)),
-      url('/menu/p03782.webp');
+      url('/img/w26/sharing.webp');
     background-size: cover;
     background-position: center;
   }
@@ -2226,7 +2226,7 @@
     background-color: var(--bg);
     background-image:
       linear-gradient(rgba(20,25,32,0.30), rgba(20,25,32,0.58)),
-      url('/menu/p03782.webp');
+      url('/img/w26/sharing.webp');
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid var(--line);
@@ -4969,3 +4969,14 @@ html.einw-offen { scroll-padding-bottom: calc(var(--einw-h, 110px) + 12px); }
 
 /* Knopf zum Menü-Baukasten unter den Menüvorschlägen (20.10.2026) */
 .ev-baukasten { margin-top: 28px; }
+
+/* ============ Winterkarte 2026/27 (28.10.2026) ============ */
+/* Hinweis unter den Desserts („Alle Preise inkl. gesetzl. MwSt.“) */
+.menu-hinweis {
+  margin: 28px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted-lesbar, var(--muted));
+}
+/* Abstand zwischen Filet-Tabelle und den Gerichten darunter (Taste Your Filet) */
+.filet-grid + .items { margin-top: 28px; }

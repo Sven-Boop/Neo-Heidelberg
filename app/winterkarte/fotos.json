@@ -1,0 +1,253 @@
+{
+ "_hinweis": [
+  "EINZIGE Zuordnung Foto → Gericht für die Website (Speisekarte DE /speisekarte, EN /en und /menu).",
+  "Stand 28.10.2026: Serien „sicher“ und „wahrscheinlich“ aus der Durchsicht aller 431 Fotos (scratchpad/benennen/claude-zuordnung.json), je Gericht ein Einzelbild ohne Hände/Personen.",
+  "gerichte: Kennung aus app/winterkarte/karte.json → nr = Bildnummer #1–#431 im Shooting „NEO - WINTERKARTE 26’“ (Selina Gargiullo, Ablage ~/Pictures/Galerie Selina Gargiullo/NEO - WINTERKARTE 26/NNN_<id>.jpg).",
+  "alt = Foto aus dem Sommer-Shooting, nur für Gerichte, die im Winter gleich geblieben sind; ein Winterfoto (nr) ersetzt es.",
+  "Gerichte ohne Eintrag zeigen kein Foto.",
+  "Svens Namen einspielen: python3 scripts/winterfotos.py --namen <datei.json>; danach immer: python3 scripts/winterfotos.py (erzeugt die WebP-Bilder).",
+  "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp."
+ ],
+ "gerichte": {
+  "w-kleine-sardinen-in-olivenoel": {
+   "nr": 285,
+   "gericht": "Kleine Sardinen in Olivenöl"
+  },
+  "w-marinierte-miesmuscheln": {
+   "alt": "/menu/p04413.webp",
+   "gericht": "Marinierte Miesmuscheln"
+  },
+  "w-kleine-kammmuscheln-galicien-style": {
+   "alt": "/menu/p04422.webp",
+   "gericht": "Kleine Kammmuscheln Galicien Style"
+  },
+  "w-die-weltbesten-codesa-anchovis-aus-kantabrien": {
+   "alt": "/menu/p04408.webp",
+   "gericht": "Die weltbesten Codesa-Anchovis aus Kantabrien"
+  },
+  "w-gaues-brotvariation": {
+   "alt": "/menu/p04295.webp",
+   "gericht": "Gaues Brotvariation"
+  },
+  "w-tatar-vom-schwarzwaelder-rind": {
+   "nr": 263,
+   "gericht": "Tatar vom Schwarzwälder Rind"
+  },
+  "w-lachsforelle-matjes-art": {
+   "nr": 267,
+   "gericht": "Lachsforelle Matjes Art"
+  },
+  "w-carpaccio-vom-rinderfilet": {
+   "nr": 236,
+   "gericht": "Carpaccio vom Rinderfilet"
+  },
+  "w-rote-bete-gebeizte-lachsforelle": {
+   "nr": 255,
+   "gericht": "Rote-Bete-gebeizte Lachsforelle"
+  },
+  "w-gebackene-bueffel-burrata": {
+   "nr": 175,
+   "gericht": "Gebackene Büffel-Burrata"
+  },
+  "w-caesar-salad": {
+   "nr": 97,
+   "gericht": "Caesar Salad"
+  },
+  "w-spitzkohl-dunkel-geroestet": {
+   "nr": 1,
+   "gericht": "Spitzkohl, dunkel geröstet"
+  },
+  "w-the-neo-tower": {
+   "alt": "/img/gallery/sushi-terrasse.webp",
+   "gericht": "The NEO Tower"
+  },
+  "w-ceviche-vom-weissen-heilbutt": {
+   "nr": 280,
+   "gericht": "Ceviche vom weißen Heilbutt"
+  },
+  "w-katsu-sando-vom-duroc-schwein": {
+   "nr": 197,
+   "gericht": "Katsu Sando vom Duroc Schwein"
+  },
+  "w-mrs-green": {
+   "nr": 141,
+   "gericht": "Mrs. Green"
+  },
+  "w-t-n-t": {
+   "nr": 43,
+   "gericht": "T N T"
+  },
+  "w-lachs-hoch2": {
+   "nr": 38,
+   "gericht": "Lachs Hoch²"
+  },
+  "w-hummer-roll": {
+   "nr": 164,
+   "gericht": "Hummer Roll"
+  },
+  "w-surf-n-turf": {
+   "nr": 49,
+   "gericht": "Surf ’n Turf"
+  },
+  "w-crispy-green": {
+   "nr": 114,
+   "gericht": "Crispy Green"
+  },
+  "w-crispy-hummer": {
+   "nr": 120,
+   "gericht": "Crispy Hummer"
+  },
+  "w-crispy-futomaki-rolls-crispy-chicken": {
+   "nr": 171,
+   "gericht": "Crispy Chicken"
+  },
+  "w-crispy-tuna": {
+   "nr": 71,
+   "gericht": "Crispy Tuna"
+  },
+  "w-limited-signature-wagyu-japan-a4-roll": {
+   "alt": "/menu/p04087.webp",
+   "gericht": "Limited Signature Wagyu Japan A4 Roll"
+  },
+  "w-lachs": {
+   "alt": "/img/E60A8677-Bearbeitet-scaled-e1719227896937.webp",
+   "gericht": "Lachs"
+  },
+  "w-weisser-heilbutt-wildfanggarnele": {
+   "nr": 32,
+   "gericht": "Weißer Heilbutt & Wildfanggarnele"
+  },
+  "w-lachsforellenfilet-vom-forellenhof-lenz": {
+   "nr": 155,
+   "gericht": "Lachsforellenfilet vom Forellenhof Lenz"
+  },
+  "w-hummer-ramen": {
+   "nr": 64,
+   "gericht": "Hummer-Ramen"
+  },
+  "w-paniertes-kotelett-vom-duroc-schwein": {
+   "nr": 101,
+   "gericht": "Paniertes Kotelett vom Duroc Schwein"
+  },
+  "w-spare-ribs-vom-galicischen-kastanienschwein": {
+   "nr": 79,
+   "gericht": "Spare Ribs vom galicischen Kastanienschwein"
+  },
+  "w-miso-ramen": {
+   "nr": 17,
+   "gericht": "Miso-Ramen"
+  },
+  "w-trueffelravioli": {
+   "nr": 134,
+   "gericht": "Trüffelravioli"
+  },
+  "w-taste-your-filet": {
+   "nr": 193,
+   "gericht": "Taste Your Filet"
+  },
+  "w-taste-your-filet-deluxe": {
+   "nr": 209,
+   "gericht": "Taste Your Filet Deluxe"
+  },
+  "w-taste-your-filet-deluxe-hoch2": {
+   "nr": 214,
+   "gericht": "Taste Your Filet Deluxe Hoch²"
+  },
+  "w-french-fries": {
+   "alt": "/menu/p04345.webp",
+   "gericht": "French Fries"
+  },
+  "w-parmesan": {
+   "alt": "/menu/p04351.webp",
+   "gericht": "+ Parmesan"
+  },
+  "w-trueffel-trueffel-mayo": {
+   "alt": "/menu/p04358.webp",
+   "gericht": "+ Trüffel & Trüffel-Mayo"
+  },
+  "w-suesskartoffel-fries": {
+   "nr": 230,
+   "gericht": "Süßkartoffel Fries"
+  },
+  "w-loaded-fries": {
+   "nr": 225,
+   "gericht": "Loaded Fries"
+  },
+  "w-cremiges-kartoffelgratin": {
+   "nr": 221,
+   "gericht": "Cremiges Kartoffelgratin"
+  }
+ },
+ "orte": {
+  "sharing": {
+   "nr": 211,
+   "was": "Hintergrund Sharing Menu (Startseite + Speisekarte), Taste Your Filet Deluxe nah"
+  },
+  "bar": {
+   "nr": 297,
+   "was": "Bar-Abschnitt der Startseite (Hintergrund)"
+  },
+  "bar-lounge": {
+   "nr": 374,
+   "was": "Galerie „Ein Abend im NEO“",
+   "de": "Die Bar-Lounge am Abend",
+   "en": "The bar lounge at night",
+   "cat": "Bar",
+   "cat_en": "Bar"
+  },
+  "tafel": {
+   "nr": 401,
+   "was": "Galerie „Ein Abend im NEO“",
+   "de": "Lange Tafel unter den Glasleuchten",
+   "en": "Long table beneath the glass lamps",
+   "cat": "Restaurant",
+   "cat_en": "Restaurant"
+  },
+  "chalet": {
+   "nr": 410,
+   "was": "Galerie „Ein Abend im NEO“",
+   "de": "Das Chalet im Winter",
+   "en": "The chalet in winter",
+   "cat": "Chalet",
+   "cat_en": "Chalet"
+  },
+  "drink-kunstwand": {
+   "nr": 333,
+   "was": "Galerie „Ein Abend im NEO“",
+   "de": "Drink vor der Kunstwand",
+   "en": "A drink in front of the art wall",
+   "cat": "Bar",
+   "cat_en": "Bar"
+  },
+  "drink-schaum": {
+   "nr": 325,
+   "was": "Galerie „Ein Abend im NEO“",
+   "de": "Aus der Bar",
+   "en": "From the bar",
+   "cat": "Bar",
+   "cat_en": "Bar"
+  },
+  "glasleuchten": {
+   "nr": 357,
+   "was": "Galerie „Das Neo in Bildern“",
+   "de": "Das Restaurant unter Glasleuchten",
+   "en": "The restaurant beneath glass lamps"
+  },
+  "longdrink": {
+   "nr": 318,
+   "was": "Galerie „Das Neo in Bildern“",
+   "de": "Longdrink aus der Bar",
+   "en": "Long drink from the bar"
+  },
+  "restaurant": {
+   "nr": 347,
+   "was": "Galerie „Das Neo in Bildern“",
+   "de": "Das Restaurant am Abend",
+   "en": "The restaurant in the evening"
+  },
+  "chalet-raum": {
+   "nr": 412,
+   "was": "Eventseiten, Raum „Das Chalet“"
+  }
+ }
+}

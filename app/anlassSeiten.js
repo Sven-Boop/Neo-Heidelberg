@@ -42,6 +42,14 @@ const RAEUME = {
     bild: '/img/gallery/neo-b-08553.webp',
     alt: 'Bar-Lounge im NEO am Abend',
   },
+  // Winterfoto aus dem Shooting „NEO - WINTERKARTE 26’“ (#412, app/winterkarte/fotos.json → orte.chalet-raum)
+  chalet: {
+    name: 'Das <em>Chalet</em>',
+    zeit: 'Im Winter',
+    text: 'Im Winter wird die Terrasse zum Chalet: Holz, Felle und warmes Licht, für Gruppen und Feiern bis zu 80 Gäste.',
+    bild: '/img/w26/chalet-raum.webp',
+    alt: 'Das Chalet des NEO im Winter',
+  },
   garten: {
     name: 'Terrasse <em>&amp; Garten</em>',
     zeit: 'Mai bis September',
@@ -122,7 +130,7 @@ export const ANLASS_SEITEN = {
         'Ihr bucht, was zu eurem Anlass passt: exklusiv die Terrasse mit Garten, das komplette Restaurant oder das ganze Haus. Für den kleineren Rahmen gibt es die Bar exklusiv.',
       ],
     },
-    raeume: ['restaurant', 'bar', 'garten'],
+    raeume: ['restaurant', 'bar', 'chalet', 'garten'],
     raeumeH2: 'Drei Bereiche, <em>ein Haus.</em>',
     anlaesse: true,
     menues: 'kurz',
@@ -158,7 +166,7 @@ export const ANLASS_SEITEN = {
         'Freie Termine im Dezember nennen wir euch auf Anfrage. Wunschdatum und ungefähre Gästezahl genügen.',
       ],
     },
-    raeume: ['restaurant', 'bar'],
+    raeume: ['restaurant', 'bar', 'chalet'],
     raeumeH2: 'Restaurant <em>und Bar.</em>',
     menues: 'voll',
     faq: [
@@ -210,7 +218,7 @@ export const ANLASS_SEITEN = {
         'Küche, Bar, Service und Technik kommen aus dem Haus.',
       ],
     },
-    raeume: ['restaurant', 'bar', 'garten'],
+    raeume: ['restaurant', 'bar', 'chalet', 'garten'],
     raeumeH2: 'Drei Bereiche, <em>ein Haus.</em>',
     menues: 'voll',
     faq: [

@@ -1,6 +1,7 @@
 import { bodyHtml } from './bodyHtml';
 import { mitHaeuserLeiste } from './haeuser';
 import { mitFeiernMenues } from './feiernMenues';
+import { mitKarte, mitSharingTeaser } from './winterkarte/render';
 
 // Seit 17.10.2026 liefert jede deutsche Adresse nur ihren eigenen Inhalt aus (vorher bekamen
 // /speisekarte und /hochzeit die komplette Startseite und schalteten nur per CSS-Klasse um).
@@ -15,8 +16,9 @@ function schneide(von, bis) {
 
 const KOPF = schneide('<!-- NAV -->', '<!-- HERO -->');
 // Startseite mit Wintermenüs im Abschnitt „Feiern im NEO“ (app/feiernMenues.js)
-const START = mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">'));
-const KARTE = schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE');
+const START = mitSharingTeaser(mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">')), 'de');
+// Speisekarte Winter 2026/27 aus app/winterkarte (Daten + Fotos), eingesetzt an <!--WINTERKARTE-->
+const KARTE = mitKarte(schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE'), 'de');
 const HOCHZEIT = schneide('<div class="subpage" id="page-hochzeit">', '<!-- FOOTER -->');
 // Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js)
 const FUSS = mitHaeuserLeiste(schneide('<!-- FOOTER -->'), 'de');

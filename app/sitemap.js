@@ -1,7 +1,7 @@
 export default function sitemap() {
   // Festes Datum der letzten inhaltlichen Änderung (bei Textänderungen nachziehen),
   // statt bei jedem Abruf „jetzt“
-  const stand = new Date('2026-10-17');
+  const stand = new Date('2026-10-28');
   const langs = {
     de: 'https://www.neo-heidelberg.de/',
     en: 'https://www.neo-heidelberg.de/en',

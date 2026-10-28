@@ -1,0 +1,1329 @@
+{
+ "_quelle": "neo-winterkarte-gaeste/karte.html + karte-en.html, START _v:13 (Gästekarte Winter 2026/27). Nicht von Hand ändern: node scripts/winterkarte-holen.mjs",
+ "seiten": [
+  {
+   "titel": "Sharing Menu",
+   "titel_en": "Sharing Menu",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "gaenge",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Katsu Sando vom Wagyu Roastbeef A4",
+       "name_en": "Katsu Sando – Wagyu A4 Roast Beef",
+       "beschr": "Wagyu-Rücken knusprig in Panko ausgebacken · Shokupan in Nussbutter geröstet · Tonkatsu-Sauce · Senf-Miso-Crème · gepickelte rote Zwiebel · Schnittlauch",
+       "beschr_en": "crispy panko-fried Wagyu loin · shokupan toasted in brown butter · tonkatsu sauce · mustard miso cream · pickled red onion · chives",
+       "nr": "I"
+      },
+      {
+       "name": "Hummer Roll",
+       "name_en": "Lobster Roll",
+       "beschr": "Hummersalat · Yuzu-Mayo · Crunchy Kürbiskerne · Avocado · Hummer-Bisque-Glace · schwarzer Tobiko · Schnittlauch",
+       "beschr_en": "lobster salad · yuzu mayo · crunchy pumpkin seeds · avocado · lobster bisque glaze · black tobiko · chives",
+       "nr": "II"
+      },
+      {
+       "name": "Taste Your Filet Deluxe",
+       "name_en": "Taste Your Filet Deluxe",
+       "beschr": "4x je 100 g · Black Angus Galicien · Chianina IGP Toscana · Pommersches Simmentaler · Wagyu Galicien · Trüffeljus · Sauce Béarnaise · Sellerie · Lauch · Walnuss",
+       "beschr_en": "4x 100 g · Black Angus Galicia · Chianina IGP Toscana · Pomeranian Simmental · Wagyu Galicia · truffle jus · sauce béarnaise · celeriac · leek · walnut",
+       "nr": "III"
+      },
+      {
+       "name": "Birne Helene",
+       "name_en": "Pear Belle Hélène",
+       "beschr": "weiße Schokoladen-Crème · Birnen-Thymian-Ragout · Glühwein-Sabayon · Schokoladen-Rum-Sauce · Crème-Brûlée-Eis",
+       "beschr_en": "white chocolate cream · pear and thyme ragout · mulled wine sabayon · chocolate rum sauce · crème brûlée ice cream",
+       "nr": "IV"
+      }
+     ]
+    },
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "liste",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Sharing Dinner für 2 Personen",
+       "name_en": "Sharing Dinner for 2",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "Preis pro Person · 125.00",
+       "preis_en": "Price per person · 125.00",
+       "id": "w-sharing-dinner-fuer-2-personen"
+      },
+      {
+       "name": "+ Tee-Pairing",
+       "name_en": "+ Tea Pairing",
+       "beschr": "vier Tees zu vier Gängen · Hojicha · Sencha Cold Brew · Genmaicha · Matcha",
+       "beschr_en": "four teas for four courses · Hojicha · Sencha Cold Brew · Genmaicha · Matcha",
+       "preis": "28.00 p. P.",
+       "preis_en": "28.00 p.p.",
+       "weg": true,
+       "id": "w-tee-pairing"
+      },
+      {
+       "name": "+ Upgrade Katsu Sando vom Wagyu Roastbeef A4",
+       "name_en": "+ Upgrade Katsu Sando – Wagyu A4 Roast Beef",
+       "beschr": "Wagyu-Rücken knusprig in Panko ausgebacken · Shokupan in Nussbutter geröstet · Tonkatsu-Sauce · Senf-Miso-Crème · gepickelte rote Zwiebel · Schnittlauch",
+       "beschr_en": "crispy panko-fried Wagyu loin · shokupan toasted in brown butter · tonkatsu sauce · mustard miso cream · pickled red onion · chives",
+       "preis": "100 g · 65.00",
+       "preis_en": "100 g · 65.00",
+       "weg": true,
+       "id": "w-upgrade-katsu-sando-vom-wagyu-roastbeef-a4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Starters",
+   "titel_en": "Starters",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "Konserven Deluxe",
+     "titel_en": "Conservas Deluxe",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Kleine Sardinen in Olivenöl",
+       "name_en": "Small Sardines in Olive Oil",
+       "beschr": "Sardinillas · Galicien",
+       "beschr_en": "Sardinillas · Galicia",
+       "preis": "115 g · 13.00",
+       "preis_en": "115 g · 13.00",
+       "id": "w-kleine-sardinen-in-olivenoel"
+      },
+      {
+       "name": "Marinierte Miesmuscheln",
+       "name_en": "Marinated Mussels",
+       "beschr": "in pikantem Tomaten-Sud · Mejillón · Galicien",
+       "beschr_en": "in a spicy tomato broth · Mejillón · Galicia",
+       "preis": "110 g · 13.00",
+       "preis_en": "110 g · 13.00",
+       "id": "w-marinierte-miesmuscheln"
+      },
+      {
+       "name": "Kleine Kammmuscheln Galicien Style",
+       "name_en": "Small Scallops Galician Style",
+       "beschr": "in feinem Paprika-Sud · Viera Galicien",
+       "beschr_en": "in a delicate paprika broth · Viera Galicia",
+       "preis": "110 g · 22.00",
+       "preis_en": "110 g · 22.00",
+       "id": "w-kleine-kammmuscheln-galicien-style"
+      },
+      {
+       "name": "Die weltbesten Codesa-Anchovis aus Kantabrien",
+       "name_en": "The World’s Best Codesa Anchovies from Cantabria",
+       "beschr": "7–10 mittelgroße Filets in prämierter, handentgräteter Spitzenqualität aus der Serie Limitada / Black Edition, eingelegt in nativem Olivenöl extra",
+       "beschr_en": "7–10 medium-sized fillets of award-winning, hand-filleted quality from the Limitada / Black Edition series, preserved in extra virgin olive oil",
+       "preis": "55 g · 25.00",
+       "preis_en": "55 g · 25.00",
+       "id": "w-die-weltbesten-codesa-anchovis-aus-kantabrien"
+      }
+     ]
+    },
+    {
+     "titel": "Zu allen Konserven",
+     "titel_en": "With All Conservas",
+     "stil": "plus",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "",
+       "name_en": "",
+       "beschr": "Sauerteigbrot · Oliven · Butter · Meersalz",
+       "beschr_en": "sourdough bread · olives · butter · sea salt",
+       "preis": "",
+       "preis_en": ""
+      }
+     ]
+    },
+    {
+     "titel": "Appetizer",
+     "titel_en": "Appetizer",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Gaues Brotvariation",
+       "name_en": "Gaues Bread Selection",
+       "beschr": "Sylter Sauerteig · Rosmarin-Focaccia · Oliven-Ciabatta · Maldon Sea Salt · Nekeas Olivenöl · PX Balsamico 25 Jahre · Koji-Butter",
+       "beschr_en": "Sylt sourdough · rosemary focaccia · olive ciabatta · Maldon sea salt · Nekeas olive oil · 25-year PX balsamic · koji butter",
+       "preis": "für 2 Personen · 12.00",
+       "preis_en": "for 2 people · 12.00",
+       "id": "w-gaues-brotvariation"
+      },
+      {
+       "name": "Tatar vom Schwarzwälder Rind",
+       "name_en": "Black Forest Beef Tartare",
+       "beschr": "Kartoffel-Crunch · Crème fraîche · Portwein-Zwiebel-Marmelade · Pommery Senf · Essiggurke · Kapern · Chili",
+       "beschr_en": "potato crunch · crème fraîche · port wine onion marmalade · Pommery mustard · gherkin · capers · chili",
+       "preis": "100 g · 28.00   150 g · 36.00",
+       "preis_en": "100 g · 28.00   150 g · 36.00",
+       "id": "w-tatar-vom-schwarzwaelder-rind"
+      },
+      {
+       "name": "Lachsforelle Matjes Art",
+       "name_en": "Salmon Trout, Matjes Style",
+       "beschr": "Forellenhof Lenz · Apfel-Senf-Miso · Granny Smith · rote Zwiebeln · Kartoffelschaum · Gewürzgurke · Dill",
+       "beschr_en": "Forellenhof Lenz · apple mustard miso · Granny Smith · red onions · potato foam · pickled cucumber · dill",
+       "preis": "26.00",
+       "preis_en": "26.00",
+       "id": "w-lachsforelle-matjes-art"
+      },
+      {
+       "name": "Carpaccio vom Rinderfilet",
+       "name_en": "Beef Fillet Carpaccio",
+       "beschr": "Entenleber-Crème · Sellerie · Rote Bete · Wintertrüffel · Haselnuss-Crunch · Feldsalat · geeiste Birne",
+       "beschr_en": "duck liver cream · celeriac · beetroot · winter truffle · hazelnut crunch · lamb’s lettuce · iced pear",
+       "preis": "28.00",
+       "preis_en": "28.00",
+       "id": "w-carpaccio-vom-rinderfilet"
+      },
+      {
+       "name": "Rote-Bete-gebeizte Lachsforelle",
+       "name_en": "Beetroot-Cured Salmon Trout",
+       "beschr": "Forellenhof Lenz · Yuzu-Nussbutter · Teriyaki-Sauce · Kumquat · Jalapeño · Shiso · Buchweizen-Crunch",
+       "beschr_en": "Forellenhof Lenz · yuzu brown butter · teriyaki sauce · kumquat · jalapeño · shiso · buckwheat crunch",
+       "preis": "27.00",
+       "preis_en": "27.00",
+       "id": "w-rote-bete-gebeizte-lachsforelle"
+      }
+     ]
+    },
+    {
+     "titel": "Young Greens",
+     "titel_en": "Young Greens",
+     "stil": "zeile",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Gebackene Büffel-Burrata",
+       "name_en": "Crispy Buffalo Burrata",
+       "beschr": "Rote-Bete-Carpaccio · Portwein-Zwiebel-Marmelade · Walnüsse · Pommery Senf · Feldsalat · geeiste Birne",
+       "beschr_en": "beetroot carpaccio · port wine onion marmalade · walnuts · Pommery mustard · lamb’s lettuce · iced pear",
+       "preis": "25.00",
+       "preis_en": "25.00",
+       "id": "w-gebackene-bueffel-burrata"
+      },
+      {
+       "name": "Caesar Salad",
+       "name_en": "Caesar Salad",
+       "beschr": "Miso-Caesar-Dressing · Romanasalat · Kürbis · Croutons · frittierte Kapern · Tomaten · süß-saure Radieschen",
+       "beschr_en": "miso Caesar dressing · romaine lettuce · pumpkin · croutons · fried capers · tomatoes · sweet-and-sour radishes",
+       "preis": "small · 16.00   large · 22.00",
+       "preis_en": "small · 16.00   large · 22.00",
+       "id": "w-caesar-salad"
+      },
+      {
+       "name": "Spitzkohl, dunkel geröstet",
+       "name_en": "Pointed Cabbage, Dark-Roasted",
+       "beschr": "Miso-Caesar-Dressing · Nori-Crunch · Parmesan · Schnittlauch",
+       "beschr_en": "miso Caesar dressing · nori crunch · Parmesan · chives",
+       "preis": "18.00",
+       "preis_en": "18.00",
+       "id": "w-spitzkohl-dunkel-geroestet"
+      }
+     ]
+    },
+    {
+     "titel": "Upgrade",
+     "titel_en": "Upgrade",
+     "stil": "zeile",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Gegrillte Wildfanggarnele",
+       "name_en": "Grilled Wild-Caught Prawn",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "1 St. · 5.00",
+       "preis_en": "1 pc · 5.00",
+       "id": "w-gegrillte-wildfanggarnele"
+      },
+      {
+       "name": "Tempura-Garnele",
+       "name_en": "Tempura Prawn",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "1 St. · 5.00",
+       "preis_en": "1 pc · 5.00",
+       "id": "w-tempura-garnele"
+      },
+      {
+       "name": "Fetzen vom Rinderfilet",
+       "name_en": "Beef Fillet Strips",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "16.00",
+       "preis_en": "16.00",
+       "id": "w-fetzen-vom-rinderfilet"
+      },
+      {
+       "name": "Crispy Chicken",
+       "name_en": "Crispy Chicken",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "12.00",
+       "preis_en": "12.00",
+       "id": "w-crispy-chicken"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Sushi & More",
+   "titel_en": "Sushi & More",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "Signature",
+     "titel_en": "Signature",
+     "stil": "rahmen",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "The NEO Tower",
+       "name_en": "The NEO Tower",
+       "beschr": "Sashimi Variation · Nigiris · Inside Out Roll · Crispy Futomaki · Panko-Garnele · Crispy Rice Spicy Tuna · Daikon · Wakame · Chili-Gurken-Salat · Ponzu",
+       "beschr_en": "sashimi variation · nigiri · inside-out roll · crispy futomaki · panko prawn · crispy rice spicy tuna · daikon · wakame · chili cucumber salad · ponzu",
+       "preis": "Preis pro Person · 59.00",
+       "preis_en": "Price per person · 59.00",
+       "id": "w-the-neo-tower"
+      }
+     ]
+    },
+    {
+     "titel": "Roh & kalt",
+     "titel_en": "Raw & Cold",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Sashimi Selection",
+       "name_en": "Sashimi Selection",
+       "beschr": "Hummersalat · Blue Fin Akami & Chu Toro · Lachsforelle vom Forellenhof Lenz · St. Jakobsmuschel · weißer Heilbutt · Rote-Bete-gebeizter Lachs · Chili-Gurken-Salat · Wakame · Ponzu",
+       "beschr_en": "lobster salad · bluefin akami & chu toro · salmon trout from Forellenhof Lenz · scallop · white halibut · beetroot-cured salmon · chili cucumber salad · wakame · ponzu",
+       "preis": "65.00",
+       "preis_en": "65.00",
+       "id": "w-sashimi-selection"
+      },
+      {
+       "name": "Sashimi Selection Thunfisch Blue Fin",
+       "name_en": "Sashimi Selection Bluefin Tuna",
+       "beschr": "Akami · Chu Toro · O Toro · Ponzu · Chili-Gurken-Salat · Wakame",
+       "beschr_en": "akami · chu toro · o-toro · ponzu · chili cucumber salad · wakame",
+       "preis": "45.00",
+       "preis_en": "45.00",
+       "id": "w-sashimi-selection-thunfisch-blue-fin"
+      },
+      {
+       "name": "Toro Tataki",
+       "name_en": "Toro Tataki",
+       "beschr": "O Toro · scharf angeflämmt · schwarzer Trüffel · Trüffel-Soja-Reduktion · Shiitake · Granny Smith · Togarashi",
+       "beschr_en": "o-toro · seared · black truffle · truffle soy reduction · shiitake · Granny Smith · togarashi",
+       "preis": "36.00",
+       "preis_en": "36.00",
+       "id": "w-toro-tataki"
+      },
+      {
+       "name": "Ceviche vom weißen Heilbutt",
+       "name_en": "White Halibut Ceviche",
+       "beschr": "Zitrusfrüchte · Granny Smith · Staudensellerie · Granatapfel · rote Zwiebeln · Haselnuss-Crunch · Jalapeño",
+       "beschr_en": "citrus fruits · Granny Smith · celery · pomegranate · red onions · hazelnut crunch · jalapeño",
+       "preis": "28.00",
+       "preis_en": "28.00",
+       "id": "w-ceviche-vom-weissen-heilbutt"
+      }
+     ]
+    },
+    {
+     "titel": "Warm & knusprig",
+     "titel_en": "Warm & Crispy",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Katsu Sando vom Duroc Schwein",
+       "name_en": "Katsu Sando – Duroc Pork",
+       "beschr": "Duroc-Rücken knusprig in Panko ausgebacken · Shokupan in Nussbutter geröstet · Tonkatsu-Sauce · Senf-Miso-Crème · gepickelte rote Zwiebel · Spitzkohl · Schnittlauch",
+       "beschr_en": "crispy panko-fried Duroc loin · shokupan toasted in brown butter · tonkatsu sauce · mustard miso cream · pickled red onion · pointed cabbage · chives",
+       "preis": "22.00",
+       "preis_en": "22.00",
+       "id": "w-katsu-sando-vom-duroc-schwein"
+      },
+      {
+       "name": "Crispy Rice Spicy Tuna",
+       "name_en": "Crispy Rice Spicy Tuna",
+       "beschr": "knusprig gebratener Sushi-Reis · Blue Fin Tatar · Jalapeño · Gochujang-Mayo · Tobiko",
+       "beschr_en": "crispy fried sushi rice · bluefin tartare · jalapeño · gochujang mayo · tobiko",
+       "preis": "4 St. · 22.00",
+       "preis_en": "4 pcs · 22.00",
+       "id": "w-crispy-rice-spicy-tuna"
+      },
+      {
+       "name": "Edamame Klassisch",
+       "name_en": "Edamame Classic",
+       "beschr": "japanische Zweigbohnen · Nussbutter · Meersalz · Harissa-Mayo",
+       "beschr_en": "Japanese soybeans · brown butter · sea salt · harissa mayo",
+       "preis": "9.50",
+       "preis_en": "9.50",
+       "id": "w-edamame-klassisch"
+      },
+      {
+       "name": "Edamame Asian Style",
+       "name_en": "Edamame Asian Style",
+       "beschr": "Nussbutter · Black Aioli · Sesam · Togarashi · Soja-Reduktion",
+       "beschr_en": "brown butter · black aioli · sesame · togarashi · soy reduction",
+       "preis": "10.50",
+       "preis_en": "10.50",
+       "id": "w-edamame-asian-style"
+      },
+      {
+       "name": "Edamame Trüffel",
+       "name_en": "Edamame Truffle",
+       "beschr": "Trüffel · Nussbutter · Meersalz · Trüffel-Crème",
+       "beschr_en": "truffle · brown butter · sea salt · truffle cream",
+       "preis": "11.50",
+       "preis_en": "11.50",
+       "id": "w-edamame-trueffel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Sushi & More · Rolls",
+   "titel_en": "Sushi & More · Rolls",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "Inside Out Rolls",
+     "titel_en": "Inside Out Rolls",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Mrs. Green",
+       "name_en": "Mrs. Green",
+       "beschr": "gepickelter Spitzkohl · Gurke · Edamame-Frischkäse-Crème · Wasabi-Mayo · Sesam · Avocado",
+       "beschr_en": "pickled pointed cabbage · cucumber · edamame cream cheese · wasabi mayo · sesame · avocado",
+       "preis": "22.00",
+       "preis_en": "22.00",
+       "id": "w-mrs-green"
+      },
+      {
+       "name": "T N T",
+       "name_en": "T N T",
+       "beschr": "Blue Fin Thunfisch, Tatar & Sashimi · Avocado · Gochujang-Mayo · Jalapeño · Sesam · Koriander",
+       "beschr_en": "bluefin tuna, tartare & sashimi · avocado · gochujang mayo · jalapeño · sesame · coriander",
+       "preis": "30.00",
+       "preis_en": "30.00",
+       "id": "w-t-n-t"
+      },
+      {
+       "name": "Lachs Hoch²",
+       "name_en": "Salmon²",
+       "beschr": "Lachsforelle vom Forellenhof Lenz · Kürbiskern-Mayo · gepickelter Rettich · Granny-Smith-Chutney · Edamame-Frischkäse-Crème · Lachsrogen · Schnittlauch",
+       "beschr_en": "salmon trout from Forellenhof Lenz · pumpkin seed mayo · pickled radish · Granny Smith chutney · edamame cream cheese · salmon roe · chives",
+       "preis": "28.00",
+       "preis_en": "28.00",
+       "id": "w-lachs-hoch2"
+      },
+      {
+       "name": "Hummer Roll",
+       "name_en": "Lobster Roll",
+       "beschr": "Hummersalat · Yuzu-Mayo · Crunchy Kürbiskerne · Avocado · Hummer-Bisque-Glace · schwarzer Tobiko · Schnittlauch",
+       "beschr_en": "lobster salad · yuzu mayo · crunchy pumpkin seeds · avocado · lobster bisque glaze · black tobiko · chives",
+       "preis": "35.00",
+       "preis_en": "35.00",
+       "id": "w-hummer-roll"
+      },
+      {
+       "name": "Surf ’n Turf",
+       "name_en": "Surf ’n Turf",
+       "beschr": "Rinderfilet · crispy Wildfanggarnele · Avocado · Trüffel-Crème · schwarzer Trüffel · Parmesan · Schnittlauch",
+       "beschr_en": "beef fillet · crispy wild-caught prawn · avocado · truffle cream · black truffle · Parmesan · chives",
+       "preis": "30.00",
+       "preis_en": "30.00",
+       "id": "w-surf-n-turf"
+      }
+     ]
+    },
+    {
+     "titel": "Crispy Futomaki-Rolls",
+     "titel_en": "Crispy Futomaki Rolls",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Crispy Green",
+       "name_en": "Crispy Green",
+       "beschr": "Teriyaki-Tofu · Avocado · gerösteter Kürbis · Edamame-Crème · Wasabi-Mayo · Sesam",
+       "beschr_en": "teriyaki tofu · avocado · roasted pumpkin · edamame cream · wasabi mayo · sesame",
+       "preis": "24.00",
+       "preis_en": "24.00",
+       "id": "w-crispy-green"
+      },
+      {
+       "name": "Crispy Hummer",
+       "name_en": "Crispy Lobster",
+       "beschr": "Hummer · Avocado · Gurke · Trüffel-Crème · Frühlingslauch · schwarzer Tobiko · Hummer-Bisque-Glace",
+       "beschr_en": "lobster · avocado · cucumber · truffle cream · spring onion · black tobiko · lobster bisque glaze",
+       "preis": "35.00",
+       "preis_en": "35.00",
+       "id": "w-crispy-hummer"
+      },
+      {
+       "name": "Crispy Chicken",
+       "name_en": "Crispy Chicken",
+       "beschr": "Teriyaki-Chicken · Teriyaki-Mayo · Avocado · Röstzwiebeln · Spitzkohl",
+       "beschr_en": "teriyaki chicken · teriyaki mayo · avocado · crispy onions · pointed cabbage",
+       "preis": "26.00",
+       "preis_en": "26.00",
+       "id": "w-crispy-futomaki-rolls-crispy-chicken"
+      },
+      {
+       "name": "Crispy Tuna",
+       "name_en": "Crispy Tuna",
+       "beschr": "Thunfisch-Tatar · Rote Bete · Avocado · Chili · Gochujang-Mayo",
+       "beschr_en": "tuna tartare · beetroot · avocado · chili · gochujang mayo",
+       "preis": "28.00",
+       "preis_en": "28.00",
+       "id": "w-crispy-tuna"
+      },
+      {
+       "name": "Crispy Gochujang Garnele",
+       "name_en": "Crispy Gochujang Prawn",
+       "beschr": "Tempura-Garnele · Gochujang-Mayo · Avocado · Rote Bete · Sesam · Frühlingslauch",
+       "beschr_en": "tempura prawn · gochujang mayo · avocado · beetroot · sesame · spring onion",
+       "preis": "27.00",
+       "preis_en": "27.00",
+       "id": "w-crispy-gochujang-garnele"
+      }
+     ]
+    },
+    {
+     "titel": "NEO Signature",
+     "titel_en": "NEO Signature",
+     "stil": "rahmen",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Limited Signature Wagyu Japan A4 Roll",
+       "name_en": "Limited Signature Wagyu Japan A4 Roll",
+       "beschr": "Japan Wagyu A4 Akune Gold · Entenleber-Crème · Daikon · Sesam · Black-Truffle-Sauce · Gurke · Schnittlauch · Fleur de Sel · leicht abgeflämmt",
+       "beschr_en": "Japan Wagyu A4 Akune Gold · duck liver cream · daikon · sesame · black truffle sauce · cucumber · chives · fleur de sel · lightly torched",
+       "preis": "48.00",
+       "preis_en": "48.00",
+       "id": "w-limited-signature-wagyu-japan-a4-roll"
+      }
+     ]
+    },
+    {
+     "titel": "Bowl",
+     "titel_en": "Bowl",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Happy Bowl",
+       "name_en": "Happy Bowl",
+       "beschr": "Sushi-Reis · Lachsforelle · Blue Fin Thunfisch · Teriyaki-Chicken · Panko-Garnele · Avocado · Edamame · gerösteter Kürbis · Daikon · Mango-Chili-Relish · Lachsrogen · Wakame · Sesam · Teriyaki-Mayo",
+       "beschr_en": "sushi rice · salmon trout · bluefin tuna · teriyaki chicken · panko prawn · avocado · edamame · roasted pumpkin · daikon · mango chili relish · salmon roe · wakame · sesame · teriyaki mayo",
+       "preis": "35.00",
+       "preis_en": "35.00",
+       "id": "w-happy-bowl"
+      }
+     ]
+    },
+    {
+     "titel": "Maki",
+     "titel_en": "Maki",
+     "stil": "kreise",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Lachs",
+       "name_en": "Salmon",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "7.00",
+       "preis_en": "7.00",
+       "id": "w-lachs"
+      },
+      {
+       "name": "Lachs-Avocado",
+       "name_en": "Salmon-Avocado",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "8.00",
+       "preis_en": "8.00",
+       "id": "w-lachs-avocado"
+      },
+      {
+       "name": "Tuna",
+       "name_en": "Tuna",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "8.00",
+       "preis_en": "8.00",
+       "id": "w-tuna"
+      },
+      {
+       "name": "Avocado",
+       "name_en": "Avocado",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "6.00",
+       "preis_en": "6.00",
+       "id": "w-avocado"
+      },
+      {
+       "name": "Gurke",
+       "name_en": "Cucumber",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "5.00",
+       "preis_en": "5.00",
+       "id": "w-gurke"
+      },
+      {
+       "name": "Gurke-Frischkäse",
+       "name_en": "Cucumber & Cheese",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "6.00",
+       "preis_en": "6.00",
+       "id": "w-gurke-frischkaese"
+      },
+      {
+       "name": "Tamago",
+       "name_en": "Tamago",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "6.00",
+       "preis_en": "6.00",
+       "id": "w-tamago"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Main",
+   "titel_en": "Main",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "Fish",
+     "titel_en": "Fish",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Weißer Heilbutt & Wildfanggarnele",
+       "name_en": "White Halibut & Wild-Caught Prawn",
+       "beschr": "Rote-Curry-Krustentiersauce · Sesam-Miso-Pak-Choi · Mango-Chutney · Crispy Rice",
+       "beschr_en": "red curry shellfish sauce · sesame miso pak choi · mango chutney · crispy rice",
+       "preis": "48.00",
+       "preis_en": "48.00",
+       "id": "w-weisser-heilbutt-wildfanggarnele"
+      },
+      {
+       "name": "Lachsforellenfilet vom Forellenhof Lenz",
+       "name_en": "Salmon Trout Fillet from Forellenhof Lenz",
+       "beschr": "Sauce Béarnaise · Sellerie · Lauch · Trüffel · Walnuss",
+       "beschr_en": "sauce béarnaise · celeriac · leek · truffle · walnut",
+       "preis": "42.00",
+       "preis_en": "42.00",
+       "id": "w-lachsforellenfilet-vom-forellenhof-lenz"
+      },
+      {
+       "name": "Hummer-Ramen",
+       "name_en": "Lobster Ramen",
+       "beschr": "halber Hummer · Hummerbisque-Dashi · Ramen-Nudeln · Ajitama · Chili-Crunch · Frühlingslauch · Koriander · Pak Choi",
+       "beschr_en": "half lobster · lobster bisque dashi · ramen noodles · ajitama egg · chili crunch · spring onion · coriander · pak choi",
+       "preis": "55.00",
+       "preis_en": "55.00",
+       "id": "w-hummer-ramen"
+      }
+     ]
+    },
+    {
+     "titel": "Pork",
+     "titel_en": "Pork",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Paniertes Kotelett vom Duroc Schwein",
+       "name_en": "Breaded Duroc Pork Chop",
+       "beschr": "Trüffeljus · Sauce Béarnaise · Sellerie · Lauch · Walnuss",
+       "beschr_en": "truffle jus · sauce béarnaise · celeriac · leek · walnut",
+       "preis": "39.00",
+       "preis_en": "39.00",
+       "id": "w-paniertes-kotelett-vom-duroc-schwein"
+      },
+      {
+       "name": "Spare Ribs vom galicischen Kastanienschwein",
+       "name_en": "Spare Ribs of Galician Chestnut-Fed Pork",
+       "beschr": "Gochujang-BBQ-Lack · Apfel-Senf-Miso · Sesam-Miso-Pak-Choi · Sesam · Frühlingslauch · Koriander · Chili",
+       "beschr_en": "gochujang BBQ glaze · apple mustard miso · sesame miso pak choi · sesame · spring onion · coriander · chili",
+       "preis": "38.00",
+       "preis_en": "38.00",
+       "id": "w-spare-ribs-vom-galicischen-kastanienschwein"
+      }
+     ]
+    },
+    {
+     "titel": "Vegetarian",
+     "titel_en": "Vegetarian",
+     "stil": "zeile",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Miso-Ramen",
+       "name_en": "Miso Ramen",
+       "beschr": "Dashi · Kürbis · Shiitake · Tofu · Pak Choi · Ajitama · Chili-Crunch · Frühlingslauch",
+       "beschr_en": "dashi · pumpkin · shiitake · tofu · pak choi · ajitama egg · chili crunch · spring onion",
+       "preis": "26.00",
+       "preis_en": "26.00",
+       "id": "w-miso-ramen"
+      },
+      {
+       "name": "Trüffelravioli",
+       "name_en": "Truffle Ravioli",
+       "beschr": "Salbeibutter · Wintertrüffel · gegrillter Spitzkohl · Parmesan",
+       "beschr_en": "sage butter · winter truffle · grilled pointed cabbage · Parmesan",
+       "preis": "29.00",
+       "preis_en": "29.00",
+       "id": "w-trueffelravioli"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Beef",
+   "titel_en": "Beef",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "Filet",
+     "titel_en": "Filet",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Black Angus Galicien",
+       "name_en": "Black Angus Galicia",
+       "beschr": "Meermeat · Nosa Terra · 28 Tage Reifung",
+       "beschr_en": "Meermeat · Nosa Terra · aged 28 days",
+       "preis": "180 g · 45.00   250 g · 57.00   500 g · 110.00",
+       "preis_en": "180 g · 45.00   250 g · 57.00   500 g · 110.00",
+       "id": "w-black-angus-galicien"
+      },
+      {
+       "name": "Chianina IGP Toscana",
+       "name_en": "Chianina IGP Toscana",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "180 g · 52.00   250 g · 65.00   500 g · 120.00",
+       "preis_en": "180 g · 52.00   250 g · 65.00   500 g · 120.00",
+       "id": "w-chianina-igp-toscana"
+      },
+      {
+       "name": "Pommersches Simmentaler",
+       "name_en": "Pomeranian Simmental",
+       "beschr": "NEO Selektion Yumshaki",
+       "beschr_en": "NEO selection Yumshaki",
+       "preis": "180 g · 65.00   250 g · 78.00   500 g · 140.00",
+       "preis_en": "180 g · 65.00   250 g · 78.00   500 g · 140.00",
+       "id": "w-pommersches-simmentaler"
+      },
+      {
+       "name": "Wagyu Galicien",
+       "name_en": "Wagyu Galicia",
+       "beschr": "Galicien – Spanien",
+       "beschr_en": "Galicia – Spain",
+       "preis": "180 g · 90.00   250 g · 125.00   500 g · 250.00",
+       "preis_en": "180 g · 90.00   250 g · 125.00   500 g · 250.00",
+       "id": "w-wagyu-galicien"
+      },
+      {
+       "name": "Taste Your Filet",
+       "name_en": "Taste Your Filet",
+       "beschr": "Black Angus Galicien · Chianina IGP Toscana · Pommersches Simmentaler",
+       "beschr_en": "Black Angus Galicia · Chianina IGP Toscana · Pomeranian Simmental",
+       "preis": "3x 100 g · 79.00",
+       "preis_en": "3x 100 g · 79.00",
+       "id": "w-taste-your-filet"
+      }
+     ]
+    },
+    {
+     "titel": "Steak",
+     "titel_en": "Steak",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Rumpsteak Pommersches Simmentaler",
+       "name_en": "Rump Steak Pomeranian Simmental",
+       "beschr": "NEO Selektion Yumshaki",
+       "beschr_en": "NEO selection Yumshaki",
+       "preis": "350 g · 55.00",
+       "preis_en": "350 g · 55.00",
+       "id": "w-rumpsteak-pommersches-simmentaler"
+      },
+      {
+       "name": "Entrecôte Pommersches Simmentaler",
+       "name_en": "Entrecôte Pomeranian Simmental",
+       "beschr": "NEO Selektion Yumshaki",
+       "beschr_en": "NEO selection Yumshaki",
+       "preis": "350 g · 55.00",
+       "preis_en": "350 g · 55.00",
+       "id": "w-entrecote-pommersches-simmentaler"
+      },
+      {
+       "name": "Dry Aged Rumpsteak – Simmentaler",
+       "name_en": "Dry Aged Rump Steak – Simmental",
+       "beschr": "3–4 Wochen Reifung · NEO Selektion Yumshaki",
+       "beschr_en": "dry-aged 3–4 weeks · NEO selection Yumshaki",
+       "preis": "350 g · 69.00",
+       "preis_en": "350 g · 69.00",
+       "id": "w-dry-aged-rumpsteak-simmentaler"
+      },
+      {
+       "name": "Dry Aged Entrecôte – Simmentaler",
+       "name_en": "Dry Aged Entrecôte – Simmental",
+       "beschr": "3–4 Wochen Reifung · NEO Selektion Yumshaki",
+       "beschr_en": "dry-aged 3–4 weeks · NEO selection Yumshaki",
+       "preis": "350 g · 69.00",
+       "preis_en": "350 g · 69.00",
+       "id": "w-dry-aged-entrecote-simmentaler"
+      },
+      {
+       "name": "Japan Wagyu A4",
+       "name_en": "Japan Wagyu A4",
+       "beschr": "Akune Gold · Kagoshima",
+       "beschr_en": "Akune Gold · Kagoshima",
+       "preis": "100 g · 65.00",
+       "preis_en": "100 g · 65.00",
+       "id": "w-japan-wagyu-a4"
+      }
+     ]
+    },
+    {
+     "titel": "Signature",
+     "titel_en": "Signature",
+     "stil": "rahmen",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Taste Your Filet Deluxe",
+       "name_en": "Taste Your Filet Deluxe",
+       "beschr": "Black Angus Galicien · Chianina IGP Toscana · Pommersches Simmentaler · Wagyu Galicien",
+       "beschr_en": "Black Angus Galicia · Chianina IGP Toscana · Pomeranian Simmental · Wagyu Galicia",
+       "preis": "4x je 100 g · 125.00",
+       "preis_en": "4x 100 g · 125.00",
+       "id": "w-taste-your-filet-deluxe"
+      }
+     ]
+    },
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "rahmen",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Taste Your Filet Deluxe Hoch²",
+       "name_en": "Taste Your Filet Deluxe²",
+       "beschr": "zusätzlich 100 g Japan Wagyu A4 · am Tisch auf dem heißen Stein",
+       "beschr_en": "plus 100 g Japan Wagyu A4 · on the hot stone at your table",
+       "preis": "175.00",
+       "preis_en": "175.00",
+       "id": "w-taste-your-filet-deluxe-hoch2"
+      }
+     ]
+    },
+    {
+     "titel": "Zu allen Filets",
+     "titel_en": "With All Filets",
+     "stil": "plus",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "",
+       "name_en": "",
+       "beschr": "Trüffeljus · Sauce Béarnaise · Sellerie · Lauch · Walnuss",
+       "beschr_en": "truffle jus · sauce béarnaise · celeriac · leek · walnut",
+       "preis": "",
+       "preis_en": ""
+      }
+     ]
+    },
+    {
+     "titel": "Zu allen Steaks",
+     "titel_en": "With All Steaks",
+     "stil": "plus",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "",
+       "name_en": "",
+       "beschr": "Jus · Koji-Butter · Rosenkohl · Soja-Karamell · Sesam · Frühlingslauch · geschmorte Zwiebel · Rote Bete",
+       "beschr_en": "jus · koji butter · Brussels sprouts · soy caramel · sesame · spring onion · braised onion · beetroot",
+       "preis": "",
+       "preis_en": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Dry Aged & Bone",
+   "titel_en": "Dry Aged & Bone",
+   "dunkel": true,
+   "rubriken": [
+    {
+     "titel": "Black Angus",
+     "titel_en": "Black Angus",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Kotelett",
+       "name_en": "Chop",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 11.00",
+       "preis_en": "from 600 g · per 100 g · 11.00",
+       "id": "w-black-angus-kotelett"
+      },
+      {
+       "name": "T-Bone",
+       "name_en": "T-Bone",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 13.00",
+       "preis_en": "from 600 g · per 100 g · 13.00",
+       "id": "w-black-angus-t-bone"
+      },
+      {
+       "name": "Porterhouse",
+       "name_en": "Porterhouse",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 15.00",
+       "preis_en": "from 600 g · per 100 g · 15.00",
+       "id": "w-black-angus-porterhouse"
+      }
+     ],
+     "intro": "Angus, britischer Herkunft und in Spanien gezüchtet, zeichnet sich durch die perfekte Balance zwischen einer guten Marmorierung und einem sehr guten Körper aus.",
+     "intro_en": "Angus, of British origin and raised in Spain, stands out for the perfect balance between fine marbling and a full, rich body."
+    },
+    {
+     "titel": "Wagyu",
+     "titel_en": "Wagyu",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Kotelett",
+       "name_en": "Chop",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 18.00",
+       "preis_en": "from 600 g · per 100 g · 18.00",
+       "id": "w-wagyu-kotelett"
+      },
+      {
+       "name": "T-Bone",
+       "name_en": "T-Bone",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 20.00",
+       "preis_en": "from 600 g · per 100 g · 20.00",
+       "id": "w-wagyu-t-bone"
+      },
+      {
+       "name": "Porterhouse",
+       "name_en": "Porterhouse",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 22.00",
+       "preis_en": "from 600 g · per 100 g · 22.00",
+       "id": "w-wagyu-porterhouse"
+      }
+     ],
+     "intro": "Es ist japanischen Ursprungs, jedoch seit mehreren Jahren ein fester Bestandteil auf den Tellern aller Fleischliebhaber in Europa. Diese Rasse wird auch von unserem Partner in Spanien gezüchtet.",
+     "intro_en": "Of Japanese origin, Wagyu has for years been a fixture on the plates of meat lovers all over Europe. This breed is also raised by our partner in Spain."
+    },
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "trenner",
+     "spalte": "voll",
+     "items": []
+    },
+    {
+     "titel": "Rubia Gallega",
+     "titel_en": "Rubia Gallega",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Kotelett",
+       "name_en": "Chop",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 16.00",
+       "preis_en": "from 600 g · per 100 g · 16.00",
+       "id": "w-rubia-gallega-kotelett"
+      },
+      {
+       "name": "T-Bone",
+       "name_en": "T-Bone",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 17.00",
+       "preis_en": "from 600 g · per 100 g · 17.00",
+       "id": "w-rubia-gallega-t-bone"
+      },
+      {
+       "name": "Porterhouse",
+       "name_en": "Porterhouse",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 19.00",
+       "preis_en": "from 600 g · per 100 g · 19.00",
+       "id": "w-rubia-gallega-porterhouse"
+      }
+     ],
+     "intro": "Die Rubia zeichnet sich durch cremegelbes Fett, ausgeprägte Fleischigkeit, dunkelrote Farbe und mäßige Marmorierung aus.",
+     "intro_en": "Rubia stands out for its cream-coloured fat, pronounced meatiness, deep red colour and moderate marbling."
+    },
+    {
+     "titel": "Chianina Rind",
+     "titel_en": "Chianina Beef",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Kotelett",
+       "name_en": "Chop",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 16.00",
+       "preis_en": "from 600 g · per 100 g · 16.00",
+       "id": "w-chianina-rind-kotelett"
+      },
+      {
+       "name": "T-Bone",
+       "name_en": "T-Bone",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 17.00",
+       "preis_en": "from 600 g · per 100 g · 17.00",
+       "id": "w-chianina-rind-t-bone"
+      },
+      {
+       "name": "Porterhouse",
+       "name_en": "Porterhouse",
+       "beschr": "3–4 Wochen Reifung",
+       "beschr_en": "dry-aged 3–4 weeks",
+       "preis": "ab 600 g · 100 g · 19.00",
+       "preis_en": "from 600 g · per 100 g · 19.00",
+       "id": "w-chianina-rind-porterhouse"
+      }
+     ],
+     "intro": "Bistecca alla Fiorentina – Die porzellanweißen Chianinas, auch bekannt als ‚die weißen Riesen aus Italien‘, sind eine der ältesten und zugleich edelsten Rinderrassen der Welt.",
+     "intro_en": "Bistecca alla Fiorentina – the porcelain-white Chianinas, also known as ‘the white giants of Italy’, are one of the oldest and noblest cattle breeds in the world."
+    }
+   ]
+  },
+  {
+   "titel": "Side Dishes",
+   "titel_en": "Side Dishes",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "Sauces & Dips",
+     "titel_en": "Sauces & Dips",
+     "stil": "liste",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Portwein-Jus",
+       "name_en": "Port Wine Jus",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "8.00",
+       "preis_en": "8.00",
+       "id": "w-portwein-jus"
+      },
+      {
+       "name": "Trüffeljus",
+       "name_en": "Truffle Jus",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "10.00",
+       "preis_en": "10.00",
+       "id": "w-trueffeljus"
+      },
+      {
+       "name": "Sauce Béarnaise",
+       "name_en": "Sauce Béarnaise",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "8.00",
+       "preis_en": "8.00",
+       "id": "w-sauce-bearnaise"
+      },
+      {
+       "name": "Koji-Butter",
+       "name_en": "Koji Butter",
+       "beschr": "24 Stunden gereift · Meersalz",
+       "beschr_en": "aged 24 hours · sea salt",
+       "preis": "4.00",
+       "preis_en": "4.00",
+       "id": "w-koji-butter"
+      },
+      {
+       "name": "Apfel-Senf-Miso",
+       "name_en": "Apple Mustard Miso",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "4.00",
+       "preis_en": "4.00",
+       "id": "w-apfel-senf-miso"
+      },
+      {
+       "name": "Trüffel-Mayo",
+       "name_en": "Truffle Mayo",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "4.00",
+       "preis_en": "4.00",
+       "id": "w-trueffel-mayo"
+      },
+      {
+       "name": "Gochujang-Mayo",
+       "name_en": "Gochujang Mayo",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "4.00",
+       "preis_en": "4.00",
+       "id": "w-gochujang-mayo"
+      }
+     ]
+    },
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "badge",
+     "spalte": "l",
+     "items": [
+      {
+       "name": "Specials",
+       "name_en": "Specials",
+       "beschr": "Fragen Sie unseren Service",
+       "beschr_en": "Ask our team",
+       "preis": "",
+       "preis_en": "",
+       "id": "w-specials"
+      }
+     ]
+    },
+    {
+     "titel": "Greens",
+     "titel_en": "Greens",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "Gebratener Rosenkohl",
+       "name_en": "Roasted Brussels Sprouts",
+       "beschr": "Jus · Koji-Butter · Soja-Karamell · Sesam · Frühlingslauch · geschmorte Zwiebel · Rote Bete",
+       "beschr_en": "jus · koji butter · soy caramel · sesame · spring onion · braised onion · beetroot",
+       "preis": "9.00",
+       "preis_en": "9.00",
+       "id": "w-gebratener-rosenkohl"
+      },
+      {
+       "name": "Gegrillter Spitzkohl",
+       "name_en": "Grilled Pointed Cabbage",
+       "beschr": "Miso-Caesar-Dressing · Nori-Crunch · Parmesan · Schnittlauch",
+       "beschr_en": "miso Caesar dressing · nori crunch · Parmesan · chives",
+       "preis": "9.00",
+       "preis_en": "9.00",
+       "id": "w-gegrillter-spitzkohl"
+      },
+      {
+       "name": "Sellerie",
+       "name_en": "Celeriac",
+       "beschr": "Lauch · Walnuss · Trüffel",
+       "beschr_en": "leek · walnut · truffle",
+       "preis": "9.00",
+       "preis_en": "9.00",
+       "id": "w-sellerie"
+      }
+     ]
+    },
+    {
+     "titel": "Fries, Potatoes & More",
+     "titel_en": "Fries, Potatoes & More",
+     "stil": "liste",
+     "spalte": "r",
+     "items": [
+      {
+       "name": "French Fries",
+       "name_en": "French Fries",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "6.00",
+       "preis_en": "6.00",
+       "id": "w-french-fries"
+      },
+      {
+       "name": "+ Parmesan",
+       "name_en": "+ Parmesan",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "8.00",
+       "preis_en": "8.00",
+       "id": "w-parmesan"
+      },
+      {
+       "name": "+ Trüffel & Trüffel-Mayo",
+       "name_en": "+ Truffle & Truffle Mayo",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "10.00",
+       "preis_en": "10.00",
+       "id": "w-trueffel-trueffel-mayo"
+      },
+      {
+       "name": "+ Parmesan, Trüffel & Trüffel-Mayo",
+       "name_en": "+ Parmesan, Truffle & Truffle Mayo",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "12.00",
+       "preis_en": "12.00",
+       "id": "w-parmesan-trueffel-trueffel-mayo"
+      },
+      {
+       "name": "Süßkartoffel Fries",
+       "name_en": "Sweet Potato Fries",
+       "beschr": "Wasabi-Guacamole · Soja-Glace · Furikake",
+       "beschr_en": "wasabi guacamole · soy glaze · furikake",
+       "preis": "10.00",
+       "preis_en": "10.00",
+       "id": "w-suesskartoffel-fries"
+      },
+      {
+       "name": "Loaded Fries",
+       "name_en": "Loaded Fries",
+       "beschr": "Trüffeljus · Sauce Béarnaise · Parmesan · Zwiebel-Ceviche",
+       "beschr_en": "truffle jus · sauce béarnaise · Parmesan · onion ceviche",
+       "preis": "14.00",
+       "preis_en": "14.00",
+       "id": "w-loaded-fries"
+      },
+      {
+       "name": "Cremiges Kartoffelgratin",
+       "name_en": "Creamy Potato Gratin",
+       "beschr": "",
+       "beschr_en": "",
+       "preis": "9.00",
+       "preis_en": "9.00",
+       "id": "w-cremiges-kartoffelgratin"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Sweets",
+   "titel_en": "Sweets",
+   "dunkel": false,
+   "rubriken": [
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "liste",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "Crème Brûlée",
+       "name_en": "Crème Brûlée",
+       "beschr": "Zitronengras · Mango · Kaffir-Limette · Pekannuss · Kokosnuss-Sorbet",
+       "beschr_en": "lemongrass · mango · kaffir lime · pecan · coconut sorbet",
+       "preis": "16.00",
+       "preis_en": "16.00",
+       "id": "w-creme-brulee"
+      },
+      {
+       "name": "Birne Helene",
+       "name_en": "Pear Belle Hélène",
+       "beschr": "weiße Schokoladen-Crème · Birnen-Thymian-Ragout · Glühwein-Sabayon · Schokoladen-Rum-Sauce · Crème-Brûlée-Eis",
+       "beschr_en": "white chocolate cream · pear and thyme ragout · mulled wine sabayon · chocolate rum sauce · crème brûlée ice cream",
+       "preis": "20.00",
+       "preis_en": "20.00",
+       "id": "w-birne-helene"
+      },
+      {
+       "name": "Schokoladenkuchen",
+       "name_en": "Chocolate Cake",
+       "beschr": "mit flüssigem Kern · Zartbitter · Zwetschgen-Ragout · Champagner-Sorbet",
+       "beschr_en": "molten centre · dark chocolate · plum ragout · champagne sorbet",
+       "preis": "16.00",
+       "preis_en": "16.00",
+       "notiz": "15–20 Minuten Zubereitungszeit",
+       "notiz_en": "15–20 minutes preparation time",
+       "id": "w-schokoladenkuchen"
+      },
+      {
+       "name": "Mochi-Eis",
+       "name_en": "Mochi Ice Cream",
+       "beschr": "Yuzu · schwarzer Sesam · Matcha",
+       "beschr_en": "yuzu · black sesame · Matcha",
+       "preis": "3 St. · 12.00",
+       "preis_en": "3 pcs · 12.00",
+       "weg": true,
+       "id": "w-mochi-eis"
+      }
+     ]
+    },
+    {
+     "titel": "",
+     "titel_en": "",
+     "stil": "hinweis",
+     "spalte": "voll",
+     "items": [
+      {
+       "name": "",
+       "name_en": "",
+       "beschr": "Alle Preise inkl. gesetzl. MwSt.",
+       "beschr_en": "All prices include VAT.",
+       "preis": "",
+       "preis_en": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

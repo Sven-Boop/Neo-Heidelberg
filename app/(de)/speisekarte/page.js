@@ -1,11 +1,12 @@
 import { speisekarteHtml } from '../../seitenTeile';
 import { brotkrumenLd } from '../../anlassSeiten';
 import SiteScripts from '../../SiteScripts';
+import { KAPITEL_NAMEN } from '../../winterkarte/render';
 
 const URL = 'https://www.neo-heidelberg.de/speisekarte';
 const TITEL = 'Speisekarte — NEO Bar & Restaurant Heidelberg';
 const TEXT =
-  'Die Speisekarte des NEO in der Bahnstadt: Dry-Aged aus dem Humidor, Filets, Californisches Sushi, Rolls, Bowls und Desserts — mit Preisen.';
+  'Die Winterkarte 2026/27 des NEO in der Bahnstadt: Dry-Aged aus dem Humidor, Filets, Californisches Sushi, Rolls, Bowl und Desserts — mit Preisen.';
 
 export const metadata = {
   title: TITEL,
@@ -19,16 +20,13 @@ export const metadata = {
 };
 
 // Eigenes JSON-LD der Speisekarte: die Karte mit ihren Kapiteln (wie die Überschriften der Seite), Brotkrumen
-const KAPITEL = [
-  'Sharing Menu', 'Starter & Appetizer', 'Sushi & More', 'Sushi Rolls', 'Maki & Mehr', 'Bowls',
-  'Main Course', 'Beef & Filet', 'Sides & Saucen', 'Sweets & Desserts',
-];
+const KAPITEL = KAPITEL_NAMEN.de;
 const ld = [
   {
     '@context': 'https://schema.org',
     '@type': 'Menu',
     '@id': `${URL}#karte`,
-    name: 'Speisekarte NEO Bar & Restaurant Heidelberg',
+    name: 'Speisekarte NEO Bar & Restaurant Heidelberg · Winter 2026/27',
     url: URL,
     inLanguage: 'de',
     hasMenuSection: KAPITEL.map((name) => ({ '@type': 'MenuSection', name })),
