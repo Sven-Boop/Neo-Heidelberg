@@ -25,7 +25,7 @@ export const sections = [
       {
         subcat: 'Conservas Deluxe',
         items: [
-          { img: '/menu/p04395.webp', name: 'Small Sardines in Olive Oil', price: '13,00 €', sub: 'Sardinillas · Galicia · 115g', desc: 'Finest sardinillas from Galicia in premium olive oil.' },
+          { img: '/menu/w26-kleine-sardinen.webp', name: 'Small Sardines in Olive Oil', price: '13,00 €', sub: 'Sardinillas · Galicia · 115g', desc: 'Finest sardinillas from Galicia in premium olive oil.' },
           { img: '/menu/p04408.webp', name: 'Marinated Mussels', price: '13,00 €', sub: 'Mejillón · Galicia · 110g', desc: 'In a spicy tomato broth.' },
           { img: '/menu/p04413.webp', name: 'Small Scallops Galician Style', price: '22,00 €', sub: 'Viera · Galicia · 110g', desc: 'In a delicate paprika broth.' },
           { img: '/menu/p04422.webp', name: 'Codesa Anchovies from Cantabria', price: '27,00 €', sub: 'Limitada / Black Edition · 55g', desc: '7–10 medium-sized fillets of award-winning, hand-filleted quality, preserved in extra virgin olive oil.' },
@@ -38,7 +38,7 @@ export const sections = [
           { img: '/menu/p04295.webp', name: 'House Bread', price: '12,00 €', sub: '', desc: 'Sylt sourdough · rosemary focaccia · olive ciabatta · Maldon sea salt · Nekeas olive oil · 25-year PX balsamic · yuzu miso butter.' },
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00517.webp', name: 'Beef Tartare', price: '100g · 28,00 € / 150g · 36,00 €', sub: 'Chianina IGP beef “Summer Style”', desc: 'Granny Smith · celery · marinated radish · green gazpacho · wild herb salad.' },
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00382.webp', name: 'Octopus Carpaccio', price: '27,00 €', sub: '', desc: 'Black aioli · piment d’Espelette · baked piquillo pepper tartare · green & red mojo sauce · capers · Kalamata olives · basil.' },
-          { img: '/menu/p03468.webp', name: 'Beef Fillet Carpaccio', price: '26,00 €', sub: '', desc: 'Ponzu vinaigrette · mango chili relish · jalapeño · baby spinach · mushrooms · spring onion · kalamansi mayo.' },
+          { img: '/menu/w26-carpaccio-rinderfilet.webp', name: 'Beef Fillet Carpaccio', price: '26,00 €', sub: '', desc: 'Ponzu vinaigrette · mango chili relish · jalapeño · baby spinach · mushrooms · spring onion · kalamansi mayo.' },
         ],
       },
       {
@@ -84,10 +84,10 @@ export const sections = [
       {
         subcat: 'Inside Out Rolls',
         items: [
-          { img: '/menu/p03549.webp', name: 'Mrs. Green (vegetarian)', price: '22,00 €', sub: '', desc: 'Green asparagus · cucumber · edamame cream cheese · yuzu mayo · black sesame · avocado.' },
+          { img: '/menu/w26-mrs-green.webp', name: 'Mrs. Green (vegetarian)', price: '22,00 €', sub: '', desc: 'Green asparagus · cucumber · edamame cream cheese · yuzu mayo · black sesame · avocado.' },
           { img: '/menu/p03638.webp', name: 'T N T', price: '30,00 €', sub: '', desc: 'Bluefin tuna (tartare & sashimi) · avocado · harissa mayo · jalapeño · sesame · coriander.' },
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00652.webp', name: 'Völklingen Hamachi Smoke Roll', price: '29,00 €', sub: '', desc: 'Hamachi sashimi · green asparagus · grilled mayo · daikon · spring onion · black sesame · soy mirin glaze.' },
-          { img: '/menu/p03632.webp', name: 'Salmon²', price: '27,00 €', sub: '', desc: 'Salmon trout from Forellenhof Lenz · aji verde · cucumber · Granny Smith chutney · edamame cream cheese · salmon roe · chives.' },
+          { img: '/menu/w26-lachs-hoch2.webp', name: 'Salmon²', price: '27,00 €', sub: '', desc: 'Salmon trout from Forellenhof Lenz · aji verde · cucumber · Granny Smith chutney · edamame cream cheese · salmon roe · chives.' },
           { img: '/img/Neo_Gerichte_by_SelinaGargiullo-00600.webp', name: 'Lobster Roll', price: '35,00 €', sub: '', desc: 'Lobster salad · yuzu mayo · crispy asparagus · avocado · lobster bisque glaze · black tobiko · chives.' },
           { img: '/menu/sig-surfturf.webp', name: 'Surf’n Turf NEO Signature', price: '29,00 €', sub: '', desc: 'Beef fillet · crispy wild-caught prawn · avocado · truffle cream · black truffle · Parmesan · chives.' },
         ],
@@ -158,7 +158,7 @@ export const sections = [
       {
         subcat: 'Pork',
         items: [
-          { img: '/menu/p04443.webp', name: 'Spare Ribs', price: '38,00 €', sub: 'Galician chestnut-fed pork', desc: 'Black BBQ glaze · miso corn cream · chili cucumber salad · chili · spring onion · coriander · sesame.' },
+          { img: '/menu/w26-spare-ribs.webp', name: 'Spare Ribs', price: '38,00 €', sub: 'Galician chestnut-fed pork', desc: 'Black BBQ glaze · miso corn cream · chili cucumber salad · chili · spring onion · coriander · sesame.' },
           { img: '/menu/p04619.webp', name: 'Duroc Pork Chop', price: '34,00 €', sub: '', desc: 'Port wine jus · black aioli cream · grilled vegetables: pointed peppers · green asparagus · aubergine · courgette · vine tomatoes · pine nuts.' },
         ],
       },
@@ -166,7 +166,7 @@ export const sections = [
         subcat: 'Vegetarian',
         items: [
           { img: null, name: 'Miso Aubergine', price: '27,00 €', sub: '', desc: 'Crispy miso aubergine · fried rice with furikake · sesame spinach · yuzu mayo.' },
-          { img: '/menu/p04029.webp', name: 'Truffle Ravioli', price: '28,00 €', sub: '', desc: 'In brown butter · creamy spinach · tomatoes · Parmesan.' },
+          { img: '/menu/w26-trueffelravioli.webp', name: 'Truffle Ravioli', price: '28,00 €', sub: '', desc: 'In brown butter · creamy spinach · tomatoes · Parmesan.' },
         ],
       },
     ],
@@ -189,7 +189,7 @@ export const sections = [
       {
         subcat: 'Taste Your Filet',
         items: [
-          { img: '/menu/p03689.webp', name: 'Taste Your Filet', price: '79,00 €', sub: '3 × 100g', desc: 'Black Angus Galicia · Chianina IGP Tuscany · Pomeranian Simmental.' },
+          { img: '/menu/w26-taste-your-filet.webp', name: 'Taste Your Filet', price: '79,00 €', sub: '3 × 100g', desc: 'Black Angus Galicia · Chianina IGP Tuscany · Pomeranian Simmental.' },
           { img: '/menu/p03753.webp', name: 'Taste Your Filet Deluxe', price: '115,00 €', sub: 'NEO Signature · 4 × 100g', desc: 'Black Angus Galicia · Chianina IGP Tuscany · Pomeranian Simmental · Wagyu Galicia.' },
           { img: null, name: 'Taste Your Filet Deluxe Hoch²', price: '165,00 €', sub: '', desc: 'Plus 100g Japanese Wagyu A4.' },
           { img: null, name: 'Served with all fillets', price: '', sub: '', desc: 'Port wine jus · sauce béarnaise · grilled vegetables (pointed peppers · green asparagus · aubergine · courgette · vine tomatoes · pine nuts · black aioli cream).' },
@@ -198,7 +198,7 @@ export const sections = [
       {
         subcat: 'Steak',
         items: [
-          { img: '/menu/p03759.webp', name: 'Japan A4', price: '100g · 65,00 €', sub: 'Akune Gold · Kagoshima · roast beef', desc: '' },
+          { img: '/menu/w26-t-n-t.webp', name: 'Japan A4', price: '100g · 65,00 €', sub: 'Akune Gold · Kagoshima · roast beef', desc: '' },
           { img: '/menu/p03694.webp', name: 'Rump Steak', price: '350g · 55,00 €', sub: 'Pomeranian Simmental · NEO selection Yumshaki', desc: 'Finest marbling.' },
           { img: '/menu/p03700.webp', name: 'Entrecôte', price: '350g · 55,00 €', sub: 'Pomeranian Simmental · NEO selection Yumshaki', desc: 'Finest marbling.' },
           { img: '/menu/p03782.webp', name: 'Dry Aged Rump Steak', price: '350g · 69,00 €', sub: 'Galicia · Black Angus · Nosa Terra · dry-aged 3–4 weeks', desc: '' },
@@ -229,7 +229,7 @@ export const sections = [
           { img: '/menu/p04351.webp', name: 'Fries & Parmesan', price: '8,00 €', sub: '', desc: '' },
           { img: '/menu/p04358.webp', name: 'Fries & Truffle', price: '10,00 €', sub: '', desc: '' },
           { img: '/menu/p04314.webp', name: 'Fries Deluxe', price: '12,00 €', sub: 'Parmesan · truffle', desc: '' },
-          { img: '/menu/p04375.webp', name: 'Sweet Potato Fries', price: '10,00 €', sub: '& guacamole', desc: '' },
+          { img: '/menu/w26-suesskartoffel-fries.webp', name: 'Sweet Potato Fries', price: '10,00 €', sub: '& guacamole', desc: '' },
           { img: '/menu/p03678.webp', name: 'Fried Rice with Furikake', price: '6,00 €', sub: '', desc: 'Chili · sesame · tamago · coriander.' },
           { img: '/menu/p04137.webp', name: 'Linguine Tossed in Butter', price: '8,00 €', sub: '', desc: '' },
           { img: null, name: 'Hasselback Potato', price: '9,00 €', sub: 'with truffle cream', desc: '' },
