@@ -22,7 +22,7 @@ const kann = (k, a) => !!g(k)?.kann.includes(a);
 
 console.log('Fälle aus dem Auftrag');
 pruefe(g('w-edamame-asian-style') && !hat('w-edamame-asian-style', 'D') && !kann('w-edamame-asian-style', 'D'), 'Edamame Asian Style ohne Fisch');
-pruefe(hat('w-caesar-salad', 'D'), 'Caesar Salad mit Fisch');
+pruefe(!hat('w-caesar-salad', 'D'), 'Caesar Salad ohne Fisch (Sven 28.10.2026)');
 pruefe(hat('w-spitzkohl-dunkel-geroestet', 'N'), 'Spitzkohl, dunkel geröstet mit Sesam');
 pruefe(hat('w-sauce-bearnaise', 'A') && hat('w-sauce-bearnaise', 'F'), 'Sauce Béarnaise mit Gluten und Soja');
 
