@@ -1,7 +1,7 @@
 {
- "_quelle": "BLISS Service lib/daten/karte.js (Küche d40f9ff, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
+ "_quelle": "BLISS Service lib/daten/karte.js (Küche 65b1001, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
  "stand": "28.10.2026",
- "kueche": "d40f9ff",
+ "kueche": "65b1001",
  "gerichte": {
   "gang:katsu-sando-vom-wagyu-roastbeef-a4": {
    "service": "w-katsu-sando-vom-wagyu-roastbeef-a4",
@@ -46,9 +46,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -687,8 +685,7 @@
     "O"
    ],
    "kann": [
-    "B",
-    "D"
+    "B"
    ]
   },
   "w-spare-ribs-vom-galicischen-kastanienschwein": {
@@ -701,9 +698,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ]
+   "kann": []
   },
   "w-miso-ramen": {
    "service": "w-miso-ramen",
@@ -737,9 +732,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -760,9 +753,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -783,9 +774,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -806,9 +795,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -829,9 +816,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -851,9 +836,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -872,9 +855,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -893,9 +874,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -914,9 +893,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -935,9 +912,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -958,9 +933,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -981,9 +954,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "C",
@@ -1003,9 +974,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1024,9 +993,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1045,9 +1012,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1066,9 +1031,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1087,9 +1050,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1108,9 +1069,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1129,9 +1088,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1150,9 +1107,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1171,9 +1126,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1192,9 +1145,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1213,9 +1164,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1234,9 +1183,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ],
+   "kann": [],
    "ohne": [
     "A",
     "F",
@@ -1263,9 +1210,7 @@
     "L",
     "O"
    ],
-   "kann": [
-    "D"
-   ]
+   "kann": []
   },
   "w-sauce-bearnaise": {
    "service": "w-sauce-bearnaise",
@@ -1329,9 +1274,7 @@
     "N",
     "O"
    ],
-   "kann": [
-    "D"
-   ]
+   "kann": []
   },
   "w-gegrillter-spitzkohl": {
    "service": "w-gegrillter-spitzkohl",
@@ -1424,8 +1367,7 @@
     "O"
    ],
    "kann": [
-    "B",
-    "D"
+    "B"
    ]
   },
   "w-cremiges-kartoffelgratin": {
