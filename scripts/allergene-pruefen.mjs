@@ -23,6 +23,9 @@ const kann = (k, a) => !!g(k)?.kann.includes(a);
 console.log('Fälle aus dem Auftrag');
 pruefe(g('w-edamame-asian-style') && !hat('w-edamame-asian-style', 'D') && !kann('w-edamame-asian-style', 'D'), 'Edamame Asian Style ohne Fisch');
 pruefe(!hat('w-caesar-salad', 'D'), 'Caesar Salad ohne Fisch (Sven 28.10.2026)');
+const OHNE_FISCH_2910 = ['w-katsu-sando-vom-duroc-schwein', 'gang:katsu-sando-vom-wagyu-roastbeef-a4', 'w-surf-n-turf', 'w-crispy-chicken', 'w-tamago'];
+pruefe(OHNE_FISCH_2910.every((k) => g(k) && !hat(k, 'D') && !kann(k, 'D')), 'Katsu, Surf ’n Turf, Crispy Chicken, Maki Tamago ohne Fisch (Sven 29.10.2026)');
+pruefe(hat('w-surf-n-turf', 'B') && hat('w-sharing-dinner-fuer-2-personen', 'D'), 'Surf ’n Turf mit Krebstieren, Sharing Menu behält Fisch (Tobiko)');
 pruefe(hat('w-spitzkohl-dunkel-geroestet', 'N'), 'Spitzkohl, dunkel geröstet mit Sesam');
 pruefe(hat('w-sauce-bearnaise', 'A') && hat('w-sauce-bearnaise', 'F'), 'Sauce Béarnaise mit Gluten und Soja');
 
