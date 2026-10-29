@@ -2042,6 +2042,9 @@
     /* Lange Einzelwörter (z.B. SCHOKOLADENKUCHEN) dürfen notfalls umbrechen,
        statt unter den Preis zu laufen (Sven 20.10.2026: 18 € nicht lesbar). */
     .item-name { overflow-wrap: anywhere; }
+    /* Neben einem Foto (29.10.2026) lieber an der Silbe trennen:
+       SCHOKOLADEN-KUCHEN statt SCHOKOLADENKUCH|EN. */
+    .item-name { hyphens: auto; -webkit-hyphens: auto; }
   }
 
   /* Sehr schmale Screens (<=400px, z.B. iPhone SE): Manifesto-Spalten dürfen
