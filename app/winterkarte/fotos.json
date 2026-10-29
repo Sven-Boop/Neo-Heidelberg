@@ -5,7 +5,8 @@
   "alt = Foto aus dem Sommer-Shooting, nur wenn es eindeutig dasselbe Gericht in derselben Anrichtung zeigt (Konserven, Brot, Fries); ein Winterfoto (nr) ersetzt es.",
   "Gerichte ohne Eintrag zeigen kein Foto.",
   "Svens Namen einspielen: python3 scripts/winterfotos.py --namen <datei.json>; danach immer: python3 scripts/winterfotos.py (erzeugt die WebP-Bilder).",
-  "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp."
+  "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp.",
+  "Stand 29.10.2026 (Sven: „Birne Helene hast Foto vom letzten Jahr usw, bei den verschiedenen Rinderfilets reicht immer dasselbe Foto“): Vorjahresfotos als alt (/menu/w25-*.webp aus neo-kueche/public/karte). Auf der Website steht jedes Foto nur einmal: Maki-Foto nur bei Maki Lachs, keine Wiederholung bei Edamame Trüffel, Dry Aged, Fries-Kombi."
  ],
  "gerichte": {
   "w-kleine-sardinen-in-olivenoel": {
@@ -187,6 +188,54 @@
   "w-cremiges-kartoffelgratin": {
    "nr": 221,
    "gericht": "Cremiges Kartoffelgratin"
+  },
+  "w-birne-helene": {
+   "alt": "/menu/w25-birne-helene.webp",
+   "gericht": "Birne Helene"
+  },
+  "w-schokoladenkuchen": {
+   "alt": "/menu/w25-schokoladenkuchen.webp",
+   "gericht": "Schokoladenkuchen"
+  },
+  "w-gebratener-rosenkohl": {
+   "alt": "/menu/w25-gebratener-rosenkohl.webp",
+   "gericht": "Gebratener Rosenkohl"
+  },
+  "w-sellerie": {
+   "alt": "/menu/w25-sellerie.webp",
+   "gericht": "Sellerie"
+  },
+  "w-the-neo-tower": {
+   "alt": "/menu/w25-the-neo-tower.webp",
+   "gericht": "The NEO Tower"
+  },
+  "w-sashimi-selection-thunfisch-blue-fin": {
+   "alt": "/menu/w25-sashimi-blue-fin.webp",
+   "gericht": "Sashimi Selection Thunfisch Blue Fin"
+  },
+  "w-toro-tataki": {
+   "alt": "/menu/w25-toro-tataki.webp",
+   "gericht": "Toro Tataki"
+  },
+  "w-edamame-klassisch": {
+   "alt": "/menu/p03491.webp",
+   "gericht": "Edamame Klassisch"
+  },
+  "w-edamame-asian-style": {
+   "alt": "/menu/w25-edamame-asian-style.webp",
+   "gericht": "Edamame Asian Style"
+  },
+  "w-lachs": {
+   "alt": "/menu/w25-maki.webp",
+   "gericht": "Maki Lachs (Foto aller Maki, nur einmal gezeigt)"
+  },
+  "w-koji-butter": {
+   "alt": "/menu/w25-koji-butter.webp",
+   "gericht": "Koji-Butter"
+  },
+  "w-japan-wagyu-a4": {
+   "alt": "/menu/p04758.webp",
+   "gericht": "Japan Wagyu A4"
   }
  },
  "orte": {
