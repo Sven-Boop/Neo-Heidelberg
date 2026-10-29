@@ -1,4 +1,5 @@
 import { bodyHtml } from './bodyHtml';
+import { bodyHtml as bodyHtmlEn } from './(en)/en/bodyHtmlEn';
 import { mitHaeuserLeiste } from './haeuser';
 import { mitFeiernMenues } from './feiernMenues';
 import { mitKarte, mitSharingTeaser } from './winterkarte/render';
@@ -7,11 +8,11 @@ import { mitKarte, mitSharingTeaser } from './winterkarte/render';
 // /speisekarte und /hochzeit die komplette Startseite und schalteten nur per CSS-Klasse um).
 // Quelle bleibt app/bodyHtml.js; hier wird sie in Kopf, Startseite, Speisekarte, Hochzeit und Fuß zerlegt.
 
-function schneide(von, bis) {
-  const a = bodyHtml.indexOf(von);
-  const b = bis ? bodyHtml.indexOf(bis, a + 1) : bodyHtml.length;
+function schneide(von, bis, quelle = bodyHtml) {
+  const a = quelle.indexOf(von);
+  const b = bis ? quelle.indexOf(bis, a + 1) : quelle.length;
   if (a < 0 || b < 0) throw new Error('seitenTeile: Markierung nicht gefunden: ' + (a < 0 ? von : bis));
-  return bodyHtml.slice(a, b);
+  return quelle.slice(a, b);
 }
 
 const KOPF = schneide('<!-- NAV -->', '<!-- HERO -->');
@@ -52,6 +53,33 @@ export function seitenHtml(inhalt) {
   return verlinke(KOPF, eigene) + verlinke(inhalt, eigene) + verlinke(FUSS, eigene);
 }
 
+// Sprachumschalter (DE/EN im Kopf) auf eine bestimmte Seite richten
+function sprachZiel(html, ziel) {
+  const neu = html.replace(/<a href="[^"]*" class="(nav-lang(?:-m)?)"/g, `<a href="${ziel}" class="$1"`);
+  if (neu === html) throw new Error('seitenTeile: Sprachumschalter nicht gefunden');
+  return neu;
+}
+
 export const startseiteHtml = seitenHtml(START);
-export const speisekarteHtml = seitenHtml(aktiv(KARTE, 'page-speisekarte'));
+// EN führt zur englischen Online-Karte, nicht zur englischen Startseite (Sven 29.10.2026).
+// /en/menu statt /menu: /menu schickt deutsch eingestellte Handys auf /speisekarte zurück (next.config.mjs).
+export const speisekarteHtml = sprachZiel(seitenHtml(aktiv(KARTE, 'page-speisekarte')), '/en/menu');
+
+// Englische Online-Karte /menu und /en/menu — Ziel des QR-Codes der gedruckten Winterkarte.
+// Sven 29.10.2026: „der soll zur Online-Karte führen, damit sie die Bilder sehen, um mehr zu
+// kaufen, und dann können sie umklicken zu ihrer Sprache.“ Kopf und Fuß der englischen Seite,
+// Inhalt nur die Speisekarte; DE führt zur deutschen Online-Karte.
+const KOPF_EN = schneide('<!-- NAV -->', '<!-- HERO -->', bodyHtmlEn);
+const KARTE_EN = mitKarte(schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE', bodyHtmlEn), 'en');
+const FUSS_EN = mitHaeuserLeiste(schneide('<!-- FOOTER -->', null, bodyHtmlEn), 'en');
+// Anker, die nicht auf der Karte liegen (#bar, #home …), zeigen auf die englische Startseite.
+function verlinkeEn(html, eigeneIds) {
+  return html.replace(/href="#([\w-]+)"/g, (ganz, id) => (eigeneIds.has(id) ? ganz : `href="/en#${id}"`));
+}
+const MENU_EN = aktiv(KARTE_EN, 'page-speisekarte');
+const menuIds = ids(MENU_EN);
+export const menuHtmlEn = sprachZiel(
+  verlinkeEn(KOPF_EN, menuIds) + verlinkeEn(MENU_EN, menuIds) + verlinkeEn(FUSS_EN, menuIds),
+  '/speisekarte',
+);
 export const hochzeitHtml = seitenHtml(aktiv(HOCHZEIT, 'page-hochzeit'));

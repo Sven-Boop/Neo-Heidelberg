@@ -23,6 +23,15 @@ const nextConfig = {
         destination: 'https://www.neo-heidelberg.de/:path*',
         permanent: true,
       },
+      // QR-Code der gedruckten Winterkarte zeigt auf /menu (englische Online-Karte). Handys mit
+      // Deutsch als erster Sprache landen gleich auf der deutschen Online-Karte (Sven 29.10.2026).
+      // Der Wert gilt für den ganzen Kopf (^…$), „en-GB,en;q=0.9,de;q=0.8“ bleibt also englisch.
+      {
+        source: '/menu',
+        has: [{ type: 'header', key: 'accept-language', value: 'de.*' }],
+        destination: '/speisekarte',
+        permanent: false,
+      },
     ];
   },
 };

@@ -58,7 +58,8 @@ const TEXTE = {
     linkImpressum: "/en/impressum/",
   },
 };
-const sprache = () => (/^\/en(\/|$)/.test(window.location.pathname) ? "en" : "de");
+// /menu = englische Online-Karte (QR-Code der gedruckten Karte, 29.10.2026)
+const sprache = () => (/^\/(en(\/|$)|menu\/?$)/.test(window.location.pathname) ? "en" : "de");
 
 // ── Gespeicherte Entscheidung ──────────────────────────────────────────────
 // localStorage ist technisch notwendig, um die Entscheidung zu merken (§ 25 Abs. 2 TDDDG).

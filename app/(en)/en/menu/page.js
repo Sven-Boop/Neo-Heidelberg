@@ -1,3 +1,3 @@
-// Die vorhandene Menü-Seite (/menu) ist bereits auf Englisch — wir spiegeln sie
-// unter /en/menu, damit die URL-Struktur der englischen Version konsistent ist.
-export { default, metadata } from '../../../(de)/menu/page';
+// /en/menu = dieselbe englische Online-Karte wie /menu, aber ohne die Sprach-Weiterleitung
+// (next.config.mjs) — Ziel des Umschalters „EN“ auf /speisekarte.
+export { default, metadata } from '../../menu/page';
