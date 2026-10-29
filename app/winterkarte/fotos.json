@@ -8,7 +8,8 @@
   "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp.",
   "Stand 29.10.2026 (Sven: „Birne Helene hast Foto vom letzten Jahr usw, bei den verschiedenen Rinderfilets reicht immer dasselbe Foto“): Vorjahresfotos als alt (/menu/w25-*.webp aus neo-kueche/public/karte). Auf der Website steht jedes Foto nur einmal: Maki-Foto nur bei Maki Lachs, keine Wiederholung bei Edamame Trüffel, Dry Aged, Fries-Kombi.",
   "Dry Aged (29.10.2026): je Rasse ein Foto am Kotelett-Eintrag, dryAgedRasse zeigt es in der Zeile der Rasse.",
-  "29.10.2026 (Sven: „bist zu nah teilweise“): 20 Winterfotos durch Aufnahmen mit ganzem Teller ersetzt; Koji-Butter ohne Foto; Edamame Klassisch mit ganzer Schale (w208), Toro Tataki mit ganzem Teller (w222)."
+  "29.10.2026 (Sven: „bist zu nah teilweise“): 20 Winterfotos durch Aufnahmen mit ganzem Teller ersetzt; Koji-Butter ohne Foto; Edamame Klassisch mit ganzer Schale (w208), Toro Tataki mit ganzem Teller (w222).",
+  "pos (29.10.2026): waagrechter Ausschnitt des quadratischen Vorschaubilds (object-position), wenn der Teller nicht mittig liegt."
  ],
  "gerichte": {
   "w-kleine-sardinen-in-olivenoel": {
@@ -57,7 +58,8 @@
   },
   "w-spitzkohl-dunkel-geroestet": {
    "nr": 2,
-   "gericht": "Spitzkohl, dunkel geröstet"
+   "gericht": "Spitzkohl, dunkel geröstet",
+   "pos": "60%"
   },
   "w-ceviche-vom-weissen-heilbutt": {
    "nr": 280,
@@ -89,16 +91,19 @@
   },
   "w-crispy-green": {
    "nr": 110,
-   "gericht": "Crispy Green"
+   "gericht": "Crispy Green",
+   "pos": "100%"
   },
   "w-crispy-hummer": {
    "nr": 117,
-   "gericht": "Crispy Hummer"
+   "gericht": "Crispy Hummer",
+   "pos": "0%"
   },
   "w-crispy-futomaki-rolls-crispy-chicken": {
    "nr": 168,
    "gericht": "Crispy Chicken",
-   "weitere": []
+   "weitere": [],
+   "pos": "0%"
   },
   "w-crispy-tuna": {
    "nr": 74,
@@ -111,7 +116,8 @@
   },
   "w-weisser-heilbutt-wildfanggarnele": {
    "nr": 33,
-   "gericht": "Weißer Heilbutt & Wildfanggarnele"
+   "gericht": "Weißer Heilbutt & Wildfanggarnele",
+   "pos": "70%"
   },
   "w-lachsforellenfilet-vom-forellenhof-lenz": {
    "nr": 155,
@@ -135,7 +141,8 @@
   },
   "w-trueffelravioli": {
    "nr": 133,
-   "gericht": "Trüffelravioli"
+   "gericht": "Trüffelravioli",
+   "pos": "10%"
   },
   "w-wagyu-galicien": {
    "nr": 242,

@@ -208,6 +208,13 @@ export function fotoFuer(id) {
   return f.alt || null;
 }
 
+// Ausschnitt im quadratischen Vorschaubild: „pos“ in fotos.json (waagrecht, z. B. "0%"),
+// wenn der Teller nicht in der Bildmitte liegt (Sven 29.10.2026: „bist zu nah“).
+export function fotoPos(id) {
+  const pos = id && fotos.gerichte[id]?.pos;
+  return /^\d{1,3}%$/.test(pos || '') ? pos : null;
+}
+
 export function ortFoto(key) {
   if (!fotos.orte[key]) throw new Error('winterkarte: Ort-Foto fehlt: ' + key);
   return '/img/w26/' + key + '.webp';
@@ -257,10 +264,11 @@ function item(it, lang, x = {}) {
   // x.allergene: Schlüssel (oder Liste), false = Zeile ohne eigenes Gericht; Standard die id
   const allergenSchluessel = x.allergene === undefined ? it.id : x.allergene;
   const bild = x.ohneBild ? null : x.bild || fotoFuer(it.id);
+  const pos = bild && !x.bild ? fotoPos(it.id) : null;
   const sub = x.sub ?? feld(it, 'notiz', lang);
   const desc = x.desc ?? feld(it, 'beschr', lang);
   return `    <div class="item${bild ? '' : ' no-image'}">
-${bild ? `      <img decoding="async" class="item-img" src="${bild}" alt="${esc(name)}" loading="lazy">\n` : ''}      <div class="item-text">
+${bild ? `      <img decoding="async" class="item-img" src="${bild}" alt="${esc(name)}" loading="lazy"${pos ? ` style="object-position:${pos} 50%"` : ''}>\n` : ''}      <div class="item-text">
         <div class="item-head"><div class="item-name">${esc(x.name ?? name)}</div><div class="item-price">${esc(x.preis ?? preis(feld(it, 'preis', lang)))}</div></div>
 ${sub ? `        <div class="item-sub">${esc(sub)}</div>\n` : ''}${desc ? `        <div class="item-desc">${esc(desc)}</div>\n` : ''}${allergenSchluessel ? allergenHtml(allergenSchluessel, lang) : ''}      </div>
     </div>`;
