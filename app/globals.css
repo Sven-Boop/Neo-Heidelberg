@@ -2044,7 +2044,12 @@
     .item-name { overflow-wrap: anywhere; }
     /* Neben einem Foto (29.10.2026) lieber an der Silbe trennen:
        SCHOKOLADEN-KUCHEN statt SCHOKOLADENKUCH|EN. */
-    .item-name { hyphens: auto; -webkit-hyphens: auto; }
+    .item-name {
+      hyphens: auto; -webkit-hyphens: auto;
+      /* nur lange Wörter, je mindestens 5 Buchstaben vor und nach dem Strich */
+      hyphenate-limit-chars: 10 5 5;
+      -webkit-hyphenate-limit-before: 5; -webkit-hyphenate-limit-after: 5;
+    }
   }
 
   /* Sehr schmale Screens (<=400px, z.B. iPhone SE): Manifesto-Spalten dürfen
