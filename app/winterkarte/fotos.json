@@ -6,7 +6,8 @@
   "Gerichte ohne Eintrag zeigen kein Foto.",
   "Svens Namen einspielen: python3 scripts/winterfotos.py --namen <datei.json>; danach immer: python3 scripts/winterfotos.py (erzeugt die WebP-Bilder).",
   "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp.",
-  "Stand 29.10.2026 (Sven: „Birne Helene hast Foto vom letzten Jahr usw, bei den verschiedenen Rinderfilets reicht immer dasselbe Foto“): Vorjahresfotos als alt (/menu/w25-*.webp aus neo-kueche/public/karte). Auf der Website steht jedes Foto nur einmal: Maki-Foto nur bei Maki Lachs, keine Wiederholung bei Edamame Trüffel, Dry Aged, Fries-Kombi."
+  "Stand 29.10.2026 (Sven: „Birne Helene hast Foto vom letzten Jahr usw, bei den verschiedenen Rinderfilets reicht immer dasselbe Foto“): Vorjahresfotos als alt (/menu/w25-*.webp aus neo-kueche/public/karte). Auf der Website steht jedes Foto nur einmal: Maki-Foto nur bei Maki Lachs, keine Wiederholung bei Edamame Trüffel, Dry Aged, Fries-Kombi.",
+  "Dry Aged (29.10.2026): je Rasse ein Foto am Kotelett-Eintrag, dryAgedRasse zeigt es in der Zeile der Rasse."
  ],
  "gerichte": {
   "w-kleine-sardinen-in-olivenoel": {
@@ -236,6 +237,22 @@
   "w-japan-wagyu-a4": {
    "alt": "/menu/p04758.webp",
    "gericht": "Japan Wagyu A4"
+  },
+  "w-black-angus-kotelett": {
+   "alt": "/menu/p03694.webp",
+   "gericht": "Black Angus · Dry Aged (Foto für die ganze Rasse)"
+  },
+  "w-wagyu-kotelett": {
+   "alt": "/menu/p03753.webp",
+   "gericht": "Wagyu · Dry Aged (Foto für die ganze Rasse)"
+  },
+  "w-rubia-gallega-kotelett": {
+   "alt": "/menu/p03700.webp",
+   "gericht": "Rubia Gallega · Dry Aged (Foto für die ganze Rasse)"
+  },
+  "w-chianina-rind-kotelett": {
+   "alt": "/menu/p03692.webp",
+   "gericht": "Chianina · Dry Aged (Foto für die ganze Rasse)"
   }
  },
  "orte": {

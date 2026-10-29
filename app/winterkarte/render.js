@@ -256,7 +256,7 @@ function item(it, lang, x = {}) {
   const name = feld(it, 'name', lang);
   // x.allergene: Schlüssel (oder Liste), false = Zeile ohne eigenes Gericht; Standard die id
   const allergenSchluessel = x.allergene === undefined ? it.id : x.allergene;
-  const bild = x.ohneBild ? null : fotoFuer(it.id);
+  const bild = x.ohneBild ? null : x.bild || fotoFuer(it.id);
   const sub = x.sub ?? feld(it, 'notiz', lang);
   const desc = x.desc ?? feld(it, 'beschr', lang);
   return `    <div class="item${bild ? '' : ' no-image'}">
@@ -304,6 +304,8 @@ function dryAgedRasse(r, lang) {
     preis: preisZeile,
     sub: feld(teile[0], 'beschr', lang),
     desc: feld(r, 'intro', lang),
+    // Foto der Rasse (Sven 29.10.2026: „bei Dry Aged Steaks hast 4 Bilder, nimm die“)
+    bild: teile.map((i) => fotoFuer(i.id)).find(Boolean),
   });
 }
 
