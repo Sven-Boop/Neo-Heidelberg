@@ -7,7 +7,8 @@
   "Svens Namen einspielen: python3 scripts/winterfotos.py --namen <datei.json>; danach immer: python3 scripts/winterfotos.py (erzeugt die WebP-Bilder).",
   "orte: Raum- und Drinkfotos aus demselben Shooting, Bild unter /img/w26/<schlüssel>.webp.",
   "Stand 29.10.2026 (Sven: „Birne Helene hast Foto vom letzten Jahr usw, bei den verschiedenen Rinderfilets reicht immer dasselbe Foto“): Vorjahresfotos als alt (/menu/w25-*.webp aus neo-kueche/public/karte). Auf der Website steht jedes Foto nur einmal: Maki-Foto nur bei Maki Lachs, keine Wiederholung bei Edamame Trüffel, Dry Aged, Fries-Kombi.",
-  "Dry Aged (29.10.2026): je Rasse ein Foto am Kotelett-Eintrag, dryAgedRasse zeigt es in der Zeile der Rasse."
+  "Dry Aged (29.10.2026): je Rasse ein Foto am Kotelett-Eintrag, dryAgedRasse zeigt es in der Zeile der Rasse.",
+  "29.10.2026 (Sven: „bist zu nah teilweise“): 20 Winterfotos durch Aufnahmen mit ganzem Teller ersetzt; Koji-Butter ohne Foto; Edamame Klassisch mit ganzer Schale (w208), Toro Tataki mit ganzem Teller (w222)."
  ],
  "gerichte": {
   "w-kleine-sardinen-in-olivenoel": {
@@ -31,7 +32,7 @@
    "gericht": "Gaues Brotvariation"
   },
   "w-tatar-vom-schwarzwaelder-rind": {
-   "nr": 263,
+   "nr": 259,
    "gericht": "Tatar vom Schwarzwälder Rind"
   },
   "w-lachsforelle-matjes-art": {
@@ -43,11 +44,11 @@
    "gericht": "Carpaccio vom Rinderfilet"
   },
   "w-rote-bete-gebeizte-lachsforelle": {
-   "nr": 255,
+   "nr": 256,
    "gericht": "Rote-Bete-gebeizte Lachsforelle"
   },
   "w-gebackene-bueffel-burrata": {
-   "nr": 175,
+   "nr": 176,
    "gericht": "Gebackene Büffel-Burrata"
   },
   "w-caesar-salad": {
@@ -55,7 +56,7 @@
    "gericht": "Caesar Salad"
   },
   "w-spitzkohl-dunkel-geroestet": {
-   "nr": 1,
+   "nr": 2,
    "gericht": "Spitzkohl, dunkel geröstet"
   },
   "w-ceviche-vom-weissen-heilbutt": {
@@ -67,7 +68,7 @@
    "gericht": "Katsu Sando vom Duroc Schwein"
   },
   "w-mrs-green": {
-   "nr": 141,
+   "nr": 140,
    "gericht": "Mrs. Green"
   },
   "w-t-n-t": {
@@ -75,41 +76,41 @@
    "gericht": "T N T"
   },
   "w-lachs-hoch2": {
-   "nr": 38,
+   "nr": 28,
    "gericht": "Lachs Hoch²"
   },
   "w-hummer-roll": {
-   "nr": 164,
+   "nr": 160,
    "gericht": "Hummer Roll"
   },
   "w-surf-n-turf": {
-   "nr": 49,
+   "nr": 54,
    "gericht": "Surf ’n Turf"
   },
   "w-crispy-green": {
-   "nr": 114,
+   "nr": 110,
    "gericht": "Crispy Green"
   },
   "w-crispy-hummer": {
-   "nr": 120,
+   "nr": 117,
    "gericht": "Crispy Hummer"
   },
   "w-crispy-futomaki-rolls-crispy-chicken": {
-   "nr": 171,
+   "nr": 168,
    "gericht": "Crispy Chicken",
    "weitere": []
   },
   "w-crispy-tuna": {
-   "nr": 71,
+   "nr": 74,
    "gericht": "Crispy Tuna"
   },
   "w-crispy-gochujang-garnele": {
-   "nr": 90,
+   "nr": 86,
    "gericht": "Crispy Gochujang Garnele",
    "weitere": []
   },
   "w-weisser-heilbutt-wildfanggarnele": {
-   "nr": 32,
+   "nr": 33,
    "gericht": "Weißer Heilbutt & Wildfanggarnele"
   },
   "w-lachsforellenfilet-vom-forellenhof-lenz": {
@@ -121,7 +122,7 @@
    "gericht": "Hummer-Ramen"
   },
   "w-paniertes-kotelett-vom-duroc-schwein": {
-   "nr": 101,
+   "nr": 106,
    "gericht": "Paniertes Kotelett vom Duroc Schwein"
   },
   "w-spare-ribs-vom-galicischen-kastanienschwein": {
@@ -129,15 +130,15 @@
    "gericht": "Spare Ribs vom galicischen Kastanienschwein"
   },
   "w-miso-ramen": {
-   "nr": 17,
+   "nr": 16,
    "gericht": "Miso-Ramen"
   },
   "w-trueffelravioli": {
-   "nr": 134,
+   "nr": 133,
    "gericht": "Trüffelravioli"
   },
   "w-wagyu-galicien": {
-   "nr": 247,
+   "nr": 242,
    "gericht": "Wagyu Galicien"
   },
   "w-taste-your-filet": {
@@ -145,7 +146,7 @@
    "gericht": "Taste Your Filet"
   },
   "w-rumpsteak-pommersches-simmentaler": {
-   "nr": 149,
+   "nr": 148,
    "gericht": "Rumpsteak Pommersches Simmentaler",
    "weitere": []
   },
@@ -163,7 +164,7 @@
    "gericht": "Taste Your Filet Deluxe Hoch²"
   },
   "w-gegrillter-spitzkohl": {
-   "nr": 9,
+   "nr": 7,
    "gericht": "Gegrillter Spitzkohl"
   },
   "w-french-fries": {
@@ -216,23 +217,15 @@
   },
   "w-toro-tataki": {
    "alt": "/menu/w25-toro-tataki.webp",
-   "gericht": "Toro Tataki"
+   "gericht": "Toro Tataki (Vorjahr, ganzer Teller)"
   },
   "w-edamame-klassisch": {
-   "alt": "/menu/p03491.webp",
-   "gericht": "Edamame Klassisch"
-  },
-  "w-edamame-asian-style": {
-   "alt": "/menu/w25-edamame-asian-style.webp",
-   "gericht": "Edamame Asian Style"
+   "alt": "/menu/w25-edamame.webp",
+   "gericht": "Edamame Klassisch (Vorjahr, ganze Schale)"
   },
   "w-lachs": {
    "alt": "/menu/w25-maki.webp",
    "gericht": "Maki Lachs (Foto aller Maki, nur einmal gezeigt)"
-  },
-  "w-koji-butter": {
-   "alt": "/menu/w25-koji-butter.webp",
-   "gericht": "Koji-Butter"
   },
   "w-japan-wagyu-a4": {
    "alt": "/menu/p04758.webp",
