@@ -257,6 +257,18 @@
   "w-sashimi-selection": {
    "alt": "/menu/p04858.webp",
    "gericht": "Sashimi Selection (Homepage, weißer Heilbutt statt Hamachi)"
+  },
+  "w-limited-signature-wagyu-japan-a4-roll": {
+   "alt": "/menu/p04087.webp",
+   "gericht": "Limited Signature Wagyu Japan A4 Roll (Homepage, Entenleber-Crème neu)"
+  },
+  "w-happy-bowl": {
+   "alt": "/menu/p04684.webp",
+   "gericht": "Happy Bowl (Homepage, gerösteter Kürbis statt Aji Verde)"
+  },
+  "w-creme-brulee": {
+   "alt": "/menu/p04474.webp",
+   "gericht": "Crème Brûlée (Homepage, Pekannuss statt karamellisierter Mandeln)"
   }
  },
  "orte": {
