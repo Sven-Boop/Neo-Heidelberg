@@ -1,7 +1,7 @@
 {
- "_quelle": "BLISS Service lib/daten/karte.js (Küche 45da9aa, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
- "stand": "29.10.2026",
- "kueche": "45da9aa",
+ "_quelle": "BLISS Service lib/daten/karte.js (Küche 458822d, Gästekarte Stand 13) + lib/karte.js gerichtBild. Nicht von Hand ändern: node scripts/allergene-holen.mjs",
+ "stand": "30.10.2026",
+ "kueche": "458822d",
  "gerichte": {
   "gang:katsu-sando-vom-wagyu-roastbeef-a4": {
    "service": "w-katsu-sando-vom-wagyu-roastbeef-a4",
@@ -632,6 +632,7 @@
     "F",
     "G",
     "L",
+    "M",
     "N",
     "O"
    ],
@@ -660,6 +661,7 @@
     "F",
     "G",
     "L",
+    "M",
     "N",
     "O"
    ],
@@ -686,6 +688,7 @@
    "enthaelt": [
     "A",
     "F",
+    "G",
     "L",
     "M",
     "N",
@@ -699,6 +702,8 @@
     "A",
     "C",
     "F",
+    "G",
+    "M",
     "N",
     "O"
    ],
@@ -1264,6 +1269,7 @@
     "F",
     "G",
     "L",
+    "M",
     "N",
     "O"
    ],
