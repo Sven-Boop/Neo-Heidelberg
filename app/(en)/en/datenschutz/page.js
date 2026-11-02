@@ -67,7 +67,7 @@ export default function DatenschutzEN() {
         <p>
           If you write to us by email or use our enquiry form (e.g. for reservations, wedding,
           corporate, event or group enquiries), we process the data you provide (name, email
-          address, and where applicable phone number, occasion, preferred date, number of guests
+          address, and where applicable phone number and postal address, occasion, preferred date, number of guests
           and your message) exclusively to handle and respond
           to your enquiry. The legal basis is Art. 6(1)(b) GDPR (performance of pre-contractual
           measures) or Art. 6(1)(f) GDPR. Your data is deleted as soon as it is no longer

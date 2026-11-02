@@ -283,6 +283,7 @@ function formularHtml(s) {
         <label class="af-field af-third"><span>Telefon</span><input type="tel" name="telefon" autocomplete="tel" maxlength="60" placeholder="optional"></label>
         <label class="af-field af-third"><span>Wunschdatum</span><input type="date" name="datum"></label>
         <label class="af-field af-third"><span>Gäste</span><input type="number" name="gaeste" min="1" max="999" inputmode="numeric" placeholder="z. B. 40"></label>
+        <label class="af-field af-full"><span>Adresse</span><input type="text" name="adresse" autocomplete="street-address" maxlength="300" placeholder="Straße, PLZ, Ort (optional)"></label>
         <label class="af-field af-full"><span>Nachricht</span><textarea name="nachricht" rows="4" maxlength="5000" placeholder="Was habt ihr vor? Uhrzeit, Budget, Wünsche …"></textarea></label>
       </div>
       <div class="af-honey" aria-hidden="true"><label>Bitte dieses Feld leer lassen<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>

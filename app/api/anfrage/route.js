@@ -38,6 +38,8 @@ export async function POST(req) {
   const name = get("name", 120);
   const email = get("mail");
   const telefon = get("telefon", 60);
+  // Freiwillig (Sven 02.11.2026), eine Zeile — BLISS SALES liest „Adresse:“
+  const adresse = get("adresse", 300).replace(/[\r\n]+/g, " ");
   const datum = datumDE(get("datum", 20));
   const gaeste = get("gaeste", 10);
   const nachricht = get("nachricht", 5000);
@@ -67,6 +69,7 @@ export async function POST(req) {
     `Name: ${name}`,
     `E-Mail: ${email}`,
     `Telefon: ${telefon || "—"}`,
+    `Adresse: ${adresse || "—"}`,
     `Wunschdatum: ${datum || "—"}`,
     `Gäste: ${gaeste || "—"}`,
     "",

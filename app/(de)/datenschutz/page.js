@@ -59,7 +59,7 @@ export default function DatenschutzPage() {
         <p>
           Wenn Sie uns per E-Mail schreiben oder unser Anfrageformular nutzen (z.&nbsp;B. für
           Reservierungen, Hochzeits-, Firmen-, Event- oder Gruppenanfragen), verarbeiten wir die von
-          Ihnen mitgeteilten Daten (Name, E-Mail-Adresse, ggf. Telefonnummer, Anlass, Wunschdatum,
+          Ihnen mitgeteilten Daten (Name, E-Mail-Adresse, ggf. Telefonnummer und Postanschrift, Anlass, Wunschdatum,
           Gästezahl sowie Ihre Nachricht) ausschließlich zur
           Bearbeitung und Beantwortung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
           DSGVO (Durchführung vorvertraglicher Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO. Ihre
