@@ -26,6 +26,9 @@ const MENUES = {
     {
       id: 'silvester',
       label: 'Fleisch &amp; Fisch',
+      bild: '/img/silvester/karte-fleisch-fisch.webp',
+      hoehe: 1705,
+      alt: 'Menükarte Silvester 2026 „Paris meets San Sebastián“, Fleisch und Fisch: zwei Snacks und fünf Gänge, 179 € pro Person ohne Getränke',
       gaenge: [
         ['Snack · Paris', 'Französische Zwiebelsuppe', 'überbackenes Comté-Brot'],
         ['Snack · San Sebastián', 'Croqueta vom Ibérico-Schinken', 'cremig gefüllt · Paprika-Mayonnaise'],
@@ -39,6 +42,9 @@ const MENUES = {
     {
       id: 'silvester-veg',
       label: 'Vegetarisches Menü',
+      bild: '/img/silvester/karte-vegetarisch.webp',
+      hoehe: 1705,
+      alt: 'Menükarte Silvester 2026 „Paris meets San Sebastián“, vegetarisch: zwei Snacks und fünf Gänge, 179 € pro Person ohne Getränke',
       gaenge: [
         ['Snack · Paris', 'Französische Zwiebelsuppe', 'überbackenes Bergkäse-Brot'],
         ['Snack · San Sebastián', 'Croqueta von Spinat', 'cremig gefüllt · Pinienkerne · Paprika-Mayonnaise'],
@@ -54,6 +60,9 @@ const MENUES = {
     {
       id: 'silvester',
       label: 'Meat &amp; Fish',
+      bild: '/img/silvester/karte-fleisch-fisch.webp',
+      hoehe: 1705,
+      alt: 'Menu card New Year’s Eve 2026 “Paris meets San Sebastián” (in German), meat and fish: two snacks and five courses, €179 per person, drinks not included',
       gaenge: [
         ['Snack · Paris', 'French Onion Soup', 'Comté-gratinated bread'],
         ['Snack · San Sebastián', 'Ibérico Ham Croqueta', 'creamy filling · paprika mayonnaise'],
@@ -67,6 +76,9 @@ const MENUES = {
     {
       id: 'silvester-veg',
       label: 'Vegetarian Menu',
+      bild: '/img/silvester/karte-vegetarisch.webp',
+      hoehe: 1705,
+      alt: 'Menu card New Year’s Eve 2026 “Paris meets San Sebastián” (in German), vegetarian: two snacks and five courses, €179 per person, drinks not included',
       gaenge: [
         ['Snack · Paris', 'French Onion Soup', 'mountain-cheese-gratinated bread'],
         ['Snack · San Sebastián', 'Spinach Croqueta', 'creamy filling · pine nuts · paprika mayonnaise'],
@@ -232,7 +244,11 @@ function buchenKnopf(t, extra = '') {
   return `<a href="${BUCHEN_HREF}" target="_blank" rel="noopener" class="btn primary${extra}">${t.buchen}</a>`;
 }
 
-function menueHtml(m) {
+// Seit 06.11.2026 ~11.10 (Sven: „da müssen die Karten rein, sieht doch net gut aus“): die fertigen Menükarten
+// (Mittig-Fassung aus neo-wintermenues/silvester.html, 10.45 Uhr) als Bild, Antippen vergrößert (KARTEN_SKRIPT).
+// Der Volltext bleibt im HTML: deutsch nur für Suchmaschinen und Screenreader (.sv-vh), englisch aufklappbar,
+// weil die Karten deutsch sind.
+function menueHtml(m, lang) {
   const zeilen = m.gaenge
     .map(([nr, name, sub]) => {
       const i = nr.indexOf(' · ');
@@ -240,17 +256,46 @@ function menueHtml(m) {
       const n2 = i < 0 ? '' : nr.slice(i + 3);
       return `<li class="sv-gang sv-${STADT(nr)}">
           <p class="sv-nr"><span class="sv-n1">${esc(n1)}</span>${n2 ? `<span class="sv-n2">${esc(n2)}</span>` : ''}</p>
-          <div class="sv-gericht"><h4 class="sv-name">${esc(name)}</h4><p class="sv-sub sv-pk">${pk(sub)}</p></div>
+          <div class="sv-gericht"><p class="sv-name">${esc(name)}</p><p class="sv-sub sv-pk">${pk(sub)}</p></div>
         </li>`;
     })
     .join('\n        ');
+  const liste = `<ol class="sv-gaenge">
+        ${zeilen}
+      </ol>`;
+  const text =
+    lang === 'en'
+      ? `<details class="sv-text-en"><summary>Read the menu in English</summary>
+      ${liste}
+      </details>`
+      : `<div class="sv-vh">
+      ${liste}
+      </div>`;
   return `<div class="sv-menue" id="menue-${m.id}">
       <h3 class="sv-menue-label">${m.label}</h3>
-      <ol class="sv-gaenge">
-        ${zeilen}
-      </ol>
+      <button type="button" class="sv-karte" data-sv-gross>
+        <img src="${m.bild}" alt="${esc(m.alt)}" width="1200" height="${m.hoehe}" loading="lazy" decoding="async">
+        <span class="sv-vh">${lang === 'en' ? '(enlarge)' : '(vergrößern)'}</span>
+      </button>
+      ${text}
     </div>`;
 }
+
+// Vergrößern im selben Fenster: Overlay mit Schließen-Knopf, Esc oder Klick daneben schließt.
+// Läuft als eigenes <script> in den page.js-Dateien (Inhalte aus dangerouslySetInnerHTML führen kein Skript aus).
+export const KARTEN_SKRIPT = `(function(){
+var EN=document.documentElement.lang==='en',ov,img,zu,vorher;
+function bau(){ov=document.createElement('div');ov.className='sv-gross';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label',EN?'Menu card':'Menükarte');
+ov.innerHTML='<button type="button" class="sv-gross-zu" aria-label="'+(EN?'Close':'Schließen')+'">×</button><img alt="">';
+document.body.appendChild(ov);img=ov.querySelector('img');zu=ov.querySelector('.sv-gross-zu');
+ov.addEventListener('click',function(e){if(e.target!==img)zumachen();});}
+function aufmachen(b){if(!ov)bau();vorher=b;var i=b.querySelector('img');img.src=i.currentSrc||i.src;img.alt=i.alt;ov.hidden=false;document.documentElement.classList.add('sv-gross-offen');zu.focus();}
+function zumachen(){if(!ov||ov.hidden)return;ov.hidden=true;document.documentElement.classList.remove('sv-gross-offen');if(vorher)vorher.focus();}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-sv-gross]');if(b){e.preventDefault();aufmachen(b);}});
+document.addEventListener('keydown',function(e){if(!ov||ov.hidden)return;if(e.key==='Escape'){zumachen();}else if(e.key==='Tab'){e.preventDefault();zu.focus();}});
+})();`;
+
+const PDF = '/pdf/neo-silvester-2026-menuekarte.pdf';
 
 function inhaltHtml(lang) {
   const t = T[lang];
@@ -297,11 +342,11 @@ function inhaltHtml(lang) {
     <div class="ev-kopf">
       <div class="eyebrow">${t.menueEyebrow}</div>
       <h2 class="ev-h2">${t.menueH2}</h2>
-      ${titelHtml('p', 'sv-titel sv-titel-mittel', lang)}
     </div>
     <div class="sv-menue-paar">
-    ${MENUES[lang].map(menueHtml).join('\n    ')}
+    ${MENUES[lang].map((m) => menueHtml(m, lang)).join('\n    ')}
     </div>
+    <p class="ev-link sv-pdf"><a href="${PDF}">${lang === 'en' ? 'Menu card as PDF (German)' : 'Menükarte als PDF'}</a></p>
     <div class="sv-preis-block">
       <p class="sv-preis">${t.preis}</p>
       <p class="sv-zusatz sv-pk">${pk(t.zusatz)}</p>
@@ -422,6 +467,8 @@ export function silvesterLd(lang) {
 }
 
 // ===== Hinweis auf der Startseite (Markierung <!--SILVESTER-TEASER-->) =====
+// Bild im Hinweis: Champagner-Foto. Die Menükarte statt des Fotos wurde am 06.11.2026 per Screenshot verglichen und verworfen
+// (Titel stünde doppelt, auf dem Handy sehr lang; die Karten zeigt die Seite /silvester).
 export function mitSilvesterTeaser(html, lang) {
   const t = T[lang];
   const marke = '<!--SILVESTER-TEASER-->';
