@@ -5080,3 +5080,73 @@ html.einw-offen { scroll-padding-bottom: calc(var(--einw-h, 110px) + 12px); }
 .allergene-schalter:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
 html:not(.js) .allergene-schalter { display: none; }
 @media print { .allergene-schalter, .allergene > summary::after { display: none; } }
+
+/* ===================== Silvester 2026 „Paris meets San Sebastián“ (Entwurf 06.11.2026, app/silvester.js) =====================
+   Paris im Blau der gedruckten Karte (#8DB8EC), San Sebastián rot (#E8664F). Seite /silvester, /en/new-years-eve, Hinweis auf der Startseite. */
+:root { --sv-paris: #8DB8EC; --sv-ss: #E8664F; }
+.sv-paris { color: var(--sv-paris); }
+.sv-ss { color: var(--sv-ss); }
+
+/* Nie ein „·“ am Zeilenende: Punkt gehört zum folgenden Teil, am Zeilenanfang wird er abgeschnitten */
+/* --sv-sep: Breite des Punkts samt Abstand; --sv-ls: Sperrung der Zeile (rechts ausgleichen, damit der Punkt mittig sitzt) */
+.sv-pk { display: block; overflow: hidden; min-width: 0; --sv-sep: .8em; --sv-ls: 0em; }
+.eyebrow .sv-pk { --sv-sep: 1.5em; --sv-ls: .34em; }
+.sv-gruss-zeile .sv-pk { --sv-sep: 1.4em; --sv-ls: .24em; }
+.sv-pk .sv-tl { margin-right: var(--sv-sep); }
+.sv-pk .sv-tl:last-child { margin-right: 0; }
+.sv-pk .sv-tl.sv-mit { margin-left: calc(-1 * var(--sv-sep)); }
+.sv-nw { white-space: nowrap; }
+.sv-sep { display: inline-block; box-sizing: border-box; width: var(--sv-sep); padding-right: var(--sv-ls); text-align: center; letter-spacing: 0; }
+.sv-sp { font-size: 0; }
+.sv-vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Titel PARIS meets SAN SEBASTIÁN */
+.sv-titel { font-weight: 900; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; overflow-wrap: normal; }
+.sv-titel .sv-meets { font-weight: 300; font-style: italic; text-transform: none; font-size: .4em; letter-spacing: .02em; color: var(--fg-soft); margin: 0 .08em; }
+.ev-hero h1.sv-titel-gross { font-size: clamp(36px, 7.2vw, 122px); line-height: 1; margin-bottom: 30px; }
+.sv-titel-mittel { font-size: clamp(26px, 3.2vw, 48px); margin-top: 22px; }
+.sv-titel-teaser { font-size: clamp(34px, 4.8vw, 80px); margin: 4px 0 0; }
+.sv-hero .hero-eyebrow { display: flex; max-width: 100%; }
+.sv-hero .hero-bg { filter: brightness(0.62) saturate(1.05) contrast(1.06); }
+
+.sv-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+
+/* Der Abend */
+.sv-abend-bild { margin: clamp(32px, 4vw, 52px) 0 0; overflow: hidden; background: var(--bg-elev); }
+.sv-abend-bild img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+
+/* Die beiden Menüs */
+.sv-menue-paar { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(44px, 6vw, 110px); align-items: start; }
+@media (max-width: 980px) { .sv-menue-paar { grid-template-columns: 1fr; } }
+.sv-menue-label { font-size: 13px; font-weight: 900; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg); padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.sv-gaenge { list-style: none; }
+.sv-gang { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0 26px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.sv-nr { border-left: 2px solid currentColor; padding-left: 12px; font-size: 13px; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.3; align-self: start; }
+.sv-gang.sv-paris .sv-nr { color: var(--sv-paris); }
+.sv-gang.sv-ss .sv-nr { color: var(--sv-ss); }
+.sv-n1 { display: block; }
+.sv-n2 { display: block; margin-top: 6px; font-size: 11px; letter-spacing: 0.2em; white-space: nowrap; opacity: .9; }
+.sv-gericht { min-width: 0; }
+.sv-name { font-size: 17px; font-weight: 700; line-height: 1.4; color: var(--fg); letter-spacing: 0.01em; padding-bottom: 0; }
+.sv-sub { margin-top: 5px; color: var(--fg-soft); font-size: 15px; line-height: 1.6; font-weight: 300; }
+@media (max-width: 560px) {
+  .sv-gang { grid-template-columns: minmax(0, 1fr); padding: 20px 0; }
+  .sv-nr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 10px; }
+  .sv-n2 { margin-top: 0; }
+}
+.sv-preis-block { margin-top: clamp(48px, 5vw, 72px); }
+.sv-preis { font-size: clamp(40px, 4.2vw, 64px); font-weight: 900; line-height: 1; letter-spacing: -0.01em; color: var(--fg); }
+.sv-zusatz { margin-top: 10px; color: var(--muted-lesbar); font-size: 15px; }
+.sv-gruss-zeile { margin-top: 26px; font-size: 12px; font-weight: 900; letter-spacing: 0.24em; text-transform: uppercase; }
+
+/* Schluss */
+.sv-schluss .ev-h2.sv-schluss-gruss { font-size: clamp(26px, 4.6vw, 72px); }
+.sv-schluss-zeile { margin-top: 18px; color: var(--fg-soft); font-size: 16px; font-weight: 300; }
+
+/* Hinweis auf der Startseite */
+.sv-teaser-innen { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 6vw, 96px); align-items: center; }
+@media (max-width: 980px) { .sv-teaser-innen { grid-template-columns: 1fr; } }
+.sv-teaser-bild { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-elev); }
+.sv-teaser-bild img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.sv-teaser-text .eyebrow { display: flex; max-width: 100%; margin-bottom: 24px; }
+.sv-teaser-p { margin-top: 26px; color: var(--fg-soft); font-size: 16px; line-height: 1.75; font-weight: 300; max-width: 56ch; }

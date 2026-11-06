@@ -3,6 +3,7 @@ import { bodyHtml as bodyHtmlEn } from './(en)/en/bodyHtmlEn';
 import { mitHaeuserLeiste } from './haeuser';
 import { mitFeiernMenues } from './feiernMenues';
 import { mitKarte, mitSharingTeaser } from './winterkarte/render';
+import { mitSilvesterTeaser, SILVESTER } from './silvester';
 
 // Seit 17.10.2026 liefert jede deutsche Adresse nur ihren eigenen Inhalt aus (vorher bekamen
 // /speisekarte und /hochzeit die komplette Startseite und schalteten nur per CSS-Klasse um).
@@ -17,7 +18,8 @@ function schneide(von, bis, quelle = bodyHtml) {
 
 const KOPF = schneide('<!-- NAV -->', '<!-- HERO -->');
 // Startseite mit Wintermenüs im Abschnitt „Feiern im NEO“ (app/feiernMenues.js)
-const START = mitSharingTeaser(mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">')), 'de');
+// Silvester-Hinweis an <!--SILVESTER-TEASER--> (app/silvester.js, Entwurf 06.11.2026)
+const START = mitSilvesterTeaser(mitSharingTeaser(mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">')), 'de'), 'de');
 // Speisekarte Winter 2026/27 aus app/winterkarte (Daten + Fotos), eingesetzt an <!--WINTERKARTE-->
 const KARTE = mitKarte(schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE'), 'de');
 const HOCHZEIT = schneide('<div class="subpage" id="page-hochzeit">', '<!-- FOOTER -->');
@@ -83,3 +85,12 @@ export const menuHtmlEn = sprachZiel(
   '/speisekarte',
 );
 export const hochzeitHtml = seitenHtml(aktiv(HOCHZEIT, 'page-hochzeit'));
+
+// Silvester 2026 (Entwurf 06.11.2026): /silvester mit deutschem Kopf und Fuß, EN → /en/new-years-eve;
+// /en/new-years-eve mit englischem Kopf und Fuß, DE → /silvester. Inhalt aus app/silvester.js.
+export const silvesterHtml = sprachZiel(seitenHtml(SILVESTER.de.inhalt), SILVESTER.de.andere);
+const silvesterEnIds = ids(SILVESTER.en.inhalt);
+export const silvesterHtmlEn = sprachZiel(
+  verlinkeEn(KOPF_EN, silvesterEnIds) + verlinkeEn(SILVESTER.en.inhalt, silvesterEnIds) + verlinkeEn(FUSS_EN, silvesterEnIds),
+  SILVESTER.en.andere,
+);

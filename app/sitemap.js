@@ -41,6 +41,20 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     })),
+    // Silvester 2026 (seit 06.11.2026), deutsch und englisch als Sprachpaar
+    ...['/silvester', '/en/new-years-eve'].map((pfad) => ({
+      url: 'https://www.neo-heidelberg.de' + pfad,
+      lastModified: new Date('2026-11-06'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          de: 'https://www.neo-heidelberg.de/silvester',
+          en: 'https://www.neo-heidelberg.de/en/new-years-eve',
+          'x-default': 'https://www.neo-heidelberg.de/silvester',
+        },
+      },
+    })),
     {
       url: 'https://www.neo-heidelberg.de/menu',
       lastModified: stand,
