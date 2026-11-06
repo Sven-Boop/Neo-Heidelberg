@@ -28,7 +28,7 @@ const MENUES = {
       id: 'silvester',
       label: 'Fleisch &amp; Fisch',
       bild: '/img/silvester/karte-fleisch-fisch.webp',
-      hoehe: 1705,
+      hoehe: 1704,
       alt: 'Menükarte Silvester 2026 „Paris meets San Sebastián“, Fleisch und Fisch: zwei Snacks und fünf Gänge, 179 € pro Person ohne Getränke',
       gaenge: [
         ['Snack · Paris', 'Französische Zwiebelsuppe', 'überbackenes Comté-Brot'],
@@ -44,7 +44,7 @@ const MENUES = {
       id: 'silvester-veg',
       label: 'Vegetarisches Menü',
       bild: '/img/silvester/karte-vegetarisch.webp',
-      hoehe: 1705,
+      hoehe: 1704,
       alt: 'Menükarte Silvester 2026 „Paris meets San Sebastián“, vegetarisch: zwei Snacks und fünf Gänge, 179 € pro Person ohne Getränke',
       gaenge: [
         ['Snack · Paris', 'Französische Zwiebelsuppe', 'überbackenes Bergkäse-Brot'],
@@ -62,7 +62,7 @@ const MENUES = {
       id: 'silvester',
       label: 'Meat &amp; Fish',
       bild: '/img/silvester/karte-fleisch-fisch.webp',
-      hoehe: 1705,
+      hoehe: 1704,
       alt: 'Menu card New Year’s Eve 2026 “Paris meets San Sebastián” (in German), meat and fish: two snacks and five courses, €179 per person, drinks not included',
       gaenge: [
         ['Snack · Paris', 'French Onion Soup', 'Comté-gratinated bread'],
@@ -78,7 +78,7 @@ const MENUES = {
       id: 'silvester-veg',
       label: 'Vegetarian Menu',
       bild: '/img/silvester/karte-vegetarisch.webp',
-      hoehe: 1705,
+      hoehe: 1704,
       alt: 'Menu card New Year’s Eve 2026 “Paris meets San Sebastián” (in German), vegetarian: two snacks and five courses, €179 per person, drinks not included',
       gaenge: [
         ['Snack · Paris', 'French Onion Soup', 'mountain-cheese-gratinated bread'],
@@ -135,6 +135,7 @@ const T = {
     faqText: `Und wenn eure Frage fehlt: schreibt uns an <a href="mailto:${MAIL}">${MAIL}</a>.`,
     faq: [
       { q: 'Wann beginnt der Silvesterabend im NEO?', a: 'Ab 18 Uhr ist geöffnet, um 19 Uhr servieren wir das Menü.' },
+      { q: 'Bis wann geht der Abend?', a: 'Gegen 1 Uhr.' },
       { q: 'Was kostet das Silvestermenü?', a: '179 € pro Person, ohne Getränke.' },
       { q: 'Gibt es ein vegetarisches Menü?', a: 'Ja, mit zwei Snacks und fünf Gängen zum gleichen Preis wie das Menü mit Fleisch und Fisch.' },
       { q: 'Wie buche ich?', a: `Online über „Jetzt buchen“, bezahlt wird direkt bei der Buchung. Fragen beantworten wir unter <a href="${TEL_LINK}">06221 7239099</a>.` },
@@ -183,6 +184,7 @@ const T = {
     faqText: `Question not answered? Write to us at <a href="mailto:${MAIL}">${MAIL}</a>.`,
     faq: [
       { q: 'When does New Year’s Eve at NEO start?', a: 'Doors open at 6 pm, the menu is served at 7 pm.' },
+      { q: 'How late does the evening go?', a: 'Until around 1 am.' },
       { q: 'How much is the New Year’s Eve menu?', a: '€179 per person, drinks not included.' },
       { q: 'Is there a vegetarian menu?', a: 'Yes, with two snacks and five courses at the same price as the meat and fish menu.' },
       { q: 'How do I book?', a: `Online via “Book now”, payment is taken when you book. For questions call us on <a href="${TEL_LINK}">+49 6221 7239099</a>.` },
@@ -426,6 +428,7 @@ export function silvesterLd(lang) {
     inLanguage: lang,
     startDate: '2026-12-31T19:00:00+01:00',
     doorTime: '2026-12-31T18:00:00+01:00',
+    endDate: '2027-01-01T01:00:00+01:00',
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
