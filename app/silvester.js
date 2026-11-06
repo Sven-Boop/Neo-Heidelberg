@@ -13,7 +13,8 @@ const BASIS = 'https://www.neo-heidelberg.de';
 // Gastronaut öffnet den 31.12. mit dem Silvester-Ticket (Zahlung vorab). Wie alle Reservierungslinks der
 // Seite in neuem Tab (target _blank); das Einwilligungs-Skript zählt den Klick als Ereignis „reservierung“.
 export const SILVESTER_BUCHEN = 'https://reservation.gastronaut.ai/neo-heidelberg?date=2026-12-31&occassion=silvester&guests=2';
-const BUCHEN_HREF = SILVESTER_BUCHEN.replace(/&/g, '&amp;');
+// Sichtbare Buchen-Knöpfe mit Kennung „website“ (Links je Kanal im Werbepaket, Sven 06.11.2026: „mach alles“); Gastronaut öffnet damit genauso
+const BUCHEN_HREF = (SILVESTER_BUCHEN + '&utm_source=website&utm_medium=homepage&utm_campaign=silvester2026').replace(/&/g, '&amp;');
 const TEL = '+49 (0) 6221 7239099';
 const TEL_LINK = 'tel:+4962217239099';
 const MAIL = 'info@neo-heidelberg.de';
