@@ -13,8 +13,10 @@ const BASIS = 'https://www.neo-heidelberg.de';
 // Gastronaut öffnet den 31.12. mit dem Silvester-Ticket (Zahlung vorab). Wie alle Reservierungslinks der
 // Seite in neuem Tab (target _blank); das Einwilligungs-Skript zählt den Klick als Ereignis „reservierung“.
 export const SILVESTER_BUCHEN = 'https://reservation.gastronaut.ai/neo-heidelberg?date=2026-12-31&occassion=silvester&guests=2';
-// Sichtbare Buchen-Knöpfe mit Kennung „website“ (Links je Kanal im Werbepaket, Sven 06.11.2026: „mach alles“); Gastronaut öffnet damit genauso
-const BUCHEN_HREF = (SILVESTER_BUCHEN + '&utm_source=website&utm_medium=homepage&utm_campaign=silvester2026').replace(/&/g, '&amp;');
+// Sichtbare Buchen-Knöpfe mit Kennung „website“ (Links je Kanal im Werbepaket, Sven 06.11.2026: „mach alles“); Gastronaut öffnet damit genauso.
+// Seit 07.11.2026 je Stelle und Sprache unterscheidbar: utm_medium startseite/silvesterseite, utm_content de/en.
+const buchenHref = (t, wo) =>
+  (SILVESTER_BUCHEN + `&utm_source=website&utm_medium=${wo}&utm_campaign=silvester2026&utm_content=${t.pfad === '/silvester' ? 'de' : 'en'}`).replace(/&/g, '&amp;');
 const TEL = '+49 (0) 6221 7239099';
 const TEL_LINK = 'tel:+4962217239099';
 const MAIL = 'info@neo-heidelberg.de';
@@ -65,7 +67,7 @@ const MENUES = {
       hoehe: 1704,
       alt: 'Menu card New Year’s Eve 2026 “Paris meets San Sebastián” (in German), meat and fish: two snacks and five courses, €179 per person, drinks not included',
       gaenge: [
-        ['Snack · Paris', 'French Onion Soup', 'Comté-gratinated bread'],
+        ['Snack · Paris', 'French Onion Soup', 'bread gratinéed with Comté'],
         ['Snack · San Sebastián', 'Ibérico Ham Croqueta', 'creamy filling · paprika mayonnaise'],
         ['I · Paris', 'Pâté en Croûte of Guinea Fowl and Goose Liver', 'Périgord truffle · frisée in truffle vinaigrette · pickled cornichons'],
         ['II · San Sebastián', 'King Prawn, Charcoal-Grilled', 'Ibérico bacon broth · crispy saffron rice · burnt aioli'],
@@ -81,7 +83,7 @@ const MENUES = {
       hoehe: 1704,
       alt: 'Menu card New Year’s Eve 2026 “Paris meets San Sebastián” (in German), vegetarian: two snacks and five courses, €179 per person, drinks not included',
       gaenge: [
-        ['Snack · Paris', 'French Onion Soup', 'mountain-cheese-gratinated bread'],
+        ['Snack · Paris', 'French Onion Soup', 'bread gratinéed with mountain cheese'],
         ['Snack · San Sebastián', 'Spinach Croqueta', 'creamy filling · pine nuts · paprika mayonnaise'],
         ['I · Paris', 'Pâté en Croûte of Wild Mushrooms and Chestnuts', 'Périgord truffle · frisée in truffle vinaigrette · pickled cornichons'],
         ['II · San Sebastián', 'Artichoke, Charcoal-Grilled', 'smoked paprika broth · crispy saffron rice · burnt aioli'],
@@ -184,7 +186,7 @@ const T = {
     faqText: `Question not answered? Write to us at <a href="mailto:${MAIL}">${MAIL}</a>.`,
     faq: [
       { q: 'When does New Year’s Eve at NEO start?', a: 'Doors open at 6 pm, the menu is served at 7 pm.' },
-      { q: 'How late does the evening go?', a: 'Until around 1 am.' },
+      { q: 'When does the evening end?', a: 'Around 1 am.' },
       { q: 'How much is the New Year’s Eve menu?', a: '€179 per person, drinks not included.' },
       { q: 'Is there a vegetarian menu?', a: 'Yes, with two snacks and five courses at the same price as the meat and fish menu.' },
       { q: 'How do I book?', a: `Online via “Book now”, payment is taken when you book. For questions call us on <a href="${TEL_LINK}">+49 6221 7239099</a>.` },
@@ -243,8 +245,8 @@ function grussHtml(g) {
   return `<span class="sv-gruss sv-pk"><span class="sv-tl sv-nw sv-paris">${esc(g[0])}</span><wbr><span class="sv-tl sv-nw sv-mit sv-ss"><span class="sv-sep"><span class="sv-sp"> </span>·<span class="sv-sp"> </span></span>${esc(g[1])}</span></span>`;
 }
 
-function buchenKnopf(t, extra = '') {
-  return `<a href="${BUCHEN_HREF}" target="_blank" rel="noopener" class="btn primary${extra}">${t.buchen}</a>`;
+function buchenKnopf(t, extra = '', wo = 'silvesterseite') {
+  return `<a href="${buchenHref(t, wo)}" target="_blank" rel="noopener" class="btn primary${extra}">${t.buchen}</a>`;
 }
 
 // Seit 06.11.2026 ~11.10 (Sven: „da müssen die Karten rein, sieht doch net gut aus“): die fertigen Menükarten
@@ -489,7 +491,7 @@ export function mitSilvesterTeaser(html, lang) {
       ${titelHtml('h2', 'sv-titel sv-titel-teaser', lang)}
       <p class="sv-teaser-p">${text}</p>
       <div class="sv-ctas">
-        ${buchenKnopf(t)}
+        ${buchenKnopf(t, '', 'startseite')}
         <a href="${t.pfad}" class="btn">${t.zumMenue}</a>
       </div>
     </div>
