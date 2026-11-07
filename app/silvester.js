@@ -497,5 +497,18 @@ export function mitSilvesterTeaser(html, lang) {
     </div>
   </div>
 </section>`;
-  return html.replace(marke, teaser);
+  // Störer im Startbild (Sven 07.11.2026: „mach auch Störer auf die HP und buchbar in Gastronaut“): runder Aufkleber
+  // rechts neben der Zeile über der Überschrift, der Text fließt um ihn herum (float + shape-outside, verdeckt nie Text).
+  // Klick öffnet direkt die Silvester-Buchung in Gastronaut (Kennung utm_medium=stoerer).
+  const vorEyebrow = '<div class="eyebrow hero-eyebrow reveal">';
+  if (html.split(vorEyebrow).length !== 2) throw new Error('silvester: Startbild-Zeile für den Störer nicht eindeutig');
+  return html.replace(marke, teaser).replace(vorEyebrow, stoererHtml(t, lang) + vorEyebrow);
+}
+
+function stoererHtml(t, lang) {
+  const z =
+    lang === 'en'
+      ? { a: 'New Year’s Eve', b: '31 Dec', c: 'Book now', aria: 'New Year’s Eve, 31 December: Paris meets San Sebastián. Book now' }
+      : { a: 'Silvester', b: '31.12.', c: 'Jetzt buchen', aria: 'Silvester, 31. Dezember: Paris meets San Sebastián. Jetzt buchen' };
+  return `<a class="sv-stoerer" href="${buchenHref(t, 'stoerer')}" target="_blank" rel="noopener" aria-label="${z.aria}"><span class="sv-st-innen" aria-hidden="true"><span class="sv-st-a${z.a.length > 10 ? ' sv-st-lang' : ''}">${z.a}</span><span class="sv-st-b">${z.b}</span><span class="sv-st-t"><span class="sv-paris">Paris</span> <span class="sv-st-m">meets</span><br><span class="sv-ss">San&nbsp;Sebastián</span></span><span class="sv-st-c">${z.c}</span></span></a>`;
 }

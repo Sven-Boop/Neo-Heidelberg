@@ -5169,3 +5169,19 @@ html:not(.js) .allergene-schalter { display: none; }
 .sv-gross-zu { position: absolute; top: max(12px, env(safe-area-inset-top)); right: 12px; width: 48px; height: 48px; border: 1px solid var(--line-bright); background: rgba(22, 27, 34, 0.85); color: var(--fg); font-size: 28px; line-height: 1; cursor: pointer; }
 .sv-gross-zu:hover, .sv-gross-zu:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
 html.sv-gross-offen, html.sv-gross-offen body { overflow: hidden; }
+
+/* ===== Silvester-Störer im Startbild (07.11.2026, eingesetzt von app/silvester.js) ===== */
+.hero-content .sv-stoerer { --st: clamp(110px, 10vw, 150px); float: right; position: relative; z-index: 4; width: var(--st); height: var(--st); margin: calc(56px - var(--st)) 0 0 24px; border-radius: 50%; display: grid; place-items: center; text-align: center; text-decoration: none; color: #F6F5F3; background: radial-gradient(circle at 50% 38%, rgba(18,28,52,.94), rgba(8,9,10,.94)); box-shadow: 0 12px 32px rgba(0,0,0,.38); rotate: -8deg; transition: rotate .25s ease, scale .25s ease, box-shadow .25s ease; animation: heroSlideUp 1s cubic-bezier(.2,.7,.2,1) .3s both; }
+.hero-content .sv-stoerer::before { content: ""; position: absolute; inset: 0; border-radius: 50%; padding: 2px; background: linear-gradient(90deg, var(--sv-paris) 50%, var(--sv-ss) 50%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; pointer-events: none; }
+.hero-content .sv-stoerer:hover, .hero-content .sv-stoerer:focus-visible { rotate: -3deg; scale: 1.05; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+.sv-st-innen { display: flex; flex-direction: column; align-items: center; font-size: clamp(9px, .92vw, 13px); line-height: 1.15; }
+.sv-st-a { font-weight: 700; font-size: .78em; letter-spacing: .26em; padding-left: .26em; text-transform: uppercase; color: var(--sv-paris); }
+.sv-st-a.sv-st-lang { font-size: .64em; letter-spacing: .1em; padding-left: .1em; }
+.sv-st-b { font-weight: 900; font-size: 2.35em; line-height: 1.05; letter-spacing: -.01em; margin: .08em 0 .1em; }
+.sv-st-t { font-weight: 700; font-size: .74em; text-transform: uppercase; letter-spacing: .04em; }
+.sv-st-m { font-weight: 300; font-style: italic; text-transform: none; color: rgba(246,245,243,.75); }
+.sv-st-c { margin-top: .5em; padding-top: .45em; border-top: 1px solid rgba(246,245,243,.35); font-weight: 700; font-size: .7em; letter-spacing: .22em; padding-left: .22em; text-transform: uppercase; }
+/* Desktop: der Störer steht rechts über der Überschrift (nur die Zeile darüber fließt um ihn herum, „Feed your soul.“ bleibt wie es ist).
+   Handy und Tablet: eigene Zeile, rechtsbündig über der Zeile „Bar & Restaurant …“. */
+@media (max-width: 899px) { .hero-content .sv-stoerer { --st: 100px; float: none; margin: 0 6px 18px auto; } }
+@media (prefers-reduced-motion: reduce) { .hero-content .sv-stoerer { animation: none; transition: none; } }
