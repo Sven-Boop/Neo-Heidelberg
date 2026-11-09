@@ -5170,10 +5170,19 @@ html:not(.js) .allergene-schalter { display: none; }
 .sv-gross-zu:hover, .sv-gross-zu:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
 html.sv-gross-offen, html.sv-gross-offen body { overflow: hidden; }
 
-/* ===== Silvester-Störer im Startbild (07.11.2026, eingesetzt von app/silvester.js) ===== */
-.hero-content .sv-stoerer { --st: clamp(110px, 10vw, 150px); float: right; position: relative; z-index: 4; width: var(--st); height: var(--st); margin: calc(56px - var(--st)) 0 0 24px; border-radius: 50%; display: grid; place-items: center; text-align: center; text-decoration: none; color: #F6F5F3; background: radial-gradient(circle at 50% 38%, rgba(18,28,52,.94), rgba(8,9,10,.94)); box-shadow: 0 12px 32px rgba(0,0,0,.38); rotate: -8deg; transition: rotate .25s ease, scale .25s ease, box-shadow .25s ease; animation: heroSlideUp 1s cubic-bezier(.2,.7,.2,1) .3s both; }
+/* ===== Störer im Startbild: Silvester (07.11.2026, app/silvester.js) und BLISS Adventskalender (09.11.2026, app/adventskalender.js) =====
+   Beide stehen im gemeinsamen Container .hero-stoerer (Adventskalender links, Silvester rechts), gleich groß. */
+.hero-content .hero-stoerer { --st: clamp(110px, 10vw, 150px); float: right; position: relative; z-index: 4; display: flex; gap: 16px; margin: calc(56px - var(--st)) 0 0 24px; }
+.hero-stoerer > a { position: relative; flex: none; width: var(--st); height: var(--st); border-radius: 50%; display: grid; place-items: center; text-align: center; text-decoration: none; color: #F6F5F3; box-shadow: 0 12px 32px rgba(0,0,0,.38); rotate: -8deg; transition: rotate .25s ease, scale .25s ease, box-shadow .25s ease; animation: heroSlideUp 1s cubic-bezier(.2,.7,.2,1) .3s both; }
+.hero-stoerer > a:hover, .hero-stoerer > a:focus-visible { rotate: -3deg; scale: 1.05; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+.hero-content .sv-stoerer { background: radial-gradient(circle at 50% 38%, rgba(18,28,52,.94), rgba(8,9,10,.94)); }
 .hero-content .sv-stoerer::before { content: ""; position: absolute; inset: 0; border-radius: 50%; padding: 2px; background: linear-gradient(90deg, var(--sv-paris) 50%, var(--sv-ss) 50%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; pointer-events: none; }
-.hero-content .sv-stoerer:hover, .hero-content .sv-stoerer:focus-visible { rotate: -3deg; scale: 1.05; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+/* Adventskalender: dunkles Weihnachtsrot, helle Schrift, feiner heller Innenring; leicht gegengedreht, damit die beiden wie zwei Aufkleber wirken */
+.hero-content .ak-stoerer { color: #F5F5F2; background: radial-gradient(circle at 50% 38%, #8E2C3D, #7B2331 55%, #5F1925); rotate: 7deg; animation-delay: .22s; }
+.hero-content .ak-stoerer:hover, .hero-content .ak-stoerer:focus-visible { rotate: 3deg; }
+.hero-content .ak-stoerer::before { content: ""; position: absolute; inset: 3px; border-radius: 50%; border: 1px solid rgba(245,245,242,.4); pointer-events: none; }
+.ak-stoerer .sv-st-a { color: #F5F5F2; }
+.ak-stoerer .sv-st-c { border-top-color: rgba(245,245,242,.4); }
 .sv-st-innen { display: flex; flex-direction: column; align-items: center; font-size: clamp(9px, .92vw, 13px); line-height: 1.15; }
 .sv-st-a { font-weight: 700; font-size: .78em; letter-spacing: .26em; padding-left: .26em; text-transform: uppercase; color: var(--sv-paris); }
 .sv-st-a.sv-st-lang { font-size: .64em; letter-spacing: .1em; padding-left: .1em; }
@@ -5181,7 +5190,8 @@ html.sv-gross-offen, html.sv-gross-offen body { overflow: hidden; }
 .sv-st-t { font-weight: 700; font-size: .74em; text-transform: uppercase; letter-spacing: .04em; }
 .sv-st-m { font-weight: 300; font-style: italic; text-transform: none; color: rgba(246,245,243,.75); }
 .sv-st-c { margin-top: .5em; padding-top: .45em; border-top: 1px solid rgba(246,245,243,.35); font-weight: 700; font-size: .7em; letter-spacing: .22em; padding-left: .22em; text-transform: uppercase; }
-/* Desktop: der Störer steht rechts über der Überschrift (nur die Zeile darüber fließt um ihn herum, „Feed your soul.“ bleibt wie es ist).
-   Handy und Tablet: eigene Zeile, rechtsbündig über der Zeile „Bar & Restaurant …“. */
-@media (max-width: 899px) { .hero-content .sv-stoerer { --st: 100px; float: none; margin: 0 6px 18px auto; } }
-@media (prefers-reduced-motion: reduce) { .hero-content .sv-stoerer { animation: none; transition: none; } }
+/* Desktop: die Störer stehen nebeneinander rechts über der Überschrift (nur die Zeile darüber fließt um sie herum, „Feed your soul.“ bleibt wie es ist).
+   Handy und Tablet: eigene Reihe, rechtsbündig über der Zeile „Bar & Restaurant …“; bis 360 px je 88 px. */
+@media (max-width: 899px) { .hero-content .hero-stoerer { --st: 100px; float: none; justify-content: flex-end; gap: 14px; margin: 0 6px 18px 0; } }
+@media (max-width: 360px) { .hero-content .hero-stoerer { --st: 88px; gap: 12px; } .hero-stoerer .sv-st-innen { font-size: 8px; } }
+@media (prefers-reduced-motion: reduce) { .hero-stoerer > a { animation: none; transition: none; } }

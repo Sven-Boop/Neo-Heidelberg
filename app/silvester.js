@@ -502,7 +502,9 @@ export function mitSilvesterTeaser(html, lang) {
   // Klick öffnet direkt die Silvester-Buchung in Gastronaut (Kennung utm_medium=stoerer).
   const vorEyebrow = '<div class="eyebrow hero-eyebrow reveal">';
   if (html.split(vorEyebrow).length !== 2) throw new Error('silvester: Startbild-Zeile für den Störer nicht eindeutig');
-  return html.replace(marke, teaser).replace(vorEyebrow, stoererHtml(t, lang) + vorEyebrow);
+  // Seit 09.11.2026 im gemeinsamen Container .hero-stoerer: app/adventskalender.js setzt dort den Adventskalender-Störer
+  // links daneben (Layout beider Störer einmal in globals.css gelöst).
+  return html.replace(marke, teaser).replace(vorEyebrow, `<div class="hero-stoerer">${stoererHtml(t, lang)}</div>` + vorEyebrow);
 }
 
 function stoererHtml(t, lang) {
