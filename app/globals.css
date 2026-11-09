@@ -295,7 +295,8 @@
   .hero-bliss:hover { color: #fff; }
   .hero-bliss:hover::after { transform: translate(2px, -2px); }
   .hero h1, .hero .hero-h1 {
-    font-size: clamp(58px, 10vw, 192px);
+    /* Höchstwert 180 statt 192 px (Sven 09.11.2026): der Inhalt ist auf 1600 px begrenzt, „Feed your soul.“ bleibt so ab 1920 px einzeilig; bis 1800 px unverändert 10vw */
+    font-size: clamp(58px, 10vw, 180px);
     font-weight: 900;
     line-height: 1.2;
     letter-spacing: -0.035em;
