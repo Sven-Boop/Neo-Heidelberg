@@ -5171,56 +5171,66 @@ html:not(.js) .allergene-schalter { display: none; }
 .sv-gross-zu:hover, .sv-gross-zu:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
 html.sv-gross-offen, html.sv-gross-offen body { overflow: hidden; }
 
-/* ===== Störer zum Wegdrücken (09.11.2026, app/stoerer.js) =====
-   Ersetzt die runden Aufkleber im Startbild. Desktop rechts unten als Karte (420 px, flach genug, um „Feed your soul.“ frei zu lassen),
-   Handy als Blatt von unten (max. 45 % Höhe). Türchen-Bild links, Text rechts, darunter Silvester als schmale Zeile.
-   Erscheint mit .stoe-da (sanft, einmal), × oder ESC schließt mit .stoe-geht. Unter Menü (99) und Cookie-Hinweis (98). */
-.stoe { --stoe-rot: #7B2331; --stoe-rot-hi: #932a3b; --stoe-knopf: 150px; position: fixed; z-index: 97; right: 24px; bottom: 24px; width: 420px; max-width: calc(100vw - 32px); max-height: calc(100vh - 120px); overflow: auto; overscroll-behavior: contain; background: #1C1C1C; color: var(--fg); border: 1px solid var(--line-bright); border-top: 3px solid var(--stoe-rot); box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35); font-family: var(--sans); opacity: 0; transform: translateY(18px); transition: opacity .45s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1); }
+/* ===== Störer auf der Startseite (09.11.2026, app/stoerer.js) =====
+   Mittiges Overlay über dem Startbild: dunkler Hintergrund mit leichtem Blur, Karte zweispaltig (links Kalender-Film,
+   rechts Text auf #161b22). Handy: Karte 92 % breit, Film oben als 16:9-Streifen, höchstens 85 % hoch (innen scrollbar).
+   Erscheint mit .stoe-da (0,5 s einblenden und hochgleiten, einmal), schließt mit .stoe-geht. Ecken eckig wie die Seite. */
+html.stoe-offen, html.stoe-offen body { overflow: hidden; }
+.stoe { --stoe-rot: #7B2331; --stoe-rot-hi: #942b3d; position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 16px; opacity: 0; transition: opacity .5s ease; }
 .stoe[hidden] { display: none; }
-.stoe.stoe-da { opacity: 1; transform: none; }
-.stoe.stoe-geht { opacity: 0; transform: translateY(18px) scale(.98); transition-duration: .3s; pointer-events: none; }
-.stoe-zu { position: absolute; top: 8px; right: 8px; z-index: 2; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; background: rgba(22,27,34,.6); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .25s; }
+.stoe.stoe-da { opacity: 1; }
+.stoe.stoe-geht { opacity: 0; transition-duration: .3s; pointer-events: none; }
+.stoe-hg { position: absolute; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); cursor: pointer; }
+.stoe-karte { position: relative; display: grid; grid-template-columns: 340px 1fr; width: min(780px, 100%); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; background: #161b22; color: var(--fg); border: 1px solid rgba(255,255,255,.1); box-shadow: 0 40px 120px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.4); font-family: var(--sans); transform: translateY(28px) scale(.985); transition: transform .5s cubic-bezier(.2,.7,.2,1); outline: none; }
+.stoe.stoe-da .stoe-karte { transform: none; }
+.stoe.stoe-geht .stoe-karte { transform: translateY(16px) scale(.985); transition-duration: .3s; }
+.stoe-karte-advent { border-top: 3px solid var(--stoe-rot); }
+.stoe-medium { position: relative; min-height: 100%; overflow: hidden; background: radial-gradient(circle at 50% 40%, #3a141c, #12090b 75%); }
+.stoe-video, .stoe-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.stoe-medium::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgba(22,27,34,.55)); pointer-events: none; }
+.stoe-inhalt { min-width: 0; padding: 44px 40px 30px; }
+.stoe-zu { position: absolute; top: 12px; right: 12px; z-index: 3; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: rgba(22,27,34,.7); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .25s; }
 .stoe-zu span { display: block; margin-top: -2px; }
 .stoe-zu:hover, .stoe-zu:focus-visible { background: #fff; color: #161b22; border-color: #fff; transform: rotate(90deg); outline: none; }
-.stoe-advent { display: grid; grid-template-columns: 112px 1fr; gap: 0 18px; padding: 20px 20px 20px; }
-.stoe-bild { align-self: start; height: 160px; overflow: hidden; background: #2a0f15; border: 1px solid var(--line-bright); }
-.stoe-bild img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.stoe-inhalt { min-width: 0; }
-.stoe-kicker { margin: 2px 40px 8px 0; font-size: 10px; font-weight: 900; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
-.stoe-titel { margin: 0 40px 8px 0; font-size: 21px; font-weight: 900; line-height: 1.1; letter-spacing: -.005em; text-transform: uppercase; color: #F5F5F2; }
-.stoe-text { margin: 0 0 14px; font-size: 13px; font-weight: 300; line-height: 1.5; color: var(--fg-soft); }
-.stoe-knopf { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: var(--stoe-knopf); height: 46px; padding: 0 8px; font-size: 11px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background .3s, color .3s, border-color .3s; }
-.stoe-knopf-rot { background: var(--stoe-rot); color: #F5F5F2; border: 1px solid var(--stoe-rot); }
-.stoe-knopf-rot:hover, .stoe-knopf-rot:focus-visible { background: var(--stoe-rot-hi); border-color: #F5F5F2; outline: none; }
-.stoe-knopf-hell { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-.stoe-knopf-hell:hover, .stoe-knopf-hell:focus-visible { background: var(--accent); color: #161b22; outline: none; }
-.stoe-silvester { display: flex; align-items: center; gap: 14px; padding: 12px 20px 14px; border-top: 1px solid var(--line-bright); background: #161b22; }
-.stoe-sv-text { flex: 1; min-width: 0; margin: 0; line-height: 1.35; }
-.stoe-sv-a { display: block; font-size: 10px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-soft); }
-.stoe-sv-b { display: block; margin-top: 3px; font-size: 14px; font-weight: 700; color: rgba(246,245,243,.7); }
-.stoe-silvester .stoe-knopf { flex: none; }
-/* Nur Silvester (25.–31.12.): × steht neben der Zeile */
-.stoe-nur-silvester { border-top-color: var(--line-bright); }
-.stoe-nur-silvester .stoe-silvester { border-top: 0; padding: 16px 64px 16px 20px; }
+.stoe-kicker { margin: 0 48px 16px 0; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
+.stoe-kicker.sv-pk { --sv-sep: 1.3em; --sv-ls: .26em; }
+.stoe-titel { margin: 0 0 18px; font-size: 46px; font-weight: 900; line-height: 1.04; letter-spacing: -.025em; color: #F5F5F2; }
+.stoe-z { display: block; white-space: nowrap; }
+.stoe-titel em { font-style: italic; color: var(--accent); }
+.stoe-text { margin: 0 0 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--fg-soft); }
+.stoe-preis { margin: 0 0 24px; font-size: 14px; font-weight: 700; line-height: 1.5; color: #F5F5F2; }
+.stoe-knopf { display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 100%; height: 52px; padding: 0 16px; font-size: 12px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; text-decoration: none; transition: background .3s, color .3s, border-color .3s, box-shadow .3s; }
+.stoe-knopf-rot { background: var(--stoe-rot); color: #F5F5F2; border: 1px solid var(--stoe-rot); box-shadow: 0 10px 28px rgba(123,35,49,.35); }
+.stoe-knopf-rot:hover, .stoe-knopf-rot:focus-visible { background: var(--stoe-rot-hi); border-color: #F5F5F2; outline: none; box-shadow: 0 14px 34px rgba(123,35,49,.5); }
+.stoe-knopf-hell { background: var(--accent); color: #161b22; border: 1px solid var(--accent); }
+.stoe-knopf-hell:hover, .stoe-knopf-hell:focus-visible { background: var(--accent-hi); border-color: #fff; outline: none; }
+.stoe-silvester { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--line-bright); }
+.stoe-sv-text { flex: 1; margin: 0; font-size: 11px; font-weight: 700; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-soft); }
+.stoe-sv-link { flex: none; display: inline-flex; align-items: center; min-height: 44px; font-size: 11px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; color: var(--accent); white-space: nowrap; }
+.stoe-sv-link:hover, .stoe-sv-link:focus-visible { color: var(--accent-hi); text-decoration: underline; text-underline-offset: 4px; outline: none; }
+.stoe-titel .sv-paris, .stoe-titel .sv-ss { font-style: normal; }
+.stoe-sv-link span { margin-left: .6em; letter-spacing: 0; }
 @media (max-width: 899px) {
-  .stoe { --stoe-knopf: 140px; left: 0; right: 0; bottom: 0; width: auto; max-width: none; max-height: 45vh; max-height: 45dvh; border-width: 3px 0 0; padding-bottom: env(safe-area-inset-bottom); transform: translateY(100%); box-shadow: 0 -18px 48px rgba(0,0,0,.55); }
-  .stoe.stoe-geht { transform: translateY(100%); }
-  .stoe-advent { grid-template-columns: 84px 1fr; gap: 0 14px; padding: 14px 16px 12px; }
-  .stoe-bild { height: 120px; }
-  .stoe-kicker { margin-right: 44px; margin-bottom: 5px; }
-  .stoe-titel { margin-right: 44px; margin-bottom: 6px; font-size: 17px; }
-  .stoe-text { margin-bottom: 10px; font-size: 12.5px; line-height: 1.45; }
-  .stoe-knopf { height: 44px; letter-spacing: .18em; }
-  .stoe-silvester { padding: 8px 16px 10px; gap: 12px; }
-  .stoe-sv-b { font-size: 13px; }
-  .stoe-zu { top: 6px; right: 6px; }
-  .stoe-nur-silvester .stoe-silvester { padding: 14px 60px 14px 16px; }
+  .stoe { padding: 0; }
+  .stoe-karte { grid-template-columns: 1fr; width: 92vw; max-height: 85vh; max-height: 85dvh; }
+  .stoe-medium { min-height: 0; aspect-ratio: 16 / 9; }
+  .stoe-medium::after { background: linear-gradient(180deg, transparent 70%, rgba(22,27,34,.6)); }
+  .stoe-inhalt { padding: 20px 22px 22px; }
+  .stoe-zu { top: 8px; right: 8px; }
+  .stoe-kicker { margin: 0 0 10px; font-size: 10px; }
+  .stoe-titel { margin-bottom: 12px; font-size: clamp(25px, 7.8vw, 40px); }
+  .stoe-text { margin-bottom: 10px; font-size: 14px; line-height: 1.5; }
+  .stoe-preis { margin-bottom: 18px; font-size: 13px; }
+  .stoe-knopf { height: 50px; }
+  .stoe-silvester { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 18px; padding-top: 14px; }
+  .stoe-sv-link { justify-content: center; border: 1px solid var(--accent); }
 }
 @media (max-width: 380px) {
-  .stoe-advent { grid-template-columns: 64px 1fr; gap: 0 12px; padding: 12px 14px 10px; }
-  .stoe-bild { height: 96px; }
-  .stoe-titel { font-size: 15.5px; }
-  .stoe-text { font-size: 12px; }
-  .stoe-silvester { padding: 8px 14px 10px; }
+  .stoe-inhalt { padding: 16px 18px 18px; }
+  .stoe-kicker { margin-bottom: 8px; }
+  .stoe-text { font-size: 13px; margin-bottom: 8px; }
+  .stoe-preis { margin-bottom: 14px; }
+  .stoe-knopf { height: 46px; }
+  .stoe-silvester { margin-top: 14px; padding-top: 12px; gap: 8px; }
 }
-@media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-zu { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-karte, .stoe.stoe-geht .stoe-karte, .stoe-zu { transition: none; } .stoe-karte { transform: none; } }

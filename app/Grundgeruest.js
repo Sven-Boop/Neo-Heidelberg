@@ -7,7 +7,6 @@ import { Lato } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Einwilligung } from './Einwilligung';
-import { stoererHtml, STOERER_SKRIPT } from './stoerer';
 
 const lato = Lato({
   weight: ['300', '400', '700', '900'],
@@ -44,8 +43,6 @@ var an=b.getAttribute('aria-pressed')!=='true';var bs=document.querySelectorAll(
 for(i=0;i<bs.length;i++)bs[i].setAttribute('aria-pressed',an?'true':'false');for(i=0;i<ds.length;i++)ds[i].open=an;});`;
 
 export function Grundgeruest({ lang, children }) {
-  // Störer zum Wegdrücken (app/stoerer.js): Datum wird beim Erzeugen der Seite geprüft, leer nach dem 31.12.2026
-  const stoerer = stoererHtml(lang);
   return (
     <html lang={lang} className={lato.variable} suppressHydrationWarning>
       <head>
@@ -55,8 +52,6 @@ export function Grundgeruest({ lang, children }) {
       </head>
       <body>
         {children}
-        {stoerer && <div className="stoe-halter" dangerouslySetInnerHTML={{ __html: stoerer }} />}
-        {stoerer && <script dangerouslySetInnerHTML={{ __html: STOERER_SKRIPT }} />}
         <Analytics />
         <SpeedInsights />
         <Einwilligung />
