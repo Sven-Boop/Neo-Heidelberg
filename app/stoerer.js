@@ -5,6 +5,7 @@
 // damit die Datumsprüfung hier auf dem Server greift. Das Skript prüft die Daten im Browser zusätzlich.
 // Erscheint etwa 1,2 s nach dem Laden, aber nie über dem Cookie-Hinweis: erst nach der Entscheidung dort.
 // × oder ESC schließt und merkt sich das 7 Tage (localStorage, Schlüssel unten).
+// Türchen-Bild (4 KB) ohne loading="lazy": die Karte ist bis zum Erscheinen versteckt, lazy lädt es erst dann und zeigt kurz eine leere Fläche.
 // Silvester-Zeile zweizeilig gesetzt (Datum / Titel) statt mit „·“: so steht nie ein Trennpunkt am Zeilenrand.
 import { silvesterStoererHref } from './silvester';
 
@@ -56,7 +57,7 @@ export function stoererHtml(lang, jetzt = new Date()) {
   if (!advent && !silvester) return '';
   const adventHtml = advent
     ? `<div class="stoe-advent" data-bis="${ADVENT_BIS}">
-    <div class="stoe-bild"><img src="/img/stoerer/adventskalender.webp" alt="${z.bildAlt}" width="240" height="344" loading="lazy" decoding="async"></div>
+    <div class="stoe-bild"><img src="/img/stoerer/adventskalender.webp" alt="${z.bildAlt}" width="240" height="344" decoding="async" fetchpriority="low"></div>
     <div class="stoe-inhalt">
       <p class="stoe-kicker">${z.kicker}</p>
       <p class="stoe-titel">${z.titel}</p>
