@@ -12,13 +12,15 @@ import { pk, silvesterStoererHref } from './silvester';
 
 export const ADVENT_BIS = '2026-12-24';
 export const SILVESTER_BIS = '2026-12-31';
-export const SCHLUESSEL = 'neo-stoerer-advent-2026';
+// v2 seit 09.11.2026: wer die frühere kleine Karte weggedrückt hat, sieht den mittigen Störer einmal
+export const SCHLUESSEL = 'neo-stoerer-advent-2026-v2';
 const ADVENT_ZIEL = 'https://adventskalender.bliss-group.de/?utm_source=neo-heidelberg&amp;utm_medium=stoerer';
 const VIDEO = {
-  hoch: '/video/stoerer-4x5.mp4',
-  quer: '/video/stoerer-16x9.mp4',
-  posterHoch: '/video/stoerer-4x5-poster.webp',
-  posterQuer: '/video/stoerer-16x9-poster.webp',
+  // v2: ab dem Türchen-Zoom geschnitten (ohne die Titeleinblendung des Films), neuer Name gegen alten Browser-Cache
+  hoch: '/video/stoerer-4x5-v2.mp4',
+  quer: '/video/stoerer-16x9-v2.mp4',
+  posterHoch: '/video/stoerer-4x5-v2-poster.webp',
+  posterQuer: '/video/stoerer-16x9-v2-poster.webp',
 };
 const SILVESTER_BILD = '/img/silvester/champagner.webp';
 
