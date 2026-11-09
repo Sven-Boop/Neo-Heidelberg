@@ -5171,28 +5171,56 @@ html:not(.js) .allergene-schalter { display: none; }
 .sv-gross-zu:hover, .sv-gross-zu:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
 html.sv-gross-offen, html.sv-gross-offen body { overflow: hidden; }
 
-/* ===== Störer im Startbild: Silvester (07.11.2026, app/silvester.js) und BLISS Adventskalender (09.11.2026, app/adventskalender.js) =====
-   Beide stehen im gemeinsamen Container .hero-stoerer (Adventskalender links, Silvester rechts), gleich groß. */
-.hero-content .hero-stoerer { --st: clamp(110px, 10vw, 150px); float: right; position: relative; z-index: 4; display: flex; gap: 16px; margin: calc(56px - var(--st)) 0 0 24px; }
-.hero-stoerer > a { position: relative; flex: none; width: var(--st); height: var(--st); border-radius: 50%; display: grid; place-items: center; text-align: center; text-decoration: none; color: #F6F5F3; box-shadow: 0 12px 32px rgba(0,0,0,.38); rotate: -8deg; transition: rotate .25s ease, scale .25s ease, box-shadow .25s ease; animation: heroSlideUp 1s cubic-bezier(.2,.7,.2,1) .3s both; }
-.hero-stoerer > a:hover, .hero-stoerer > a:focus-visible { rotate: -3deg; scale: 1.05; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
-.hero-content .sv-stoerer { background: radial-gradient(circle at 50% 38%, rgba(18,28,52,.94), rgba(8,9,10,.94)); }
-.hero-content .sv-stoerer::before { content: ""; position: absolute; inset: 0; border-radius: 50%; padding: 2px; background: linear-gradient(90deg, var(--sv-paris) 50%, var(--sv-ss) 50%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; pointer-events: none; }
-/* Adventskalender: dunkles Weihnachtsrot, helle Schrift, feiner heller Innenring; leicht gegengedreht, damit die beiden wie zwei Aufkleber wirken */
-.hero-content .ak-stoerer { color: #F5F5F2; background: radial-gradient(circle at 50% 38%, #8E2C3D, #7B2331 55%, #5F1925); rotate: 7deg; animation-delay: .22s; }
-.hero-content .ak-stoerer:hover, .hero-content .ak-stoerer:focus-visible { rotate: 3deg; }
-.hero-content .ak-stoerer::before { content: ""; position: absolute; inset: 3px; border-radius: 50%; border: 1px solid rgba(245,245,242,.4); pointer-events: none; }
-.ak-stoerer .sv-st-a { color: #F5F5F2; }
-.ak-stoerer .sv-st-c { border-top-color: rgba(245,245,242,.4); }
-.sv-st-innen { display: flex; flex-direction: column; align-items: center; font-size: clamp(9px, .92vw, 13px); line-height: 1.15; }
-.sv-st-a { font-weight: 700; font-size: .78em; letter-spacing: .26em; padding-left: .26em; text-transform: uppercase; color: var(--sv-paris); }
-.sv-st-a.sv-st-lang { font-size: .64em; letter-spacing: .1em; padding-left: .1em; }
-.sv-st-b { font-weight: 900; font-size: 2.35em; line-height: 1.05; letter-spacing: -.01em; margin: .08em 0 .1em; }
-.sv-st-t { font-weight: 700; font-size: .74em; text-transform: uppercase; letter-spacing: .04em; }
-.sv-st-m { font-weight: 300; font-style: italic; text-transform: none; color: rgba(246,245,243,.75); }
-.sv-st-c { margin-top: .5em; padding-top: .45em; border-top: 1px solid rgba(246,245,243,.35); font-weight: 700; font-size: .7em; letter-spacing: .22em; padding-left: .22em; text-transform: uppercase; }
-/* Desktop: die Störer stehen nebeneinander rechts über der Überschrift (nur die Zeile darüber fließt um sie herum, „Feed your soul.“ bleibt wie es ist).
-   Handy und Tablet: eigene Reihe, rechtsbündig über der Zeile „Bar & Restaurant …“; bis 360 px je 88 px. */
-@media (max-width: 899px) { .hero-content .hero-stoerer { --st: 100px; float: none; justify-content: flex-end; gap: 14px; margin: 0 6px 18px 0; } }
-@media (max-width: 360px) { .hero-content .hero-stoerer { --st: 88px; gap: 12px; } .hero-stoerer .sv-st-innen { font-size: 8px; } }
-@media (prefers-reduced-motion: reduce) { .hero-stoerer > a { animation: none; transition: none; } }
+/* ===== Störer zum Wegdrücken (09.11.2026, app/stoerer.js) =====
+   Ersetzt die runden Aufkleber im Startbild. Desktop rechts unten als Karte (420 px, flach genug, um „Feed your soul.“ frei zu lassen),
+   Handy als Blatt von unten (max. 45 % Höhe). Türchen-Bild links, Text rechts, darunter Silvester als schmale Zeile.
+   Erscheint mit .stoe-da (sanft, einmal), × oder ESC schließt mit .stoe-geht. Unter Menü (99) und Cookie-Hinweis (98). */
+.stoe { --stoe-rot: #7B2331; --stoe-rot-hi: #932a3b; --stoe-knopf: 150px; position: fixed; z-index: 97; right: 24px; bottom: 24px; width: 420px; max-width: calc(100vw - 32px); max-height: calc(100vh - 120px); overflow: auto; overscroll-behavior: contain; background: #1C1C1C; color: var(--fg); border: 1px solid var(--line-bright); border-top: 3px solid var(--stoe-rot); box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35); font-family: var(--sans); opacity: 0; transform: translateY(18px); transition: opacity .45s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1); }
+.stoe[hidden] { display: none; }
+.stoe.stoe-da { opacity: 1; transform: none; }
+.stoe.stoe-geht { opacity: 0; transform: translateY(18px) scale(.98); transition-duration: .3s; pointer-events: none; }
+.stoe-zu { position: absolute; top: 8px; right: 8px; z-index: 2; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; background: rgba(22,27,34,.6); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .25s; }
+.stoe-zu span { display: block; margin-top: -2px; }
+.stoe-zu:hover, .stoe-zu:focus-visible { background: #fff; color: #161b22; border-color: #fff; transform: rotate(90deg); outline: none; }
+.stoe-advent { display: grid; grid-template-columns: 112px 1fr; gap: 0 18px; padding: 20px 20px 20px; }
+.stoe-bild { align-self: start; height: 160px; overflow: hidden; background: #2a0f15; border: 1px solid var(--line-bright); }
+.stoe-bild img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.stoe-inhalt { min-width: 0; }
+.stoe-kicker { margin: 2px 40px 8px 0; font-size: 10px; font-weight: 900; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.stoe-titel { margin: 0 40px 8px 0; font-size: 21px; font-weight: 900; line-height: 1.1; letter-spacing: -.005em; text-transform: uppercase; color: #F5F5F2; }
+.stoe-text { margin: 0 0 14px; font-size: 13px; font-weight: 300; line-height: 1.5; color: var(--fg-soft); }
+.stoe-knopf { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: var(--stoe-knopf); height: 46px; padding: 0 8px; font-size: 11px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background .3s, color .3s, border-color .3s; }
+.stoe-knopf-rot { background: var(--stoe-rot); color: #F5F5F2; border: 1px solid var(--stoe-rot); }
+.stoe-knopf-rot:hover, .stoe-knopf-rot:focus-visible { background: var(--stoe-rot-hi); border-color: #F5F5F2; outline: none; }
+.stoe-knopf-hell { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.stoe-knopf-hell:hover, .stoe-knopf-hell:focus-visible { background: var(--accent); color: #161b22; outline: none; }
+.stoe-silvester { display: flex; align-items: center; gap: 14px; padding: 12px 20px 14px; border-top: 1px solid var(--line-bright); background: #161b22; }
+.stoe-sv-text { flex: 1; min-width: 0; margin: 0; line-height: 1.35; }
+.stoe-sv-a { display: block; font-size: 10px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-soft); }
+.stoe-sv-b { display: block; margin-top: 3px; font-size: 14px; font-weight: 700; color: rgba(246,245,243,.7); }
+.stoe-silvester .stoe-knopf { flex: none; }
+/* Nur Silvester (25.–31.12.): × steht neben der Zeile */
+.stoe-nur-silvester { border-top-color: var(--line-bright); }
+.stoe-nur-silvester .stoe-silvester { border-top: 0; padding: 16px 64px 16px 20px; }
+@media (max-width: 899px) {
+  .stoe { --stoe-knopf: 140px; left: 0; right: 0; bottom: 0; width: auto; max-width: none; max-height: 45vh; max-height: 45dvh; border-width: 3px 0 0; padding-bottom: env(safe-area-inset-bottom); transform: translateY(100%); box-shadow: 0 -18px 48px rgba(0,0,0,.55); }
+  .stoe.stoe-geht { transform: translateY(100%); }
+  .stoe-advent { grid-template-columns: 84px 1fr; gap: 0 14px; padding: 14px 16px 12px; }
+  .stoe-bild { height: 120px; }
+  .stoe-kicker { margin-right: 44px; margin-bottom: 5px; }
+  .stoe-titel { margin-right: 44px; margin-bottom: 6px; font-size: 17px; }
+  .stoe-text { margin-bottom: 10px; font-size: 12.5px; line-height: 1.45; }
+  .stoe-knopf { height: 44px; letter-spacing: .18em; }
+  .stoe-silvester { padding: 8px 16px 10px; gap: 12px; }
+  .stoe-sv-b { font-size: 13px; }
+  .stoe-zu { top: 6px; right: 6px; }
+  .stoe-nur-silvester .stoe-silvester { padding: 14px 60px 14px 16px; }
+}
+@media (max-width: 380px) {
+  .stoe-advent { grid-template-columns: 64px 1fr; gap: 0 12px; padding: 12px 14px 10px; }
+  .stoe-bild { height: 96px; }
+  .stoe-titel { font-size: 15.5px; }
+  .stoe-text { font-size: 12px; }
+  .stoe-silvester { padding: 8px 14px 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-zu { transition: none; } }

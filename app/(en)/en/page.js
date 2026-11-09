@@ -5,10 +5,6 @@ import { structuredDataEn } from '../../structuredData';
 import { mitHaeuserLeiste } from '../../haeuser';
 import { mitKarte, mitSharingTeaser } from '../../winterkarte/render';
 import { mitSilvesterTeaser } from '../../silvester';
-import { mitAdventStoerer } from '../../adventskalender';
-
-// Stündlich neu erzeugen: der Adventskalender-Störer verschwindet nach dem 24.12.2026 von selbst (app/adventskalender.js).
-export const revalidate = 3600;
 
 // Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js), Winterkarte aus app/winterkarte
 // Silvester-Hinweis an <!--SILVESTER-TEASER--> (app/silvester.js, Entwurf 06.11.2026)
@@ -44,7 +40,7 @@ export default function HomeEN() {
       {structuredDataEn.map((json, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
       ))}
-      <div id="app-root" dangerouslySetInnerHTML={{ __html: mitAdventStoerer(html, 'en') }} />
+      <div id="app-root" dangerouslySetInnerHTML={{ __html: html }} />
       <SiteScripts />
     </>
   );

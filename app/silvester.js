@@ -497,20 +497,10 @@ export function mitSilvesterTeaser(html, lang) {
     </div>
   </div>
 </section>`;
-  // Störer im Startbild (Sven 07.11.2026: „mach auch Störer auf die HP und buchbar in Gastronaut“): runder Aufkleber
-  // rechts neben der Zeile über der Überschrift, der Text fließt um ihn herum (float + shape-outside, verdeckt nie Text).
-  // Klick öffnet direkt die Silvester-Buchung in Gastronaut (Kennung utm_medium=stoerer).
-  const vorEyebrow = '<div class="eyebrow hero-eyebrow reveal">';
-  if (html.split(vorEyebrow).length !== 2) throw new Error('silvester: Startbild-Zeile für den Störer nicht eindeutig');
-  // Seit 09.11.2026 im gemeinsamen Container .hero-stoerer: app/adventskalender.js setzt dort den Adventskalender-Störer
-  // links daneben (Layout beider Störer einmal in globals.css gelöst).
-  return html.replace(marke, teaser).replace(vorEyebrow, `<div class="hero-stoerer">${stoererHtml(t, lang)}</div>` + vorEyebrow);
+  // Die runden Störer im Startbild (07.–09.11.2026) sind seit 09.11.2026 durch den wegdrückbaren Störer
+  // aus app/stoerer.js ersetzt (Sven: „wirklich Störer mit Text zum Wegdrücken“), der Link kommt von silvesterStoererHref.
+  return html.replace(marke, teaser);
 }
 
-function stoererHtml(t, lang) {
-  const z =
-    lang === 'en'
-      ? { a: 'New Year’s Eve', b: '31 Dec', c: 'Book now', aria: 'New Year’s Eve, 31 December: Paris meets San Sebastián. Book now' }
-      : { a: 'Silvester', b: '31.12.', c: 'Jetzt buchen', aria: 'Silvester, 31. Dezember: Paris meets San Sebastián. Jetzt buchen' };
-  return `<a class="sv-stoerer" href="${buchenHref(t, 'stoerer')}" target="_blank" rel="noopener" aria-label="${z.aria}"><span class="sv-st-innen" aria-hidden="true"><span class="sv-st-a${z.a.length > 10 ? ' sv-st-lang' : ''}">${z.a}</span><span class="sv-st-b">${z.b}</span><span class="sv-st-t"><span class="sv-paris">Paris</span> <span class="sv-st-m">meets</span><br><span class="sv-ss">San&nbsp;Sebastián</span></span><span class="sv-st-c">${z.c}</span></span></a>`;
-}
+// Buchungslink für den Störer (app/stoerer.js), Kennung utm_medium=stoerer wie beim früheren runden Störer
+export const silvesterStoererHref = (lang) => buchenHref(T[lang] || T.de, 'stoerer');
