@@ -5208,9 +5208,10 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 /* Silvester-Streifen unter dem Adventskalender (10.11.2026, Sven: „darunter aber Silvester schlecht, muss besser“):
    gleiche Spalten wie oben, links Champagner, rechts der Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester,
    Preis und ein eigener Knopf in Paris-Blau (umrandet, damit „Jetzt sichern“ der Hauptknopf bleibt). */
-.stoe-sv { grid-column: 1 / -1; display: grid; grid-template-columns: 340px 1fr; background: #10141a; border-top: 1px solid rgba(255,255,255,.1); }
+/* Schwarzer Balken zwischen Kalender und Silvester, Hintergrund wie oben (Sven 10.11.2026: „damit es ruhiger aussieht“) */
+.stoe-sv { grid-column: 1 / -1; display: grid; grid-template-columns: 340px 1fr; background: #161b22; border-top: 14px solid #000; }
 .stoe-sv-medium { position: relative; min-height: 100%; overflow: hidden; background: #1d242d; }
-.stoe-sv-medium::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 62%, rgba(16,20,26,.75)); pointer-events: none; }
+.stoe-sv-medium::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgba(22,27,34,.55)); pointer-events: none; }
 .stoe-sv-inhalt { min-width: 0; padding: 26px 40px 30px; }
 .stoe-sv-kicker { margin: 0 48px 12px 0; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--fg-soft); --sv-sep: 1.3em; --sv-ls: .26em; }
 .stoe-sv-titel { margin: 0 0 12px; font-size: 25px; line-height: 1.1; color: #F5F5F2; }
@@ -5219,7 +5220,7 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 .stoe-sv-info { margin: 0 0 20px; font-size: 14px; font-weight: 700; line-height: 1.5; color: #F5F5F2; }
 .stoe-knopf-sv { gap: 1em; height: 48px; background: transparent; color: var(--sv-paris); border: 1px solid var(--sv-paris); }
 .stoe-knopf-sv span { font-size: 15px; letter-spacing: 0; }
-.stoe-knopf-sv:hover, .stoe-knopf-sv:focus-visible { background: var(--sv-paris); color: #10141a; outline: none; }
+.stoe-knopf-sv:hover, .stoe-knopf-sv:focus-visible { background: var(--sv-paris); color: #161b22; outline: none; }
 /* Silvester-Karte allein (25.–31.12.): Schriftzug wie auf /silvester */
 .stoe-titel-sv { font-size: 36px; line-height: 1.08; }
 .stoe-titel-sv .sv-meets { font-size: .45em; }
@@ -5235,7 +5236,7 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-text { margin-bottom: 10px; font-size: 14px; line-height: 1.5; }
   .stoe-preis { margin-bottom: 18px; font-size: 13px; }
   .stoe-knopf { height: 50px; }
-  .stoe-sv { grid-template-columns: 88px minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; column-gap: 16px; padding: 18px 22px 22px; }
+  .stoe-sv { grid-template-columns: 88px minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; column-gap: 16px; padding: 18px 22px 22px; border-top-width: 10px; }
   .stoe-sv-inhalt { display: contents; }
   .stoe-sv-medium { grid-column: 1; grid-row: 1 / 4; align-self: start; min-height: 0; aspect-ratio: 1; }
   .stoe-sv-medium::after { display: none; }
