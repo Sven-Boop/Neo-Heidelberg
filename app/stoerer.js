@@ -1,6 +1,7 @@
 // Störer auf der Startseite (Sven 09.11.2026: „Störer mittig auf HP machen und geiler“, „gerne auch das Video des Kalenders“).
 // Mittiges Overlay über dem Startbild, nur auf / und /en (app/(de)/page.js, app/(en)/en/page.js), Unterseiten werben nicht.
-// Bis 24.12.2026: BLISS Adventskalender groß mit Kalender-Film (stummer Loop), darunter ein eigener Silvester-Streifen
+// Bis 24.12.2026: BLISS Adventskalender groß mit Kalender-Film (stummer Loop) und „Das steckt drin“ (vier Höhepunkte mit Wert,
+// „Alle 24 Erlebnisse ansehen“ klappt die ganze Liste nach Häusern auf), darunter ein eigener Silvester-Streifen
 // mit Champagner-Bild, Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester, Preis und Knopf (Sven 10.11.2026:
 // „Kalender sehr gut, darunter aber Silvester schlecht, muss besser“; vorher nur eine graue Textzeile mit Link).
 // 25.–31.12.2026: nur Silvester (Champagner-Bild). Danach nichts. Die Startseiten werden stündlich neu erzeugt (revalidate),
@@ -26,6 +27,56 @@ const VIDEO = {
 };
 const SILVESTER_BILD = '/img/silvester/champagner.webp';
 
+// Was im Kalender steckt (Sven 10.11.2026: „beim Kalender muss man sehen, was alles dabei ist, muss präsenter werden“).
+// Titel und Werte wörtlich aus https://adventskalender.bliss-group.de/api/tuer?liste=1 (Stand 10.11.2026, 24 Erlebnisse,
+// Summe 1.249 € = Gegenwert). Ändert sich der Kalender, hier nachziehen. Englisch übersetzt.
+// Einträge: [deutsch, englisch, Wert in €, Türchen 24?]
+const INHALT = [
+  { haus: 'NEO Heidelberg', e: [
+    ['Das Chalet-Menü', 'The Chalet menu', 69],
+    ['Das Say Cheese Menü', 'The Say Cheese menu', 65],
+    ['Ein Abend im NEO', 'An evening at NEO', 60],
+    ['Eine Flasche Wein', 'A bottle of wine', 50],
+    ['Ein Extra-Gang vom Küchenchef', 'An extra course from the head chef', 25],
+    ['Ein Dessert', 'A dessert', 20],
+    ['Ein Glas Champagner für Silvester', 'A glass of champagne on New Year’s Eve', 20],
+    ['Ein Glas Champagner', 'A glass of champagne', 15],
+    ['Ein Glas vom Sommelier', 'A glass chosen by the sommelier', 14],
+    ['Ein Cocktail und ein kleiner Snack', 'A cocktail and a small snack', 14],
+  ] },
+  { haus: 'Stories VIII', e: [['Ein Abend bei Stories VIII', 'An evening at Stories VIII', 175, true]] },
+  { haus: 'Schloss Neckarbischofsheim', e: [
+    ['Eine Nacht im Schloss für zwei', 'A night at the castle for two', 160],
+    ['100 € Rabatt für deine Feier im Schloss', '€100 off your celebration at the castle', 100],
+    ['Candlelight Dinner im Schloss', 'Candlelight dinner at the castle', 59],
+  ] },
+  { haus: 'SOUL Catering', e: [
+    ['150 € Rabatt für das nächste Catering', '€150 off your next catering', 150],
+    ['Kartoffelpuffer mit Räucherlachs', 'Potato pancakes with smoked salmon', 10],
+    ['Eine Haxensemmel', 'A pork knuckle roll', 9],
+    ['Ein hausgemachter Glühwein', 'A homemade mulled wine', 4],
+  ] },
+  { haus: 'l’ab Wiesloch', e: [
+    ['Ein Platz beim Family Brunch', 'A seat at the Family Brunch', 49],
+    ['Ein Platz beim Adventsbrunch', 'A seat at the Advent brunch', 45],
+    ['50 % auf das Omakase Menü', '50% off the Omakase menu', 45],
+  ] },
+  { haus: 'Ghost Kitchen', e: [
+    ['Die Signature-Box', 'The Signature Box', 49],
+    ['Eine Sushi-Rolle', 'A sushi roll', 22],
+    ['Eine Bowl', 'A bowl', 20],
+  ] },
+];
+// Die Höhepunkte im Störer: vier immer (je ein Haus), die mit 1 am Ende nur in der dreispaltigen Fassung ab 1000 px (Rest hinter „Alle 24 ansehen“)
+const HOEHEPUNKTE = {
+  de: [['Ein Abend bei Stories VIII mit Tim Raue', 175], ['Eine Nacht im Schloss für zwei', 160], ['Das Chalet-Menü im NEO', 69], ['Eine Flasche Wein im NEO', 50, 1], ['Ein Platz beim Family Brunch im LAB', 49], ['Die Signature-Box der Ghost Kitchen', 49, 1]],
+  en: [['An evening at Stories VIII with Tim Raue', 175], ['A night at the castle for two', 160], ['The Chalet menu at NEO', 69], ['A bottle of wine at NEO', 50, 1], ['A seat at the Family Brunch at l’ab', 49], ['The Ghost Kitchen Signature Box', 49, 1]],
+};
+const ANZAHL = INHALT.reduce((n, h) => n + h.e.length, 0);
+const SUMME = INHALT.reduce((n, h) => n + h.e.reduce((m, x) => m + x[2], 0), 0);
+if (ANZAHL !== 24 || SUMME !== 1249) throw new Error(`Störer: Kalenderinhalt passt nicht (${ANZAHL} Erlebnisse, ${SUMME} €)`);
+const wert = (lang, n) => (lang === 'en' ? `€${n.toLocaleString('en-GB')}` : `${n.toLocaleString('de-DE')}&nbsp;€`);
+
 // Kalendertag in Europe/Berlin als JJJJ-MM-TT (sv-SE liefert genau dieses Format)
 export function berlinTag(jetzt = new Date()) {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit' }).format(jetzt);
@@ -36,7 +87,12 @@ const TEXT = {
     zu: 'Schließen',
     kicker: 'Adventskalender 2026',
     titel: ['24 Momente aus', 'unseren Häusern.'],
-    text: 'Vom 1. bis 24. Dezember jeden Tag ein Erlebnis, digital per Mail, auch zum Verschenken.',
+    text: 'Vom 1. bis 24. Dezember jeden Tag ein Erlebnis per Mail, auch als Geschenk.',
+    drin: 'Das steckt drin',
+    alle: 'Alle 24 Erlebnisse ansehen',
+    weniger: 'Liste schließen',
+    t24: 'Türchen 24',
+    zusammen: 'Zusammen 1.249 € · für 249 €',
     preis: '249 € · 1.249 € Gegenwert · 300 nummerierte Exemplare',
     knopf: 'Jetzt sichern',
     svBandKicker: 'Silvester · 31. Dezember',
@@ -52,7 +108,12 @@ const TEXT = {
     zu: 'Close',
     kicker: 'Advent Calendar 2026',
     titel: ['24 moments from', 'our houses.'],
-    text: 'One experience every day from 1 to 24 December, delivered by email, also as a gift.',
+    text: 'One experience every day from 1 to 24 December by email, also as a gift.',
+    drin: 'What’s inside',
+    alle: 'See all 24 experiences',
+    weniger: 'Close the list',
+    t24: 'Door 24',
+    zusammen: 'Worth €1,249 in total · for €249',
     preis: '€249 · worth €1,249 · 300 numbered editions',
     knopf: 'Get yours',
     svBandKicker: 'New Year’s Eve · 31 December',
@@ -68,16 +129,38 @@ const TEXT = {
 
 const zuKnopf = (z) => `<button type="button" class="stoe-zu" data-stoe-zu aria-label="${z.zu}"><span aria-hidden="true">×</span></button>`;
 
-function adventKarte(z, svHref) {
+function hoehepunkteHtml(lang) {
+  return (HOEHEPUNKTE[lang] || HOEHEPUNKTE.de).map(([t, w, breit]) => `<li${breit ? ' class="stoe-nur-breit"' : ''}><span class="stoe-drin-t">${t}</span><span class="stoe-drin-w">${wert(lang, w)}</span></li>`).join('');
+}
+
+function alleHtml(z, lang) {
+  const en = lang === 'en';
+  return INHALT.map((h) => `<div class="stoe-haus"><p class="stoe-haus-name">${h.haus}</p><ul>${h.e
+    .map(([de, eng, w, t24]) => `<li><span class="stoe-drin-t">${en ? eng : de}${t24 ? ` <em class="stoe-t24">${z.t24}</em>` : ''}</span><span class="stoe-drin-w">${wert(lang, w)}</span></li>`)
+    .join('')}</ul></div>`).join('');
+}
+
+function adventKarte(z, svHref, lang) {
   return `<div class="stoe-karte stoe-karte-advent" data-art="advent" data-bis="${ADVENT_BIS}" role="dialog" aria-modal="true" aria-labelledby="stoe-titel-advent" tabindex="-1">
     ${zuKnopf(z)}
     <div class="stoe-medium"><video class="stoe-video" muted playsinline loop autoplay preload="none" aria-hidden="true" data-src-hoch="${VIDEO.hoch}" data-src-quer="${VIDEO.quer}" data-poster-hoch="${VIDEO.posterHoch}" data-poster-quer="${VIDEO.posterQuer}"></video></div>
-    <div class="stoe-inhalt">
+    <div class="stoe-kopf">
       <p class="stoe-kicker">${z.kicker}</p>
       <h2 class="stoe-titel" id="stoe-titel-advent"><span class="stoe-z">${z.titel[0]}</span> <span class="stoe-z"><em>${z.titel[1]}</em></span></h2>
       <p class="stoe-text">${z.text}</p>
+    </div>
+    <div class="stoe-drin">
+      <p class="stoe-drin-kopf">${z.drin}</p>
+      <ul class="stoe-drin-liste">${hoehepunkteHtml(lang)}</ul>
+      <button type="button" class="stoe-alle" data-stoe-alle aria-expanded="false" aria-controls="stoe-alle-liste" data-auf="${z.alle}" data-zu="${z.weniger}"><span class="stoe-alle-text">${z.alle}</span><span class="stoe-alle-pfeil" aria-hidden="true"></span></button>
+    </div>
+    <div class="stoe-kauf">
       <p class="stoe-preis sv-pk">${pk(z.preis)}</p>
       <a class="stoe-knopf stoe-knopf-rot" data-stoe-angebot href="${ADVENT_ZIEL}" target="_blank" rel="noopener">${z.knopf}</a>
+    </div>
+    <div class="stoe-alle-liste" id="stoe-alle-liste" hidden>
+      ${alleHtml(z, lang)}
+      <p class="stoe-summe sv-pk">${pk(z.zusammen)}</p>
     </div>
     <div class="stoe-sv">
       <div class="stoe-sv-medium"><img class="stoe-bild" data-src="${SILVESTER_BILD}" alt="" width="1067" height="600" decoding="async"></div>
@@ -112,7 +195,7 @@ export function stoererHtml(lang, jetzt = new Date()) {
   const z = TEXT[lang] || TEXT.de;
   const svHref = silvesterStoererHref(lang === 'en' ? 'en' : 'de');
   const tag = berlinTag(jetzt);
-  const karten = (tag <= ADVENT_BIS ? adventKarte(z, svHref) : '') + (tag <= SILVESTER_BIS ? silvesterKarte(z, svHref) : '');
+  const karten = (tag <= ADVENT_BIS ? adventKarte(z, svHref, lang === 'en' ? 'en' : 'de') : '') + (tag <= SILVESTER_BIS ? silvesterKarte(z, svHref) : '');
   if (!karten) return '';
   return `<div class="stoe" id="neo-stoerer" data-schluessel="${SCHLUESSEL}" hidden>
   <div class="stoe-hg" data-stoe-zu></div>
@@ -147,7 +230,10 @@ var v=karte.querySelector('video');if(v){try{v.pause()}catch(e){}}
 html.classList.remove('stoe-offen');w.classList.remove('stoe-da');w.classList.add('stoe-geht');
 if(vorher&&vorher!==document.body&&vorher.focus&&document.contains(vorher)){try{vorher.focus({preventScroll:true})}catch(e){}}else if(w.contains(document.activeElement))document.activeElement.blur();
 setTimeout(function(){w.hidden=true;raus(w)},ruhig?0:320)}
-w.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('[data-stoe-zu]'))zu();else if(t.closest('[data-stoe-angebot]'))setTimeout(zu,0)});
+function alle(k){var l=document.getElementById(k.getAttribute('aria-controls'));if(!l)return;var auf=l.hidden;l.hidden=!auf;k.setAttribute('aria-expanded',auf?'true':'false');
+var tx=k.querySelector('.stoe-alle-text');if(tx)tx.textContent=k.getAttribute(auf?'data-zu':'data-auf');
+if(auf){var top=l.getBoundingClientRect().top-karte.getBoundingClientRect().top+karte.scrollTop-24;try{karte.scrollTo({top:top,behavior:ruhig?'auto':'smooth'})}catch(e){karte.scrollTop=top}}}
+w.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var k;if(t.closest('[data-stoe-zu]'))zu();else if((k=t.closest('[data-stoe-alle]')))alle(k);else if(t.closest('[data-stoe-angebot]'))setTimeout(zu,0)});
 document.addEventListener('keydown',function(e){if(!offen)return;
 if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();zu();return}
 if(e.key!=='Tab')return;var f=fokusbar();if(!f.length){e.preventDefault();return}var i=f.indexOf(document.activeElement);

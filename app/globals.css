@@ -5181,23 +5181,23 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 .stoe.stoe-da { opacity: 1; }
 .stoe.stoe-geht { opacity: 0; transition-duration: .3s; pointer-events: none; }
 .stoe-hg { position: absolute; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); cursor: pointer; }
-.stoe-karte { position: relative; display: grid; grid-template-columns: 340px 1fr; width: min(780px, 100%); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; background: #161b22; color: var(--fg); border: 1px solid rgba(255,255,255,.1); box-shadow: 0 40px 120px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.4); font-family: var(--sans); transform: translateY(28px) scale(.985); transition: transform .5s cubic-bezier(.2,.7,.2,1); outline: none; }
+.stoe-karte { position: relative; display: grid; grid-template-columns: 400px 1fr; width: min(860px, 100%); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; background: #161b22; color: var(--fg); border: 1px solid rgba(255,255,255,.1); box-shadow: 0 40px 120px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.4); font-family: var(--sans); transform: translateY(28px) scale(.985); transition: transform .5s cubic-bezier(.2,.7,.2,1); outline: none; }
 .stoe.stoe-da .stoe-karte { transform: none; }
 .stoe.stoe-geht .stoe-karte { transform: translateY(16px) scale(.985); transition-duration: .3s; }
 .stoe-karte-advent { border-top: 3px solid var(--stoe-rot); }
 .stoe-medium { position: relative; min-height: 100%; overflow: hidden; background: radial-gradient(circle at 50% 40%, #3a141c, #12090b 75%); }
 .stoe-video, .stoe-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .stoe-medium::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgba(22,27,34,.55)); pointer-events: none; }
-.stoe-inhalt { min-width: 0; padding: 44px 40px 30px; }
+.stoe-inhalt { min-width: 0; padding: 40px 44px 32px; }
 .stoe-zu { position: absolute; top: 12px; right: 12px; z-index: 3; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: rgba(22,27,34,.7); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .25s; }
 .stoe-zu span { display: block; margin-top: -2px; }
 .stoe-zu:hover, .stoe-zu:focus-visible { background: #fff; color: #161b22; border-color: #fff; transform: rotate(90deg); outline: none; }
 .stoe-kicker { margin: 0 48px 16px 0; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
 .stoe-kicker.sv-pk { --sv-sep: 1.3em; --sv-ls: .26em; }
-.stoe-titel { margin: 0 0 18px; font-size: 46px; font-weight: 900; line-height: 1.04; letter-spacing: -.025em; color: #F5F5F2; }
+.stoe-titel { margin: 0 0 12px; font-size: 44px; font-weight: 900; line-height: 1.04; letter-spacing: -.025em; color: #F5F5F2; }
 .stoe-z { display: block; white-space: nowrap; }
 .stoe-titel em { font-style: italic; color: var(--accent); }
-.stoe-text { margin: 0 0 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--fg-soft); }
+.stoe-text { margin: 0 0 22px; font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--fg-soft); }
 .stoe-preis { margin: 0 0 24px; font-size: 14px; font-weight: 700; line-height: 1.5; color: #F5F5F2; }
 .stoe-knopf { display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 100%; height: 52px; padding: 0 16px; font-size: 12px; font-weight: 900; letter-spacing: .24em; text-transform: uppercase; text-decoration: none; transition: background .3s, color .3s, border-color .3s, box-shadow .3s; }
 .stoe-knopf-rot { background: var(--stoe-rot); color: #F5F5F2; border: 1px solid var(--stoe-rot); box-shadow: 0 10px 28px rgba(123,35,49,.35); }
@@ -5208,11 +5208,67 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 /* Silvester-Streifen unter dem Adventskalender (10.11.2026, Sven: „darunter aber Silvester schlecht, muss besser“):
    gleiche Spalten wie oben, links Champagner, rechts der Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester,
    Preis und ein eigener Knopf in Paris-Blau (umrandet, damit „Jetzt sichern“ der Hauptknopf bleibt). */
+/* Das steckt drin (10.11.2026, Sven: „beim Kalender muss man sehen, was alles dabei ist, muss präsenter werden“):
+   fünf Höhepunkte wie auf einer Karte (Titel links, Wert rechts), „Alle 24 Erlebnisse ansehen“ klappt die ganze Liste
+   nach Häusern über die volle Breite auf (Desktop drei Spalten). */
+/* Aufbau der Kalender-Karte: Bild links über alle Zeilen, rechts Kopf, „Das steckt drin“, Kauf; ab 1000 px drei Spalten */
+.stoe-karte-advent .stoe-medium { grid-column: 1; grid-row: 1 / 4; }
+.stoe-kopf, .stoe-drin, .stoe-kauf { grid-column: 2; min-width: 0; }
+.stoe-kopf { padding: 40px 44px 0; }
+.stoe-kopf .stoe-text { margin-bottom: 22px; }
+.stoe-drin { padding: 0 44px; }
+.stoe-kauf { padding: 22px 44px 32px; }
+.stoe-kauf .stoe-preis { margin-bottom: 18px; }
+.stoe-alle-liste, .stoe-sv { grid-column: 1 / -1; }
+.stoe-drin-liste .stoe-nur-breit { display: none; }
+@media (min-width: 1000px) {
+  .stoe-karte-advent { grid-template-columns: 320px minmax(0, 1fr) 390px; width: min(1140px, 100%); }
+  .stoe-karte-advent .stoe-medium { grid-row: 1 / 3; }
+  .stoe-kopf { grid-row: 1; }
+  .stoe-drin .stoe-drin-kopf { margin-right: 48px; }
+  .stoe-drin-liste .stoe-nur-breit { display: flex; }
+  .stoe-kopf .stoe-text { margin-bottom: 0; }
+  .stoe-kauf { grid-row: 2; align-self: end; }
+  .stoe-drin { grid-column: 3; grid-row: 1 / 3; padding: 40px 40px 26px 32px; border-left: 1px solid rgba(255,255,255,.08); margin-top: 40px; margin-bottom: 32px; padding-top: 0; padding-bottom: 0; }
+  .stoe-karte-advent .stoe-sv { grid-template-columns: 320px 1fr; }
+  .stoe-karte-advent .stoe-sv-inhalt { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 40px; align-items: center; padding: 30px 44px; }
+  .stoe-karte-advent .stoe-sv-kicker, .stoe-karte-advent .stoe-sv-titel, .stoe-karte-advent .stoe-sv-info { grid-column: 1; }
+  .stoe-karte-advent .stoe-sv-info { margin-bottom: 0; }
+  .stoe-karte-advent .stoe-knopf-sv { grid-column: 2; grid-row: 1 / 4; align-self: center; }
+}
+@media (min-width: 1000px) and (max-width: 1179px) {
+  .stoe-karte-advent { grid-template-columns: 250px minmax(0, 1fr) 330px; }
+  .stoe-karte-advent .stoe-sv { grid-template-columns: 250px 1fr; }
+  .stoe-karte-advent .stoe-titel { font-size: 38px; }
+  .stoe-kopf { padding: 36px 32px 0; }
+  .stoe-kauf { padding: 22px 32px 30px; }
+  .stoe-drin { padding-right: 32px; padding-left: 28px; }
+  .stoe-drin-t, .stoe-drin-w { font-size: 13px; }
+  .stoe-karte-advent .stoe-sv-inhalt { grid-template-columns: minmax(0, 1fr) 220px; column-gap: 28px; padding: 26px 32px; }
+}
+.stoe-drin-kopf { margin: 0 0 6px; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
+.stoe-drin-liste, .stoe-haus ul { list-style: none; margin: 0; padding: 0; }
+.stoe-drin-liste li, .stoe-haus li { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.09); }
+.stoe-drin-t { min-width: 0; font-size: 14px; font-weight: 400; line-height: 1.35; color: #F5F5F2; }
+.stoe-drin-w { flex: none; font-size: 14px; font-weight: 900; line-height: 1.35; color: var(--accent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stoe-alle { display: inline-flex; align-items: center; gap: .8em; min-height: 44px; margin: 2px 0 -6px; padding: 0; background: none; border: 0; color: var(--accent); font-family: inherit; font-size: 11px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; }
+.stoe-alle:hover .stoe-alle-text, .stoe-alle:focus-visible .stoe-alle-text { color: var(--accent-hi); text-decoration: underline; text-underline-offset: 4px; }
+.stoe-alle:focus-visible { outline: none; }
+.stoe-alle-pfeil { width: 7px; height: 7px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .25s, margin .25s; }
+.stoe-alle[aria-expanded="true"] .stoe-alle-pfeil { margin-top: 4px; transform: rotate(-135deg); }
+.stoe-alle-liste { grid-column: 1 / -1; padding: 28px 40px 30px; border-top: 1px solid rgba(255,255,255,.1); columns: 3; column-gap: 36px; }
+.stoe-alle-liste[hidden] { display: none; }
+.stoe-haus { break-inside: avoid; margin-bottom: 20px; }
+.stoe-haus-name { margin: 0 0 2px; font-size: 10px; font-weight: 900; letter-spacing: .22em; text-transform: uppercase; color: var(--fg-soft); }
+.stoe-haus li { padding: 5px 0; gap: 12px; }
+.stoe-haus .stoe-drin-t, .stoe-haus .stoe-drin-w { font-size: 13px; }
+.stoe-t24 { margin-left: .4em; font-style: normal; font-size: 9px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+.stoe-summe { column-span: all; margin: 4px 0 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.18); font-size: 14px; font-weight: 900; color: #F5F5F2; }
 /* Schwarzer Balken zwischen Kalender und Silvester, Hintergrund wie oben (Sven 10.11.2026: „damit es ruhiger aussieht“) */
-.stoe-sv { grid-column: 1 / -1; display: grid; grid-template-columns: 340px 1fr; background: #161b22; border-top: 14px solid #000; }
+.stoe-sv { grid-column: 1 / -1; display: grid; grid-template-columns: 400px 1fr; background: #161b22; border-top: 14px solid #000; }
 .stoe-sv-medium { position: relative; min-height: 100%; overflow: hidden; background: #1d242d; }
 .stoe-sv-medium::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgba(22,27,34,.55)); pointer-events: none; }
-.stoe-sv-inhalt { min-width: 0; padding: 26px 40px 30px; }
+.stoe-sv-inhalt { min-width: 0; padding: 26px 44px 30px; }
 .stoe-sv-kicker { margin: 0 48px 12px 0; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--fg-soft); --sv-sep: 1.3em; --sv-ls: .26em; }
 .stoe-sv-titel { margin: 0 0 12px; font-size: 25px; line-height: 1.1; color: #F5F5F2; }
 .stoe-sv-titel .sv-meets { font-size: .52em; }
@@ -5247,6 +5303,15 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-sv-info { align-self: start; margin: 0; font-size: 13px; }
   .stoe-knopf-sv { grid-column: 1 / -1; margin-top: 16px; height: 48px; }
   .stoe-titel-sv { font-size: clamp(23px, 7vw, 34px); }
+  .stoe-karte-advent .stoe-medium, .stoe-kopf, .stoe-drin, .stoe-kauf { grid-column: 1; grid-row: auto; }
+  .stoe-kopf { padding: 20px 22px 0; }
+  .stoe-kopf .stoe-text { margin-bottom: 16px; }
+  .stoe-drin { padding: 0 22px; }
+  .stoe-kauf { padding: 16px 22px 22px; }
+  .stoe-drin-liste li { padding: 6px 0; gap: 12px; }
+  .stoe-drin-t, .stoe-drin-w { font-size: 13px; }
+  .stoe-alle-liste { columns: 1; padding: 20px 22px 22px; }
+  .stoe-haus { margin-bottom: 16px; }
 }
 @media (max-width: 380px) {
   .stoe-inhalt { padding: 16px 18px 18px; }
@@ -5267,5 +5332,8 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-sv-z { display: inline; }
   .stoe-sv-titel { font-size: 18px; margin-bottom: 6px; }
   .stoe-knopf-sv { margin-top: 12px; }
+  .stoe-kopf .stoe-text { display: none; }
+  .stoe-kopf .stoe-titel { margin-bottom: 14px; }
+  .stoe-drin-liste li:nth-child(n+4) { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-karte, .stoe.stoe-geht .stoe-karte, .stoe-zu { transition: none; } .stoe-karte { transform: none; } }
