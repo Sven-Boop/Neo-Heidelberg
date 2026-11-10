@@ -5,11 +5,7 @@ import { structuredDataEn } from '../../structuredData';
 import { mitHaeuserLeiste } from '../../haeuser';
 import { mitKarte, mitSharingTeaser } from '../../winterkarte/render';
 import { mitSilvesterTeaser } from '../../silvester';
-import { stoererHtml, STOERER_SKRIPT } from '../../stoerer';
 
-// Stündlich neu erzeugen: der Störer (app/stoerer.js) zeigt den Adventskalender bis 24.12., Silvester bis 31.12.2026
-// und verschwindet danach ohne neuen Deploy.
-export const revalidate = 3600;
 
 // Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js), Winterkarte aus app/winterkarte
 // Silvester-Hinweis an <!--SILVESTER-TEASER--> (app/silvester.js, Entwurf 06.11.2026)
@@ -39,8 +35,7 @@ export const metadata = {
 };
 
 export default function HomeEN() {
-  // Störer mittig über dem Startbild, nur auf der Startseite (app/stoerer.js); leer nach dem 31.12.2026
-  const stoerer = stoererHtml('en');
+  // Der Störer (app/stoerer.js) kommt seit 10.11.2026 aus dem Grundgerüst auf jede Seite
   return (
     <>
       <SetLang lang="en" />
@@ -48,8 +43,6 @@ export default function HomeEN() {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
       ))}
       <div id="app-root" dangerouslySetInnerHTML={{ __html: html }} />
-      {stoerer && <div dangerouslySetInnerHTML={{ __html: stoerer }} />}
-      {stoerer && <script dangerouslySetInnerHTML={{ __html: STOERER_SKRIPT }} />}
       <SiteScripts />
     </>
   );

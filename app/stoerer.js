@@ -1,5 +1,6 @@
 // Störer auf der Startseite (Sven 09.11.2026: „Störer mittig auf HP machen und geiler“, „gerne auch das Video des Kalenders“).
-// Mittiges Overlay über dem Startbild, nur auf / und /en (app/(de)/page.js, app/(en)/en/page.js), Unterseiten werben nicht.
+// Mittiges Overlay, seit 10.11.2026 auf allen Seiten beider Sprachen (eingebunden in app/Grundgeruest.js; Sven: „den Kalender
+// auch auf alle anderen Seiten als Störer machen“), nur Impressum und Datenschutz bleiben frei (Skript unten).
 // Bis 24.12.2026: BLISS Adventskalender groß mit Kalender-Film (stummer Loop) und „Das steckt drin“ (vier Höhepunkte mit Wert,
 // „Alle 24 Erlebnisse ansehen“ klappt die ganze Liste nach Häusern auf), darunter ein eigener Silvester-Streifen
 // mit Champagner-Bild, Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester, Preis und Knopf (Sven 10.11.2026:
@@ -206,6 +207,7 @@ export function stoererHtml(lang, jetzt = new Date()) {
 // Läuft direkt nach dem Störer-HTML (vor React).
 export const STOERER_SKRIPT = `(function(){
 var w=document.getElementById('neo-stoerer');if(!w)return;
+if(/\/(impressum|datenschutz)\/?$/.test(location.pathname)){w.parentNode.removeChild(w);return}
 var K=w.getAttribute('data-schluessel'),TAGE=7,html=document.documentElement,zeit=false,offen=false,weg=false,vorher=null;
 function ls(f){try{return f(window.localStorage)}catch(e){return null}}
 function raus(el){if(el&&el.parentNode)el.parentNode.removeChild(el)}
