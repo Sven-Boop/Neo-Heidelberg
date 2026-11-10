@@ -33,10 +33,6 @@ export const metadata = {
   },
 };
 
-// Stündlich neu erzeugen (gilt für alle Seiten darunter): der Störer (app/stoerer.js) zeigt den Adventskalender
-// bis 24.12., Silvester bis 31.12.2026 und verschwindet danach ohne neuen Deploy.
-export const revalidate = 3600;
-
 export const viewport = VIEWPORT;
 
 export default function RootLayout({ children }) {

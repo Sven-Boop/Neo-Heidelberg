@@ -7,7 +7,6 @@ import { Lato } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Einwilligung } from './Einwilligung';
-import { stoererHtml, STOERER_SKRIPT } from './stoerer';
 
 const lato = Lato({
   weight: ['300', '400', '700', '900'],
@@ -43,11 +42,7 @@ const allergenSchalter = `document.addEventListener('click',function(e){var b=e.
 var an=b.getAttribute('aria-pressed')!=='true';var bs=document.querySelectorAll('[data-allergene-schalter]'),ds=document.querySelectorAll('details.allergene'),i;
 for(i=0;i<bs.length;i++)bs[i].setAttribute('aria-pressed',an?'true':'false');for(i=0;i<ds.length;i++)ds[i].open=an;});`;
 
-// Störer (app/stoerer.js) auf allen Seiten beider Sprachen (Sven 10.11.2026: „den Kalender auch auf alle anderen
-// Seiten als Störer machen“; vorher nur / und /en). Leer nach dem 31.12.2026. Impressum und Datenschutz nimmt das
-// Skript selbst aus (Pflichtangaben nicht überdecken). Wer ihn weggedrückt hat, sieht ihn 7 Tage auf keiner Seite.
 export function Grundgeruest({ lang, children }) {
-  const stoerer = stoererHtml(lang);
   return (
     <html lang={lang} className={lato.variable} suppressHydrationWarning>
       <head>
@@ -57,8 +52,6 @@ export function Grundgeruest({ lang, children }) {
       </head>
       <body>
         {children}
-        {stoerer && <div dangerouslySetInnerHTML={{ __html: stoerer }} />}
-        {stoerer && <script dangerouslySetInnerHTML={{ __html: STOERER_SKRIPT }} />}
         <Analytics />
         <SpeedInsights />
         <Einwilligung />
