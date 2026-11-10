@@ -5337,3 +5337,8 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-drin-liste li:nth-child(n+4) { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-karte, .stoe.stoe-geht .stoe-karte, .stoe-zu { transition: none; } .stoe-karte { transform: none; } }
+
+/* Silvester: Weinbegleitung (10.11.2026), Karte links wie die Menükarten, Text rechts (Handy: darunter) */
+.sv-wein-text { min-width: 0; padding-top: 4px; }
+.sv-wein-satz { color: var(--fg-soft); font-size: 17px; line-height: 1.75; font-weight: 300; max-width: 40ch; }
+.sv-wein .sv-preis-block { margin-top: clamp(30px, 3vw, 44px); }

@@ -95,6 +95,44 @@ const MENUES = {
   ],
 };
 
+// ===== Weinbegleitung (10.11.2026, Sven) =====
+// Karte aus Development/neo-wintermenues/silvester-wein.html („… Weinbegleitung Paris meets San Sebastián 10.11. 17.40 Uhr“),
+// Weine von Daniel. Gilt für beide Menüs. In Gastronaut als Option beim Buchen dazubuchbar.
+const WEIN = {
+  de: {
+    id: 'weinbegleitung',
+    label: 'Die Weine',
+    bild: '/img/silvester/karte-weinbegleitung.webp',
+    hoehe: 1704,
+    alt: 'Weinbegleitung Silvester 2026 „Paris meets San Sebastián“: sechs Gläser à 0,1 l zu den Gängen, 55 € pro Person',
+    gaenge: [
+      ['Snacks', 'Quartet Brut', 'Roederer Estate · Kalifornien'],
+      ['I · Paris', 'Riesling Hendelberg', 'Spreitzer · Rheingau'],
+      ['II · San Sebastián', 'Weißburgunder Muschelkalk', 'Dr. Wehrheim · Birkweiler, Pfalz'],
+      ['III · Paris', 'Chardonnay', 'Tormaresca · Apulien'],
+      ['IV · San Sebastián', 'Spätburgunder Goldberg', 'Wageck · Bissersheim, Pfalz'],
+      ['V · Paris', 'Riesling Spätlese Oestricher Lenchen', 'Spreitzer · Rheingau'],
+    ],
+  },
+  en: {
+    id: 'weinbegleitung',
+    label: 'The wines',
+    bild: '/img/silvester/karte-weinbegleitung.webp',
+    hoehe: 1704,
+    alt: 'Wine pairing card New Year’s Eve 2026 “Paris meets San Sebastián” (in German): six glasses (0.1 l) matched to the courses, €55 per person',
+    summary: 'Read the wine list in English',
+    gaenge: [
+      ['Snacks', 'Quartet Brut', 'Roederer Estate · California'],
+      ['I · Paris', 'Riesling Hendelberg', 'Spreitzer · Rheingau'],
+      ['II · San Sebastián', 'Weißburgunder Muschelkalk (Pinot Blanc)', 'Dr. Wehrheim · Birkweiler, Palatinate'],
+      ['III · Paris', 'Chardonnay', 'Tormaresca · Apulia'],
+      ['IV · San Sebastián', 'Spätburgunder Goldberg (Pinot Noir)', 'Wageck · Bissersheim, Palatinate'],
+      ['V · Paris', 'Riesling Spätlese Oestricher Lenchen', 'Spreitzer · Rheingau'],
+    ],
+  },
+};
+const WEIN_PDF = '/pdf/neo-silvester-2026-weinbegleitung.pdf';
+
 // ===== Seitentexte =====
 const T = {
   de: {
@@ -123,6 +161,7 @@ const T = {
       ['Ablauf', 'ab 18 Uhr geöffnet, um 19 Uhr servieren wir das Menü'],
       ['Menü', 'zwei Snacks und fünf Gänge, Fleisch und Fisch oder vegetarisch'],
       ['Preis', '179 € pro Person, ohne Getränke'],
+      ['Weinbegleitung', 'auf Wunsch, sechs Gläser à 0,1 l, 55 € pro Person'],
       ['Buchung', 'online, bezahlt wird bei der Buchung'],
       ['Ort', 'Zollhofgarten 2, 69115 Heidelberg · Bahnstadt'],
     ],
@@ -132,6 +171,12 @@ const T = {
     preis: '179 €',
     zusatz: 'pro Person · ohne Getränke',
     gruss: ['Bonne Année', '¡Feliz Año Nuevo!'],
+    weinEyebrow: 'Weinbegleitung',
+    weinH2: 'Sechs Gläser <em>zu den Gängen.</em>',
+    weinText: 'Auf Wunsch mit Weinbegleitung: sechs Gläser à 0,1 l zu den Gängen, 55 € pro Person, bei der Buchung dazubuchbar.',
+    weinPreis: '55 €',
+    weinZusatz: 'pro Person · 0,1 l pro Glas',
+    weinPdf: 'Weinbegleitung als PDF',
     faqEyebrow: 'Häufige Fragen',
     faqH2: 'Gut zu <em>wissen.</em>',
     faqText: `Und wenn eure Frage fehlt: schreibt uns an <a href="mailto:${MAIL}">${MAIL}</a>.`,
@@ -172,6 +217,7 @@ const T = {
       ['Timing', 'doors open at 6 pm, the menu is served at 7 pm'],
       ['Menu', 'two snacks and five courses, meat and fish or vegetarian'],
       ['Price', '€179 per person, drinks not included'],
+      ['Wine pairing', 'on request, six glasses (0.1 l), €55 per person'],
       ['Booking', 'online, payment when booking'],
       ['Address', 'Zollhofgarten 2, 69115 Heidelberg · Bahnstadt'],
     ],
@@ -181,6 +227,12 @@ const T = {
     preis: '€179',
     zusatz: 'per person · drinks not included',
     gruss: ['Bonne Année', '¡Feliz Año Nuevo!'],
+    weinEyebrow: 'Wine pairing',
+    weinH2: 'Six glasses <em>with the courses.</em>',
+    weinText: 'Wine pairing on request: six glasses (0.1 l) matched to the courses, €55 per person, can be added when booking.',
+    weinPreis: '€55',
+    weinZusatz: 'per person · 0.1 l per glass',
+    weinPdf: 'Wine pairing as PDF (German)',
     faqEyebrow: 'FAQ',
     faqH2: 'Good to <em>know.</em>',
     faqText: `Question not answered? Write to us at <a href="mailto:${MAIL}">${MAIL}</a>.`,
@@ -270,7 +322,7 @@ function menueHtml(m, lang) {
       </ol>`;
   const text =
     lang === 'en'
-      ? `<details class="sv-text-en"><summary>Read the menu in English</summary>
+      ? `<details class="sv-text-en"><summary>${m.summary || 'Read the menu in English'}</summary>
       ${liste}
       </details>`
       : `<div class="sv-vh">
@@ -357,6 +409,27 @@ function inhaltHtml(lang) {
       <p class="sv-zusatz sv-pk">${pk(t.zusatz)}</p>
       <p class="sv-gruss-zeile">${grussHtml(t.gruss)}</p>
       <div class="sv-ctas">${buchenKnopf(t)}</div>
+    </div>
+  </div>
+</section>
+
+<section class="ev-abschnitt sv-menues sv-wein" id="weinbegleitung">
+  <div class="ev-innen">
+    <div class="ev-kopf">
+      <div class="eyebrow">${t.weinEyebrow}</div>
+      <h2 class="ev-h2">${t.weinH2}</h2>
+    </div>
+    <div class="sv-menue-paar">
+    ${menueHtml(WEIN[lang], lang)}
+    <div class="sv-wein-text">
+      <p class="sv-wein-satz">${t.weinText}</p>
+      <div class="sv-preis-block">
+        <p class="sv-preis">${t.weinPreis}</p>
+        <p class="sv-zusatz sv-pk">${pk(t.weinZusatz)}</p>
+        <div class="sv-ctas">${buchenKnopf(t)}</div>
+      </div>
+      <p class="ev-link sv-pdf"><a href="${WEIN_PDF}">${t.weinPdf}</a></p>
+    </div>
     </div>
   </div>
 </section>
