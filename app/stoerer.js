@@ -18,8 +18,8 @@ export const SILVESTER_BIS = '2026-12-31';
 // v2 seit 09.11.2026: wer die frühere kleine Karte weggedrückt hat, sieht den mittigen Störer einmal
 export const SCHLUESSEL = 'neo-stoerer-advent-2026-v2';
 const ADVENT_ZIEL = 'https://adventskalender.bliss-group.de/?utm_source=neo-heidelberg&amp;utm_medium=stoerer';
-// Gutschein-Zeile unter dem Kalender-Knopf (Sven 10.11.2026: „gutscheine … mit in den störer“), nur Deutsch
-const GUTSCHEIN_ZIEL = 'https://www.gastroguide.de/api-v1/widget/voucher/?id=MjM2NjE4&amp;mode=widgetLayer&amp;font=TGF0bw==&amp;mainColor=AAC8DA&amp;value=0&amp;darkMode=0&amp;utm_source=neo-heidelberg&amp;utm_medium=stoerer-gutschein';
+// Gutschein-Block unter dem Kalender-Knopf (Sven 10.11.2026: „gutscheine … mit in den störer“, abends: „… perfekte geschenk“), nur Deutsch
+const GUTSCHEIN_ZIEL = 'https://www.gastroguide.de/api-v1/widget/voucher/?id=MjM2NjE4&amp;mode=widgetLayer&amp;font=TGF0bw==&amp;mainColor=AAC8DA&amp;value=0&amp;darkMode=0&amp;utm_source=neo&amp;utm_medium=stoerer-gutschein';
 const VIDEO = {
   // v2: ab dem Türchen-Zoom geschnitten (ohne die Titeleinblendung des Films), neuer Name gegen alten Browser-Cache
   // v3 (10.11.2026, Sven: „schön wäre, dass die Musik geht beim Störer-Kalender“): dieselben Bilder mit der Filmmusik (Ton v9),
@@ -100,7 +100,9 @@ const TEXT = {
     zusammen: 'Zusammen 1.249 € · für 249 €',
     preis: '249 € · 1.249 € Gegenwert · 300 nummerierte Exemplare',
     knopf: 'Jetzt sichern',
-    gutschein: 'Oder ein NEO-Gutschein in jeder Höhe&nbsp;→',
+    gutscheinDach: 'Das perfekte Geschenk.',
+    gutscheinSatz: 'Ein Abend im NEO, als Gutschein in jeder Höhe, sofort per Mail.',
+    gutschein: '<span class="stoe-nw">NEO-Gutschein</span> verschenken',
     svBandKicker: 'Silvester · 31. Dezember',
     svBandInfo: 'Zwei Snacks und fünf Gänge · 179 € pro Person',
     silvesterKnopf: 'Jetzt buchen',
@@ -164,7 +166,11 @@ function adventKarte(z, svHref, lang) {
     <div class="stoe-kauf">
       <p class="stoe-preis sv-pk">${pk(z.preis)}</p>
       <a class="stoe-knopf stoe-knopf-rot" data-stoe-angebot href="${ADVENT_ZIEL}" target="_blank" rel="noopener">${z.knopf}</a>
-      ${z.gutschein ? `<a class="stoe-gutschein" data-stoe-angebot href="${GUTSCHEIN_ZIEL}" target="_blank" rel="noopener">${z.gutschein}</a>` : ''}
+      ${z.gutschein ? `<div class="stoe-gs" data-gutschein-block>
+        <p class="stoe-gs-dach">${z.gutscheinDach}</p>
+        <p class="stoe-gs-satz">${z.gutscheinSatz}</p>
+        <a class="stoe-knopf stoe-knopf-gs" data-stoe-angebot data-gutschein-knopf href="${GUTSCHEIN_ZIEL}" target="_blank" rel="noopener"><span>${z.gutschein}</span></a>
+      </div>` : ''}
     </div>
     <div class="stoe-alle-liste" id="stoe-alle-liste" hidden>
       ${alleHtml(z, lang)}
