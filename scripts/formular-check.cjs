@@ -61,6 +61,18 @@ async function trifft(page, selector) {
   // Cookie-Hinweis (seit 17.10.2026): ablehnen, falls er unten steht (die Wahl gilt danach für den ganzen Lauf)
   const nein = page.locator('.einw .einw-knopf', { hasText: 'Ablehnen' });
   if ((await nein.count()) && (await nein.first().isVisible())) { await nein.first().click(); await page.waitForTimeout(400); log('Cookie-Hinweis abgelehnt'); }
+  // Störer (seit 09.11.2026, Adventskalender/Silvester): erscheint ca. 1 s nach der Cookie-Wahl mittig über der Seite.
+  // Gäste schließen ihn per ×; der Lauf macht das auch und prüft dabei, dass das × wirklich schließt.
+  // Gemerkt wird das 7 Tage im localStorage, gilt also für den Rest des Laufs (Hochzeit, EN).
+  const stoe = page.locator('#neo-stoerer');
+  if (await stoe.count()) {
+    await stoe.waitFor({ state: 'visible', timeout: 4000 }).catch(() => {});
+    if (await stoe.isVisible()) {
+      await page.click('#neo-stoerer .stoe-zu');
+      await page.waitForTimeout(700);
+      pruefe(!(await stoe.isVisible()), 'Störer lässt sich per × schließen');
+    }
+  }
   const F = '#anfrage-form';
   const formDa = (await page.locator(F).count()) === 1;
   pruefe(formDa, 'Anfrageformular auf der Startseite vorhanden');
