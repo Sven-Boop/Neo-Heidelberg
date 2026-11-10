@@ -55,6 +55,13 @@ export default function sitemap() {
         },
       },
     })),
+    // Menü-Baukasten (eigenes Vercel-Projekt, per Rewrite unter dieser Adresse, seit 20.10.2026)
+    {
+      url: 'https://www.neo-heidelberg.de/menue-baukasten',
+      lastModified: new Date('2026-11-10'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     {
       url: 'https://www.neo-heidelberg.de/menu',
       lastModified: stand,
