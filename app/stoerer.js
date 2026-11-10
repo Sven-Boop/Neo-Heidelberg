@@ -1,6 +1,8 @@
 // Störer auf der Startseite (Sven 09.11.2026: „Störer mittig auf HP machen und geiler“, „gerne auch das Video des Kalenders“).
 // Mittiges Overlay über dem Startbild, nur auf / und /en (app/(de)/page.js, app/(en)/en/page.js), Unterseiten werben nicht.
-// Bis 24.12.2026: BLISS Adventskalender groß mit Kalender-Film (stummer Loop), darunter eine Zeile Silvester.
+// Bis 24.12.2026: BLISS Adventskalender groß mit Kalender-Film (stummer Loop), darunter ein eigener Silvester-Streifen
+// mit Champagner-Bild, Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester, Preis und Knopf (Sven 10.11.2026:
+// „Kalender sehr gut, darunter aber Silvester schlecht, muss besser“; vorher nur eine graue Textzeile mit Link).
 // 25.–31.12.2026: nur Silvester (Champagner-Bild). Danach nichts. Die Startseiten werden stündlich neu erzeugt (revalidate),
 // das Skript prüft die Daten im Browser zusätzlich (Europe/Berlin).
 // Erscheint 1 s nach dem Laden, nie zusammen mit dem Cookie-Hinweis (erst nach der Entscheidung dort).
@@ -37,7 +39,8 @@ const TEXT = {
     text: 'Vom 1. bis 24. Dezember jeden Tag ein Erlebnis, digital per Mail, auch zum Verschenken.',
     preis: '249 € · 1.249 € Gegenwert · 300 nummerierte Exemplare',
     knopf: 'Jetzt sichern',
-    silvester: 'Silvester 31.12. · Paris meets San Sebastián',
+    svBandKicker: 'Silvester · 31. Dezember',
+    svBandInfo: 'Zwei Snacks und fünf Gänge · 179 € pro Person',
     silvesterKnopf: 'Jetzt buchen',
     silvesterAria: 'Silvester 31. Dezember, Paris meets San Sebastián: jetzt buchen',
     svKicker: 'Silvester · 31.12.2026',
@@ -52,7 +55,8 @@ const TEXT = {
     text: 'One experience every day from 1 to 24 December, delivered by email, also as a gift.',
     preis: '€249 · worth €1,249 · 300 numbered editions',
     knopf: 'Get yours',
-    silvester: 'New Year’s Eve 31 Dec · Paris meets San Sebastián',
+    svBandKicker: 'New Year’s Eve · 31 December',
+    svBandInfo: 'Two snacks and five courses · €179 per person',
     silvesterKnopf: 'Book now',
     silvesterAria: 'New Year’s Eve, 31 December, Paris meets San Sebastián: book now',
     svKicker: 'New Year’s Eve · 31 Dec 2026',
@@ -74,9 +78,14 @@ function adventKarte(z, svHref) {
       <p class="stoe-text">${z.text}</p>
       <p class="stoe-preis sv-pk">${pk(z.preis)}</p>
       <a class="stoe-knopf stoe-knopf-rot" data-stoe-angebot href="${ADVENT_ZIEL}" target="_blank" rel="noopener">${z.knopf}</a>
-      <div class="stoe-silvester">
-        <p class="stoe-sv-text sv-pk">${pk(z.silvester)}</p>
-        <a class="stoe-sv-link" data-stoe-angebot href="${svHref}" target="_blank" rel="noopener" aria-label="${z.silvesterAria}">${z.silvesterKnopf}<span aria-hidden="true"> →</span></a>
+    </div>
+    <div class="stoe-sv">
+      <div class="stoe-sv-medium"><img class="stoe-bild" data-src="${SILVESTER_BILD}" alt="" width="1067" height="600" decoding="async"></div>
+      <div class="stoe-sv-inhalt">
+        <p class="stoe-sv-kicker sv-pk">${pk(z.svBandKicker)}</p>
+        <p class="stoe-sv-titel sv-titel"><span class="stoe-sv-z"><span class="sv-paris">Paris</span> <span class="sv-meets">meets</span></span> <span class="stoe-sv-z sv-ss">San&nbsp;Sebastián</span></p>
+        <p class="stoe-sv-info sv-pk">${pk(z.svBandInfo)}</p>
+        <a class="stoe-knopf stoe-knopf-sv" data-stoe-angebot href="${svHref}" target="_blank" rel="noopener" aria-label="${z.silvesterAria}">${z.silvesterKnopf}<span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>`;
@@ -88,7 +97,7 @@ function silvesterKarte(z, svHref) {
     <div class="stoe-medium"><img class="stoe-bild" data-src="${SILVESTER_BILD}" alt="${z.svBildAlt}" width="1067" height="600" decoding="async"></div>
     <div class="stoe-inhalt">
       <p class="stoe-kicker sv-pk">${pk(z.svKicker)}</p>
-      <h2 class="stoe-titel" id="stoe-titel-silvester"><span class="stoe-z"><span class="sv-paris">Paris</span> meets</span> <span class="stoe-z"><span class="sv-ss">San&nbsp;Sebastián.</span></span></h2>
+      <h2 class="stoe-titel stoe-titel-sv sv-titel" id="stoe-titel-silvester"><span class="stoe-z"><span class="sv-paris">Paris</span> <span class="sv-meets">meets</span></span> <span class="stoe-z sv-ss">San&nbsp;Sebastián</span></h2>
       <p class="stoe-text">${z.svText}</p>
       <p class="stoe-preis sv-pk">${pk(z.svPreis)}</p>
       <a class="stoe-knopf stoe-knopf-hell" data-stoe-angebot href="${svHref}" target="_blank" rel="noopener" aria-label="${z.silvesterAria}">${z.silvesterKnopf}</a>

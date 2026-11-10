@@ -5204,15 +5204,28 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 .stoe-knopf-rot:hover, .stoe-knopf-rot:focus-visible { background: var(--stoe-rot-hi); border-color: #F5F5F2; outline: none; box-shadow: 0 14px 34px rgba(123,35,49,.5); }
 .stoe-knopf-hell { background: var(--accent); color: #161b22; border: 1px solid var(--accent); }
 .stoe-knopf-hell:hover, .stoe-knopf-hell:focus-visible { background: var(--accent-hi); border-color: #fff; outline: none; }
-.stoe-silvester { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--line-bright); }
-.stoe-sv-text { flex: 1; margin: 0; font-size: 11px; font-weight: 700; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-soft); }
-.stoe-sv-link { flex: none; display: inline-flex; align-items: center; min-height: 44px; font-size: 11px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; color: var(--accent); white-space: nowrap; }
-.stoe-sv-link:hover, .stoe-sv-link:focus-visible { color: var(--accent-hi); text-decoration: underline; text-underline-offset: 4px; outline: none; }
 .stoe-titel .sv-paris, .stoe-titel .sv-ss { font-style: normal; }
-.stoe-sv-link span { margin-left: .6em; letter-spacing: 0; }
+/* Silvester-Streifen unter dem Adventskalender (10.11.2026, Sven: „darunter aber Silvester schlecht, muss besser“):
+   gleiche Spalten wie oben, links Champagner, rechts der Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester,
+   Preis und ein eigener Knopf in Paris-Blau (umrandet, damit „Jetzt sichern“ der Hauptknopf bleibt). */
+.stoe-sv { grid-column: 1 / -1; display: grid; grid-template-columns: 340px 1fr; background: #10141a; border-top: 1px solid rgba(255,255,255,.1); }
+.stoe-sv-medium { position: relative; min-height: 100%; overflow: hidden; background: #1d242d; }
+.stoe-sv-medium::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 62%, rgba(16,20,26,.75)); pointer-events: none; }
+.stoe-sv-inhalt { min-width: 0; padding: 26px 40px 30px; }
+.stoe-sv-kicker { margin: 0 48px 12px 0; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--fg-soft); --sv-sep: 1.3em; --sv-ls: .26em; }
+.stoe-sv-titel { margin: 0 0 12px; font-size: 25px; line-height: 1.1; color: #F5F5F2; }
+.stoe-sv-titel .sv-meets { font-size: .52em; }
+.stoe-sv-z { white-space: nowrap; }
+.stoe-sv-info { margin: 0 0 20px; font-size: 14px; font-weight: 700; line-height: 1.5; color: #F5F5F2; }
+.stoe-knopf-sv { gap: 1em; height: 48px; background: transparent; color: var(--sv-paris); border: 1px solid var(--sv-paris); }
+.stoe-knopf-sv span { font-size: 15px; letter-spacing: 0; }
+.stoe-knopf-sv:hover, .stoe-knopf-sv:focus-visible { background: var(--sv-paris); color: #10141a; outline: none; }
+/* Silvester-Karte allein (25.–31.12.): Schriftzug wie auf /silvester */
+.stoe-titel-sv { font-size: 36px; line-height: 1.08; }
+.stoe-titel-sv .sv-meets { font-size: .45em; }
 @media (max-width: 899px) {
   .stoe { padding: 0; }
-  .stoe-karte { grid-template-columns: 1fr; width: 92vw; max-height: 85vh; max-height: 85dvh; }
+  .stoe-karte { grid-template-columns: 1fr; width: 92vw; max-height: 88vh; max-height: 88dvh; }
   .stoe-medium { min-height: 0; aspect-ratio: 16 / 9; }
   .stoe-medium::after { background: linear-gradient(180deg, transparent 70%, rgba(22,27,34,.6)); }
   .stoe-inhalt { padding: 20px 22px 22px; }
@@ -5222,8 +5235,17 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-text { margin-bottom: 10px; font-size: 14px; line-height: 1.5; }
   .stoe-preis { margin-bottom: 18px; font-size: 13px; }
   .stoe-knopf { height: 50px; }
-  .stoe-silvester { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 18px; padding-top: 14px; }
-  .stoe-sv-link { justify-content: center; border: 1px solid var(--accent); }
+  .stoe-sv { grid-template-columns: 88px minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; column-gap: 16px; padding: 18px 22px 22px; }
+  .stoe-sv-inhalt { display: contents; }
+  .stoe-sv-medium { grid-column: 1; grid-row: 1 / 4; align-self: start; min-height: 0; aspect-ratio: 1; }
+  .stoe-sv-medium::after { display: none; }
+  .stoe-sv-kicker, .stoe-sv-titel, .stoe-sv-info { grid-column: 2; }
+  .stoe-sv-kicker { margin: 2px 0 8px; font-size: 10px; }
+  .stoe-sv-titel { margin-bottom: 8px; font-size: 19px; }
+  .stoe-sv-z { display: block; }
+  .stoe-sv-info { align-self: start; margin: 0; font-size: 13px; }
+  .stoe-knopf-sv { grid-column: 1 / -1; margin-top: 16px; height: 48px; }
+  .stoe-titel-sv { font-size: clamp(23px, 7vw, 34px); }
 }
 @media (max-width: 380px) {
   .stoe-inhalt { padding: 16px 18px 18px; }
@@ -5231,6 +5253,18 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-text { font-size: 13px; margin-bottom: 8px; }
   .stoe-preis { margin-bottom: 14px; }
   .stoe-knopf { height: 46px; }
-  .stoe-silvester { margin-top: 14px; padding-top: 12px; gap: 8px; }
+  .stoe-sv { grid-template-columns: 72px minmax(0, 1fr); column-gap: 14px; padding: 16px 18px 18px; }
+  .stoe-sv-titel { font-size: 17px; }
+  .stoe-knopf-sv { height: 46px; margin-top: 14px; }
+}
+/* Kurze Handys (iPhone SE u. ä.): Film flacher, Silvester ohne Bild und einzeilig, damit fast alles ohne Scrollen passt */
+@media (max-width: 899px) and (max-height: 760px) {
+  .stoe-medium { aspect-ratio: 21 / 9; }
+  .stoe-sv { grid-template-columns: minmax(0, 1fr); padding-top: 14px; }
+  .stoe-sv-medium { display: none; }
+  .stoe-sv-kicker, .stoe-sv-titel, .stoe-sv-info { grid-column: 1; }
+  .stoe-sv-z { display: inline; }
+  .stoe-sv-titel { font-size: 18px; margin-bottom: 6px; }
+  .stoe-knopf-sv { margin-top: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-karte, .stoe.stoe-geht .stoe-karte, .stoe-zu { transition: none; } .stoe-karte { transform: none; } }
