@@ -5213,6 +5213,9 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 .stoe-knopf-rot:hover, .stoe-knopf-rot:focus-visible { background: var(--stoe-rot-hi); border-color: #F5F5F2; outline: none; box-shadow: 0 14px 34px rgba(123,35,49,.5); }
 .stoe-knopf-hell { background: var(--accent); color: #161b22; border: 1px solid var(--accent); }
 .stoe-knopf-hell:hover, .stoe-knopf-hell:focus-visible { background: var(--accent-hi); border-color: #fff; outline: none; }
+/* Gutschein-Zeile unter dem Kalender-Knopf (10.11.2026, Gutschein-Offensive): klein, der Kalender bleibt Hauptsache */
+.stoe-gutschein { display: block; margin: 12px 0 0; padding: 4px 0; text-align: center; font-size: 13px; font-weight: 400; line-height: 1.4; color: var(--fg-soft); text-decoration: underline; text-decoration-color: rgba(245,245,242,.3); text-underline-offset: 3px; transition: color .3s, text-decoration-color .3s; }
+.stoe-gutschein:hover, .stoe-gutschein:focus-visible { color: #F5F5F2; text-decoration-color: currentColor; outline: none; }
 .stoe-titel .sv-paris, .stoe-titel .sv-ss { font-style: normal; }
 /* Silvester-Streifen unter dem Adventskalender (10.11.2026, Sven: „darunter aber Silvester schlecht, muss besser“):
    gleiche Spalten wie oben, links Champagner, rechts der Schriftzug PARIS meets SAN SEBASTIÁN wie auf /silvester,
@@ -5351,3 +5354,18 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 .sv-wein-text { min-width: 0; padding-top: 4px; }
 .sv-wein-satz { color: var(--fg-soft); font-size: 17px; line-height: 1.75; font-weight: 300; max-width: 40ch; }
 .sv-wein .sv-preis-block { margin-top: clamp(30px, 3vw, 44px); }
+
+/* ===== Gutschein-Abschnitt auf der Startseite (10.11.2026, Gutschein-Offensive): ruhig, direkt nach dem Slider ===== */
+.gutschein-band { padding: clamp(56px, 7vw, 104px) var(--pad-x); border-bottom: 1px solid var(--line); }
+.gb-innen { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.gb-kopf .eyebrow { margin-bottom: 20px; }
+.gutschein-band h2 { margin: 0; font-size: clamp(34px, 4.6vw, 68px); font-weight: 900; line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; }
+.gutschein-band h2 em { font-style: italic; color: var(--accent); }
+.gb-text p { max-width: 52ch; margin: 0 0 28px; font-size: 16px; line-height: 1.7; color: var(--fg-soft); }
+.gb-text .btn { justify-content: center; min-width: 15rem; }
+@media (min-width: 900px) {
+  .gb-innen { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 120px); align-items: end; }
+}
+@media (max-width: 480px) {
+  .gb-text .btn { width: 100%; min-width: 0; }
+}
