@@ -5369,3 +5369,6 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 @media (max-width: 480px) {
   .gb-text .btn { width: 100%; min-width: 0; }
 }
+/* Handy-Menü (10.11.2026, mit „Gutscheine“ zwölf Einträge): beginnt unter der Kopfleiste und scrollt auf kleinen Handys,
+   statt oben unter dem Kopf zu verschwinden (safe center: zentriert nur, solange alles passt) */
+.mobile-menu { justify-content: safe center; gap: 24px; padding: 104px 0 28px; overflow-y: auto; }
