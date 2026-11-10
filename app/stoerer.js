@@ -20,10 +20,12 @@ export const SCHLUESSEL = 'neo-stoerer-advent-2026-v2';
 const ADVENT_ZIEL = 'https://adventskalender.bliss-group.de/?utm_source=neo-heidelberg&amp;utm_medium=stoerer';
 const VIDEO = {
   // v2: ab dem Türchen-Zoom geschnitten (ohne die Titeleinblendung des Films), neuer Name gegen alten Browser-Cache
-  hoch: '/video/stoerer-4x5-v2.mp4',
-  quer: '/video/stoerer-16x9-v2.mp4',
-  posterHoch: '/video/stoerer-4x5-v2-poster.webp',
-  posterQuer: '/video/stoerer-16x9-v2-poster.webp',
+  // v3 (10.11.2026, Sven: „schön wäre, dass die Musik geht beim Störer-Kalender“): dieselben Bilder mit der Filmmusik (Ton v9),
+  // Quelle bliss-adventskalender/video/film-4x5.mp4 bzw. film-16x9.mp4 ab 6,4 s, 25,6 s, AAC 96 kbit/s
+  hoch: '/video/stoerer-4x5-v3.mp4',
+  quer: '/video/stoerer-16x9-v3.mp4',
+  posterHoch: '/video/stoerer-4x5-v3-poster.webp',
+  posterQuer: '/video/stoerer-16x9-v3-poster.webp',
 };
 const SILVESTER_BILD = '/img/silvester/champagner.webp';
 
@@ -86,6 +88,7 @@ const TEXT = {
   de: {
     zu: 'Schließen',
     kicker: 'Adventskalender 2026',
+    tonAn: 'Ton an', tonAus: 'Ton aus',
     titel: ['24 Momente aus', 'unseren Häusern.'],
     text: 'Vom 1. bis 24. Dezember jeden Tag ein Erlebnis per Mail, auch als Geschenk.',
     drin: 'Das steckt drin',
@@ -107,6 +110,7 @@ const TEXT = {
   en: {
     zu: 'Close',
     kicker: 'Advent Calendar 2026',
+    tonAn: 'Sound on', tonAus: 'Sound off',
     titel: ['24 moments from', 'our houses.'],
     text: 'One experience every day from 1 to 24 December by email, also as a gift.',
     drin: 'What’s inside',
@@ -143,7 +147,7 @@ function alleHtml(z, lang) {
 function adventKarte(z, svHref, lang) {
   return `<div class="stoe-karte stoe-karte-advent" data-art="advent" data-bis="${ADVENT_BIS}" role="dialog" aria-modal="true" aria-labelledby="stoe-titel-advent" tabindex="-1">
     ${zuKnopf(z)}
-    <div class="stoe-medium"><video class="stoe-video" muted playsinline loop autoplay preload="none" aria-hidden="true" data-src-hoch="${VIDEO.hoch}" data-src-quer="${VIDEO.quer}" data-poster-hoch="${VIDEO.posterHoch}" data-poster-quer="${VIDEO.posterQuer}"></video></div>
+    <div class="stoe-medium"><video class="stoe-video" muted playsinline loop autoplay preload="none" aria-hidden="true" data-src-hoch="${VIDEO.hoch}" data-src-quer="${VIDEO.quer}" data-poster-hoch="${VIDEO.posterHoch}" data-poster-quer="${VIDEO.posterQuer}"></video><button type="button" class="stoe-ton" data-stoe-ton aria-pressed="false" data-an="${z.tonAn}" data-aus="${z.tonAus}" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path class="stoe-ton-laut" d="M3 9v6h4l5 4V5L7 9H3z" fill="currentColor"/><path class="stoe-ton-welle" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="stoe-ton-strich" d="M15.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="stoe-ton-text">${z.tonAn}</span></button></div>
     <div class="stoe-kopf">
       <p class="stoe-kicker">${z.kicker}</p>
       <h2 class="stoe-titel" id="stoe-titel-advent"><span class="stoe-z">${z.titel[0]}</span> <span class="stoe-z"><em>${z.titel[1]}</em></span></h2>
@@ -218,12 +222,19 @@ var bis=+ls(function(s){return s.getItem(K)});if(bis&&Date.now()-bis<TAGE*864e5)
 function entschieden(){return !!ls(function(s){var e=JSON.parse(s.getItem('neo-consent')||'null');return e&&(e.wert==='ja'||e.wert==='nein')})}
 var ruhig=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
 var spar=!!(navigator.connection&&navigator.connection.saveData);
+var tonKnopf=karte.querySelector('[data-stoe-ton]');
+function tonZeigen(v){if(!tonKnopf)return;tonKnopf.hidden=false;var an=!v.muted;tonKnopf.setAttribute('aria-pressed',an?'true':'false');tonKnopf.classList.toggle('stoe-ton-an',an);var t=tonKnopf.querySelector('.stoe-ton-text');if(t)t.textContent=tonKnopf.getAttribute(an?'data-aus':'data-an')}
 function film(){var v=karte.querySelector('video');if(!v)return;var handy=!!(window.matchMedia&&matchMedia('(max-width: 899px)').matches);
 v.poster=v.getAttribute(handy?'data-poster-quer':'data-poster-hoch');if(ruhig||spar)return;
-v.muted=true;v.src=v.getAttribute(handy?'data-src-quer':'data-src-hoch');try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
+v.src=v.getAttribute(handy?'data-src-quer':'data-src-hoch');
+// Mit Musik starten (Sven 10.11.2026); verbietet der Browser Ton ohne Klick, läuft der Film stumm und der Knopf sagt „Ton an“
+v.muted=false;v.volume=1;
+function stumm(){v.muted=true;try{var q=v.play();if(q&&q.catch)q.catch(function(){})}catch(e){}tonZeigen(v)}
+try{var p=v.play();if(p&&p.then)p.then(function(){tonZeigen(v)},stumm);else tonZeigen(v)}catch(e){stumm()}}
+function ton(){var v=karte.querySelector('video');if(!v)return;v.muted=!v.muted;if(!v.muted){v.volume=1;try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}tonZeigen(v)}
 function fokusbar(){var l=karte.querySelectorAll('a[href],button'),r=[],i;for(i=0;i<l.length;i++)if(l[i].offsetWidth||l[i].offsetHeight)r.push(l[i]);return r}
-function zeigen(){offen=true;vorher=document.activeElement;w.hidden=false;html.classList.add('stoe-offen');film();var im=karte.querySelector('img[data-src]');if(im)im.src=im.getAttribute('data-src');void w.offsetWidth;w.classList.add('stoe-da');try{karte.focus({preventScroll:true})}catch(e){karte.focus()}}
-function verstecken(){offen=false;w.classList.remove('stoe-da');w.hidden=true;html.classList.remove('stoe-offen')}
+function zeigen(){offen=true;vorher=document.activeElement;w.hidden=false;html.classList.add('stoe-offen');var vv=karte.querySelector('video');if(vv&&vv.getAttribute('src')){try{var pp=vv.play();if(pp&&pp.catch)pp.catch(function(){})}catch(e){}}else film();var im=karte.querySelector('img[data-src]');if(im)im.src=im.getAttribute('data-src');void w.offsetWidth;w.classList.add('stoe-da');try{karte.focus({preventScroll:true})}catch(e){karte.focus()}}
+function verstecken(){offen=false;w.classList.remove('stoe-da');w.hidden=true;html.classList.remove('stoe-offen');var v=karte.querySelector('video');if(v){try{v.pause()}catch(e){}}}
 function pruefen(){if(weg)return;var darf=zeit&&entschieden()&&!html.classList.contains('einw-offen');if(darf&&!offen)zeigen();else if(!darf&&offen)verstecken()}
 function zu(){if(weg||!offen)return;weg=true;offen=false;ls(function(s){s.setItem(K,String(Date.now()))});
 var v=karte.querySelector('video');if(v){try{v.pause()}catch(e){}}
@@ -233,7 +244,7 @@ setTimeout(function(){w.hidden=true;raus(w)},ruhig?0:320)}
 function alle(k){var l=document.getElementById(k.getAttribute('aria-controls'));if(!l)return;var auf=l.hidden;l.hidden=!auf;k.setAttribute('aria-expanded',auf?'true':'false');
 var tx=k.querySelector('.stoe-alle-text');if(tx)tx.textContent=k.getAttribute(auf?'data-zu':'data-auf');
 if(auf){var top=l.getBoundingClientRect().top-karte.getBoundingClientRect().top+karte.scrollTop-24;try{karte.scrollTo({top:top,behavior:ruhig?'auto':'smooth'})}catch(e){karte.scrollTop=top}}}
-w.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var k;if(t.closest('[data-stoe-zu]'))zu();else if((k=t.closest('[data-stoe-alle]')))alle(k);else if(t.closest('[data-stoe-angebot]'))setTimeout(zu,0)});
+w.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var k;if(t.closest('[data-stoe-zu]'))zu();else if(t.closest('[data-stoe-ton]'))ton();else if((k=t.closest('[data-stoe-alle]')))alle(k);else if(t.closest('[data-stoe-angebot]'))setTimeout(zu,0)});
 document.addEventListener('keydown',function(e){if(!offen)return;
 if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();zu();return}
 if(e.key!=='Tab')return;var f=fokusbar();if(!f.length){e.preventDefault();return}var i=f.indexOf(document.activeElement);

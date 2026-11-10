@@ -5191,6 +5191,15 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 .stoe-inhalt { min-width: 0; padding: 40px 44px 32px; }
 .stoe-zu { position: absolute; top: 12px; right: 12px; z-index: 3; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: rgba(22,27,34,.7); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .25s; }
 .stoe-zu span { display: block; margin-top: -2px; }
+/* Ton-Knopf unten links auf dem Film (10.11.2026): stumm = durchgestrichener Lautsprecher + „Ton an“, mit Musik = Wellen + „Ton aus“ */
+.stoe-ton { position: absolute; left: 12px; bottom: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 10px; border: 1px solid rgba(255,255,255,.3); border-radius: 18px; background: rgba(22,27,34,.72); color: #fff; font: 700 11px/1 var(--font-lato), sans-serif; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
+.stoe-ton[hidden] { display: none; }
+.stoe-ton:hover, .stoe-ton:focus-visible { background: #fff; color: #161b22; border-color: #fff; outline: none; }
+.stoe-ton .stoe-ton-welle { display: none; }
+.stoe-ton.stoe-ton-an .stoe-ton-welle { display: block; }
+.stoe-ton.stoe-ton-an .stoe-ton-strich { display: none; }
+.stoe-ton-an { background: rgba(123,35,49,.85); border-color: rgba(255,255,255,.35); }
+@media (max-width: 899px) { .stoe-ton { left: 10px; bottom: 10px; height: 32px; font-size: 10px; } }
 .stoe-zu:hover, .stoe-zu:focus-visible { background: #fff; color: #161b22; border-color: #fff; transform: rotate(90deg); outline: none; }
 .stoe-kicker { margin: 0 48px 16px 0; font-size: 11px; font-weight: 900; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
 .stoe-kicker.sv-pk { --sv-sep: 1.3em; --sv-ls: .26em; }
