@@ -207,7 +207,7 @@ export function stoererHtml(lang, jetzt = new Date()) {
 // Läuft direkt nach dem Störer-HTML (vor React).
 export const STOERER_SKRIPT = `(function(){
 var w=document.getElementById('neo-stoerer');if(!w)return;
-if(/(^|[/])(impressum|datenschutz)[/]?$/.test(location.pathname)){w.parentNode.removeChild(w);return}
+if(/\/(impressum|datenschutz)\/?$/.test(location.pathname)){w.parentNode.removeChild(w);return}
 var K=w.getAttribute('data-schluessel'),TAGE=7,html=document.documentElement,zeit=false,offen=false,weg=false,vorher=null;
 function ls(f){try{return f(window.localStorage)}catch(e){return null}}
 function raus(el){if(el&&el.parentNode)el.parentNode.removeChild(el)}
