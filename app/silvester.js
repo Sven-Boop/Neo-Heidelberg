@@ -10,9 +10,14 @@
 // die ganzen Seiten setzt app/seitenTeile.js zusammen (silvesterHtml, silvesterHtmlEn).
 
 const BASIS = 'https://www.neo-heidelberg.de';
-// Gastronaut öffnet den 31.12. mit dem Silvester-Ticket (Zahlung vorab). Wie alle Reservierungslinks der
-// Seite in neuem Tab (target _blank); das Einwilligungs-Skript zählt den Klick als Ereignis „reservierung“.
-export const SILVESTER_BUCHEN = 'https://reservation.gastronaut.ai/neo-heidelberg?date=2026-12-31&occassion=silvester&guests=2';
+// Wie alle Reservierungslinks der Seite in neuem Tab (target _blank); das Einwilligungs-Skript zählt den
+// Klick als Ereignis „reservierung“.
+// 23.11.2026 (Sven „1 ja“): OHNE date/occassion im Link. Mit ?date=2026-12-31 ruft das Gastronaut-Fenster die
+// Zeiten für den 31.12. UND für heute ab; kommt „heute“ als zweite Antwort, zeigt es den 31.12. mit den
+// normalen Uhrzeiten statt dem Silvester-Ticket (4 von 6 Aufrufen). Wählt der Gast den Tag selbst, stimmt es
+// (3 von 3). Fehler am 23.11. an Leon (Gastronaut) gemeldet; nach der Behebung wieder
+// '…/neo-heidelberg?date=2026-12-31&occassion=silvester&guests=2' und den Hinweis buchenHinweis entfernen.
+export const SILVESTER_BUCHEN = 'https://reservation.gastronaut.ai/neo-heidelberg?guests=2';
 // Sichtbare Buchen-Knöpfe mit Kennung „website“ (Links je Kanal im Werbepaket, Sven 06.11.2026: „mach alles“); Gastronaut öffnet damit genauso.
 // Seit 07.11.2026 je Stelle und Sprache unterscheidbar: utm_medium startseite/silvesterseite, utm_content de/en.
 const buchenHref = (t, wo) =>
@@ -149,6 +154,7 @@ const T = {
     eyebrow: ['Silvester', 'Donnerstag, 31. Dezember 2026'],
     lead: 'Zwei Snacks und fünf Gänge, Fleisch und Fisch oder vegetarisch. Ab 18 Uhr geöffnet, um 19 Uhr servieren wir das Menü.',
     buchen: 'Jetzt buchen',
+    buchenHinweis: 'Im Kalender bitte den 31.12. wählen',
     zumMenue: 'Zum Menü',
     abendEyebrow: 'Der Abend',
     abendH2: 'Silvester <em>im NEO.</em>',
@@ -205,6 +211,7 @@ const T = {
     eyebrow: ['New Year’s Eve', 'Thursday, 31 December 2026'],
     lead: 'Two snacks and five courses, meat and fish or vegetarian. Doors open at 6 pm, the menu is served at 7 pm.',
     buchen: 'Book now',
+    buchenHinweis: 'Please select 31 December in the calendar',
     zumMenue: 'See the menu',
     abendEyebrow: 'The evening',
     abendH2: 'New Year’s Eve <em>at NEO.</em>',
@@ -298,7 +305,7 @@ function grussHtml(g) {
 }
 
 function buchenKnopf(t, extra = '', wo = 'silvesterseite') {
-  return `<a href="${buchenHref(t, wo)}" target="_blank" rel="noopener" class="btn primary${extra}">${t.buchen}</a>`;
+  return `<a href="${buchenHref(t, wo)}" target="_blank" rel="noopener" class="btn primary${extra}">${t.buchen}</a><span class="sv-buchen-hinweis">${t.buchenHinweis}</span>`;
 }
 
 // Seit 06.11.2026 ~11.10 (Sven: „da müssen die Karten rein, sieht doch net gut aus“): die fertigen Menükarten

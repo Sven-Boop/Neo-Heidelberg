@@ -5387,3 +5387,10 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 /* Handy-Menü (10.11.2026, mit „Gutscheine“ zwölf Einträge): beginnt unter der Kopfleiste und scrollt auf kleinen Handys,
    statt oben unter dem Kopf zu verschwinden (safe center: zentriert nur, solange alles passt) */
 .mobile-menu { justify-content: safe center; gap: 24px; padding: 104px 0 28px; overflow-y: auto; }
+
+/* Silvester: Hinweis unter den Buchen-Knöpfen, solange der Gastronaut-Link ohne Datum öffnet (23.11.2026) */
+.sv-buchen-hinweis { order: 9; flex-basis: 100%; display: block; margin-top: 2px; font-size: 13px; line-height: 1.4; opacity: .78; }
+.hero-ctas > .sv-buchen-hinweis { grid-row: 2; grid-column: 1 / span 2; }
+@media (max-width: 720px) {
+  .hero-ctas > .sv-buchen-hinweis { grid-row: auto; grid-column: auto; }
+}
