@@ -9,7 +9,7 @@ const betrag = (p) => parseFloat(String(p).replace(/[^0-9,]/g, '').replace(',', 
 const RESTAURANT = (MENUES.menues || []).slice().sort((a, b) => betrag(a.preis) - betrag(b.preis));
 
 function zeile(m) {
-  return `<li><a class="ev-menue-zeile" href="/firmenfeier#menue-${esc(m.id)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen && m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(String(z).replace(/\s+·\s+/g, ', '))).join(', ')}</span>` : ''}</span><span class="ev-menue-preis"><span class="ev-menue-betrag">${esc(m.preis)}</span>${m.preisZusatz ? `<span class="ev-menue-zusatz">${esc(String(m.preisZusatz).replace(/\s+·\s+/g, ", "))}</span>` : ''}</span></a></li>`;
+  return `<li><a class="ev-menue-zeile" href="/firmenfeier#menue-${esc(m.id)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen && m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(String(z).replace(/\s+·\s+/g, ', '))).join('<br>')}</span>` : ''}</span><span class="ev-menue-preis"><span class="ev-menue-betrag">${esc(m.preis)}</span>${m.preisZusatz ? `<span class="ev-menue-zusatz">${esc(String(m.preisZusatz).replace(/\s+·\s+/g, ", "))}</span>` : ''}</span></a></li>`;
 }
 
 const zwischen = (name) => new RegExp(`<!--${name}-->[\\s\\S]*?<!--/${name}-->`, 'g');

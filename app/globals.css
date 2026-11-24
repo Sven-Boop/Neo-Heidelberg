@@ -5439,3 +5439,11 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 }
 /* Kacheln ohne Zier-Nummer: Text bleibt unten im Bild */
 #app-root .card-content { justify-content: flex-end; }
+
+/* Nachzug Prüf-Funde 24.11.2026: Herkunft der Rassen und Adresszeile im Hochzeits-Startbild normal statt gesperrter Versalien, ohne Akzentstrich */
+#app-root .breed-origin { text-transform: none; letter-spacing: 0.01em; font-size: 13px; font-weight: 400; color: var(--fg-soft); }
+#app-root .breed-origin::before { content: none; }
+#app-root .hochzeit-hero .hero-inner > .eyebrow:first-child { text-transform: none; letter-spacing: 0.01em; font-size: 15px; font-weight: 400; color: var(--fg-soft); }
+#app-root .hochzeit-hero .hero-inner > .eyebrow:first-child::before { content: none; }
+/* Drei Versprechen (Hochzeit) nicht kursiv: kursiv bleibt nur im Startbild */
+#app-root .tmnl-quote { font-style: normal; }

@@ -53,7 +53,7 @@ const RAEUME = {
 
 const KUECHE = {
   eyebrow: 'Küche und Bar',
-  h2: 'Steak, Sushi, <em>Infusionen</em>',
+  h2: 'Steak, Sushi<br><em>Infusionen</em>',
   text: [
     'Unser Fleisch reift drei bis vier Wochen im eigenen Humidor, trocken und am Knochen: Angus, Chianina, Wagyu, Rubia Gallega. Daneben wird californisches Sushi von Hand gerollt, auf Bestellung.',
     'An der Bar gibt es hauseigene Infusionen, klassische Signatures und saisonale Kreationen. Vegetarisch und vegan geht selbstverständlich auch, bis hin zu rein pflanzlichen Gängen.',
@@ -123,14 +123,14 @@ export const ANLASS_SEITEN = {
       ],
     },
     raeume: ['restaurant', 'bar', 'garten'],
-    raeumeH2: 'Drei Bereiche, <em>ein Haus</em>',
+    raeumeH2: 'Drei Bereiche<br><em>ein Haus</em>',
     anlaesse: true,
     menues: 'kurz',
     faq: [F.gaeste, F.lage, F.bar, F.essen, F.musik, F.ansehen, F.anfrage],
     form: {
       anlass: 'Firmenfeier / Firmen-Event',
       quelle: 'Seite Eventlocation',
-      h2: 'Erzählt uns, <em>was ihr vorhabt</em>',
+      h2: 'Erzählt uns<br><em>was ihr vorhabt</em>',
     },
     venueText:
       'Eventlocation in der Heidelberger Bahnstadt: Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof mit Restaurant, Bar, Terrasse und Garten (Mai bis September). Bis 199 Gäste.',
@@ -151,7 +151,7 @@ export const ANLASS_SEITEN = {
     lead: 'Eure Weihnachtsfeier in der Halle im ehemaligen Güterbahnhof, nahe dem Hauptbahnhof: Dinner an langen Tafeln, danach an die Bar, später legt der DJ auf. Bis 199 Gäste.',
     intro: {
       eyebrow: 'Dezember im NEO',
-      h2: 'Ein Abend, <em>ein Haus</em>',
+      h2: 'Ein Abend<br><em>ein Haus</em>',
       text: [
         'Gefeiert wird im Restaurant unter den Stahlträgern der Halle, mit offener Küche und dem Dry-Aged-Humidor im Blick, und an der Bar, die immer ein bisschen länger aufhat als die Küche.',
         'Ihr bucht, was zu eurem Team passt: die Bar exklusiv für den Apéro nach Feierabend, das komplette Restaurant oder das ganze Haus.',
@@ -211,7 +211,7 @@ export const ANLASS_SEITEN = {
       ],
     },
     raeume: ['restaurant', 'bar', 'garten'],
-    raeumeH2: 'Drei Bereiche, <em>ein Haus</em>',
+    raeumeH2: 'Drei Bereiche<br><em>ein Haus</em>',
     menues: 'voll',
     faq: [
       F.gaeste,
@@ -228,7 +228,7 @@ export const ANLASS_SEITEN = {
     form: {
       anlass: 'Firmenfeier / Firmen-Event',
       quelle: 'Seite Firmenfeier',
-      h2: 'Euer Firmen-Event <em>anfragen</em>',
+      h2: 'Euer <span class="nb">Firmen-Event</span> <em>anfragen</em>',
     },
     venueText:
       'Location für Firmenfeiern in der Heidelberger Bahnstadt: Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof mit Restaurant, Bar, Terrasse und Garten (Mai bis September). Bis 199 Gäste.',
@@ -322,7 +322,7 @@ function raeumeHtml(s) {
 }
 
 // ===== Menüvorschläge (Abzug aus dem Werkzeug NEO Wintermenüs, app/menuvorschlaege.json) =====
-// Anzeige: „·“ aus dem Werkzeug als Komma (KI-Look-Liste 21.11.2026), menuvorschlaege.json bleibt unverändert
+// Anzeige: „·“ aus dem Werkzeug als Komma, jede Kopfzeile eines Menüs in eigener Zeile (KI-Look-Liste 21.11.2026), menuvorschlaege.json bleibt unverändert
 const komma = (t) => String(t ?? '').replace(/\s+·\s+/g, ', ');
 const esc = (x) => String(x ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // Alle Menüs in einer Gruppe, Reihenfolge wie im Werkzeug. Sven 19.10.2026: „die Menüs gibt es in jedem Raum,
@@ -350,7 +350,7 @@ function gaengeHtml(m) {
 
 function menueVollHtml(m, offen) {
   return `<details class="ev-menue" id="menue-${esc(m.id)}"${offen ? ' open' : ''}>
-        <summary><span class="ev-menue-kopf"><h3 class="ev-menue-name">${esc(m.titel)}</h3>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(komma(z))).join(', ')}</span>` : ''}</span>${preisHtml(m)}</summary>
+        <summary><span class="ev-menue-kopf"><h3 class="ev-menue-name">${esc(m.titel)}</h3>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(komma(z))).join('<br>')}</span>` : ''}</span>${preisHtml(m)}</summary>
         <div class="ev-menue-inhalt">
           <ol class="ev-gaenge">${gaengeHtml(m)}</ol>
           ${m.option ? `<p class="ev-menue-option">${esc(komma(m.option))}</p>` : ''}
@@ -360,7 +360,7 @@ function menueVollHtml(m, offen) {
 }
 
 function menueKurzHtml(m) {
-  return `<li><a class="ev-menue-zeile" href="#anfrage" data-menue="${esc(menueWert(m))}" aria-label="Menü anfragen: ${esc(m.titel)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(komma(z))).join(', ')}</span>` : ''}</span>${preisHtml(m)}</a></li>`;
+  return `<li><a class="ev-menue-zeile" href="#anfrage" data-menue="${esc(menueWert(m))}" aria-label="Menü anfragen: ${esc(m.titel)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(komma(z))).join('<br>')}</span>` : ''}</span>${preisHtml(m)}</a></li>`;
 }
 
 function menuesHtml(s) {

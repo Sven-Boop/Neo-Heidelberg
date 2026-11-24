@@ -51,7 +51,7 @@ const T = {
     ohne: 'Ohne Saucen und Beilage möglich – dann ohne',
     rasse: 'Rasse',
     dryAgedSub: 'Ab 600 g, Preis je 100 g',
-    sharingH2: 'Vier Gänge, <em>ein Abend</em>',
+    sharingH2: 'Vier Gänge<br><em>Ein Abend</em>',
     sharingLead:
       'Unser Sharing-Menü für zwei. Katsu Sando vom Wagyu Roastbeef als Auftakt, eine Hummer Roll als Zwischengang, zum Hauptgang das Taste Your Filet Deluxe — 4 × 100 g von allen vier Rassen. Und dann: Birne Helene.',
     sharingLabel: 'für 2 Personen',
@@ -80,7 +80,7 @@ const T = {
     ohne: 'Available without sauces and side – then without',
     rasse: 'Breed',
     dryAgedSub: 'From 600 g, price per 100 g',
-    sharingH2: 'Four courses, <em>one evening</em>',
+    sharingH2: 'Four courses<br><em>One evening</em>',
     sharingLead:
       'Our sharing menu for two. Katsu sando of Wagyu roast beef to open, a Lobster Roll as an interlude, Taste Your Filet Deluxe as the main — 4 × 100 g of all four breeds. And then: Pear Belle Hélène.',
     sharingLabel: 'for 2 people',
@@ -342,6 +342,9 @@ function rubrikenHtml(kap, lang) {
     return teile.join('');
   }
   let hinweis = '';
+  // Rubrik-Zeile weglassen, wenn sie nur den Kapitel-Titel wiederholt („Bowl“ unter „Bowl“) und das Kapitel nur diese eine Rubrik hat (KI-Look-Liste, keine Doppelung)
+  const kapTitel = String(kap.h2[lang]).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim().toLowerCase();
+  const nurEine = rubs.filter((r) => r.stil !== 'trenner' && r.stil !== 'hinweis').length === 1;
   for (const r of rubs) {
     const titel = feld(r, 'titel', lang);
     if (r.stil === 'trenner') continue;
@@ -368,7 +371,7 @@ function rubrikenHtml(kap, lang) {
     // Rubrik ohne Titel (z. B. Deluxe Hoch² unter Signature) hängt an der vorigen Gruppe
     if (titel) {
       zu();
-      teile.push(`  <div class="subcat">${esc(titel)}</div>\n`);
+      if (!(nurEine && String(titel).trim().toLowerCase() === kapTitel)) teile.push(`  <div class="subcat">${esc(titel)}</div>\n`);
       gruppe = [];
     }
     for (const it of sichtbar(r)) (gruppe ||= []).push(item(it, lang));
