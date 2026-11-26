@@ -50,8 +50,8 @@ const T = {
     fragen: 'Allergene: bitte frag unser Team',
     ohne: 'Ohne Saucen und Beilage möglich – dann ohne',
     rasse: 'Rasse',
-    dryAgedSub: 'Ab 600 g · Preis je 100 g',
-    sharingH2: 'Vier Gänge. <em>Ein Abend.</em>',
+    dryAgedSub: 'Ab 600 g, Preis je 100 g',
+    sharingH2: 'Vier Gänge<br><em>Ein Abend</em>',
     sharingLead:
       'Unser Sharing-Menü für zwei. Katsu Sando vom Wagyu Roastbeef als Auftakt, eine Hummer Roll als Zwischengang, zum Hauptgang das Taste Your Filet Deluxe — 4 × 100 g von allen vier Rassen. Und dann: Birne Helene.',
     sharingLabel: 'für 2 Personen',
@@ -79,8 +79,8 @@ const T = {
     fragen: 'Allergens: please ask our team',
     ohne: 'Available without sauces and side – then without',
     rasse: 'Breed',
-    dryAgedSub: 'From 600 g · price per 100 g',
-    sharingH2: 'Four courses. <em>One evening.</em>',
+    dryAgedSub: 'From 600 g, price per 100 g',
+    sharingH2: 'Four courses<br><em>One evening</em>',
     sharingLead:
       'Our sharing menu for two. Katsu sando of Wagyu roast beef to open, a Lobster Roll as an interlude, Taste Your Filet Deluxe as the main — 4 × 100 g of all four breeds. And then: Pear Belle Hélène.',
     sharingLabel: 'for 2 people',
@@ -102,7 +102,7 @@ const T = {
 const KAPITEL = [
   {
     id: 'starter', seite: 'Starters', nr: 'I',
-    h2: { de: 'Starter &amp; <em>Appetizer.</em>', en: 'Starters &amp; <em>Appetizers.</em>' },
+    h2: { de: 'Starter &amp; <em>Appetizer</em>', en: 'Starters &amp; <em>Appetizers</em>' },
     intro: {
       de: 'Der Anfang von allem. Von galizischen Konserven über das Tatar vom Schwarzwälder Rind bis zum Carpaccio mit Wintertrüffel — die Bühne für den Abend.',
       en: 'The beginning of it all. From Galician conservas to Black Forest beef tartare to carpaccio with winter truffle — the stage for the evening.',
@@ -110,7 +110,7 @@ const KAPITEL = [
   },
   {
     id: 'sushi', seite: 'Sushi & More', nr: 'II',
-    h2: { de: 'Sushi &amp; <em>More.</em>', en: 'Sushi &amp; <em>More.</em>' },
+    h2: { de: 'Sushi &amp; <em>More</em>', en: 'Sushi &amp; <em>More</em>' },
     intro: {
       de: 'Californisches Sushi, wie wir es verstehen. Lachsforelle vom Forellenhof Lenz, Blue Fin Thunfisch, weißer Heilbutt — in Sashimi, Tataki und Ceviche.',
       en: 'Californian sushi as we understand it. Salmon trout from Forellenhof Lenz, Blue Fin tuna, white halibut — as sashimi, tataki and ceviche.',
@@ -118,7 +118,7 @@ const KAPITEL = [
   },
   {
     id: 'rolls', seite: 'Sushi & More · Rolls', rubriken: ['Inside Out Rolls', 'Crispy Futomaki-Rolls', 'NEO Signature'], nr: 'III',
-    h2: { de: 'Sushi <em>Rolls.</em>', en: 'Sushi <em>Rolls.</em>' },
+    h2: { de: 'Sushi <em>Rolls</em>', en: 'Sushi <em>Rolls</em>' },
     intro: {
       de: 'Handgerollt auf Bestellung. Inside-Out-Rolls und Crispy Futomaki — vom reinen Gemüse bis zur leicht abgeflämmten Signature-Rolle mit Japan Wagyu A4.',
       en: 'Hand-rolled to order. Inside-out rolls and crispy futomaki — from pure vegetable to the lightly torched signature roll with Japan Wagyu A4.',
@@ -126,7 +126,7 @@ const KAPITEL = [
   },
   {
     id: 'bowls', seite: 'Sushi & More · Rolls', rubriken: ['Bowl'], nr: 'IV',
-    h2: { de: 'Bowl<em>.</em>', en: 'Bowl<em>.</em>' },
+    h2: { de: 'Bowl', en: 'Bowl' },
     intro: {
       de: 'Sushi-Reis als Basis, das Beste aus See und Küche on top. Die schnellste Art, sich durchs halbe NEO zu essen.',
       en: 'Sushi rice as the base, the best of sea and kitchen on top. The fastest way to eat through half of NEO.',
@@ -134,7 +134,7 @@ const KAPITEL = [
   },
   {
     id: 'maki', seite: 'Sushi & More · Rolls', rubriken: ['Maki'], nr: 'V',
-    h2: { de: 'Maki<em>.</em>', en: 'Maki<em>.</em>' },
+    h2: { de: 'Maki', en: 'Maki' },
     intro: {
       de: 'Klassisch und reduziert, frisch gerollt. Die einfachste Art, sich durch die See zu probieren.',
       en: 'Classic and pared back, freshly rolled. The simplest way to taste your way through the sea.',
@@ -142,7 +142,7 @@ const KAPITEL = [
   },
   {
     id: 'main-course', seite: 'Main', nr: 'VI',
-    h2: { de: 'Main <em>Course.</em>', en: 'Main <em>Course.</em>' },
+    h2: { de: 'Main <em>Course</em>', en: 'Main <em>Course</em>' },
     intro: {
       de: 'Heilbutt und Lachsforelle, Hummer im Ramen, Schwein vom Duroc und vom galicischen Kastanienschwein — und für jeden eine vegetarische Antwort.',
       en: 'Halibut and salmon trout, lobster in ramen, Duroc and Galician chestnut-fed pork — and a vegetarian answer for everyone.',
@@ -152,7 +152,7 @@ const KAPITEL = [
     id: 'beef', seite: 'Beef', nr: 'VII',
     // Website-Reihenfolge: erst alles zum Filet, dann die Steaks (in der Karte zwei Spalten nebeneinander)
     reihenfolge: ['Filet', 'Signature', '', 'Zu allen Filets', 'Steak', 'Zu allen Steaks'],
-    h2: { de: 'Beef &amp; <em>Filet.</em>', en: 'Beef &amp; <em>Fillet.</em>' },
+    h2: { de: 'Beef &amp; <em>Filet</em>', en: 'Beef &amp; <em>Fillet</em>' },
     intro: {
       de: 'Vier Rassen, drei Größen. Vom Black Angus über die toskanische Chianina und das Pommersche Simmentaler bis zum Wagyu — dazu Steaks und Japan Wagyu A4.',
       en: 'Four breeds, three sizes. From Black Angus to Tuscan Chianina and Pomeranian Simmental to Wagyu — plus steaks and Japan Wagyu A4.',
@@ -160,7 +160,7 @@ const KAPITEL = [
   },
   {
     id: 'dry-aged', seite: 'Dry Aged & Bone', nr: 'VIII',
-    h2: { de: 'Dry Aged <em>&amp; Bone.</em>', en: 'Dry Aged <em>&amp; Bone.</em>' },
+    h2: { de: 'Dry Aged <em>&amp; Bone</em>', en: 'Dry Aged <em>&amp; Bone</em>' },
     intro: {
       de: 'Trocken gereift am Knochen, drei bis vier Wochen im eigenen Humidor. Ab 600 g, Preis je 100 g.',
       en: 'Dry-aged on the bone, three to four weeks in our own humidor. From 600 g, price per 100 g.',
@@ -169,7 +169,7 @@ const KAPITEL = [
   },
   {
     id: 'sides', seite: 'Side Dishes', nr: 'IX',
-    h2: { de: 'Sides &amp; <em>Saucen.</em>', en: 'Sides &amp; <em>Sauces.</em>' },
+    h2: { de: 'Sides &amp; <em>Saucen</em>', en: 'Sides &amp; <em>Sauces</em>' },
     intro: {
       de: 'Fries mit Trüffel, cremiges Kartoffelgratin, Rosenkohl und Spitzkohl — und Saucen, die den Unterschied machen.',
       en: 'Fries with truffle, creamy potato gratin, Brussels sprouts and pointed cabbage — and sauces that make the difference.',
@@ -177,7 +177,7 @@ const KAPITEL = [
   },
   {
     id: 'sweets', seite: 'Sweets', nr: 'X',
-    h2: { de: 'Sweets &amp; <em>Desserts.</em>', en: 'Sweets &amp; <em>Desserts.</em>' },
+    h2: { de: 'Sweets &amp; <em>Desserts</em>', en: 'Sweets &amp; <em>Desserts</em>' },
     intro: {
       de: 'Der letzte Gang. Crème Brûlée, Birne Helene, Schokoladenkuchen mit flüssigem Kern — das süße Finale.',
       en: 'The final course. Crème brûlée, Pear Belle Hélène, chocolate cake with a molten centre — the sweet finale.',
@@ -191,13 +191,15 @@ const ANKER = ['#sharing', '#starter', '#sushi', '#rolls', '#bowls', '#maki', '#
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const feld = (o, k, lang) => (lang === 'en' ? o[k + '_en'] ?? o[k] : o[k]);
+// Anzeige: Zutaten-Trenner „·“ der Gästekarte als Komma (KI-Look-Liste 21.11.2026), die Daten bleiben unverändert
+const komma = (t) => (t == null ? t : String(t).replace(/\s+·\s+/g, ', '));
 
 // „115 g · 13.00“ → „115 g · 13,00 €“, „100 g · 28.00   150 g · 36.00“ → „100 g · 28,00 € / 150 g · 36,00 €“
 export function preis(s) {
   if (!s) return '';
   return s
     .split(/\s{3,}/)
-    .map((teil) => teil.replace(/(\d+)\.(\d{2})(?!\d)/g, '$1,$2 €'))
+    .map((teil) => teil.replace(/(\d+)\.(\d{2})(?!\d)/g, '$1,$2 €').replace(/\s+·\s+/g, ', '))
     .join(' / ');
 }
 
@@ -265,8 +267,8 @@ function item(it, lang, x = {}) {
   const allergenSchluessel = x.allergene === undefined ? it.id : x.allergene;
   const bild = x.ohneBild ? null : x.bild || fotoFuer(it.id);
   const pos = bild && !x.bild ? fotoPos(it.id) : null;
-  const sub = x.sub ?? feld(it, 'notiz', lang);
-  const desc = x.desc ?? feld(it, 'beschr', lang);
+  const sub = komma(x.sub ?? feld(it, 'notiz', lang));
+  const desc = komma(x.desc ?? feld(it, 'beschr', lang));
   return `    <div class="item${bild ? '' : ' no-image'}">
 ${bild ? `      <img decoding="async" class="item-img" src="${bild}" alt="${esc(name)}" loading="lazy"${pos ? ` style="object-position:${pos} 50%"` : ''}>\n` : ''}      <div class="item-text">
         <div class="item-head"><div class="item-name">${esc(x.name ?? name)}</div><div class="item-price">${esc(x.preis ?? preis(feld(it, 'preis', lang)))}</div></div>
@@ -284,7 +286,7 @@ function filetTabelle(r, lang) {
   const zeilen = mitGroessen
     .map((i) => {
       const preise = i.preis.split(/\s{3,}/).map((p) => preis(p.split(' · ')[1]));
-      const b = feld(i, 'beschr', lang);
+      const b = komma(feld(i, 'beschr', lang));
       return `    <div class="filet-row">
       <div class="filet-cell"><div class="filet-name">${esc(feld(i, 'name', lang))}${b ? `<small>${esc(b)}</small>` : ''}</div>
 ${allergenHtml(i.id, lang)}      </div>
@@ -306,7 +308,7 @@ ${rest.length ? `  <div class="items">\n${rest.map((i) => item(i, lang)).join('\
 function dryAgedRasse(r, lang) {
   const teile = sichtbar(r);
   const preisZeile =
-    teile.map((i) => `${feld(i, 'name', lang)} ${(i.preis.match(/(\d+)\.(\d{2})$/) || []).slice(1).join(',')}`).join(' · ') + ' €';
+    teile.map((i) => `${feld(i, 'name', lang)} ${(i.preis.match(/(\d+)\.(\d{2})$/) || []).slice(1).join(',')}`).join(' / ') + ' €';
   return item({ id: null, name: r.titel, name_en: r.titel_en }, lang, {
     allergene: teile.map((i) => i.id),
     preis: preisZeile,
@@ -340,6 +342,9 @@ function rubrikenHtml(kap, lang) {
     return teile.join('');
   }
   let hinweis = '';
+  // Rubrik-Zeile weglassen, wenn sie nur den Kapitel-Titel wiederholt („Bowl“ unter „Bowl“) und das Kapitel nur diese eine Rubrik hat (KI-Look-Liste, keine Doppelung)
+  const kapTitel = String(kap.h2[lang]).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim().toLowerCase();
+  const nurEine = rubs.filter((r) => r.stil !== 'trenner' && r.stil !== 'hinweis').length === 1;
   for (const r of rubs) {
     const titel = feld(r, 'titel', lang);
     if (r.stil === 'trenner') continue;
@@ -366,7 +371,7 @@ function rubrikenHtml(kap, lang) {
     // Rubrik ohne Titel (z. B. Deluxe Hoch² unter Signature) hängt an der vorigen Gruppe
     if (titel) {
       zu();
-      teile.push(`  <div class="subcat">${esc(titel)}</div>\n`);
+      if (!(nurEine && String(titel).trim().toLowerCase() === kapTitel)) teile.push(`  <div class="subcat">${esc(titel)}</div>\n`);
       gruppe = [];
     }
     for (const it of sichtbar(r)) (gruppe ||= []).push(item(it, lang));
@@ -380,7 +385,6 @@ function kapitelHtml(kap, lang) {
   return `<section class="section" id="${kap.id}">
   <div class="section-head">
     <div>
-      <div class="eyebrow">${T[lang].kapitel} ${kap.nr}</div>
       <h2>${kap.h2[lang]}</h2>
     </div>
     <p>${kap.intro[lang]}</p>
@@ -400,11 +404,10 @@ export function sharingHtml(lang, { id = '', eyebrow, eyebrowTag = 'div', knopf,
   if (!betrag) throw new Error('winterkarte: Sharing-Preis nicht lesbar: ' + preisItem.preis);
   return `<section class="sharing"${id ? ` id="${id}"` : ''} data-lazy>
   <div class="sharing-inner">
-    <${eyebrowTag} class="eyebrow">${eyebrow}</${eyebrowTag}>
-    <h2>${t.sharingH2}</h2>
+${eyebrow ? `    <${eyebrowTag} class="eyebrow">${eyebrow}</${eyebrowTag}>\n` : ''}    <h2>${t.sharingH2}</h2>
     <p class="lead">${t.sharingLead}</p>
     <div class="courses">
-${gaenge.map((g) => `      <div class="course"><div class="course-num">${g.nr}</div><div class="course-name">${esc(feld(g, 'name', lang))}</div><div class="course-desc">${esc(feld(g, 'beschr', lang))}</div>${mitAllergenen ? allergenHtml(gangSchluessel(g.name), lang, '').trimEnd() : ''}</div>`).join('\n')}
+${gaenge.map((g) => `      <div class="course"><div class="course-num">${g.nr}</div><div class="course-name">${esc(feld(g, 'name', lang))}</div><div class="course-desc">${esc(komma(feld(g, 'beschr', lang)))}</div>${mitAllergenen ? allergenHtml(gangSchluessel(g.name), lang, '').trimEnd() : ''}</div>`).join('\n')}
     </div>
     <div class="sharing-price">
       <span class="label">${t.sharingLabel}</span>
@@ -466,14 +469,14 @@ const ersetze = (html, marke, inhalt) => {
 // Startseiten-Teaser „Vier Gänge. Ein Abend.“ (Markierung <!--SHARING-TEASER--> in bodyHtml / bodyHtmlEn)
 export function mitSharingTeaser(html, lang) {
   const knopf = `<a href="${RESERVIEREN}" target="_blank" rel="noopener" class="btn primary">${lang === 'en' ? 'Reserve now' : 'Jetzt reservieren'}</a>`;
-  return ersetze(html, '<!--SHARING-TEASER-->', sharingHtml(lang, { eyebrow: 'Signature · Sharing Menu', knopf }));
+  return ersetze(html, '<!--SHARING-TEASER-->', sharingHtml(lang, { eyebrow: '', knopf }));
 }
 
 // Komplette Karte (Markierung <!--WINTERKARTE--> in bodyHtml / bodyHtmlEn)
 export function mitKarte(html, lang) {
   const inhalt =
     lang === 'en'
-      ? karteHtml('en', { sharingEyebrow: 'Winter Menu 2026/27 · Sharing&nbsp;Menu' })
-      : karteHtml('de', { sharingEyebrow: 'Speisekarte · Winter&nbsp;2026/27', sharingEyebrowTag: 'h1' });
+      ? karteHtml('en', { sharingEyebrow: 'Winter Menu 2026/27' })
+      : karteHtml('de', { sharingEyebrow: 'Speisekarte Winter&nbsp;2026/27', sharingEyebrowTag: 'h1' });
   return ersetze(html, '<!--WINTERKARTE-->', inhalt);
 }

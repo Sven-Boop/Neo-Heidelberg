@@ -5394,3 +5394,56 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 @media (max-width: 720px) {
   .hero-ctas > .sv-buchen-hinweis { grid-row: auto; grid-column: auto; }
 }
+
+/* ===================== KI-Look-Umbau (Entwurf 24.11.2026, Zweig ki-look) =====================
+   Svens KI-Look-Liste vom 21.11.2026, Vorbild stories-popup-kitchen.de: kursiv nur an ein, zwei Stellen
+   (em.kursiv im Startbild), keine eingefärbten Akzentwörter in Überschriften, keine pulsierenden Punkte und
+   kein Glow, keine Haarlinie zwischen allen Abschnitten, Adresse/Zeiten/Kleingedrucktes normal statt gesperrter
+   Versalien, ruhigere Abstände. Gilt im Seiteninhalt (#app-root); Störer und Einwilligungs-Leiste bleiben unberührt. */
+#app-root em:not(.kursiv) { font-style: normal; color: inherit; }
+#app-root .stat-num { font-style: normal; color: var(--fg); }
+#app-root .member-quote { font-style: normal; }
+#app-root .ev-menue-gruppe-name, #app-root .ev-gang-rubrik { font-style: normal; color: var(--fg-soft); }
+#app-root .ev-gang-oder .ev-gang-nr { font-style: normal; }
+#app-root .hochzeit-hero h1 em::after, #app-root .hochzeit-hero .hero-h1 em::after { content: none; }
+.status-dot::before, .status-dot.closed::before { animation: none; box-shadow: none; }
+.scroll-hint::after { animation: none; opacity: .55; }
+
+/* Kicker im Slider als ruhige Zeile statt gesperrter Versalien */
+#app-root .ss-eyebrow { font-size: 15px; font-weight: 400; letter-spacing: 0.01em; text-transform: none; color: var(--fg-soft); margin-bottom: 14px; }
+
+/* Datum normal gesetzt (Silvester-Seite und Hinweis auf der Startseite) */
+.ev-datum { margin: 0 0 22px; color: var(--fg-soft); font-size: clamp(16px, 1.3vw, 19px); font-weight: 400; letter-spacing: 0.01em; line-height: 1.45; }
+.sv-teaser-datum { margin: 0 0 12px; }
+.ev-hero h1.sv-titel-gross { margin-bottom: 16px; }
+
+/* Adresse, Zeiten, Saison, Kleingedrucktes ohne Versalien */
+#app-root .reserve .sub { text-transform: none; letter-spacing: 0.01em; font-size: 15px; line-height: 1.7; }
+#app-root .saison-tag { text-transform: none; letter-spacing: 0.01em; font-size: 13px; font-weight: 400; }
+#app-root .foot-bottom { text-transform: none; letter-spacing: 0.01em; font-size: 12px; font-weight: 400; }
+#app-root .foot-haus { margin-left: 1.2em; }
+
+/* Preis der Signature-Kacheln in eigener Zeile statt „· 30,00 €“ */
+.sig-tile-betrag { display: block; margin-top: 3px; color: var(--fg); font-weight: 400; }
+
+/* Ohne Haarlinie zwischen den Abschnitten der Anlass- und Silvester-Seiten; Abstand trennt */
+.ev-abschnitt { border-top: 0; }
+
+/* Straffer: übergroße Abschnittsabstände am Desktop um gut ein Fünftel kleiner (Handy unverändert) */
+@media (min-width: 900px) {
+  .sharing, .signatures, .news, .bliss-section, .galerie, .zehn-jahre, .team, .reviews {
+    padding-top: clamp(80px, 8.5vw, 128px);
+    padding-bottom: clamp(80px, 8.5vw, 128px);
+  }
+  .ev-abschnitt { padding-top: clamp(64px, 7vw, 104px); padding-bottom: clamp(64px, 7vw, 104px); }
+}
+/* Kacheln ohne Zier-Nummer: Text bleibt unten im Bild */
+#app-root .card-content { justify-content: flex-end; }
+
+/* Nachzug Prüf-Funde 24.11.2026: Herkunft der Rassen und Adresszeile im Hochzeits-Startbild normal statt gesperrter Versalien, ohne Akzentstrich */
+#app-root .breed-origin { text-transform: none; letter-spacing: 0.01em; font-size: 13px; font-weight: 400; color: var(--fg-soft); }
+#app-root .breed-origin::before { content: none; }
+#app-root .hochzeit-hero .hero-inner > .eyebrow:first-child { text-transform: none; letter-spacing: 0.01em; font-size: 15px; font-weight: 400; color: var(--fg-soft); }
+#app-root .hochzeit-hero .hero-inner > .eyebrow:first-child::before { content: none; }
+/* Drei Versprechen (Hochzeit) nicht kursiv: kursiv bleibt nur im Startbild */
+#app-root .tmnl-quote { font-style: normal; }

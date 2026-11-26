@@ -53,7 +53,7 @@ const RAEUME = {
 
 const KUECHE = {
   eyebrow: 'Küche und Bar',
-  h2: 'Steak, Sushi, <em>Infusionen.</em>',
+  h2: 'Steak, Sushi<br><em>Infusionen</em>',
   text: [
     'Unser Fleisch reift drei bis vier Wochen im eigenen Humidor, trocken und am Knochen: Angus, Chianina, Wagyu, Rubia Gallega. Daneben wird californisches Sushi von Hand gerollt, auf Bestellung.',
     'An der Bar gibt es hauseigene Infusionen, klassische Signatures und saisonale Kreationen. Vegetarisch und vegan geht selbstverständlich auch, bis hin zu rein pflanzlichen Gängen.',
@@ -109,28 +109,28 @@ export const ANLASS_SEITEN = {
     title: 'Eventlocation Heidelberg · NEO in der Bahnstadt',
     description:
       'Eventlocation in Heidelberg für bis 199 Gäste: Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof, Bar, Terrasse und Garten. Dry-Aged, Sushi, DJ.',
-    eyebrow: 'Eventlocation · Bahnstadt · bis&nbsp;199&nbsp;Gäste',
-    h1: 'Event&shy;location in <em>Heidelberg.</em>',
+    eyebrow: 'Eventlocation, Bahnstadt, bis&nbsp;199&nbsp;Gäste',
+    h1: 'Event&shy;location in <em class="kursiv">Heidelberg</em>',
     heroBild: '/img/gallery/neo-b-08559.webp',
     heroPos: 'center 45%',
     lead: 'Eine Halle im ehemaligen Güterbahnhof der Bahnstadt, nahe dem Hauptbahnhof. Darin Restaurant und Bar, davor Terrasse und Garten im Zollhofgarten. Bis 199 Gäste, innen und außen.',
     intro: {
       eyebrow: 'Das Haus',
-      h2: 'Das ganze NEO <em>für euch.</em>',
+      h2: 'Das ganze NEO <em>für euch</em>',
       text: [
         'Das NEO ist Bar und Restaurant in einer alten Industriehalle, seit 2016 in der Bahnstadt. Sichtbeton, Stahlträger, offene Küche, der Dry-Aged-Humidor im Blick. Kein klassisches Restaurant und kein Sushi-Laden, beides unter einem Dach.',
         'Ihr bucht, was zu eurem Anlass passt: exklusiv die Terrasse mit Garten, das komplette Restaurant oder das ganze Haus. Für den kleineren Rahmen gibt es die Bar exklusiv.',
       ],
     },
     raeume: ['restaurant', 'bar', 'garten'],
-    raeumeH2: 'Drei Bereiche, <em>ein Haus.</em>',
+    raeumeH2: 'Drei Bereiche<br><em>ein Haus</em>',
     anlaesse: true,
     menues: 'kurz',
     faq: [F.gaeste, F.lage, F.bar, F.essen, F.musik, F.ansehen, F.anfrage],
     form: {
       anlass: 'Firmenfeier / Firmen-Event',
       quelle: 'Seite Eventlocation',
-      h2: 'Erzählt uns, <em>was ihr vorhabt.</em>',
+      h2: 'Erzählt uns<br><em>was ihr vorhabt</em>',
     },
     venueText:
       'Eventlocation in der Heidelberger Bahnstadt: Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof mit Restaurant, Bar, Terrasse und Garten (Mai bis September). Bis 199 Gäste.',
@@ -144,14 +144,14 @@ export const ANLASS_SEITEN = {
     title: 'Weihnachtsfeier Location Heidelberg · NEO Bahnstadt',
     description:
       'Weihnachtsfeier in Heidelberg im NEO: Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof, bis 199 Gäste. Dry-Aged, Sushi, Bar mit eigenen Infusionen, DJ.',
-    eyebrow: 'Weihnachtsfeier · Bahnstadt · bis&nbsp;199&nbsp;Gäste',
-    h1: 'Weihnachts&shy;feier in <em>Heidelberg.</em>',
+    eyebrow: 'Weihnachtsfeier, Bahnstadt, bis&nbsp;199&nbsp;Gäste',
+    h1: 'Weihnachts&shy;feier in <em class="kursiv">Heidelberg</em>',
     heroBild: '/img/gallery/neo-b-08592.webp',
     heroPos: 'center 55%',
     lead: 'Eure Weihnachtsfeier in der Halle im ehemaligen Güterbahnhof, nahe dem Hauptbahnhof: Dinner an langen Tafeln, danach an die Bar, später legt der DJ auf. Bis 199 Gäste.',
     intro: {
       eyebrow: 'Dezember im NEO',
-      h2: 'Ein Abend, <em>ein Haus.</em>',
+      h2: 'Ein Abend<br><em>ein Haus</em>',
       text: [
         'Gefeiert wird im Restaurant unter den Stahlträgern der Halle, mit offener Küche und dem Dry-Aged-Humidor im Blick, und an der Bar, die immer ein bisschen länger aufhat als die Küche.',
         'Ihr bucht, was zu eurem Team passt: die Bar exklusiv für den Apéro nach Feierabend, das komplette Restaurant oder das ganze Haus.',
@@ -159,7 +159,7 @@ export const ANLASS_SEITEN = {
       ],
     },
     raeume: ['restaurant', 'bar'],
-    raeumeH2: 'Restaurant <em>und Bar.</em>',
+    raeumeH2: 'Restaurant <em>und Bar</em>',
     menues: 'voll',
     faq: [
       {
@@ -182,7 +182,7 @@ export const ANLASS_SEITEN = {
     form: {
       anlass: 'Weihnachtsfeier',
       quelle: 'Seite Weihnachtsfeier',
-      h2: 'Freie Termine <em>anfragen.</em>',
+      h2: 'Freie Termine <em>anfragen</em>',
     },
     venueText:
       'Weihnachtsfeier-Location in der Heidelberger Bahnstadt: Restaurant und Bar in einer Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof. Bis 199 Gäste.',
@@ -196,14 +196,14 @@ export const ANLASS_SEITEN = {
     title: 'Firmenfeier Location Heidelberg · NEO Bahnstadt',
     description:
       'Firmenfeier in Heidelberg im NEO: bis 199 Gäste in Halle, Bar, Terrasse und Garten, nahe dem Hauptbahnhof. Dry-Aged, Sushi, Bar exklusiv für After-Work.',
-    eyebrow: 'Firmenfeier · Bahnstadt · bis&nbsp;199&nbsp;Gäste',
-    h1: 'Firmenfeier in <em>Heidelberg.</em>',
+    eyebrow: 'Firmenfeier, Bahnstadt, bis&nbsp;199&nbsp;Gäste',
+    h1: 'Firmenfeier in <em class="kursiv">Heidelberg</em>',
     heroBild: '/img/gallery/glasfassade.webp',
     heroPos: 'center 50%',
     lead: 'Das ganze NEO für euer Team: eine Halle im ehemaligen Güterbahnhof der Bahnstadt, nahe dem Hauptbahnhof. Bis 199 Gäste, innen und außen, von Mai bis September mit Terrasse und Garten.',
     intro: {
       eyebrow: 'Für Firmen',
-      h2: 'Vom Apéro bis <em>zum ganzen Haus.</em>',
+      h2: 'Vom Apéro bis <em>zum ganzen Haus</em>',
       text: [
         'Nicht jedes Firmen-Event braucht das ganze Haus. Für den Apéro nach Feierabend oder das After-Work bucht ihr die Bar exklusiv, mit hauseigenen Infusionen und einer Weinkarte mit Tiefe.',
         'Für die große Feier nehmt ihr das komplette Restaurant, von Mai bis September die Terrasse mit Garten, oder gleich das ganze NEO. DJ oder Live-Band gibt es nach Wunsch.',
@@ -211,7 +211,7 @@ export const ANLASS_SEITEN = {
       ],
     },
     raeume: ['restaurant', 'bar', 'garten'],
-    raeumeH2: 'Drei Bereiche, <em>ein Haus.</em>',
+    raeumeH2: 'Drei Bereiche<br><em>ein Haus</em>',
     menues: 'voll',
     faq: [
       F.gaeste,
@@ -228,7 +228,7 @@ export const ANLASS_SEITEN = {
     form: {
       anlass: 'Firmenfeier / Firmen-Event',
       quelle: 'Seite Firmenfeier',
-      h2: 'Euer Firmen-Event <em>anfragen.</em>',
+      h2: 'Euer <span class="nb">Firmen-Event</span> <em>anfragen</em>',
     },
     venueText:
       'Location für Firmenfeiern in der Heidelberger Bahnstadt: Halle im ehemaligen Güterbahnhof nahe dem Hauptbahnhof mit Restaurant, Bar, Terrasse und Garten (Mai bis September). Bis 199 Gäste.',
@@ -270,7 +270,6 @@ function formularHtml(s) {
   const optionen = ANLAESSE.map((a) => `<option value="${a}"${a === s.form.anlass ? ' selected' : ''}>${a}</option>`).join('');
   return `<section class="anfrage-form-section ev-anfrage" id="anfrage">
   <div class="af-intro">
-    <div class="eyebrow">Anfrage</div>
     <h2>${s.form.h2}</h2>
     <p>Anlass, Wunschdatum und ungefähre Gästezahl genügen für den ersten Schritt. Wir melden uns mit einem Vorschlag.</p>
     <p class="af-alt">Lieber per E-Mail? <a href="mailto:${MAIL}?subject=${encodeURIComponent('Anfrage NEO Heidelberg – ' + s.navLabel)}">${MAIL}</a><br>Oder telefonisch: <a href="${TEL_LINK}">${TEL}</a></p>
@@ -315,7 +314,6 @@ function raeumeHtml(s) {
   return `<section class="ev-abschnitt">
   <div class="ev-innen">
     <div class="ev-kopf">
-      <div class="eyebrow">Räume</div>
       <h2 class="ev-h2">${s.raeumeH2}</h2>
     </div>
     ${zeilen}
@@ -324,6 +322,8 @@ function raeumeHtml(s) {
 }
 
 // ===== Menüvorschläge (Abzug aus dem Werkzeug NEO Wintermenüs, app/menuvorschlaege.json) =====
+// Anzeige: „·“ aus dem Werkzeug als Komma, jede Kopfzeile eines Menüs in eigener Zeile (KI-Look-Liste 21.11.2026), menuvorschlaege.json bleibt unverändert
+const komma = (t) => String(t ?? '').replace(/\s+·\s+/g, ', ');
 const esc = (x) => String(x ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // Alle Menüs in einer Gruppe, Reihenfolge wie im Werkzeug. Sven 19.10.2026: „die Menüs gibt es in jedem Raum,
 // egal ob Chalet oder NEO“ – keine Trennung mehr nach Restaurant und Chalet.
@@ -335,32 +335,32 @@ function menueAnfrageLink(m, text = 'Dieses Menü anfragen') {
 }
 
 function preisHtml(m) {
-  return `<span class="ev-menue-preis"><span class="ev-menue-betrag">${esc(m.preis)}</span>${m.preisZusatz ? `<span class="ev-menue-zusatz">${esc(m.preisZusatz)}</span>` : ''}</span>`;
+  return `<span class="ev-menue-preis"><span class="ev-menue-betrag">${esc(m.preis)}</span>${m.preisZusatz ? `<span class="ev-menue-zusatz">${esc(komma(m.preisZusatz))}</span>` : ''}</span>`;
 }
 
 function gaengeHtml(m) {
   return m.bloecke
     .map((b) => {
-      if (b.art === 'rubrik') return `<li class="ev-gang-rubrik">${esc(b.titel)}</li>`;
-      if (b.art === 'notiz') return `<li class="ev-gang-notiz">${esc(b.text)}</li>`;
-      return `<li class="ev-gang${b.oder ? ' ev-gang-oder' : ''}"><span class="ev-gang-nr">${b.oder ? 'oder' : esc(b.nr)}</span><span class="ev-gang-text"><span class="ev-gang-name">${esc(b.name)}</span>${b.beschreibung ? `<span class="ev-gang-sub">${esc(b.beschreibung)}</span>` : ''}</span>${b.preis ? `<span class="ev-gang-preis">${esc(b.preis)}</span>` : ''}</li>`;
+      if (b.art === 'rubrik') return `<li class="ev-gang-rubrik">${esc(komma(b.titel))}</li>`;
+      if (b.art === 'notiz') return `<li class="ev-gang-notiz">${esc(komma(b.text))}</li>`;
+      return `<li class="ev-gang${b.oder ? ' ev-gang-oder' : ''}"><span class="ev-gang-nr">${b.oder ? 'oder' : esc(b.nr)}</span><span class="ev-gang-text"><span class="ev-gang-name">${esc(komma(b.name))}</span>${b.beschreibung ? `<span class="ev-gang-sub">${esc(komma(b.beschreibung))}</span>` : ''}</span>${b.preis ? `<span class="ev-gang-preis">${esc(b.preis)}</span>` : ''}</li>`;
     })
     .join('');
 }
 
 function menueVollHtml(m, offen) {
   return `<details class="ev-menue" id="menue-${esc(m.id)}"${offen ? ' open' : ''}>
-        <summary><span class="ev-menue-kopf"><h3 class="ev-menue-name">${esc(m.titel)}</h3>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map(esc).join(' · ')}</span>` : ''}</span>${preisHtml(m)}</summary>
+        <summary><span class="ev-menue-kopf"><h3 class="ev-menue-name">${esc(m.titel)}</h3>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(komma(z))).join('<br>')}</span>` : ''}</span>${preisHtml(m)}</summary>
         <div class="ev-menue-inhalt">
           <ol class="ev-gaenge">${gaengeHtml(m)}</ol>
-          ${m.option ? `<p class="ev-menue-option">${esc(m.option)}</p>` : ''}
+          ${m.option ? `<p class="ev-menue-option">${esc(komma(m.option))}</p>` : ''}
           ${menueAnfrageLink(m)}
         </div>
       </details>`;
 }
 
 function menueKurzHtml(m) {
-  return `<li><a class="ev-menue-zeile" href="#anfrage" data-menue="${esc(menueWert(m))}" aria-label="Menü anfragen: ${esc(m.titel)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map(esc).join(' · ')}</span>` : ''}</span>${preisHtml(m)}</a></li>`;
+  return `<li><a class="ev-menue-zeile" href="#anfrage" data-menue="${esc(menueWert(m))}" aria-label="Menü anfragen: ${esc(m.titel)}"><span class="ev-menue-kopf"><span class="ev-menue-name">${esc(m.titel)}</span>${m.zeilen.length ? `<span class="ev-menue-zeilen">${m.zeilen.map((z) => esc(komma(z))).join('<br>')}</span>` : ''}</span>${preisHtml(m)}</a></li>`;
 }
 
 function menuesHtml(s) {
@@ -376,8 +376,8 @@ function menuesHtml(s) {
 <section class="ev-abschnitt ev-menues" id="menuevorschlaege">
   <div class="ev-innen ev-zwei">
     <div class="ev-menues-links">
-      <div class="eyebrow">Menüvorschläge · Winter 2026/27</div>
-      <h2 class="ev-h2">Menüs für <em>eure Runde.</em></h2>
+      <div class="eyebrow">Menüvorschläge Winter 2026/27</div>
+      <h2 class="ev-h2">Menüs für <em>eure Runde</em></h2>
       <div class="ev-text">
         <p>${voll ? 'Fest zusammengestellt, Preise pro Person. Passt ein Menü, übernehmt es mit einem Klick in eure Anfrage.' : 'Für die Wintersaison gibt es feste Menüs, Preise pro Person. Antippen übernimmt das Menü in eure Anfrage.'}</p>
         ${voll ? '' : '<p class="ev-link"><a href="/weihnachtsfeier#menuevorschlaege">Alle Gänge ansehen</a></p>'}
@@ -398,7 +398,7 @@ function inhaltHtml(s) {
     ['Exklusiv', s.raeume.includes('garten') ? 'die Bar, die Terrasse mit Garten, das komplette Restaurant oder das ganze Haus' : 'die Bar, das komplette Restaurant oder das ganze Haus'],
     ['Küche', 'Dry-Aged-Steaks aus dem eigenen Humidor, handgerolltes Sushi'],
     ['Musik', 'DJ oder Live-Band nach Wunsch'],
-    ['Lage', 'Zollhofgarten 2, 69115 Heidelberg · Bahnstadt, nahe dem Hauptbahnhof'],
+    ['Lage', 'Zollhofgarten 2, 69115 Heidelberg, Bahnstadt, nahe dem Hauptbahnhof'],
   ];
   const weiter = s.weiter.map((k) => ZEILEN[k]);
   return `<div class="subpage active ev-seite" id="${s.id}">
@@ -407,7 +407,6 @@ function inhaltHtml(s) {
   <div class="hero-bg" style="background-image:url('${s.heroBild}');background-position:${s.heroPos}"></div>
   <div class="hero-content">
     <nav class="ev-pfad" aria-label="Brotkrumen"><a href="/">NEO Heidelberg</a><span aria-hidden="true">/</span><span aria-current="page">${s.navLabel}</span></nav>
-    <div class="eyebrow hero-eyebrow">${s.eyebrow}</div>
     <h1>${s.h1}</h1>
     <p class="ev-lead">${s.lead}</p>
     <div class="hero-ctas">
@@ -422,7 +421,6 @@ function inhaltHtml(s) {
 <section class="ev-abschnitt">
   <div class="ev-innen ev-zwei">
     <div>
-      <div class="eyebrow">${s.intro.eyebrow}</div>
       <h2 class="ev-h2">${s.intro.h2}</h2>
     </div>
     <div class="ev-text">
@@ -441,8 +439,7 @@ ${
 <section class="ev-abschnitt">
   <div class="ev-innen ev-zwei">
     <div>
-      <div class="eyebrow">Anlässe</div>
-      <h2 class="ev-h2">Wofür <em>ihr kommt.</em></h2>
+      <h2 class="ev-h2">Wofür <em>ihr kommt</em></h2>
     </div>
     <div>
       <ul class="ev-liste">
@@ -458,7 +455,6 @@ ${
 <section class="ev-abschnitt">
   <div class="ev-innen ev-zwei">
     <div>
-      <div class="eyebrow">${KUECHE.eyebrow}</div>
       <h2 class="ev-h2">${KUECHE.h2}</h2>
     </div>
     <div class="ev-text">
@@ -475,7 +471,7 @@ ${menuesHtml(s)}
 <section class="faq ev-faq">
   <div class="faq-head">
     <div class="eyebrow">Häufige Fragen</div>
-    <h2>Gut zu <em>wissen.</em></h2>
+    <h2>Gut zu <em>wissen</em></h2>
     <p>Und wenn eure Frage fehlt: schreibt uns an <a href="mailto:${MAIL}">${MAIL}</a>.</p>
   </div>
   <div class="faq-list">

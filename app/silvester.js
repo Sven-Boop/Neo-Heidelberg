@@ -157,7 +157,7 @@ const T = {
     buchenHinweis: 'Im Kalender bitte den 31.12. wählen',
     zumMenue: 'Zum Menü',
     abendEyebrow: 'Der Abend',
-    abendH2: 'Silvester <em>im NEO.</em>',
+    abendH2: 'Silvester <em>im NEO</em>',
     abendText: [
       'Ab 18 Uhr ist das NEO geöffnet, um 19 Uhr servieren wir das Menü: zwei Snacks und fünf Gänge, im Wechsel aus Paris und San Sebastián.',
       'Fleisch und Fisch oder vegetarisch, beide Menüs zum gleichen Preis.',
@@ -169,22 +169,22 @@ const T = {
       ['Preis', '179 € pro Person, ohne Getränke'],
       ['Weinbegleitung', 'auf Wunsch, sechs Gläser à 0,1 l, 55 € pro Person'],
       ['Buchung', 'online, bezahlt wird bei der Buchung'],
-      ['Ort', 'Zollhofgarten 2, 69115 Heidelberg · Bahnstadt'],
+      ['Ort', 'Zollhofgarten 2, 69115 Heidelberg, Bahnstadt'],
     ],
     bildAlt: 'Champagner im Kühler, dahinter Gläser im NEO',
     menueEyebrow: 'Das Menü',
-    menueH2: 'Zwei Snacks, <em>fünf Gänge.</em>',
+    menueH2: 'Zwei Snacks<br><em>fünf Gänge</em>',
     preis: '179 €',
-    zusatz: 'pro Person · ohne Getränke',
-    gruss: ['Bonne Année', '¡Feliz Año Nuevo!'],
+    zusatz: 'pro Person, ohne Getränke',
+    gruss: ['Bonne Année', 'Feliz Año Nuevo'],
     weinEyebrow: 'Weinbegleitung',
-    weinH2: 'Sechs Gläser <em>zu den Gängen.</em>',
+    weinH2: 'Sechs Gläser <em>zu den Gängen</em>',
     weinText: 'Auf Wunsch mit Weinbegleitung: sechs Gläser à 0,1 l zu den Gängen, 55 € pro Person, bei der Buchung dazubuchbar.',
     weinPreis: '55 €',
-    weinZusatz: 'pro Person · 0,1 l pro Glas',
+    weinZusatz: 'pro Person, 0,1 l pro Glas',
     weinPdf: 'Weinbegleitung als PDF',
     faqEyebrow: 'Häufige Fragen',
-    faqH2: 'Gut zu <em>wissen.</em>',
+    faqH2: 'Gut zu <em>wissen</em>',
     faqText: `Und wenn eure Frage fehlt: schreibt uns an <a href="mailto:${MAIL}">${MAIL}</a>.`,
     faq: [
       { q: 'Wann beginnt der Silvesterabend im NEO?', a: 'Ab 18 Uhr ist geöffnet, um 19 Uhr servieren wir das Menü.' },
@@ -214,7 +214,7 @@ const T = {
     buchenHinweis: 'Please select 31 December in the calendar',
     zumMenue: 'See the menu',
     abendEyebrow: 'The evening',
-    abendH2: 'New Year’s Eve <em>at NEO.</em>',
+    abendH2: 'New Year’s Eve <em>at NEO</em>',
     abendText: [
       'NEO opens at 6 pm and the menu is served at 7 pm: two snacks and five courses, alternating between Paris and San Sebastián.',
       'Meat and fish or vegetarian, both menus at the same price.',
@@ -226,22 +226,22 @@ const T = {
       ['Price', '€179 per person, drinks not included'],
       ['Wine pairing', 'on request, six glasses (0.1 l), €55 per person'],
       ['Booking', 'online, payment when booking'],
-      ['Address', 'Zollhofgarten 2, 69115 Heidelberg · Bahnstadt'],
+      ['Address', 'Zollhofgarten 2, 69115 Heidelberg, Bahnstadt'],
     ],
     bildAlt: 'Champagne on ice with glasses at NEO',
     menueEyebrow: 'The menu',
-    menueH2: 'Two snacks, <em>five courses.</em>',
+    menueH2: 'Two snacks<br><em>five courses</em>',
     preis: '€179',
-    zusatz: 'per person · drinks not included',
-    gruss: ['Bonne Année', '¡Feliz Año Nuevo!'],
+    zusatz: 'per person, drinks not included',
+    gruss: ['Bonne Année', 'Feliz Año Nuevo'],
     weinEyebrow: 'Wine pairing',
-    weinH2: 'Six glasses <em>with the courses.</em>',
+    weinH2: 'Six glasses <em>with the courses</em>',
     weinText: 'Wine pairing on request: six glasses (0.1 l) matched to the courses, €55 per person, can be added when booking.',
     weinPreis: '€55',
-    weinZusatz: 'per person · 0.1 l per glass',
+    weinZusatz: 'per person, 0.1 l per glass',
     weinPdf: 'Wine pairing as PDF (German)',
     faqEyebrow: 'FAQ',
-    faqH2: 'Good to <em>know.</em>',
+    faqH2: 'Good to <em>know</em>',
     faqText: `Question not answered? Write to us at <a href="mailto:${MAIL}">${MAIL}</a>.`,
     faq: [
       { q: 'When does New Year’s Eve at NEO start?', a: 'Doors open at 6 pm, the menu is served at 7 pm.' },
@@ -296,12 +296,13 @@ const STADT = (nr) => (/sebasti/i.test(nr) ? 'ss' : 'paris');
 function titelHtml(tag, kl, lang) {
   const meets = '<span class="sv-meets">meets</span>';
   return `<${tag} class="${kl}"><span class="sv-paris">Paris</span> ${meets} <span class="sv-ss">San&nbsp;Sebastián</span>${
-    tag === 'h1' ? `<span class="sv-vh"> ${lang === 'en' ? '· New Year’s Eve 2026 at NEO Heidelberg' : '· Silvester 2026 im NEO Heidelberg'}</span>` : ''
+    tag === 'h1' ? `<span class="sv-vh">${lang === 'en' ? ', New Year’s Eve 2026 at NEO Heidelberg' : ', Silvester 2026 im NEO Heidelberg'}</span>` : ''
   }</${tag}>`;
 }
 
-function grussHtml(g) {
-  return `<span class="sv-gruss sv-pk"><span class="sv-tl sv-nw sv-paris">${esc(g[0])}</span><wbr><span class="sv-tl sv-nw sv-mit sv-ss"><span class="sv-sep"><span class="sv-sp"> </span>·<span class="sv-sp"> </span></span>${esc(g[1])}</span></span>`;
+// Zwei Grüße, farbig getrennt statt mit „·“ (KI-Look-Liste 21.11.2026); umbruch: jeder Gruß in eigener Zeile
+function grussHtml(g, umbruch = false) {
+  return `<span class="sv-gruss"><span class="sv-nw sv-paris">${esc(g[0])}</span>${umbruch ? '<br>' : ' '}<span class="sv-nw sv-ss">${esc(g[1])}</span></span>`;
 }
 
 function buchenKnopf(t, extra = '', wo = 'silvesterseite') {
@@ -320,7 +321,7 @@ function menueHtml(m, lang) {
       const n2 = i < 0 ? '' : nr.slice(i + 3);
       return `<li class="sv-gang sv-${STADT(nr)}">
           <p class="sv-nr"><span class="sv-n1">${esc(n1)}</span>${n2 ? `<span class="sv-n2">${esc(n2)}</span>` : ''}</p>
-          <div class="sv-gericht"><p class="sv-name">${esc(name)}</p><p class="sv-sub sv-pk">${pk(sub)}</p></div>
+          <div class="sv-gericht"><p class="sv-name">${esc(name)}</p><p class="sv-sub">${esc(String(sub).replace(/\s+·\s+/g, ', '))}</p></div>
         </li>`;
     })
     .join('\n        ');
@@ -373,8 +374,9 @@ function inhaltHtml(lang) {
   <div class="hero-bg" style="background-image:url('${HERO_BILD}');background-position:center 60%"></div>
   <div class="hero-content">
     <nav class="ev-pfad" aria-label="${t.brot}"><a href="${home}">NEO Heidelberg</a><span aria-hidden="true">/</span><span aria-current="page">${t.navLabel}</span></nav>
-    <div class="eyebrow hero-eyebrow"><span class="sv-pk">${pk(t.eyebrow.join(' · '))}</span></div>
+    <div class="eyebrow hero-eyebrow">${esc(t.eyebrow[0])}</div>
     ${titelHtml('h1', 'sv-titel sv-titel-gross', lang)}
+    <p class="ev-datum">${esc(t.datum)}</p>
     <p class="ev-lead">${t.lead}</p>
     <div class="hero-ctas">
       ${buchenKnopf(t)}
@@ -387,7 +389,6 @@ function inhaltHtml(lang) {
 <section class="ev-abschnitt">
   <div class="ev-innen ev-zwei">
     <div>
-      <div class="eyebrow">${t.abendEyebrow}</div>
       <h2 class="ev-h2">${t.abendH2}</h2>
       <figure class="sv-abend-bild"><img src="${ABEND_BILD}" alt="${t.bildAlt}" width="1067" height="600" loading="lazy" decoding="async"></figure>
     </div>
@@ -443,7 +444,6 @@ function inhaltHtml(lang) {
 
 <section class="faq ev-faq">
   <div class="faq-head">
-    <div class="eyebrow">${t.faqEyebrow}</div>
     <h2>${t.faqH2}</h2>
     <p>${t.faqText}</p>
   </div>
@@ -454,9 +454,8 @@ function inhaltHtml(lang) {
 
 <section class="ev-abschnitt sv-schluss">
   <div class="ev-innen">
-    <div class="eyebrow">${t.schlussEyebrow}</div>
-    <h2 class="ev-h2 sv-schluss-gruss">${grussHtml(t.gruss)}</h2>
-    <p class="sv-schluss-zeile sv-pk">${pk(t.schlussZeile.join(' · '))}</p>
+    <h2 class="ev-h2 sv-schluss-gruss">${grussHtml(t.gruss, true)}</h2>
+    <p class="sv-schluss-zeile">${t.schlussZeile.map(esc).join('<br>')}</p>
     <div class="sv-ctas">
       ${buchenKnopf(t)}
       <a href="${TEL_LINK}" class="btn">${lang === 'en' ? '+49 6221 7239099' : '06221 7239099'}</a>
@@ -567,7 +566,7 @@ export function mitSilvesterTeaser(html, lang) {
   <div class="ev-innen sv-teaser-innen">
     <figure class="sv-teaser-bild"><img src="${ABEND_BILD}" alt="${t.bildAlt}" width="1067" height="600" loading="lazy" decoding="async"></figure>
     <div class="sv-teaser-text">
-      <div class="eyebrow"><span class="sv-pk">${pk(t.eyebrow.join(' · '))}</span></div>
+      <p class="ev-datum sv-teaser-datum">${esc(t.eyebrow.join(', '))}</p>
       ${titelHtml('h2', 'sv-titel sv-titel-teaser', lang)}
       <p class="sv-teaser-p">${text}</p>
       <div class="sv-ctas">
