@@ -89,7 +89,7 @@ const INHALT = [
   ] },
   { haus: 'l’ab Wiesloch', e: [
     ['Ein Platz beim Family Brunch', 'A seat at the Family Brunch', 49],
-    ['Ein Platz beim Adventsbrunch', 'A seat at the Advent brunch', 45],
+    ['Ein Platz beim Brunch im LAB', 'A seat at brunch at LAB', 45],
     ['50 % auf das Omakase Menü', '50% off the Omakase menu', 45],
   ] },
   { haus: 'Ghost Kitchen', e: [
@@ -126,6 +126,7 @@ const TEXT = {
     t24: 'Türchen 24',
     zusammen: 'Zusammen 1.249 € · für 249 €',
     preis: '249 € · 1.249 € Gegenwert · 300 nummerierte Exemplare',
+    preisBw: '199 € statt 249 € · 1.249 € Gegenwert · 300 nummerierte Exemplare',
     knopf: 'Jetzt sichern',
     gutscheinDach: 'Das perfekte Geschenk.',
     gutscheinSatz: 'Ein Abend im NEO, als Gutschein in jeder Höhe, sofort per Mail.',
@@ -151,6 +152,7 @@ const TEXT = {
     t24: 'Door 24',
     zusammen: 'Worth €1,249 in total · for €249',
     preis: '€249 · worth €1,249 · 300 numbered editions',
+    preisBw: '€199 instead of €249 · worth €1,249 · 300 numbered editions',
     knopf: 'Get yours',
     svBandKicker: 'New Year’s Eve · 31 December',
     svBandInfo: 'Two snacks and five courses · €179 per person',
@@ -192,7 +194,8 @@ function adventKarte(z, svHref, lang) {
       <button type="button" class="stoe-alle" data-stoe-alle aria-expanded="false" aria-controls="stoe-alle-liste" data-auf="${z.alle}" data-zu="${z.weniger}"><span class="stoe-alle-text">${z.alle}</span><span class="stoe-alle-pfeil" aria-hidden="true"></span></button>
     </div>
     <div class="stoe-kauf">
-      <p class="stoe-preis sv-pk">${pk(z.preis)}</p>
+      <p class="stoe-preis sv-pk" data-bw-preis="0">${pk(z.preis)}</p>
+      <p class="stoe-preis sv-pk" data-bw-preis="1" hidden>${pk(z.preisBw)}</p>
       <a class="stoe-knopf stoe-knopf-rot" data-stoe-angebot href="${ADVENT_ZIEL}" target="_blank" rel="noopener">${z.knopf}</a>
       ${z.gutschein ? `<div class="stoe-gs" data-gutschein-block>
         <p class="stoe-gs-dach">${z.gutscheinDach}</p>
@@ -258,6 +261,8 @@ if(b&&(a||tag>b.getAttribute('data-bis'))){raus(b);b=null}
 var karte=a||b;if(!karte){raus(w);return}
 var bwq=/[?&]blackweek=1(&|$)/.test(location.search),bw=karte.querySelector('[data-bw]'),bwAn=false;
 if(bw){bwAn=bwq||(tag>=bw.getAttribute('data-bw-von')&&tag<=bw.getAttribute('data-bw-bis'));if(bwAn){bw.hidden=false;karte.classList.add('stoe-mit-bw');K=K+'-bw'}else raus(bw)}
+// Preiszeile: in der Black Week „199 € statt 249 €“, sonst „249 €“ (genau eine bleibt stehen)
+var bwp=document.querySelectorAll('[data-bw-preis]');for(var bwj=0;bwj<bwp.length;bwj++){if((bwp[bwj].getAttribute('data-bw-preis')==='1')===bwAn)bwp[bwj].hidden=false;else if(bwp[bwj].parentNode)bwp[bwj].parentNode.removeChild(bwp[bwj])}
 var bis=+ls(function(s){return s.getItem(K)});if(bis&&Date.now()-bis<TAGE*864e5&&!bwq){raus(w);return}
 function entschieden(){return !!ls(function(s){var e=JSON.parse(s.getItem('neo-consent')||'null');return e&&(e.wert==='ja'||e.wert==='nein')})}
 var ruhig=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
