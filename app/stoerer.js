@@ -31,6 +31,33 @@ const VIDEO = {
 };
 const SILVESTER_BILD = '/img/silvester/champagner.webp';
 
+// Black Week (Auftrag 27.11.2026): eigener Block oben im Störer, sichtbar 29.11.–06.12.2026 (Europe/Berlin, Prüfung im Browser).
+// ?blackweek=1 zeigt ihn immer (zum Ansehen vorher). Wer den Störer schon weggedrückt hat, sieht ihn in der Black Week einmal neu
+// (Merk-Schlüssel mit Endung -bw). Steht als hidden im HTML, das Skript blendet ihn ein oder nimmt ihn heraus.
+export const BW_VON = '2026-11-29';
+export const BW_BIS = '2026-12-06';
+const BW_STORIES = 'https://gastronaut.ai/vouchers/blisscatering';
+const BW_ADVENT = 'https://adventskalender.bliss-group.de';
+const BW_TEXT = {
+  de: { titel: 'Black Week', datum: '29.11. bis 6.12.', zeilen: [
+    ['NEO', '20&nbsp;% mehr Wert ab 100&nbsp;€ Gutschein, nur vor Ort im NEO'],
+    ['STORIES', '20&nbsp;% auf Gutscheine für Mittwoch und Donnerstag, 140&nbsp;€ statt 175&nbsp;€', BW_STORIES],
+    ['Adventskalender', '199&nbsp;€ statt 249&nbsp;€', BW_ADVENT],
+  ] },
+  en: { titel: 'Black Week', datum: '29 Nov to 6 Dec', zeilen: [
+    ['NEO', '20&nbsp;% extra value on vouchers from €100, in-house only'],
+    ['STORIES', '20&nbsp;% off vouchers for Wednesday and Thursday, €140 instead of €175', BW_STORIES],
+    ['Advent calendar', '€199 instead of €249', BW_ADVENT],
+  ] },
+};
+function blackWeekHtml(lang) {
+  const b = BW_TEXT[lang] || BW_TEXT.de;
+  return `<div class="stoe-bw" data-bw data-bw-von="${BW_VON}" data-bw-bis="${BW_BIS}" hidden>
+      <div class="stoe-bw-kopf"><p class="stoe-bw-titel">${b.titel}</p><p class="stoe-bw-datum">${b.datum}</p></div>
+      <ul class="stoe-bw-liste">${b.zeilen.map(([haus, text, ziel]) => `<li><span class="stoe-bw-haus">${haus}</span><span class="stoe-bw-text">${ziel ? `<a href="${ziel}" data-stoe-angebot target="_blank" rel="noopener">${text}</a>` : text}</span></li>`).join('')}</ul>
+    </div>`;
+}
+
 // Was im Kalender steckt (Sven 10.11.2026: „beim Kalender muss man sehen, was alles dabei ist, muss präsenter werden“).
 // Titel und Werte wörtlich aus https://adventskalender.bliss-group.de/api/tuer?liste=1 (Stand 10.11.2026, 24 Erlebnisse,
 // Summe 1.249 € = Gegenwert). Ändert sich der Kalender, hier nachziehen. Englisch übersetzt.
@@ -152,6 +179,7 @@ function alleHtml(z, lang) {
 function adventKarte(z, svHref, lang) {
   return `<div class="stoe-karte stoe-karte-advent" data-art="advent" data-bis="${ADVENT_BIS}" role="dialog" aria-modal="true" aria-labelledby="stoe-titel-advent" tabindex="-1">
     ${zuKnopf(z)}
+    ${blackWeekHtml(lang)}
     <div class="stoe-medium"><video class="stoe-video" muted playsinline loop autoplay preload="none" aria-hidden="true" data-src-hoch="${VIDEO.hoch}" data-src-quer="${VIDEO.quer}" data-poster-hoch="${VIDEO.posterHoch}" data-poster-quer="${VIDEO.posterQuer}"></video><button type="button" class="stoe-ton" data-stoe-ton aria-pressed="false" data-an="${z.tonAn}" data-aus="${z.tonAus}" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path class="stoe-ton-laut" d="M3 9v6h4l5 4V5L7 9H3z" fill="currentColor"/><path class="stoe-ton-welle" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="stoe-ton-strich" d="M15.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="stoe-ton-text">${z.tonAn}</span></button></div>
     <div class="stoe-kopf">
       <p class="stoe-kicker">${z.kicker}</p>
@@ -228,7 +256,9 @@ var a=w.querySelector('[data-art="advent"]'),b=w.querySelector('[data-art="silve
 if(a&&tag>a.getAttribute('data-bis')){raus(a);a=null}
 if(b&&(a||tag>b.getAttribute('data-bis'))){raus(b);b=null}
 var karte=a||b;if(!karte){raus(w);return}
-var bis=+ls(function(s){return s.getItem(K)});if(bis&&Date.now()-bis<TAGE*864e5){raus(w);return}
+var bwq=/[?&]blackweek=1(&|$)/.test(location.search),bw=karte.querySelector('[data-bw]'),bwAn=false;
+if(bw){bwAn=bwq||(tag>=bw.getAttribute('data-bw-von')&&tag<=bw.getAttribute('data-bw-bis'));if(bwAn){bw.hidden=false;karte.classList.add('stoe-mit-bw');K=K+'-bw'}else raus(bw)}
+var bis=+ls(function(s){return s.getItem(K)});if(bis&&Date.now()-bis<TAGE*864e5&&!bwq){raus(w);return}
 function entschieden(){return !!ls(function(s){var e=JSON.parse(s.getItem('neo-consent')||'null');return e&&(e.wert==='ja'||e.wert==='nein')})}
 var ruhig=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
 var spar=!!(navigator.connection&&navigator.connection.saveData);

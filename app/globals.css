@@ -5363,6 +5363,43 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
   .stoe-kopf .stoe-titel { margin-bottom: 14px; }
   .stoe-drin-liste li:nth-child(n+4) { display: none; }
 }
+/* Black Week (29.11.–06.12.2026, app/stoerer.js): schwarzer Streifen oben über die ganze Karte wie der Balken vor Silvester,
+   links Titel und Datum in der Breite des Films, rechts drei Zeilen (Haus als Etikett, dann Text), ohne Akzentfarbe.
+   Die übrigen Teile rücken eine Zeile nach unten (.stoe-mit-bw); Handy: Streifen oben, darunter alles wie bisher. */
+.stoe-bw { grid-column: 1 / -1; grid-row: 1; display: grid; grid-template-columns: 400px minmax(0, 1fr); background: #000; border-bottom: 1px solid rgba(255,255,255,.1); }
+.stoe-bw[hidden] { display: none; }
+.stoe-bw-kopf { padding: 26px 32px 24px 44px; }
+.stoe-bw-titel { margin: 0; font-size: 30px; font-weight: 900; line-height: 1.05; letter-spacing: -.02em; color: #F5F5F2; white-space: nowrap; }
+.stoe-bw-datum { margin: 6px 0 0; font-size: 14px; font-weight: 400; line-height: 1.4; color: var(--fg-soft); }
+.stoe-bw-liste { list-style: none; margin: 0; padding: 24px 72px 22px 44px; }
+.stoe-bw-liste li { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); column-gap: 16px; padding: 3px 0; font-size: 14px; line-height: 1.45; }
+.stoe-bw-haus { font-weight: 900; color: #F5F5F2; white-space: nowrap; }
+.stoe-bw-text { min-width: 0; font-weight: 300; color: var(--fg-soft); }
+.stoe-bw-text a { color: #F5F5F2; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .25s; }
+.stoe-bw-text a:hover, .stoe-bw-text a:focus-visible { color: #fff; text-decoration-thickness: 2px; outline: none; }
+.stoe-mit-bw.stoe-karte-advent .stoe-medium { grid-row: 2 / 5; }
+@media (min-width: 1000px) {
+  .stoe-bw { grid-template-columns: 320px minmax(0, 1fr); }
+  .stoe-mit-bw.stoe-karte-advent .stoe-medium { grid-row: 2 / 4; }
+  .stoe-mit-bw .stoe-kopf { grid-row: 2; }
+  .stoe-mit-bw .stoe-kauf { grid-row: 3; }
+  .stoe-mit-bw .stoe-drin { grid-row: 2 / 4; }
+}
+@media (min-width: 1000px) and (max-width: 1179px) {
+  .stoe-bw { grid-template-columns: 250px minmax(0, 1fr); }
+  .stoe-bw-kopf { padding-left: 32px; padding-right: 24px; }
+  .stoe-bw-liste { padding-left: 32px; }
+}
+@media (max-width: 899px) {
+  .stoe-bw, .stoe-mit-bw.stoe-karte-advent .stoe-medium { grid-row: auto; }
+  .stoe-bw { grid-column: 1; grid-template-columns: minmax(0, 1fr); }
+  .stoe-bw-kopf { padding: 18px 64px 0 22px; }
+  .stoe-bw-titel { font-size: 24px; }
+  .stoe-bw-datum { margin-top: 4px; font-size: 13px; }
+  .stoe-bw-liste { padding: 10px 22px 16px; }
+  .stoe-bw-liste li { display: block; padding: 5px 0; font-size: 13px; }
+  .stoe-bw-haus { display: block; font-size: 11px; letter-spacing: .04em; }
+}
 @media (prefers-reduced-motion: reduce) { .stoe, .stoe.stoe-geht, .stoe-karte, .stoe.stoe-geht .stoe-karte, .stoe-zu { transition: none; } .stoe-karte { transform: none; } }
 
 /* Silvester: Weinbegleitung (10.11.2026), Karte links wie die Menükarten, Text rechts (Handy: darunter) */
