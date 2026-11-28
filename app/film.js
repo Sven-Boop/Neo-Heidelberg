@@ -1,11 +1,12 @@
 // Der BLISS-Group-Film (Fahrt durch alle Häuser, 102 s, Hochformat 9:16, mit Musik), seit 28.11.2026 auf bliss-group.de.
-// Sven 28.11.2026: „bei den anderen [Websites] schau wo es passen könnte“. Hier dezent als Textlink „Film ansehen“:
-//   1. im Fuß jeder Seite direkt hinter „Ein Haus der BLISS Group ↗“ (Copyright-Zeile)
-//   2. auf der Startseite im Abschnitt „Acht Welten, eine Familie“ neben „BLISS Group entdecken“, mit kurzer Zeile
-// Klick öffnet den Film bildschirmfüllend auf Schwarz über der Seite (mit Ton von vorn, Bedienelemente, × und ESC schließen,
-// Fokus zurück, Seite scrollt solange nicht). Das Video-Element entsteht erst beim Klick, vorab lädt nichts.
-// Ohne JavaScript ist es ein normaler Link auf bliss-group.de/film (neuer Tab).
-// bodyHtml.js bleibt unverändert: die Links setzt mitFilm() beim Bauen ein (seitenTeile.js, app/(en)/en/page.js),
+// Sven 28.11.2026: „bei den anderen [Websites] schau wo es passen könnte“, dann „finde das schon geil, verstecken will ich das net“:
+//   1. im Fuß jeder Seite der Textlink „Film ansehen“ direkt hinter „Ein Haus der BLISS Group ↗“ (Copyright-Zeile)
+//   2. auf der Startseite im Abschnitt „Acht Welten, eine Familie“ nach „BLISS Group entdecken“ ein Film-Block:
+//      Standbild im Hochformat mit rundem Abspielknopf, daneben Überschrift, Satz und Knopf „Film ansehen“ (am Handy untereinander)
+// Klick auf Bild, Knopf oder Link öffnet den Film bildschirmfüllend auf Schwarz über der Seite (mit Ton von vorn, Bedienelemente,
+// × und ESC schließen, Fokus zurück, Seite scrollt solange nicht). Das Video-Element entsteht erst beim Klick, das Standbild lädt lazy.
+// Ohne JavaScript führen alle auf bliss-group.de/film (neuer Tab).
+// bodyHtml.js bleibt unverändert: Link und Block setzt mitFilm() beim Bauen ein (seitenTeile.js, app/(en)/en/page.js),
 // das Skript FILM_SKRIPT läuft im <head> aller Seiten (Grundgeruest.js) und arbeitet per Ereignis-Delegation.
 
 // nach 24.12.2026 kommt Fassung v2 ohne Palais, dann hier umstellen
@@ -16,17 +17,47 @@ export const FILM = {
   seite: 'https://bliss-group.de/film',
 };
 
+// Satz mit Hausnamen: nur LAB und NEO, damit nach dem 24.12.2026 (Palais raus) hier nichts geändert werden muss
 const TEXT = {
-  de: { ansehen: 'Film ansehen', zeile: 'Alle Häuser der BLISS Group in 100 Sekunden', zu: 'Schließen', label: 'Der BLISS-Group-Film: eine Fahrt durch alle Häuser, mit Musik' },
-  en: { ansehen: 'Watch the film', zeile: 'All BLISS Group houses in 100 seconds', zu: 'Close', label: 'The BLISS Group film: a ride through all our houses, with music' },
+  de: {
+    ansehen: 'Film ansehen',
+    titel: 'Die BLISS Group in 100 Sekunden',
+    satz: 'Einmal durch alle Häuser der BLISS Group, vom LAB in Wiesloch bis ins NEO.',
+    abspielen: 'Film abspielen, mit Ton',
+    zu: 'Schließen',
+    label: 'Der BLISS-Group-Film: eine Fahrt durch alle Häuser, mit Musik',
+  },
+  en: {
+    ansehen: 'Watch the film',
+    titel: 'The BLISS Group in 100 seconds',
+    satz: 'Once through all BLISS Group houses, from LAB in Wiesloch to NEO.',
+    abspielen: 'Play the film, with sound',
+    zu: 'Close',
+    label: 'The BLISS Group film: a ride through all our houses, with music',
+  },
 };
 
 const PLAY = '<span class="film-dreieck" aria-hidden="true"></span>';
 
-function link(t, klasse, mitZeile) {
-  return `<a class="${klasse}" href="${FILM.seite}" target="_blank" rel="noopener" data-bliss-film aria-haspopup="dialog">${PLAY}${t.ansehen}${
-    mitZeile ? `<span class="film-zeile">${t.zeile}</span>` : ''
-  }</a>`;
+const ATTR = `href="${FILM.seite}" target="_blank" rel="noopener" data-bliss-film aria-haspopup="dialog"`;
+
+function link(t, klasse) {
+  return `<a class="${klasse}" ${ATTR}>${PLAY}${t.ansehen}</a>`;
+}
+
+// Film-Block im BLISS-Abschnitt: Standbild (lazy) mit Abspielknopf, Überschrift, Satz, Knopf im NEO-Stil (.btn)
+function block(t) {
+  return `<div class="bliss-film-block" data-film-abschnitt>
+    <a class="bliss-film-poster" ${ATTR} aria-label="${t.abspielen}">
+      <img src="${FILM.poster}" width="720" height="1280" alt="" loading="lazy" decoding="async">
+      <span class="bliss-film-play" aria-hidden="true"></span>
+    </a>
+    <div class="bliss-film-text">
+      <h3>${t.titel}</h3>
+      <p>${t.satz}</p>
+      <a class="btn bliss-film-knopf" ${ATTR}>${t.ansehen}</a>
+    </div>
+  </div>`;
 }
 
 // Setzt die Links ein: Fuß (hinter dem „Ein Haus der BLISS Group“-Span) und, wo vorhanden, den BLISS-Abschnitt der Startseite.
@@ -44,14 +75,14 @@ export function mitFilm(html, sprache) {
   const f = einmal('<span class="nb foot-haus">');
   if (f >= 0) {
     const ende = neu.indexOf('</span>', f) + '</span>'.length;
-    neu = neu.slice(0, ende) + ' ' + link(t, 'nb foot-film', false) + neu.slice(ende);
+    neu = neu.slice(0, ende) + ' ' + link(t, 'nb foot-film') + neu.slice(ende);
     treffer++;
   }
-  // 2. Startseite: <div class="bliss-cta"><a … class="btn primary">BLISS Group entdecken</a>
+  // 2. Startseite: Block direkt nach <div class="bliss-cta">…</div> (Knopf „BLISS Group entdecken“ bleibt, wie er ist)
   const b = einmal('<div class="bliss-cta">');
   if (b >= 0) {
-    const ende = neu.indexOf('</a>', b) + '</a>'.length;
-    neu = neu.slice(0, ende) + '\n    ' + link(t, 'bliss-film', true) + neu.slice(ende);
+    const ende = neu.indexOf('</div>', b) + '</div>'.length;
+    neu = neu.slice(0, ende) + '\n  ' + block(t) + neu.slice(ende);
     treffer++;
   }
   if (!treffer) throw new Error('film: weder Fuß noch BLISS-Abschnitt gefunden');
