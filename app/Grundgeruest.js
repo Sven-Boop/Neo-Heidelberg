@@ -7,6 +7,7 @@ import { Lato } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Einwilligung } from './Einwilligung';
+import { FILM_SKRIPT } from './film';
 
 const lato = Lato({
   weight: ['300', '400', '700', '900'],
@@ -49,6 +50,8 @@ export function Grundgeruest({ lang, children }) {
         <link rel="preload" as="image" href="/video/neo-hero-poster.webp" fetchPriority="high" />
         <script dangerouslySetInnerHTML={{ __html: lazyBilder }} />
         <script dangerouslySetInnerHTML={{ __html: allergenSchalter }} />
+        {/* BLISS-Group-Film im Großmodus (app/film.js) */}
+        <script dangerouslySetInnerHTML={{ __html: FILM_SKRIPT }} />
       </head>
       <body>
         {children}

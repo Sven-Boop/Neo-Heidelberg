@@ -4,6 +4,7 @@ import { mitHaeuserLeiste } from './haeuser';
 import { mitFeiernMenues } from './feiernMenues';
 import { mitKarte, mitSharingTeaser } from './winterkarte/render';
 import { mitSilvesterTeaser, SILVESTER } from './silvester';
+import { mitFilm } from './film';
 
 // Seit 17.10.2026 liefert jede deutsche Adresse nur ihren eigenen Inhalt aus (vorher bekamen
 // /speisekarte und /hochzeit die komplette Startseite und schalteten nur per CSS-Klasse um).
@@ -19,12 +20,13 @@ function schneide(von, bis, quelle = bodyHtml) {
 const KOPF = schneide('<!-- NAV -->', '<!-- HERO -->');
 // Startseite mit Wintermenüs im Abschnitt „Feiern im NEO“ (app/feiernMenues.js)
 // Silvester-Hinweis an <!--SILVESTER-TEASER--> (app/silvester.js, Entwurf 06.11.2026)
-const START = mitSilvesterTeaser(mitSharingTeaser(mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">')), 'de'), 'de');
+// Link „Film ansehen“ im BLISS-Abschnitt und im Fuß (app/film.js)
+const START = mitFilm(mitSilvesterTeaser(mitSharingTeaser(mitFeiernMenues(schneide('<!-- HERO -->', '<div class="subpage" id="page-speisekarte">')), 'de'), 'de'), 'de');
 // Speisekarte Winter 2026/27 aus app/winterkarte (Daten + Fotos), eingesetzt an <!--WINTERKARTE-->
 const KARTE = mitKarte(schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE'), 'de');
 const HOCHZEIT = schneide('<div class="subpage" id="page-hochzeit">', '<!-- FOOTER -->');
 // Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js)
-const FUSS = mitHaeuserLeiste(schneide('<!-- FOOTER -->'), 'de');
+const FUSS = mitFilm(mitHaeuserLeiste(schneide('<!-- FOOTER -->'), 'de'), 'de');
 
 const ids = (html) => new Set([...html.matchAll(/\sid="([\w-]+)"/g)].map((m) => m[1]));
 const BEREICHE = [
@@ -73,7 +75,7 @@ export const speisekarteHtml = sprachZiel(seitenHtml(aktiv(KARTE, 'page-speiseka
 // Inhalt nur die Speisekarte; DE führt zur deutschen Online-Karte.
 const KOPF_EN = schneide('<!-- NAV -->', '<!-- HERO -->', bodyHtmlEn);
 const KARTE_EN = mitKarte(schneide('<div class="subpage" id="page-speisekarte">', '<!-- ==================== HOCHZEIT PAGE', bodyHtmlEn), 'en');
-const FUSS_EN = mitHaeuserLeiste(schneide('<!-- FOOTER -->', null, bodyHtmlEn), 'en');
+const FUSS_EN = mitFilm(mitHaeuserLeiste(schneide('<!-- FOOTER -->', null, bodyHtmlEn), 'en'), 'en');
 // Anker, die nicht auf der Karte liegen (#bar, #home …), zeigen auf die englische Startseite.
 function verlinkeEn(html, eigeneIds) {
   return html.replace(/href="#([\w-]+)"/g, (ganz, id) => (eigeneIds.has(id) ? ganz : `href="/en#${id}"`));

@@ -6,6 +6,7 @@ import { mitHaeuserLeiste } from '../../haeuser';
 import { mitKarte, mitSharingTeaser } from '../../winterkarte/render';
 import { mitSilvesterTeaser } from '../../silvester';
 import { stoererHtml, STOERER_SKRIPT } from '../../stoerer';
+import { mitFilm } from '../../film';
 
 // Stündlich neu erzeugen: der Störer (app/stoerer.js) zeigt den Adventskalender bis 24.12., Silvester bis 31.12.2026
 // und verschwindet danach ohne neuen Deploy.
@@ -13,7 +14,8 @@ export const revalidate = 3600;
 
 // Fuß mit Häuser-Leiste über der Copyright-Zeile (app/haeuser.js), Winterkarte aus app/winterkarte
 // Silvester-Hinweis an <!--SILVESTER-TEASER--> (app/silvester.js, Entwurf 06.11.2026)
-const html = mitKarte(mitSilvesterTeaser(mitSharingTeaser(mitHaeuserLeiste(bodyHtml, 'en'), 'en'), 'en'), 'en');
+// Link „Watch the film“ im BLISS-Abschnitt und im Fuß (app/film.js)
+const html = mitFilm(mitKarte(mitSilvesterTeaser(mitSharingTeaser(mitHaeuserLeiste(bodyHtml, 'en'), 'en'), 'en'), 'en'), 'en');
 
 export const metadata = {
   title: 'NEO Heidelberg · Dry-Aged Steaks, Sushi & Bar at Main Station',

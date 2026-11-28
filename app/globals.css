@@ -5484,3 +5484,22 @@ html.stoe-offen, html.stoe-offen body { overflow: hidden; }
 #app-root .hochzeit-hero .hero-inner > .eyebrow:first-child::before { content: none; }
 /* Drei Versprechen (Hochzeit) nicht kursiv: kursiv bleibt nur im Startbild */
 #app-root .tmnl-quote { font-style: normal; }
+
+/* ===== 28.11.2026 · BLISS-Group-Film (app/film.js): Textlink im Fuß und im BLISS-Abschnitt, Großmodus auf Schwarz ===== */
+.film-dreieck { display: inline-block; width: 0; height: 0; margin-right: 0.55em; border-left: 0.62em solid currentColor; border-top: 0.38em solid transparent; border-bottom: 0.38em solid transparent; vertical-align: 0.02em; }
+#app-root .foot-film { margin-left: 1.2em; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+#app-root .foot-film:hover { color: var(--fg-soft); }
+.bliss-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 36px; }
+.bliss-film { display: inline-flex; flex-wrap: wrap; align-items: baseline; column-gap: 14px; row-gap: 4px; padding: 10px 0; font-size: 11px; font-weight: 900; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg); transition: color .3s; }
+.bliss-film .film-dreieck { margin-right: -6px; }
+.bliss-film .film-zeile { font-size: 14px; font-weight: 300; letter-spacing: 0.01em; text-transform: none; color: var(--fg-soft); }
+.bliss-film:hover, .bliss-film:focus-visible { color: var(--accent); }
+html.bliss-kino-offen, html.bliss-kino-offen body { overflow: hidden; }
+.bliss-kino { position: fixed; inset: 0; z-index: 100001; display: grid; place-items: center; background: #000; opacity: 0; transition: opacity .35s ease; cursor: pointer; }
+.bliss-kino[hidden] { display: none; }
+.bliss-kino.da { opacity: 1; }
+.bliss-kino-video { display: block; width: auto; height: 100vh; height: 100dvh; max-width: 100%; aspect-ratio: 9 / 16; background: #000; object-fit: contain; cursor: auto; }
+.bliss-kino-zu { position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: 14px; z-index: 2; width: 48px; height: 48px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.32); border-radius: 50%; background: rgba(22,27,34,.78); color: #fff; font-size: 28px; line-height: 1; cursor: pointer; transition: background .25s, color .25s; }
+.bliss-kino-zu span { display: block; margin-top: -2px; }
+.bliss-kino-zu:hover, .bliss-kino-zu:focus-visible { background: #fff; color: #161b22; outline: none; }
+@media (prefers-reduced-motion: reduce) { .bliss-kino, .bliss-kino-zu { transition: none; } }
